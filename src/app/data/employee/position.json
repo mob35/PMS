@@ -1,0 +1,24 @@
+{
+	"data": [
+		 {
+            "name": "Director",
+            "code": "01"
+        },
+        {
+            "name": "Human Resource",
+            "code": "02"
+        },
+        {
+            "name": "Accounting",
+            "code": "03"
+        },
+        {
+            "name": "Developer",
+            "code": "04"
+        },
+        {
+            "name": "System Analyst",
+            "code": "05"
+        }
+    ]
+}
