@@ -3,51 +3,35 @@
         <md-toolbar class="md-accent md-hue-2">
             <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
                 <span class="title">Delete Employee</span>
-                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
+                <md-button class="md-icon-button" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-close"></md-icon>
                 </md-button>
             </div>
         </md-toolbar>
         <!-- FORM WIZARD -->
         <ms-form-wizard flex>
-            <md-tabs md-dynamic-height md-selected="msWizard.selectedIndex" md-center-tabs="true">
-                <md-tab>
-                    <!-- <md-tab-label>
-                        <span class="ms-form-wizard-step-label">
-                                <span class="ms-form-wizard-step-number md-accent-bg"
-                                      ng-if="wizardStep1.$invalid">1</span>
-                        <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep1.$valid">
-                                    <i class="icon-check s16"></i>
-                                </span>
-                        <span class="ms-form-wizard-step-text">Delete Employee</span>
-                        </span>
-                    </md-tab-label> -->
-                    <md-tab-body>
-                        <div class="divMarCompos">
-                            <form name="wizardStep1" class="md-inline-form" ms-form-wizard-form novalidate>
-                                <div layout="column" layout-gt-xs="row">
-                                    <md-input-container flex="10">
-                                    </md-input-container>
-                                    <md-input-container flex="80">
-                                        <div class="navigation md-title" flex layout="row" layout-align="center center">
-                                            <span>Are you sure you want to delete this employee ?</span>
-                                        </div>
-                                    </md-input-container>
-                                    <md-input-container flex="10">
-                                    </md-input-container>
+            <md-tabs-label md-dynamic-height md-selected="msWizard.selectedIndex" md-center-tabs="true">
+                <div class="divMarCompos">
+                    <form name="wizardStep" class="md-inline-form" ms-form-wizard-form novalidate>
+                        <div layout="column" layout-gt-xs="row">
+                            <md-input-container flex="10">
+                            </md-input-container>
+                            <md-input-container flex="80">
+                                <div class="navigation md-title" flex layout="row" layout-align="center center">
+                                    <span>Are you sure you want to delete this employee ?</span>
                                 </div>
-                                <!-- /////// -->
-                            </form>
+                            </md-input-container>
+                            <md-input-container flex="10">
+                            </md-input-container>
                         </div>
-                    </md-tab-body>
-                </md-tab>
-                <!-- ///////// -->
-            </md-tabs>
+                    </form>
+                </div>
+            </md-tabs-label>
             <div class="navigation" flex layout="row" layout-align="space-between center">
-                <md-button class="md-raised md-accent" ng-click="msWizard.previousStep()" ng-disabled="msWizard.isFirstStep()">
+                <md-button class="md-raised md-accent" ng-click="closeDialog()" >
                     Cancel
                 </md-button>
-                <md-button class="md-raised md-accent" ng-click="msWizard.nextStep()" ng-hide="msWizard.isLastStep()" ng-disabled="msWizard.currentStepInvalid()">
+                <md-button class="md-raised md-accent" ng-click="closeDialog()" >
                     Done
                 </md-button>
             </div>
