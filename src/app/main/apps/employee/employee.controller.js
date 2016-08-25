@@ -6,11 +6,9 @@
         .controller('EmpController', EmpController);
 
     /** @ngInject */
-<<<<<<< HEAD
-    function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, Inbox) {
-=======
+
     function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms) {
->>>>>>> c1c3ae6a291f24a97fbd4ce350807c7c8d726d83
+
         var vm = this;
 
         // Data
@@ -75,17 +73,11 @@
          * @param mail
          */
         function selectDev(mail) { vm.selectedDev = mail; }
-<<<<<<< HEAD
 
-        function selectMail(mail) {
-            vm.selectedMail = mail;
-
-=======
 
         function selectMail(mail) {
             $scope.selectedMail = mail;
 
->>>>>>> c1c3ae6a291f24a97fbd4ce350807c7c8d726d83
             $timeout(function() {
                 // If responsive read pane is
                 // active, navigate to it
@@ -139,15 +131,10 @@
             var idx = $scope.checked.indexOf(mail);
 
             if (idx > -1) {
-<<<<<<< HEAD
-                vm.checked.splice(idx, 1);
-            } else {
-                vm.checked.push(mail);
-=======
+
                 $scope.checked.splice(idx, 1);
             } else {
                 $scope.checked.push(mail);
->>>>>>> c1c3ae6a291f24a97fbd4ce350807c7c8d726d83
             }
         }
 
@@ -158,11 +145,8 @@
          * @returns {boolean}
          */
         function isChecked(mail) {
-<<<<<<< HEAD
-            return vm.checked.indexOf(mail) > -1;
-=======
+
             return $scope.checked.indexOf(mail) > -1;
->>>>>>> c1c3ae6a291f24a97fbd4ce350807c7c8d726d83
         }
 
         /**
@@ -170,17 +154,11 @@
          */
         function checkAll() {
             if (vm.allChecked) {
-<<<<<<< HEAD
-                vm.checked = [];
-                vm.allChecked = false;
-            } else {
-                angular.forEach(vm.inbox, function(mail) {
-=======
+
                 $scope.checked = [];
                 vm.allChecked = false;
             } else {
                 angular.forEach($scope.empPms, function(mail) {
->>>>>>> c1c3ae6a291f24a97fbd4ce350807c7c8d726d83
                     if (!isChecked(mail)) {
                         toggleCheck(mail);
                     }
@@ -195,22 +173,22 @@
          *
          * @param ev
          */
-<<<<<<< HEAD
-        function composeDialog(ev) {
-            $mdDialog.show({
-                controller: 'ComposeDialogController',
-                controllerAs: 'vm',
-                locals: {
-                    selectedMail: undefined
-                },
-                templateUrl: 'app/main/apps/employee/dialogs/compose/compose-dialog.html',
-                parent: angular.element($document.body),
-                targetEvent: ev,
-                clickOutsideToClose: true
-            });
-        }
+        // <<<<<<< HEAD
+        // function composeDialog(ev) {
+        //     $mdDialog.show({
+        //         controller: 'ComposeDialogController',
+        //         controllerAs: 'vm',
+        //         locals: {
+        //             selectedMail: undefined
+        //         },
+        //         templateUrl: 'app/main/apps/employee/dialogs/compose/compose-dialog.html',
+        //         parent: angular.element($document.body),
+        //         targetEvent: ev,
+        //         clickOutsideToClose: true
+        //     });
+        // }
         ////////////  Certificate  ////////////
-=======
+        // =======
         $scope.composeDialog = function(ev) {
                 $mdDialog.show({
                     controller: 'ComposeDialogController',
@@ -225,7 +203,6 @@
                 });
             }
             ////////////  Certificate  ////////////
->>>>>>> c1c3ae6a291f24a97fbd4ce350807c7c8d726d83
         function certificateDialog(ev) {
             $mdDialog.show({
                 controller: 'CertificateDialogController',
@@ -314,11 +291,8 @@
          *
          * @param sidenavId
          */
-<<<<<<< HEAD
-        function toggleSidenav(sidenavId) {
-=======
+
         $scope.toggleSidenav = function(sidenavId) {
->>>>>>> c1c3ae6a291f24a97fbd4ce350807c7c8d726d83
             $mdSidenav(sidenavId).toggle();
         }
     }
