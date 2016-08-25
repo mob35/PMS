@@ -1,7 +1,7 @@
 {
     "EMP": {
         "MAILBOX": "Employee",
-        "COMPOSE": "New Employee",
+        "NewEmp": "New Employee",
         "INBOX": "Inbox",
         "STARRED": "Starred",
         "IMPORTANT": "Important",
