@@ -1,9 +1,9 @@
 <md-dialog class="compose-dialog" aria-label="New Employee">
-    <form class="md-inline-form">
+    <form class="md-inline-form fixHeight">
         <md-toolbar class="md-accent md-hue-2">
             <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
                 <span class="title">New Employee</span>
-                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
+                <md-button class="md-icon-button" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-close"></md-icon>
                 </md-button>
             </div>
@@ -11,6 +11,7 @@
         <!-- FORM WIZARD -->
         <ms-form-wizard flex>
             <md-tabs md-dynamic-height md-selected="msWizard.selectedIndex" md-center-tabs="true">
+                <!-- Personal Information -->
                 <md-tab>
                     <md-tab-label>
                         <span class="ms-form-wizard-step-label">
@@ -27,7 +28,7 @@
                             <form name="wizardStep1" class="md-inline-form" ms-form-wizard-form novalidate>
                                 <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                                     <md-input-container flex="30">
-                                        <input type="text" name="firstname" ng-model="vm.formWizard.firstname" placeholder="Firstname" required>
+                                        <input type="text" name="firstname" ng-model="formWizard.firstname" placeholder="Firstname" required>
                                         <div ng-messages="wizardStep1.firstname.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Firstname field is required.</span>
@@ -35,7 +36,7 @@
                                         </div>
                                     </md-input-container>
                                     <md-input-container flex="30">
-                                        <input type="text" name="lastname" ng-model="vm.formWizard.lastname" placeholder="Lastname" required>
+                                        <input type="text" name="lastname" ng-model="formWizard.lastname" placeholder="Lastname" required>
                                         <div ng-messages="wizardStep1.lastname.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Lastname field is required.</span>
@@ -43,13 +44,12 @@
                                         </div>
                                     </md-input-container>
                                     <md-input-container flex="30">
-
                                     </md-input-container>
                                 </div>
                                 <!-- /////// -->
                                 <div class="divBtn" layout="column" layout-gt-xs="row">
                                     <md-input-container flex="30">
-                                        <input type="text" name="Position" ng-model="vm.formWizard.Position" placeholder="Position" required>
+                                        <input type="text" name="Position" ng-model="formWizard.Position" placeholder="Position" required>
                                         <div ng-messages="wizardStep1.Position.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Position field is required.</span>
@@ -57,7 +57,7 @@
                                         </div>
                                     </md-input-container>
                                     <md-input-container flex="30">
-                                        <input type="text" name="Salary" ng-model="vm.formWizard.salary" placeholder="Salary" required>
+                                        <input type="text" name="Salary" ng-model="formWizard.Salary" placeholder="Salary" required>
                                         <div ng-messages="wizardStep1.Salary.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Salary field is required.</span>
@@ -68,9 +68,9 @@
                                     </md-input-container>
                                 </div>
                                 <!-- /////// -->
-                               <!--  <div class="divBtn" layout="column" layout-gt-xs="row">
+                                <!--  <div class="divBtn" layout="column" layout-gt-xs="row">
                                     <md-input-container flex="30">
-                                        <input type="text" name="Address" ng-model="vm.formWizard.Address" placeholder="Address" required>
+                                        <input type="text" name="Address" ng-model="formWizard.Address" placeholder="Address" required>
                                         <div ng-messages="wizardStep1.Address.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Address field is required.</span>
@@ -78,7 +78,7 @@
                                         </div>
                                     </md-input-container>
                                     <md-input-container flex="30">
-                                        <input type="text" name="Moo" ng-model="vm.formWizard.Moo" placeholder="Moo" required>
+                                        <input type="text" name="Moo" ng-model="formWizard.Moo" placeholder="Moo" required>
                                         <div ng-messages="wizardStep1.Moo.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Moo field is required.</span>
@@ -87,7 +87,7 @@
                                     </md-input-container>
                                     <md-input-container flex="30">
                                         <label>State</label>
-                                        <md-select ng-model="vm.basicForm.state">
+                                        <md-select ng-model="basicForm.state">
                                             <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
                                                 {{state.abbrev}}
                                             </md-option>
@@ -95,10 +95,10 @@
                                     </md-input-container>
                                 </div> -->
                                 <!-- /////// -->
-                               <!--  <div class="divBtn2" layout="column" layout-gt-xs="row">
+                                <!--  <div class="divBtn2" layout="column" layout-gt-xs="row">
                                     <md-input-container flex>
                                         <label>District</label>
-                                        <md-select ng-model="vm.basicForm.district">
+                                        <md-select ng-model="basicForm.district">
                                             <md-option ng-repeat="district in vm.districts" value="{{district.abbrev}}">
                                                 {{district.abbrev}}
                                             </md-option>
@@ -106,7 +106,7 @@
                                     </md-input-container>
                                     <md-input-container flex>
                                         <label>Amphur</label>
-                                        <md-select ng-model="vm.basicForm.amphur">
+                                        <md-select ng-model="basicForm.amphur">
                                             <md-option ng-repeat="amphur in vm.amphurs" value="{{amphur.abbrev}}">
                                                 {{amphur.abbrev}}
                                             </md-option>
@@ -114,7 +114,7 @@
                                     </md-input-container>
                                     <md-input-container flex>
                                         <label>Province</label>
-                                        <md-select ng-model="vm.basicForm.state">
+                                        <md-select ng-model="basicForm.state">
                                             <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
                                                 {{state.abbrev}}
                                             </md-option>
@@ -124,7 +124,7 @@
                                 <!-- /////// -->
                                 <!-- <div class="divBtn" layout="column" layout-gt-xs="row">
                                     <md-input-container flex="30">
-                                        <input type="text" name="Postcode" ng-model="vm.formWizard.Postcode" placeholder="Postcode" required>
+                                        <input type="text" name="Postcode" ng-model="formWizard.Postcode" placeholder="Postcode" required>
                                         <div ng-messages="wizardStep1.Postcode.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Postcode field is required.</span>
@@ -132,7 +132,7 @@
                                         </div>
                                     </md-input-container>
                                     <md-input-container flex="30">
-                                        <input type="text" name="Tel" ng-model="vm.formWizard.Tel" placeholder="Tel" required>
+                                        <input type="text" name="Tel" ng-model="formWizard.Tel" placeholder="Tel" required>
                                         <div ng-messages="wizardStep1.Tel.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Tel field is required.</span>
@@ -140,7 +140,7 @@
                                         </div>
                                     </md-input-container>
                                     <md-input-container flex="30">
-                                        <input type="text" name="Mobile" ng-model="vm.formWizard.Mobile" placeholder="Mobile" required>
+                                        <input type="text" name="Mobile" ng-model="formWizard.Mobile" placeholder="Mobile" required>
                                         <div ng-messages="wizardStep1.Mobile.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Mobile field is required.</span>
@@ -149,7 +149,6 @@
                                     </md-input-container>
                                 </div> -->
                                 <!-- /////// -->
-                                
                                 <!-- /////// -->
                                 <!-- <div class="" layout="row" layout-xs="column">
                                     <div flex>
@@ -173,16 +172,16 @@
                                     <div flex="20">
                                         <span>Sex</span>
                                     </div>
-                                    <div ng-repeat="sexName in vm.sex" flex="20">
+                                    <div ng-repeat="sexName in sex" flex="20">
                                         <md-radio-group layout="row">
                                             <md-radio-button class="radioMargin">{{sexName.name}}</md-radio-button>
                                         </md-radio-group>
                                     </div>
                                 </div> -->
                                 <!-- /////// -->
-                                <div class="divBtn" layout="column" layout-gt-xs="row">
+                                <div class="divBtn question" layout="column" layout-gt-xs="row">
                                     <md-input-container flex="30">
-                                        <input type="text" name="Birth Date" ng-model="vm.formWizard.Address" placeholder="Birth Date" required>
+                                        <input type='date' name="BirthDate" class="padding-small" ng-model="formWizard.BirthDate" placeholder="Birth Date" required/>
                                         <div ng-messages="wizardStep1.Address.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Address field is required.</span>
@@ -190,26 +189,36 @@
                                         </div>
                                     </md-input-container>
                                     <md-input-container flex="30">
-                                        <input type="text" name="Age" ng-model="vm.formWizard.Moo" placeholder="Age" required>
+                                        <input type="number" name="Age" ng-model="formWizard.Age" placeholder="Age" required>
                                         <div ng-messages="wizardStep1.Moo.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Moo field is required.</span>
                                             </div>
                                         </div>
                                     </md-input-container>
-                                    <md-input-container flex="30">
-                                        <input type="text" name="Race" ng-model="vm.formWizard.Moo" placeholder="Race" required>
-                                        <div ng-messages="wizardStep1.Moo.$error" role="alert">
-                                            <div ng-message="required">
-                                                <span>Moo field is required.</span>
-                                            </div>
+                                    <md-input-container flex="3">
+                                        <div class="fixSex">
+                                            <span>Sex :</span>
                                         </div>
+                                    </md-input-container>
+                                    <md-input-container flex="25">
+                                        <md-switch ng-model="active" class="colorSW marginTopZero">
+                                            {{ active ? 'Male' : 'Famale' }}
+                                        </md-switch>
                                     </md-input-container>
                                 </div>
                                 <!-- /////// -->
                                 <div class="divBtn" layout="column" layout-gt-xs="row">
                                     <md-input-container flex="30">
-                                        <input type="text" name="Nationality" ng-model="vm.formWizard.Address" placeholder="Nationality" required>
+                                        <input type="text" name="Race" ng-model="formWizard.Race" placeholder="Race" required>
+                                        <div ng-messages="wizardStep1.Moo.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Moo field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                    <md-input-container flex="30">
+                                        <input type="text" name="Nationality" ng-model="formWizard.Nationality" placeholder="Nationality" required>
                                         <div ng-messages="wizardStep1.Address.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Address field is required.</span>
@@ -217,26 +226,26 @@
                                         </div>
                                     </md-input-container>
                                     <md-input-container flex="30">
-                                        <input type="text" name="Religion" ng-model="vm.formWizard.Moo" placeholder="Religion" required>
+                                        <input type="text" name="Religion" ng-model="formWizard.Religion" placeholder="Religion" required>
                                         <div ng-messages="wizardStep1.Moo.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Moo field is required.</span>
                                             </div>
                                         </div>
                                     </md-input-container>
-                                    <md-input-container flex="30">
-                                        <input type="text" name="Underlying Disease" ng-model="vm.formWizard.Moo" placeholder="Underlying Disease" required>
+                                    <!-- <md-input-container flex="30">
+                                        <input type="text" name="Underlying Disease" ng-model="formWizard.Moo" placeholder="Underlying Disease" required>
                                         <div ng-messages="wizardStep1.Moo.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Moo field is required.</span>
                                             </div>
                                         </div>
-                                    </md-input-container>
+                                    </md-input-container> -->
                                 </div>
                                 <!-- /////// -->
                                 <div class="divBtn" layout="column" layout-gt-xs="row">
                                     <md-input-container flex="30">
-                                        <input type="text" name="IDCard No." ng-model="vm.formWizard.Address" placeholder="IDCard No." required>
+                                        <input type="text" name="IDCardNo" ng-model="formWizard.IDCardNo" placeholder="IDCard No." required>
                                         <div ng-messages="wizardStep1.Address.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Address field is required.</span>
@@ -244,7 +253,7 @@
                                         </div>
                                     </md-input-container>
                                     <md-input-container flex="30">
-                                        <input type="text" name="Expiration Date" ng-model="vm.formWizard.Moo" placeholder="Expiration Date" required>
+                                        <input type="text" name="ExpirationDate" ng-model="formWizard.ExpirationDate" placeholder="Expiration Date" required>
                                         <div ng-messages="wizardStep1.Moo.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Moo field is required.</span>
@@ -252,7 +261,7 @@
                                         </div>
                                     </md-input-container>
                                     <md-input-container flex="30">
-                                        <input type="text" name="Account" ng-model="vm.formWizard.Moo" placeholder="Account" required>
+                                        <input type="text" name="Account" ng-model="formWizard.Account" placeholder="Account" required>
                                         <div ng-messages="wizardStep1.Moo.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Moo field is required.</span>
@@ -263,7 +272,7 @@
                                 <!-- /////// -->
                                 <!-- <div class="divBtn2" layout="column" layout-gt-xs="row">
                                     <md-input-container flex="30">
-                                        <input type="text" name="Height" ng-model="vm.formWizard.Address" placeholder="Height" required>
+                                        <input type="text" name="Height" ng-model="formWizard.Address" placeholder="Height" required>
                                         <div ng-messages="wizardStep1.Address.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Address field is required.</span>
@@ -271,7 +280,7 @@
                                         </div>
                                     </md-input-container>
                                     <md-input-container flex="30">
-                                        <input type="text" name="Weight" ng-model="vm.formWizard.Moo" placeholder="Weight" required>
+                                        <input type="text" name="Weight" ng-model="formWizard.Moo" placeholder="Weight" required>
                                         <div ng-messages="wizardStep1.Moo.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Moo field is required.</span>
@@ -279,7 +288,7 @@
                                         </div>
                                     </md-input-container>
                                     <md-input-container flex="30">
-                                        <input type="text" name="Underlying disease" ng-model="vm.formWizard.Moo" placeholder="Underlying disease" required>
+                                        <input type="text" name="Underlying disease" ng-model="formWizard.Moo" placeholder="Underlying disease" required>
                                         <div ng-messages="wizardStep1.Moo.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Moo field is required.</span>
@@ -288,7 +297,7 @@
                                     </md-input-container>
                                 </div> -->
                                 <!-- /////// -->
-                               <!--  <div class="divBtn4" layout="row" layout-xs="column">
+                                <!--  <div class="divBtn4" layout="row" layout-xs="column">
                                     <span flex="20">Military Status</span>
                                     <div flex="20">
                                         <md-checkbox class="no-label" ng-checked>
@@ -325,7 +334,7 @@
                                 </div> -->
                                 <div class="divBtn2" layout="column">
                                     <md-input-container class="md-block" flex="60">
-                                        <input type="email" name="email" ng-model="vm.formWizard.email" placeholder="Email" ng-pattern="/^.+@.+\..+$/" required>
+                                        <input type="email" name="email" ng-model="formWizard.email" placeholder="Email" ng-pattern="/^.+@.+\..+$/" required>
                                         <div ng-messages="wizardStep1.email.$error" role="alert" multiple>
                                             <div ng-message="required">
                                                 <span>Email field is required</span>
@@ -336,12 +345,11 @@
                                         </div>
                                     </md-input-container>
                                 </div>
-                                
                             </form>
                         </div>
                     </md-tab-body>
                 </md-tab>
-                <!-- ///////// -->
+                <!-- Personal Information2 -->
                 <md-tab ng-disabled="wizardStep1.$invalid">
                     <md-tab-label>
                         <span class="ms-form-wizard-step-label">
@@ -350,11 +358,206 @@
                         <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep2.$valid">
                                     <i class="icon-check s16"></i>
                                 </span>
+                        <span class="ms-form-wizard-step-text">Personal Information 2</span>
+                        </span>
+                    </md-tab-label>
+                    <md-tab-body>
+                        <div class="divMarCompos">
+                            <form name="wizardStep2" class="md-inline-form" ms-form-wizard-form novalidate>
+                                <!-- /////// -->
+                                <div class="divBtn" layout="column" layout-gt-xs="row">
+                                    <md-input-container flex="30">
+                                        <input type="text" name="Address" ng-model="formWizard.Address" placeholder="Address" required>
+                                        <div ng-messages="wizardStep2.Address.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Address field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                    <md-input-container flex="30">
+                                        <input type="text" name="Moo" ng-model="formWizard.Moo" placeholder="Moo" required>
+                                        <div ng-messages="wizardStep2.Moo.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Moo field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                    <md-input-container flex="30">
+                                        <label>State</label>
+                                        <md-select ng-model="basicForm.state">
+                                            <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                                                {{state.abbrev}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </div>
+                                <!-- /////// -->
+                                <div class="divBtn2" layout="column" layout-gt-xs="row">
+                                    <md-input-container flex>
+                                        <label>District</label>
+                                        <md-select ng-model="basicForm.district">
+                                            <md-option ng-repeat="district in vm.districts" value="{{district.abbrev}}">
+                                                {{district.abbrev}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                    <md-input-container flex>
+                                        <label>Amphur</label>
+                                        <md-select ng-model="basicForm.amphur">
+                                            <md-option ng-repeat="amphur in vm.amphurs" value="{{amphur.abbrev}}">
+                                                {{amphur.abbrev}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                    <md-input-container flex>
+                                        <label>Province</label>
+                                        <md-select ng-model="basicForm.state">
+                                            <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
+                                                {{state.abbrev}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </div>
+                                <!-- /////// -->
+                                <div class="divBtn" layout="column" layout-gt-xs="row">
+                                    <md-input-container flex="30">
+                                        <input type="text" name="Postcode" ng-model="formWizard.Postcode" placeholder="Postcode" required>
+                                        <div ng-messages="wizardStep2.Postcode.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Postcode field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                    <md-input-container flex="30">
+                                        <input type="text" name="Tel" ng-model="formWizard.Tel" placeholder="Tel" required>
+                                        <div ng-messages="wizardStep2.Tel.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Tel field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                    <md-input-container flex="30">
+                                        <input type="text" name="Mobile" ng-model="formWizard.Mobile" placeholder="Mobile" required>
+                                        <div ng-messages="wizardStep2.Mobile.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Mobile field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                </div>
+                                <!-- /////// -->
+                                <div class="divBtn2" layout="column" layout-gt-xs="row">
+                                    <md-input-container flex="30">
+                                        <input type="text" name="Height" ng-model="formWizard.Address" placeholder="Height" required>
+                                        <div ng-messages="wizardStep2.Address.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Address field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                    <md-input-container flex="30">
+                                        <input type="text" name="Weight" ng-model="formWizard.Weight" placeholder="Weight" required>
+                                        <div ng-messages="wizardStep2.Moo.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Moo field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                    <md-input-container flex="30">
+                                        <input type="text" name="UnderlyingDisease" ng-model="formWizard.UnderlyingDisease" placeholder="Underlying Disease" required>
+                                        <div ng-messages="wizardStep2.Moo.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Moo field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                </div>
+                                <!-- /////// -->
+                                <div class="divBtn4" layout="row" layout-xs="column">
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> with parent
+                                    </div>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> own home
+                                    </div>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> hired house
+                                    </div>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> hostel
+                                    </div>
+                                </div>
+                                <!-- ///////// -->
+                                <div class="divBtn4" layout="row" layout-xs="column">
+                                    <span flex="20">Military Status</span>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Exempted
+                                    </div>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Served
+                                    </div>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Not Yet
+                                    </div>
+                                </div>
+                                <!-- /////// -->
+                                <div class="divBtn4" layout="row" layout-xs="column">
+                                    <span flex="20">Marital Status</span>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Single
+                                    </div>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Married
+                                    </div>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Widowed
+                                    </div>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Separated
+                                    </div>
+                                </div>
+                                <div class="divBtn5" layout="column">
+                                    <!-- <md-input-container class="md-block" flex="60">
+                                        <input type="email" name="email" ng-model="formWizard.email" placeholder="Email" ng-pattern="/^.+@.+\..+$/" required>
+                                        <div ng-messages="wizardStep2.email.$error" role="alert" multiple>
+                                            <div ng-message="required">
+                                                <span>Email field is required</span>
+                                            </div>
+                                            <div ng-message="pattern">
+                                                <span>Email must be a valid e-mail address</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container> -->
+                                </div>
+                            </form>
+                        </div>
+                    </md-tab-body>
+                </md-tab>
+                <!-- Family Information -->
+                <md-tab ng-disabled="wizardStep1.$invalid || wizardStep2.$invalid">
+                    <md-tab-label>
+                        <span class="ms-form-wizard-step-label">
+                                <span class="ms-form-wizard-step-number md-accent-bg"
+                                      ng-if="wizardStep3.$invalid">3</span>
+                        <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep3.$valid">
+                                    <i class="icon-check s16"></i>
+                                </span>
                         <span class="ms-form-wizard-step-text">Family Information</span>
                         </span>
                     </md-tab-label>
                     <md-tab-body>
-                        <div class="hrBorder marginZero" layout="row" layout-xs="column" ng-hide="showme">
+                        <div class="hrBorder marginThree" layout="row" layout-xs="column" ng-hide="showme">
                             <div flex="10">
                             </div>
                             <div flex="10">
@@ -373,68 +576,68 @@
                                     <span>Tel : {{fam.tel}}</span> 
                                 </div> -->
                         </div>
-                    <div class="divMarCompos">
-                        <form name="wizardStep2" ms-form-wizard-form novalidate>
-                            <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showme">
-                                <md-input-container flex="50">
-                                    <label>FirstName</label>
-                                    <input type="text" name="FirstName" ng-model="vm.family.nameFm">
-                                </md-input-container>
-                                <md-input-container flex="50">
-                                    <label>LastName</label>
-                                    <input type="text" name="LastName" ng-model="vm.family.LastNameFm">
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showme">
-                                <md-input-container flex="50">
-                                    <label>Age</label>
-                                    <input type="text" name="Age" ng-model="vm.family.age">
-                                </md-input-container>
-                                <md-input-container flex="50">
-                                    <div layout="row" layout-xs="column">
-                                        <div flex="20">
-                                            <span>Sex</span>
+                        <div class="divMarCompos">
+                            <form name="wizardStep3" ms-form-wizard-form novalidate>
+                                <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showme">
+                                    <md-input-container flex="50">
+                                        <label>FirstName</label>
+                                        <input type="text" name="FirstName" ng-model="family.nameFm">
+                                    </md-input-container>
+                                    <md-input-container flex="50">
+                                        <label>LastName</label>
+                                        <input type="text" name="LastName" ng-model="family.LastNameFm">
+                                    </md-input-container>
+                                </div>
+                                <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showme">
+                                    <md-input-container flex="50">
+                                        <label>Age</label>
+                                        <input type="number" name="Age" ng-model="family.age">
+                                    </md-input-container>
+                                    <md-input-container flex="50">
+                                        <div layout="row" layout-xs="column">
+                                            <div flex="20">
+                                                <span>Sex</span>
+                                            </div>
+                                            <div style="margin-top:-22px;" ng-repeat="sexName in sex" flex="30">
+                                                <md-radio-group layout="row">
+                                                    <md-radio-button class="radioMargin">{{sexName.name}}</md-radio-button>
+                                                </md-radio-group>
+                                            </div>
                                         </div>
-                                        <div style="margin-top:-22px;" ng-repeat="sexName in vm.sex" flex="30">
-                                            <md-radio-group layout="row">
-                                                <md-radio-button class="radioMargin">{{sexName.name}}</md-radio-button>
-                                            </md-radio-group>
-                                        </div>
+                                    </md-input-container>
+                                </div>
+                                <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showme">
+                                    <md-input-container flex="50">
+                                        <label>Occupation</label>
+                                        <input type="text" name="Occupation" ng-model="family.Occupation">
+                                    </md-input-container>
+                                    <md-input-container flex="50">
+                                        <label>Work Place</label>
+                                        <input type="text" name="WorkPlace" ng-model="formWizard.WorkPlace">
+                                    </md-input-container>
+                                </div>
+                                <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showme">
+                                    <md-input-container flex="50">
+                                        <label>Related</label>
+                                        <input type="text" name="Related" ng-model="family.related">
+                                    </md-input-container>
+                                    <md-input-container flex="50">
+                                        <label>Telephone</label>
+                                        <input type="text" name="Telephone" ng-model="family.tel">
+                                    </md-input-container>
+                                </div>
+                                <div layout="row" layout-xs="column" ng-show="showme">
+                                    <div flex="85">
                                     </div>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showme">
-                                <md-input-container flex="50">
-                                    <label>Occupation</label>
-                                    <input type="text" name="Occupation" ng-model="vm.family.Occupation">
-                                </md-input-container>
-                                <md-input-container flex="50">
-                                    <label>Work Place</label>
-                                    <input type="text" name="WorkPlace" ng-model="vm.formWizard.WorkPlace">
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showme">
-                                <md-input-container flex="50">
-                                    <label>Related</label>
-                                    <input type="text" name="Related" ng-model="vm.family.related">
-                                </md-input-container>
-                                <md-input-container flex="50">
-                                    <label>Telephone</label>
-                                    <input type="text" name="Telephone" ng-model="vm.family.tel">
-                                </md-input-container>
-                            </div>
-                            <div layout="row" layout-xs="column" ng-show="showme">
-                                <div flex="85">
+                                    <div flex>
+                                        <md-button class="md-raised md-accent" ng-click="showme=false; addNewList()">
+                                            Add Family
+                                        </md-button>
+                                    </div>
                                 </div>
-                                <div flex>
-                                    <md-button class="md-raised md-accent" ng-click="showme=false;vm.addNewList()">
-                                        Add Family
-                                    </md-button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
                         </div>
-                        <div class="info hrBorder marginZero" flex layout="column" ng-repeat="fam in vm.family">
+                        <div class="info hrBorder marginZero" flex layout="column" ng-repeat="fam in family">
                             <!-- <div class="name" layout="row" layout-align="start center"> 
                             </div> -->
                             <div layout="row" layout-xs="column">
@@ -452,15 +655,19 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="marginAdd80" layout="row" layout-xs="column">
+                            <div flex>
+                            </div>
+                        </div>
                     </md-tab-body>
                 </md-tab>
-                <!-- ////////// -->
-                <md-tab ng-disabled="wizardStep1.$invalid || wizardStep2.$invalid">
+                <!-- Education Information -->
+                <md-tab ng-disabled="wizardStep1.$invalid || wizardStep2.$invalid || wizardStep3.$invalid">
                     <md-tab-label>
                         <span class="ms-form-wizard-step-label">
                                 <span class="ms-form-wizard-step-number md-accent-bg"
-                                      ng-if="wizardStep3.$invalid">3</span>
-                        <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep3.$valid">
+                                      ng-if="wizardStep4.$invalid">4</span>
+                        <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep4.$valid">
                                     <i class="icon-check s16"></i>
                                 </span>
                         <span class="ms-form-wizard-step-text">Education Information</span>
@@ -479,66 +686,66 @@
                                 <span>Add Education</span>
                             </div>
                         </div>
-                    <div class="divMarCompos">
-                        <form name="wizardStep2" ms-form-wizard-form novalidate>
-                            <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeEducation">
-                                <md-input-container flex="50">
-                                    <label>Education Level</label>
-                                    <md-select ng-model="vm.basicForm.state">
-                                        <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
-                                            {{state.abbrev}}
-                                        </md-option>
-                                    </md-select>
-                                </md-input-container>
-                                <md-input-container flex="50">
-                                    <input type="text" name="Institution" ng-model="vm.formWizard.Moo" placeholder="Institution" required>
-                                    <div ng-messages="wizardStep1.Moo.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Institution field is required.</span>
+                        <div class="divMarCompos">
+                            <form name="wizardStep2" ms-form-wizard-form novalidate>
+                                <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeEducation">
+                                    <md-input-container flex="50">
+                                        <label>Education Level</label>
+                                        <md-select ng-model="basicForm.state">
+                                            <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
+                                                {{state.abbrev}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                    <md-input-container flex="50">
+                                        <input type="text" name="Institution" ng-model="formWizard.Institution" placeholder="Institution" required>
+                                        <div ng-messages="wizardStep1.Moo.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Institution field is required.</span>
+                                            </div>
                                         </div>
+                                    </md-input-container>
+                                </div>
+                                <div class="divBtn2" layout="column" layout-gt-xs="row" ng-show="showmeEducation">
+                                    <md-input-container flex>
+                                        <label>Major</label>
+                                        <md-select ng-model="basicForm.state">
+                                            <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
+                                                {{state.abbrev}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </div>
+                                <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeEducation">
+                                    <md-input-container flex="50">
+                                        <label>From</label>
+                                        <input type="date" name="From" ng-model="formWizard.From">
+                                    </md-input-container>
+                                    <md-input-container flex="50">
+                                        <label>To</label>
+                                        <input type="date" name="To" ng-model="formWizard.To">
+                                    </md-input-container>
+                                </div>
+                                <div layout="row" layout-xs="column" ng-show="showmeEducation">
+                                    <div flex="80">
                                     </div>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn2" layout="column" layout-gt-xs="row" ng-show="showmeEducation">
-                                <md-input-container flex>
-                                    <label>Major</label>
-                                    <md-select ng-model="vm.basicForm.state">
-                                        <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
-                                            {{state.abbrev}}
-                                        </md-option>
-                                    </md-select>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeEducation">
-                                <md-input-container flex="50">
-                                    <label>From</label>
-                                    <input type="date" name="From" ng-model="vm.formWizard.From">
-                                </md-input-container>
-                                <md-input-container flex="50">
-                                    <label>To</label>
-                                    <input type="date" name="To" ng-model="vm.formWizard.To">
-                                </md-input-container>
-                            </div>
-                            <div layout="row" layout-xs="column" ng-show="showmeEducation">
-                                <div flex="80">
+                                    <div flex>
+                                        <md-button class="md-raised md-accent" ng-click="showmeEducation=false">
+                                            Add Education
+                                        </md-button>
+                                    </div>
                                 </div>
-                                <div flex>
-                                    <md-button class="md-raised md-accent" ng-click="showmeEducation=false">
-                                        Add Education
-                                    </md-button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
                         </div>
                     </md-tab-body>
                 </md-tab>
-                <!--  /////////// -->
-                <md-tab ng-disabled="wizardStep1.$invalid || wizardStep2.$invalid || wizardStep3.$invalid">
+                <!--  Work Experience -->
+                <md-tab ng-disabled="wizardStep1.$invalid || wizardStep2.$invalid || wizardStep3.$invalid || wizardStep4.$invalid">
                     <md-tab-label>
                         <span class="ms-form-wizard-step-label">
                                 <span class="ms-form-wizard-step-number md-accent-bg"
-                                      ng-if="wizardStep3.$invalid">3</span>
-                        <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep3.$valid">
+                                      ng-if="wizardStep5.$invalid">5</span>
+                        <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep5.$valid">
                                     <i class="icon-check s16"></i>
                                 </span>
                         <span class="ms-form-wizard-step-text">Work Experience</span>
@@ -558,67 +765,67 @@
                             </div>
                         </div>
                         <div class="divMarCompos">
-                        <form name="wizardStep3" ms-form-wizard-form novalidate>
-                            <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeExperience">
-                                <md-input-container flex>
-                                    <input type="text" name="Company Name" ng-model="vm.formWizard.companyname" placeholder="Company Name" required>
-                                    <div ng-messages="wizardStep3.companyname.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Company Name field is required.</span>
+                            <form name="wizardStep5" ms-form-wizard-form novalidate>
+                                <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeExperience">
+                                    <md-input-container flex>
+                                        <input type="text" name="Company Name" ng-model="formWizard.companyname" placeholder="Company Name" required>
+                                        <div ng-messages="wizardStep5.companyname.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Company Name field is required.</span>
+                                            </div>
                                         </div>
+                                    </md-input-container>
+                                </div>
+                                <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeExperience">
+                                    <md-input-container flex="50">
+                                        <label>From</label>
+                                        <input type="date" name="From" ng-model="formWizard.From">
+                                    </md-input-container>
+                                    <md-input-container flex="50">
+                                        <label>To</label>
+                                        <input type="date" name="To" ng-model="formWizard.To">
+                                    </md-input-container>
+                                </div>
+                                <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeExperience">
+                                    <md-input-container flex="50">
+                                        <label>Position</label>
+                                        <input type="text" name="Position" ng-model="formWizard.Position">
+                                    </md-input-container>
+                                    <md-input-container flex="30">
+                                        <label>Salary</label>
+                                        <input type="text" name="Salary" ng-model="formWizard.Salary">
+                                    </md-input-container>
+                                    <div class="divBtn5" flex><span>Baht</span></div>
+                                </div>
+                                <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeExperience">
+                                    <md-input-container flex="45">
+                                        <label>Reasons</label>
+                                        <input type="text" name="Reasons" ng-model="formWizard.Reasons">
+                                    </md-input-container>
+                                    <md-input-container flex="30">
+                                        <label>Job Description</label>
+                                        <input type="text" name="Job Description" ng-model="formWizard.JobDescription">
+                                    </md-input-container>
+                                </div>
+                                <div layout="row" layout-xs="column" ng-show="showmeExperience">
+                                    <div flex="70">
                                     </div>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeExperience">
-                                <md-input-container flex="50">
-                                    <label>From</label>
-                                    <input type="date" name="From" ng-model="vm.formWizard.From">
-                                </md-input-container>
-                                <md-input-container flex="50">
-                                    <label>To</label>
-                                    <input type="date" name="To" ng-model="vm.formWizard.To">
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeExperience">
-                                <md-input-container flex="50">
-                                    <label>Position</label>
-                                    <input type="text" name="Position" ng-model="vm.formWizard.Position">
-                                </md-input-container>
-                                <md-input-container flex="30">
-                                    <label>Salary</label>
-                                    <input type="text" name="Salary" ng-model="vm.formWizard.Salary">
-                                </md-input-container>
-                                <div class="divBtn5" flex><span>Baht</span></div>
-                            </div>
-                            <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeExperience">
-                                <md-input-container flex="45">
-                                    <label>Reasons</label>
-                                    <input type="text" name="Reasons" ng-model="vm.formWizard.Reasons">
-                                </md-input-container>
-                                <md-input-container flex="30">
-                                    <label>Job Description</label>
-                                    <input type="text" name="Job Description" ng-model="vm.formWizard.JobDescription">
-                                </md-input-container>
-                            </div>
-                            <div layout="row" layout-xs="column" ng-show="showmeExperience">
-                                <div flex="70">
+                                    <div flex>
+                                        <md-button class="md-raised md-accent" ng-click="showmeExperience=false">
+                                            Add Work Experience
+                                        </md-button>
+                                    </div>
                                 </div>
-                                <div flex>
-                                    <md-button class="md-raised md-accent" ng-click="showmeExperience=false">
-                                        Add Work Experience
-                                    </md-button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
                         </div>
                     </md-tab-body>
                 </md-tab>
-                <!-- ////////// -->
-                <md-tab ng-disabled="wizardStep1.$invalid || wizardStep2.$invalid || wizardStep3.$invalid || wizardStep4.$invalid">
+                <!-- Language Ability -->
+                <md-tab ng-disabled="wizardStep1.$invalid || wizardStep2.$invalid || wizardStep3.$invalid || wizardStep4.$invalid || wizardStep5.$invalid">
                     <md-tab-label>
                         <span class="ms-form-wizard-step-label">
                                 <span class="ms-form-wizard-step-number md-accent-bg"
-                                      ng-if="wizardStep4.$invalid">4</span>
+                                      ng-if="wizardStep6.$invalid">6</span>
                         <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep3.$valid">
                                     <i class="icon-check s16"></i>
                                 </span>
@@ -639,369 +846,396 @@
                             </div>
                         </div>
                         <div class="divMarCompos">
-                        <form name="wizardStep4" ms-form-wizard-form novalidate>
-                            <div layout="column" layout-gt-xs="row" ng-show="showmeLanguage">
-                                <md-input-container flex>
-                                    <label>Language</label>
-                                    <md-select ng-model="vm.basicForm.state">
-                                        <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
-                                            {{state.abbrev}}
-                                        </md-option>
-                                    </md-select>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn4" layout="row" layout-xs="column" ng-show="showmeLanguage">
-                                <span flex="20">Speaking</span>
-                                <div flex="20">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> Good
+                            <form name="wizardStep6" ms-form-wizard-form novalidate>
+                                <div layout="column" layout-gt-xs="row" ng-show="showmeLanguage">
+                                    <md-input-container flex>
+                                        <label>Language</label>
+                                        <md-select ng-model="basicForm.state">
+                                            <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
+                                                {{state.abbrev}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
                                 </div>
-                                <div flex="20">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> Fair
+                                <div class="divBtn4" layout="row" layout-xs="column" ng-show="showmeLanguage">
+                                    <span flex="20">Speaking</span>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Good
+                                    </div>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Fair
+                                    </div>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Poor
+                                    </div>
                                 </div>
-                                <div flex="20">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> Poor
+                                <div class="divBtn4" layout="row" layout-xs="column" ng-show="showmeLanguage">
+                                    <span flex="20">Writing</span>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Good
+                                    </div>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Fair
+                                    </div>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Poor
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="divBtn4" layout="row" layout-xs="column" ng-show="showmeLanguage">
-                                <span flex="20">Writing</span>
-                                <div flex="20">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> Good
+                                <div class="divBtn4" layout="row" layout-xs="column" ng-show="showmeLanguage">
+                                    <span flex="20">Reading</span>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Good
+                                    </div>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Fair
+                                    </div>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Poor
+                                    </div>
                                 </div>
-                                <div flex="20">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> Fair
+                                <div layout="row" layout-xs="column" ng-show="showmeLanguage">
+                                    <div flex="70">
+                                    </div>
+                                    <div flex>
+                                        <md-button class="md-raised md-accent" ng-click="showmeLanguage=false">
+                                            Add Language Ability
+                                        </md-button>
+                                    </div>
                                 </div>
-                                <div flex="20">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> Poor
-                                </div>
-                            </div>
-                            <div class="divBtn4" layout="row" layout-xs="column" ng-show="showmeLanguage">
-                                <span flex="20">Reading</span>
-                                <div flex="20">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> Good
-                                </div>
-                                <div flex="20">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> Fair
-                                </div>
-                                <div flex="20">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> Poor
-                                </div>
-                            </div>
-                            <div layout="row" layout-xs="column" ng-show="showmeLanguage">
-                                <div flex="70">
-                                </div>
-                                <div flex>
-                                    <md-button class="md-raised md-accent" ng-click="showmeLanguage=false">
-                                        Add Language Ability
-                                    </md-button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
                         </div>
                     </md-tab-body>
                 </md-tab>
-                <!-- ////////// -->
-                <md-tab ng-disabled="wizardStep1.$invalid || wizardStep2.$invalid || wizardStep3.$invalid || wizardStep4.$invalid || wizardStep5.$invalid">
+                <!-- Special Ability -->
+                <md-tab ng-disabled="wizardStep1.$invalid || wizardStep2.$invalid || wizardStep3.$invalid || wizardStep4.$invalid || wizardStep5.$invalid || wizardStep6.$invalid">
                     <md-tab-label>
                         <span class="ms-form-wizard-step-label">
                                 <span class="ms-form-wizard-step-number md-accent-bg"
-                                      ng-if="wizardStep5.$invalid">5</span>
-                        <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep5.$valid">
+                                      ng-if="wizardStep7.$invalid">7</span>
+                        <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep7.$valid">
                                     <i class="icon-check s16"></i>
                                 </span>
                         <span class="ms-form-wizard-step-text">Special Ability</span>
                         </span>
                     </md-tab-label>
                     <md-tab-body>
-                    <div class="divMarCompos">
-                        <form name="wizardStep5" class="md-inline-form" ms-form-wizard-form novalidate>
-                            <div class="divBtn5" layout="row" layout-xs="column">
-                                <span flex="20">Typing</span>
-                                <div flex="30">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> Yes
+                        <div class="divMarCompos">
+                            <form name="wizardStep7" class="md-inline-form" ms-form-wizard-form novalidate>
+                                <div class="divBtn5 divBtn3" layout="row" layout-xs="column">
+                                    <span flex="20">Typing</span>
+                                    <div flex="30">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Yes
+                                    </div>
+                                    <div flex="30">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> No
+                                    </div>
                                 </div>
-                                <div flex="30">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> No
+                                <div class="divBtn" layout="row" layout-xs="column">
+                                    <md-input-container flex="20">
+                                    </md-input-container>
+                                    <md-input-container flex="50">
+                                        <input type="number" name="Thai" ng-model="formWizard.Thai" placeholder="Thai" required>
+                                        <div ng-messages="wizardStep7.Thai.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Thai field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                    <span class="divBtn5" flex="20">Word/Minutes</span>
                                 </div>
-                            </div>
-                            <div class="divBtn" layout="row" layout-xs="column">
-                                <md-input-container flex="20">
-                                </md-input-container>
-                                <md-input-container flex="50">
-                                    <input type="text" name="Thai" ng-model="vm.formWizard.Thai" placeholder="Thai" required>
-                                    <div ng-messages="wizardStep5.Thai.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Thai field is required.</span>
+                                <div class="divBtn2" layout="row" layout-xs="column">
+                                    <md-input-container flex="20">
+                                    </md-input-container>
+                                    <md-input-container flex="50">
+                                        <input type="number" name="English" ng-model="formWizard.English" placeholder="English" required>
+                                        <div ng-messages="wizardStep7.English.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>English field is required.</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </md-input-container>
-                                <span class="divBtn5" flex="20">Word/Minutes</span>
-                            </div>
-                            <div layout="row" layout-xs="column">
-                                <md-input-container flex="20">
-                                </md-input-container>
-                                <md-input-container flex="50">
-                                    <input type="text" name="English" ng-model="vm.formWizard.English" placeholder="English" required>
-                                    <div ng-messages="wizardStep5.English.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>English field is required.</span>
-                                        </div>
-                                    </div>
-                                </md-input-container>
-                                <span class="divBtn5" flex="20">Word/Minutes</span>
-                            </div>
-                            <!-- /////// -->
-                            <div layout="row" layout-xs="column">
-                                <span flex="20">Computer</span>
-                                <div flex="30">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> Yes
+                                    </md-input-container>
+                                    <span class="divBtn5" flex="20">Word/Minutes</span>
                                 </div>
-                                <div flex="30">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> No
+                                <!-- /////// -->
+                                <div class="divBtn3" layout="row" layout-xs="column">
+                                    <span flex="20">Computer</span>
+                                    <div flex="30">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Yes
+                                    </div>
+                                    <div flex="30">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> No
+                                    </div>
                                 </div>
-                            </div>
-                            <div layout="row" layout-xs="column">
-                                <md-input-container flex="20">
-                                </md-input-container>
-                                <md-input-container flex="50">
-                                    <input type="text" name="Please Mension" ng-model="vm.formWizard.PleaseMension" placeholder="Please Mension" required>
-                                    <div ng-messages="wizardStep5.PleaseMension.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Please Mension field is required.</span>
+                                <div class="divBtn2" layout="row" layout-xs="column">
+                                    <md-input-container flex="20">
+                                    </md-input-container>
+                                    <md-input-container flex="50">
+                                        <input type="text" name="Please Mension" ng-model="formWizard.PleaseMension" placeholder="Please Mension" required>
+                                        <div ng-messages="wizardStep7.PleaseMension.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Please Mension field is required.</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                            <div layout="row" layout-xs="column">
-                                <span flex="20">Dirving</span>
-                                <div flex="30">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> Yes
+                                    </md-input-container>
                                 </div>
-                                <div flex="30">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> No
+                                <div class="divBtn3" layout="row" layout-xs="column">
+                                    <span flex="20">Dirving</span>
+                                    <div flex="30">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Yes
+                                    </div>
+                                    <div flex="30">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> No
+                                    </div>
                                 </div>
-                            </div>
-                            <div layout="row" layout-xs="column">
-                                <md-input-container flex="20">
-                                </md-input-container>
-                                <md-input-container flex="50">
-                                    <input type="text" name="Dirving License No." ng-model="vm.formWizard.DirvingLicense" placeholder="Dirving License No." required>
-                                    <div ng-messages="wizardStep5.DirvingLicense.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Dirving License No. field is required.</span>
+                                <div layout="row" layout-xs="column">
+                                    <md-input-container flex="20">
+                                    </md-input-container>
+                                    <md-input-container flex="50">
+                                        <input type="text" name="Dirving License No." ng-model="formWizard.DirvingLicense" placeholder="Dirving License No." required>
+                                        <div ng-messages="wizardStep7.DirvingLicense.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Dirving License No. field is required.</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn" layout="column" layout-gt-xs="row" flex>
-                                <md-input-container flex>
-                                    <input type="text" name="Office Machine" ng-model="vm.formWizard.OfficeMachine" placeholder="Office Machine" required>
-                                    <div ng-messages="wizardStep1.OfficeMachine.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Office Machine field is required.</span>
-                                        </div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn" layout="column" layout-gt-xs="row" flex>
-                                <md-input-container flex>
-                                    <input type="text" name="Hobbies" ng-model="vm.formWizard.Hobbies" placeholder="Hobbies" required>
-                                    <div ng-messages="wizardStep1.Hobbies.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Hobbies field is required.</span>
-                                        </div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn" layout="column" layout-gt-xs="row" flex>
-                                <md-input-container flex>
-                                    <input type="text" name="Sport" ng-model="vm.formWizard.Sport" placeholder="Sport" required>
-                                    <div ng-messages="wizardStep1.Sport.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Sport field is required.</span>
-                                        </div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn" layout="column" layout-gt-xs="row" flex>
-                                <md-input-container flex>
-                                    <input type="text" name="Knowledge" ng-model="vm.formWizard.Knowledge" placeholder="Knowledge" required>
-                                    <div ng-messages="wizardStep1.Knowledge.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Knowledge field is required.</span>
-                                        </div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                            <div layout="column" layout-gt-xs="row" flex>
-                                <md-input-container flex>
-                                    <input type="text" name="Other" ng-model="vm.formWizard.Other" placeholder="Other" required>
-                                    <div ng-messages="wizardStep1.Other.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Other field is required.</span>
-                                        </div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                        </form>
+                                    </md-input-container>
+                                </div>
+                            </form>
                         </div>
                     </md-tab-body>
                 </md-tab>
-                <!-- ////////// -->
-                <md-tab ng-disabled="wizardStep1.$invalid || wizardStep2.$invalid || wizardStep3.$invalid || wizardStep4.$invalid || wizardStep5.$invalid || wizardStep6.$invalid">
+                <!-- Special Ability 2 -->
+                <md-tab ng-disabled="wizardStep1.$invalid || wizardStep2.$invalid || wizardStep3.$invalid || wizardStep4.$invalid || wizardStep5.$invalid || wizardStep6.$invalid || wizardStep7.$invalid">
                     <md-tab-label>
                         <span class="ms-form-wizard-step-label">
                                 <span class="ms-form-wizard-step-number md-accent-bg"
-                                      ng-if="wizardStep6.$invalid">6</span>
-                        <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep6.$valid">
+                                      ng-if="wizardStep8.$invalid">8</span>
+                        <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep8.$valid">
+                                    <i class="icon-check s16"></i>
+                                </span>
+                        <span class="ms-form-wizard-step-text">Special Ability 2</span>
+                        </span>
+                    </md-tab-label>
+                    <md-tab-body>
+                        <div class="divMarCompos">
+                            <form name="wizardStep8" class="md-inline-form" ms-form-wizard-form novalidate>
+                                <div class="divBtn" layout="column" layout-gt-xs="row" flex>
+                                    <md-input-container flex>
+                                        <input type="text" name="Office Machine" ng-model="formWizard.OfficeMachine" placeholder="Office Machine" required>
+                                        <div ng-messages="wizardStep1.OfficeMachine.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Office Machine field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                </div>
+                                <div class="divBtn" layout="column" layout-gt-xs="row" flex>
+                                    <md-input-container flex>
+                                        <input type="text" name="Hobbies" ng-model="formWizard.Hobbies" placeholder="Hobbies" required>
+                                        <div ng-messages="wizardStep1.Hobbies.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Hobbies field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                </div>
+                                <div class="divBtn" layout="column" layout-gt-xs="row" flex>
+                                    <md-input-container flex>
+                                        <input type="text" name="Sport" ng-model="formWizard.Sport" placeholder="Sport" required>
+                                        <div ng-messages="wizardStep1.Sport.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Sport field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                </div>
+                                <div class="divBtn" layout="column" layout-gt-xs="row" flex>
+                                    <md-input-container flex>
+                                        <input type="text" name="Knowledge" ng-model="formWizard.Knowledge" placeholder="Knowledge" required>
+                                        <div ng-messages="wizardStep1.Knowledge.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Knowledge field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                </div>
+                                <div layout="column" layout-gt-xs="row" flex>
+                                    <md-input-container flex>
+                                        <input type="text" name="Other" ng-model="formWizard.Other" placeholder="Other" required>
+                                        <div ng-messages="wizardStep1.Other.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Other field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                </div>
+                            </form>
+                        </div>
+                    </md-tab-body>
+                </md-tab>
+                <!-- Other Information -->
+                <md-tab ng-disabled="wizardStep1.$invalid || wizardStep2.$invalid || wizardStep3.$invalid || wizardStep4.$invalid || wizardStep5.$invalid || wizardStep6.$invalid || wizardStep7.$invalid || wizardStep8.$invalid">
+                    <md-tab-label>
+                        <span class="ms-form-wizard-step-label">
+                                <span class="ms-form-wizard-step-number md-accent-bg"
+                                      ng-if="wizardStep9.$invalid">9</span>
+                        <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep9.$valid">
                                     <i class="icon-check s16"></i>
                                 </span>
                         <span class="ms-form-wizard-step-text">Other Information</span>
                         </span>
                     </md-tab-label>
                     <md-tab-body>
-                    <div class="divMarCompos">
-                        <form name="wizardStep6" class="md-inline-form" ms-form-wizard-form novalidate>
-                            <div class="divBtn5" layout="row" layout-xs="column">
-                                <span flex="30">I can work up country</span>
-                                <div flex="20">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> No
+                        <div class="divMarCompos">
+                            <form name="wizardStep9" class="md-inline-form" ms-form-wizard-form novalidate>
+                                <div class="divBtn5" layout="row" layout-xs="column">
+                                    <span flex="30">I can work up country</span>
+                                    <div flex="20">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> No
+                                    </div>
+                                    <div flex="30">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Yes
+                                    </div>
                                 </div>
-                                <div flex="30">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> Yes
+                                <div class="divBtn2" layout="row" layout-xs="column">
+                                    <md-input-container flex="50">
+                                        <span flex="30">Person to be notified in case of emergency</span>
+                                    </md-input-container>
                                 </div>
-                            </div>
-                            <div class="divBtn2" layout="row" layout-xs="column">
-                                <md-input-container flex="50">
-                                    <span flex="30">Person to be notified in case of emergency</span>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn" layout="row" layout-xs="column">
-                                <md-input-container flex="50">
-                                    <input type="text" name="FirstName" ng-model="vm.formWizard.FirstName" placeholder="FirstName" required>
-                                    <div ng-messages="wizardStep6.FirstName.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>FirstName field is required.</span>
+                                <div class="divBtn" layout="row" layout-xs="column">
+                                    <md-input-container flex="50">
+                                        <input type="text" name="FirstName" ng-model="formWizard.FirstName" placeholder="FirstName" required>
+                                        <div ng-messages="wizardStep9.FirstName.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>FirstName field is required.</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </md-input-container>
-                                <md-input-container flex="50">
-                                    <input type="text" name="LastName" ng-model="vm.formWizard.LastName" placeholder="LastName" required>
-                                    <div ng-messages="wizardStep6.LastName.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>LastName field is required.</span>
+                                    </md-input-container>
+                                    <md-input-container flex="50">
+                                        <input type="text" name="LastName" ng-model="formWizard.LastName" placeholder="LastName" required>
+                                        <div ng-messages="wizardStep9.LastName.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>LastName field is required.</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn" layout="row" layout-xs="column">
-                                <md-input-container flex="50">
-                                    <input type="text" name="Related to the applient as" ng-model="vm.formWizard.Related" placeholder="Related to the applient as" required>
-                                    <div ng-messages="wizardStep6.Related.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Related to the applient as field is required.</span>
-                                        </div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn" layout="row" layout-xs="column">
-                                <md-input-container flex>
-                                    <input type="text" name="Address" ng-model="vm.formWizard.Address" placeholder="Address" required>
-                                    <div ng-messages="wizardStep6.Address.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Address field is required.</span>
-                                        </div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn" layout="row" layout-xs="column">
-                                <md-input-container flex>
-                                    <input type="text" name="Telephone" ng-model="vm.formWizard.Telephone" placeholder="Telephone" required>
-                                    <div ng-messages="wizardStep6.Telephone.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Telephone field is required.</span>
-                                        </div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn2" layout="row" layout-xs="column">
-                                <md-input-container flex>
-                                    <input type="text" name="Source of job information" ng-model="vm.formWizard.Sourceofjob" placeholder="Source of job information" required>
-                                    <div ng-messages="wizardStep6.Sourceofjob.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Source of job information field is required.</span>
-                                        </div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                            <div class="divBtn7" layout="row" layout-xs="column">
-                                <span>Have you ever been seriously or contrated with</span>
-                            </div>
-                            <div class="divBtn7" layout="row" layout-xs="column">
-                                <span flex="30">Contagious disease</span>
-                                <div flex="30">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> No
+                                    </md-input-container>
                                 </div>
-                                <div flex="30">
-                                    <md-checkbox class="no-label" ng-checked>
-                                    </md-checkbox> Yes
+                                <div class="divBtn" layout="row" layout-xs="column">
+                                    <md-input-container flex="50">
+                                        <input type="text" name="Related to the applient as" ng-model="formWizard.Related" placeholder="Related to the applient as" required>
+                                        <div ng-messages="wizardStep9.Related.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Related to the applient as field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
                                 </div>
-                            </div>
-                            <div class="divBtn5" layout="row" layout-xs="column">
-                                <span>Give the name of rlatives/friend working with us know to you</span>
-                            </div>
-                            <div class="divBtn" layout="row" layout-xs="column">
-                                <md-input-container flex="50">
-                                    <input type="text" name="FirstName" ng-model="vm.formWizard.FirstName" placeholder="FirstName" required>
-                                    <div ng-messages="wizardStep6.FirstName.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>FirstName field is required.</span>
+                                <div class="divBtn" layout="row" layout-xs="column">
+                                    <md-input-container flex>
+                                        <input type="text" name="Address" ng-model="formWizard.Address" placeholder="Address" required>
+                                        <div ng-messages="wizardStep9.Address.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Address field is required.</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </md-input-container>
-                                <md-input-container flex="50">
-                                    <input type="text" name="LastName" ng-model="vm.formWizard.LastName" placeholder="LastName" required>
-                                    <div ng-messages="wizardStep6.LastName.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>LastName field is required.</span>
+                                    </md-input-container>
+                                </div>
+                                <div class="divBtn" layout="row" layout-xs="column">
+                                    <md-input-container flex>
+                                        <input type="text" name="Telephone" ng-model="formWizard.Telephone" placeholder="Telephone" required>
+                                        <div ng-messages="wizardStep9.Telephone.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Telephone field is required.</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                            <div layout="row" layout-xs="column">
-                                <md-input-container flex>
-                                    <input type="text" name="Introduce yourself" ng-model="vm.formWizard.Introduceyourself" placeholder="Introduce yourself" required>
-                                    <div ng-messages="wizardStep6.Introduceyourself.$error" role="alert">
-                                        <div ng-message="required">
-                                            <span>Introduce yourself field is required.</span>
-                                        </div>
-                                    </div>
-                                </md-input-container>
-                            </div>
-                        </form>
+                                    </md-input-container>
+                                </div>
+                            </form>
                         </div>
                     </md-tab-body>
                 </md-tab>
-                <!-- ////////// -->
+                <!-- Other Information 2 -->
+                <md-tab ng-disabled="wizardStep1.$invalid || wizardStep2.$invalid || wizardStep3.$invalid || wizardStep4.$invalid || wizardStep5.$invalid || wizardStep6.$invalid || wizardStep7.$invalid || wizardStep8.$invalid || wizardStep9.$invalid">
+                    <md-tab-label>
+                        <span class="ms-form-wizard-step-label">
+                                <span class="ms-form-wizard-step-number md-accent-bg"
+                                      ng-if="wizardStep10.$invalid">10</span>
+                        <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep10.$valid">
+                                    <i class="icon-check s16"></i>
+                                </span>
+                        <span class="ms-form-wizard-step-text">Other Information 2</span>
+                        </span>
+                    </md-tab-label>
+                    <md-tab-body>
+                        <div class="divMarCompos">
+                            <form name="wizardStep10" class="md-inline-form" ms-form-wizard-form novalidate>
+                                <div class="divBtn5 divBtn7" layout="row" layout-xs="column">
+                                    <span>Have you ever been seriously or contrated with</span>
+                                </div>
+                                <div class="divBtn7" layout="row" layout-xs="column">
+                                    <span flex="30">Contagious disease</span>
+                                    <div flex="30">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> No
+                                    </div>
+                                    <div flex="30">
+                                        <md-checkbox class="no-label" ng-checked>
+                                        </md-checkbox> Yes
+                                    </div>
+                                </div>
+                                <div class="divBtn5" layout="row" layout-xs="column">
+                                    <span>Give the name of rlatives/friend working with us know to you</span>
+                                </div>
+                                <div class="divBtn" layout="row" layout-xs="column">
+                                    <md-input-container flex="50">
+                                        <input type="text" name="FirstName" ng-model="formWizard.FirstName" placeholder="FirstName" required>
+                                        <div ng-messages="wizardStep10.FirstName.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>FirstName field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                    <md-input-container flex="50">
+                                        <input type="text" name="LastName" ng-model="formWizard.LastName" placeholder="LastName" required>
+                                        <div ng-messages="wizardStep10.LastName.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>LastName field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                </div>
+                                <div layout="row" layout-xs="column">
+                                    <md-input-container flex>
+                                        <input type="text" name="Introduce yourself" ng-model="formWizard.Introduceyourself" placeholder="Introduce yourself" required>
+                                        <div ng-messages="wizardStep10.Introduceyourself.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Introduce yourself field is required.</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                </div>
+                            </form>
+                        </div>
+                    </md-tab-body>
+                </md-tab>
             </md-tabs>
-            <div class="navigation" flex layout="row" layout-align="center center">
+            <div class="navigation fixPos" flex layout="row" layout-align="center center">
                 <md-button class="md-raised md-accent" ng-click="msWizard.previousStep()" ng-disabled="msWizard.isFirstStep()">
                     Previous
                 </md-button>
@@ -1011,94 +1245,10 @@
                 <md-button class="md-raised md-accent" ng-click="msWizard.nextStep()" ng-hide="msWizard.isLastStep()" ng-disabled="msWizard.currentStepInvalid()">
                     Next
                 </md-button>
-                <md-button class="md-raised md-warn" ng-click="vm.sendForm(); msWizard.resetForm();" ng-show="msWizard.isLastStep()" ng-disabled="msWizard.formsIncomplete()">
+                <md-button class="md-raised md-warn" ng-click="sendForm(); msWizard.resetForm();" ng-show="msWizard.isLastStep()" ng-disabled="msWizard.formsIncomplete()">
                     Send
                 </md-button>
             </div>
         </ms-form-wizard>
-        <!-- / FORM WIZARD -->
-        <!--   <md-dialog-content ms-scroll>
-            <md-input-container class="md-block">
-                <label translate="EMP.FROM">From</label>
-                <input ng-model="vm.form.from" type="email" disabled>
-            </md-input-container>
-
-            <md-input-container class="md-block to" ng-class="{'hidden-cc': vm.hiddenCC, 'hidden-bcc': vm.hiddenBCC}">
-                <label translate="EMP.TO">To</label>
-                <input ng-model="vm.form.to" type="email">
-
-                <div class="cc-bcc" layout="row" layout-align="start center">
-                    <div class="show-cc" ng-show="vm.hiddenCC" ng-click="vm.hiddenCC = false">CC</div>
-                    <div class="show-bcc" ng-show="vm.hiddenBCC" ng-click="vm.hiddenBCC = false">BCC</div>
-                </div>
-            </md-input-container>
-
-            <md-input-container class="md-block" ng-hide="vm.hiddenCC">
-                <label translate="EMP.CC">Cc</label>
-                <input ng-model="vm.form.cc" type="email">
-            </md-input-container>
-
-            <md-input-container class="md-block" ng-hide="vm.hiddenBCC">
-                <label translate="EMP.BCC">Bcc</label>
-                <input ng-model="vm.form.bcc" type="t">
-            </md-input-container>
-
-            <md-input-container class="md-block">
-                <label translate="EMP.SUBJECT">Subject</label>
-                <input ng-model="vm.form.subject" type="text">
-            </md-input-container>
-
-            <text-angular ng-model="vm.form.message"></text-angular>
-
-            <div class="attachment-list">
-                <div class="attachment" layout="row" layout-align="space-between center">
-                    <div>
-                        <span class="filename">attachment-2.doc</span>
-                        <span class="size">(12 Kb)</span>
-                    </div>
-
-                    <md-button class="md-icon-button" aria-label="Delete attachment" translate
-                               translate-attr-aria-label="EMP.DELETE_ATTACHMENT">
-                        <md-icon md-font-icon="icon-close" class="s16"></md-icon>
-                    </md-button>
-                </div>
-
-                <div class="attachment" layout="row" layout-align="space-between center">
-                    <div>
-                        <span class="filename">attachment-1.jpg</span>
-                        <span class="size">(350 Kb)</span>
-                    </div>
-
-                    <md-button class="md-icon-button" aria-label="Delete attachment" translate
-                               translate-attr-aria-label="EMP.DELETE_ATTACHMENT">
-                        <md-icon md-font-icon="icon-close" class="s16"></md-icon>
-                    </md-button>
-                </div>
-            </div>
-        </md-dialog-content>
-
-        <md-dialog-actions layout="row" layout-align="space-between center">
-            <div layout="row" layout-align="start center">
-                <md-button ng-click="vm.closeDialog()" class="send-button md-accent md-raised" aria-label="Send"
-                           translate="EMP.SEND"
-                           translate-attr-aria-label="EMP.SEND">
-                    SEND
-                </md-button>
-
-                <md-button class="md-icon-button" aria-label="Attach file"
-                           translate-attr-aria-label="EMP.ATTACH_FILE">
-                    <md-icon md-font-icon="icon-paperclip"></md-icon>
-                    <md-tooltip><span translate="EMP.ATTACH_FILE"></span></md-tooltip>
-                </md-button>
-            </div>
-
-            <div layout="row">
-                <md-button class="md-icon-button" aria-label="Delete"
-                           translate-attr-aria-label="EMP.DELETE">
-                    <md-icon md-font-icon="icon-delete"></md-icon>
-                    <md-tooltip><span translate="EMP.DELETE"></span></md-tooltip>
-                </md-button>
-            </div>
-        </md-dialog-actions> -->
     </form>
 </md-dialog>

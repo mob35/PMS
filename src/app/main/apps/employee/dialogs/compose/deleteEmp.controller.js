@@ -28,7 +28,7 @@
         }
 
         // Methods
-        vm.closeDialog = closeDialog;
+        $scope.closeDialog = closeDialog;
         vm.addNewList = addNewList;
 
 
@@ -38,7 +38,7 @@
         {
             $mdDialog.hide();
         }
-        vm.stepper = {
+        $scope.stepper = {
             step1: {},
             step2: {},
             step3: {}

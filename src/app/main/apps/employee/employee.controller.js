@@ -6,7 +6,11 @@
         .controller('EmpController', EmpController);
 
     /** @ngInject */
+<<<<<<< HEAD
     function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, Inbox) {
+=======
+    function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms) {
+>>>>>>> c1c3ae6a291f24a97fbd4ce350807c7c8d726d83
         var vm = this;
 
         // Data
@@ -14,12 +18,12 @@
             'creapond': 'johndoe@creapond.com',
             'withinpixels': 'johndoe@withinpixels.com'
         };
-        vm.checked = [];
-        vm.colors = ['blue-bg', 'blue-grey-bg', 'orange-bg', 'pink-bg', 'purple-bg'];
+        $scope.checked = [];
+        $scope.colors = ['blue-bg', 'blue-grey-bg', 'orange-bg', 'pink-bg', 'purple-bg'];
         $scope.selectedAccount = 'creapond';
-        vm.selectedMail = {};
+        $scope.selectedMail = {};
         vm.selectedDev = {};
-        vm.toggleSidenav = toggleSidenav;
+        // vm.toggleSidenav = toggleSidenav;
 
         vm.responsiveReadPane = undefined;
         vm.activeMailPaneIndex = 0;
@@ -28,16 +32,16 @@
         vm.scrollPos = 0;
         vm.scrollEl = angular.element('#content');
 
-        vm.inbox = Inbox.data;
-        vm.position = Inbox.position;
-        vm.selectedMail = vm.inbox[0];
-        vm.selectedDev = vm.position[0];
+        $scope.empPms = EmpPms.data;
+        $scope.position = EmpPms.position;
+        $scope.selectedMail = $scope.empPms[0];
+        vm.selectedDev = $scope.position[0];
         vm.selectedMailShowDetails = false;
 
         // Methods
         vm.checkAll = checkAll;
         vm.closeReadPane = closeReadPane;
-        vm.composeDialog = composeDialog;
+        // vm.composeDialog = composeDialog;
         vm.certificateDialog = certificateDialog;
         vm.deleteDialog = deleteDialog;
         vm.regardDialog = regardDialog;
@@ -71,10 +75,17 @@
          * @param mail
          */
         function selectDev(mail) { vm.selectedDev = mail; }
+<<<<<<< HEAD
 
         function selectMail(mail) {
             vm.selectedMail = mail;
 
+=======
+
+        function selectMail(mail) {
+            $scope.selectedMail = mail;
+
+>>>>>>> c1c3ae6a291f24a97fbd4ce350807c7c8d726d83
             $timeout(function() {
                 // If responsive read pane is
                 // active, navigate to it
@@ -125,12 +136,18 @@
                 event.stopPropagation();
             }
 
-            var idx = vm.checked.indexOf(mail);
+            var idx = $scope.checked.indexOf(mail);
 
             if (idx > -1) {
+<<<<<<< HEAD
                 vm.checked.splice(idx, 1);
             } else {
                 vm.checked.push(mail);
+=======
+                $scope.checked.splice(idx, 1);
+            } else {
+                $scope.checked.push(mail);
+>>>>>>> c1c3ae6a291f24a97fbd4ce350807c7c8d726d83
             }
         }
 
@@ -141,7 +158,11 @@
          * @returns {boolean}
          */
         function isChecked(mail) {
+<<<<<<< HEAD
             return vm.checked.indexOf(mail) > -1;
+=======
+            return $scope.checked.indexOf(mail) > -1;
+>>>>>>> c1c3ae6a291f24a97fbd4ce350807c7c8d726d83
         }
 
         /**
@@ -149,10 +170,17 @@
          */
         function checkAll() {
             if (vm.allChecked) {
+<<<<<<< HEAD
                 vm.checked = [];
                 vm.allChecked = false;
             } else {
                 angular.forEach(vm.inbox, function(mail) {
+=======
+                $scope.checked = [];
+                vm.allChecked = false;
+            } else {
+                angular.forEach($scope.empPms, function(mail) {
+>>>>>>> c1c3ae6a291f24a97fbd4ce350807c7c8d726d83
                     if (!isChecked(mail)) {
                         toggleCheck(mail);
                     }
@@ -167,6 +195,7 @@
          *
          * @param ev
          */
+<<<<<<< HEAD
         function composeDialog(ev) {
             $mdDialog.show({
                 controller: 'ComposeDialogController',
@@ -181,6 +210,22 @@
             });
         }
         ////////////  Certificate  ////////////
+=======
+        $scope.composeDialog = function(ev) {
+                $mdDialog.show({
+                    controller: 'ComposeDialogController',
+                    controllerAs: 'vm',
+                    locals: {
+                        selectedMail: undefined
+                    },
+                    templateUrl: 'app/main/apps/employee/dialogs/compose/compose-dialog.html',
+                    parent: angular.element($document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true
+                });
+            }
+            ////////////  Certificate  ////////////
+>>>>>>> c1c3ae6a291f24a97fbd4ce350807c7c8d726d83
         function certificateDialog(ev) {
             $mdDialog.show({
                 controller: 'CertificateDialogController',
@@ -269,7 +314,11 @@
          *
          * @param sidenavId
          */
+<<<<<<< HEAD
         function toggleSidenav(sidenavId) {
+=======
+        $scope.toggleSidenav = function(sidenavId) {
+>>>>>>> c1c3ae6a291f24a97fbd4ce350807c7c8d726d83
             $mdSidenav(sidenavId).toggle();
         }
     }

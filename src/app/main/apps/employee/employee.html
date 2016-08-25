@@ -11,12 +11,12 @@
         <!-- CONTENT HEADER -->
         <div class="header" layout="row" layout-align="start center">
             <div class="search-wrapper md-whiteframe-4dp" layout="row" layout-align="start center" flex>
-                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')" hide-gt-md aria-label="Toggle Sidenav" translate translate-attr-aria-label="EMP.TOGGLE_SIDENAV">
+                <md-button class="md-icon-button sidenav-toggle" ng-click="toggleSidenav('main-sidenav')" hide-gt-md aria-label="Toggle Sidenav" translate translate-attr-aria-label="EMP.TOGGLE_SIDENAV">
                     <md-icon class="icon" md-font-icon="icon-menu"></md-icon>
                 </md-button>
                 <div class="search" flex layout="row" layout-align="start center">
                     <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
-                    <input flex ng-model="vm.search" type="text" placeholder="Search for an e-mail or contact" translate translate-attr-placeholder="EMP.SEARCH_PLACEHOLDER">
+                    <input flex ng-model="search" type="text" placeholder="Search for an e-mail or contact">
                 </div>
             </div>
         </div>
@@ -47,7 +47,6 @@
                         <md-icon class="iconSize" md-font-icon="icon-square-inc-cash" ng-click="vm.regardDialog($event)"></md-icon>
                         <md-tooltip><span>Regard Employee</span></md-tooltip>
                     </md-button>
-                    
                     <!-- <div class="divider-vertical"></div> -->
                     <md-button class="md-icon-button" aria-label="Person" translate translate-attr-aria-label="EMP.MOVE_TO" hide show-gt-sm>
                         <md-icon md-font-icon="icon-person-box" ng-click="vm.evaluationDialog($event)"></md-icon>

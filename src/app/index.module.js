@@ -21,9 +21,9 @@
             'app.quick-panel',
 
             // Sample
-            'app.sample',
+            // 'app.sample',
             
-            'app.test',
+            // 'app.test',
             // Apps
             'app.employee'
 
