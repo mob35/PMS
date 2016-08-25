@@ -33,12 +33,13 @@
         // Api
         msApiProvider.register('emp.inbox', ['app/data/employee/empPms.json']);
 
+        
         // Navigation
-        msNavigationServiceProvider.saveItem('fuse.employee', {
+        msNavigationServiceProvider.saveItem('employee', {
             title : 'Employee Infomation',
             icon  : 'icon-people',
             state : 'app.employee',
-            weight: 3
+            weight: 1
         });
     }
 })();
