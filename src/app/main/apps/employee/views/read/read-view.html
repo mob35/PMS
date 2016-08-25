@@ -10,7 +10,7 @@
     </h2>
     </md-toolbar>
     <md-card-content>
-        <div ng-repeat="per in vm.selectedMail.personalInfo">
+        <div ng-repeat="per in selectedMail.personalInfo">
             <div layout="row" layout-xs="column">
                 <div flex="80">
                 </div>
@@ -208,7 +208,7 @@
     </h2>
     </md-toolbar>
     <md-card-content>
-        <div ng-repeat="fam in vm.selectedMail.familyInfo">
+        <div ng-repeat="fam in selectedMail.familyInfo">
             <div layout="row" layout-align="start center">
                 <div class="info" flex layout="column">
                     <div class="name" layout="row" layout-align="start center">
@@ -250,7 +250,7 @@
     </h2>
     </md-toolbar>
     <md-card-content>
-        <div ng-repeat="edu in vm.selectedMail.EducationInfo">
+        <div ng-repeat="edu in selectedMail.EducationInfo">
             <div layout="row" layout-align="start center">
                 <div class="info" flex layout="column">
                     <div class="name" layout="row" layout-align="start center">
@@ -291,7 +291,7 @@
     </h2>
     </md-toolbar>
     <md-card-content>
-        <div ng-repeat="work in vm.selectedMail.WorkInfo">
+        <div ng-repeat="work in selectedMail.WorkInfo">
             <div layout="row" layout-align="start center">
                 <div class="info" flex layout="column">
                     <div class="name" layout="row" layout-align="start center">
@@ -336,7 +336,7 @@
     </h2>
     </md-toolbar>
     <md-card-content>
-        <div ng-repeat="lang in vm.selectedMail.languageInfo">
+        <div ng-repeat="lang in selectedMail.languageInfo">
             <div layout="row" layout-align="start center">
                 <div class="info" flex layout="column">
                     <div class="name" layout="row" layout-align="start center">
@@ -377,7 +377,7 @@
     </h2>
     </md-toolbar>
     <md-card-content>
-        <div layout="row" layout-xs="column" ng-repeat="spe in vm.selectedMail.specialInfo">
+        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
             <div flex="30">
                 <span>Typing</span>
             </div>
@@ -385,7 +385,7 @@
                 <span>Thai {{spe.typingTH}} Word/Minutes</span>
             </div>
         </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in vm.selectedMail.specialInfo">
+        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
             <div flex="30">
                 <span></span>
             </div>
@@ -393,7 +393,7 @@
                 <span>English {{spe.typingEN}} Word/Minutes</span>
             </div>
         </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in vm.selectedMail.specialInfo">
+        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
             <div flex="30">
                 <span>Computer</span>
             </div>
@@ -401,7 +401,7 @@
                 <span>{{spe.computer}}</span>
             </div>
         </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in vm.selectedMail.specialInfo">
+        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
             <div flex="30">
                 <span>Driving</span>
             </div>
@@ -409,7 +409,7 @@
                 <span>No. {{spe.driving}}</span>
             </div>
         </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in vm.selectedMail.specialInfo">
+        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
             <div flex="30">
                 <span>Office Machine</span>
             </div>
@@ -417,7 +417,7 @@
                 <span>{{spe.officeMachine}}</span>
             </div>
         </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in vm.selectedMail.specialInfo">
+        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
             <div flex="30">
                 <span>Hobby</span>
             </div>
@@ -425,7 +425,7 @@
                 <span>{{spe.hobby}}</span>
             </div>
         </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in vm.selectedMail.specialInfo">
+        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
             <div flex="30">
                 <span>Sport</span>
             </div>
@@ -433,7 +433,7 @@
                 <span>{{spe.sport}}</span>
             </div>
         </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in vm.selectedMail.specialInfo">
+        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
             <div flex="30">
                 <span>Knowledge</span>
             </div>
@@ -441,7 +441,7 @@
                 <span>{{spe.knowledge}}</span>
             </div>
         </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in vm.selectedMail.specialInfo">
+        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
             <div flex="30">
                 <span>Other</span>
             </div>
@@ -463,7 +463,7 @@
     </h2>
     </md-toolbar>
     <md-card-content>
-        <div ng-repeat="oth in vm.selectedMail.otherInfo">
+        <div ng-repeat="oth in selectedMail.otherInfo">
             <div layout="row" layout-xs="column">
                 <div class="fontStyle" flex="40">
                     <span>I Can Work Up Country</span>

@@ -19,7 +19,7 @@
                 }
             },
             resolve  : {
-                Inbox: function (msApi)
+                EmpPms: function (msApi)
                 {
                     return msApi.resolve('emp.inbox@get');
                 }
@@ -31,7 +31,7 @@
         $translatePartialLoaderProvider.addPart('app/main/apps/employee');
 
         // Api
-        msApiProvider.register('emp.inbox', ['app/data/employee/inbox.json']);
+        msApiProvider.register('emp.inbox', ['app/data/employee/empPms.json']);
 
         // Navigation
         msNavigationServiceProvider.saveItem('fuse.employee', {

@@ -25,36 +25,37 @@
         }
 
         // Methods
-        vm.closeDialog = closeDialog;
-        vm.addNewList = addNewList;
+        // vm.closeDialog = closeDialog;
+        // vm.addNewList = addNewList;
 
 
         //////////
+
         $scope.active = true;
 
-        function closeDialog() {
+        $scope.closeDialog = function() {
             $mdDialog.hide();
         }
-        vm.stepper = {
+        $scope.stepper = {
             step1: {},
             step2: {},
             step3: {}
         };
 
-        vm.basicForm = {};
-        vm.formWizard = {};
-        vm.sex = [{ "name": "Male" }, { "name": "Famale" }];
-        vm.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
+        $scope.basicForm = {};
+        $scope.formWizard = {};
+        $scope.sex = [{ "name": "Male" }, { "name": "Famale" }];
+        $scope.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
             'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
             'WY').split(' ').map(function(state) {
             return { abbrev: state };
         });
 
         // Methods
-        // $scope.family = [];
-        vm.family = [];
-        vm.sendForm = sendForm;
-        vm.submitStepper = submitStepper;
+        $scope.family = [];
+        // vm.family = [];
+        // vm.sendForm = sendForm;
+        // vm.submitStepper = submitStepper;
 
         //////////
 
@@ -63,38 +64,40 @@
          *
          * @param ev
          */
-        //  $scope.addNewList =  function () { 
-        //     $scope.family.push({ 'nameFm': $scope.family.nameFm, 
-        //                          'LastNameFm' : $scope.family.LastNameFm, 
-        //                          'age': $scope.family.age, 
-        //                          'related': $scope.family.related , 
-        //                          'Occupation': $scope.family.Occupation , 
-        //                          'tel': $scope.family.tel }); 
-        //     $scope.family.nameFm = ''; 
-        //     $scope.family.LastNameFm = ''; 
-        //     $scope.family.age =''; 
-        //     $scope.family.related =''; 
-        //     $scope.family.Occupation =''; 
-        //     $scope.family.tel =''; 
-        // }
-        function addNewList() {
-            vm.family.push({
-                'nameFm': vm.family.nameFm,
-                'LastNameFm': vm.family.LastNameFm,
-                'age': vm.family.age,
-                'related': vm.family.related,
-                'Occupation': vm.family.Occupation,
-                'tel': vm.family.tel
-            });
-            vm.family.nameFm = '';
-            vm.family.LastNameFm = '';
-            vm.family.age = '';
-            vm.family.related = '';
-            vm.family.Occupation = '';
-            vm.family.tel = '';
-        }
+        $scope.addNewList = function() {
+                $scope.family.push({
+                    'nameFm': $scope.family.nameFm,
+                    'LastNameFm': $scope.family.LastNameFm,
+                    'age': $scope.family.age,
+                    'related': $scope.family.related,
+                    'Occupation': $scope.family.Occupation,
+                    'tel': $scope.family.tel
+                });
+                $scope.family.nameFm = '';
+                $scope.family.LastNameFm = '';
+                $scope.family.age = '';
+                $scope.family.related = '';
+                $scope.family.Occupation = '';
+                $scope.family.tel = '';
+            }
+            // function addNewList() {
+            //     vm.family.push({
+            //         'nameFm': vm.family.nameFm,
+            //         'LastNameFm': vm.family.LastNameFm,
+            //         'age': vm.family.age,
+            //         'related': vm.family.related,
+            //         'Occupation': vm.family.Occupation,
+            //         'tel': vm.family.tel
+            //     });
+            //     vm.family.nameFm = '';
+            //     vm.family.LastNameFm = '';
+            //     vm.family.age = '';
+            //     vm.family.related = '';
+            //     vm.family.Occupation = '';
+            //     vm.family.tel = '';
+            // }
 
-        function submitStepper(ev) {
+        $scope.submitStepper=function(ev) {
             // You can do an API call here to send the form to your server
 
             // Show the sent data.. you can delete this safely.
@@ -116,13 +119,13 @@
                 parent: angular.element('body'),
                 targetEvent: ev,
                 locals: {
-                    formWizardData: vm.stepper
+                    formWizardData: $scope.stepper
                 },
                 clickOutsideToClose: true
             });
 
             // Reset the form model
-            vm.stepper = {
+            $scope.stepper = {
                 step1: {},
                 step2: {},
                 step3: {}
@@ -132,7 +135,7 @@
         /**
          * Send form
          */
-        function sendForm(ev) {
+        $scope.sendForm = function(ev) {
             // You can do an API call here to send the form to your server
 
             // Show the sent data.. you can delete this safely.
@@ -154,14 +157,15 @@
                 parent: angular.element('body'),
                 targetEvent: ev,
                 locals: {
-                    formWizardData: vm.formWizard
+                    formWizardData: $scope.formWizard
                 },
                 clickOutsideToClose: true
             });
 
             // Clear the form data
-            vm.formWizard = {};
+            $scope.formWizard = {};
         }
     }
+
 
 })();

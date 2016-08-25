@@ -1,5 +1,4 @@
-(function ()
-{
+(function() {
     'use strict';
 
     angular
@@ -7,21 +6,20 @@
         .controller('EmpController', EmpController);
 
     /** @ngInject */
-    function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, Inbox)
-    {
+    function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms) {
         var vm = this;
 
         // Data
         $scope.accounts = {
-            'creapond'    : 'johndoe@creapond.com',
+            'creapond': 'johndoe@creapond.com',
             'withinpixels': 'johndoe@withinpixels.com'
         };
-        vm.checked = [];
-        vm.colors = ['blue-bg', 'blue-grey-bg', 'orange-bg', 'pink-bg', 'purple-bg'];
+        $scope.checked = [];
+        $scope.colors = ['blue-bg', 'blue-grey-bg', 'orange-bg', 'pink-bg', 'purple-bg'];
         $scope.selectedAccount = 'creapond';
-        vm.selectedMail = {};
+        $scope.selectedMail = {};
         vm.selectedDev = {};
-        vm.toggleSidenav = toggleSidenav;
+        // vm.toggleSidenav = toggleSidenav;
 
         vm.responsiveReadPane = undefined;
         vm.activeMailPaneIndex = 0;
@@ -30,16 +28,16 @@
         vm.scrollPos = 0;
         vm.scrollEl = angular.element('#content');
 
-        vm.inbox = Inbox.data;
-        vm.position = Inbox.position;
-        vm.selectedMail = vm.inbox[0];
-        vm.selectedDev = vm.position[0];
+        $scope.empPms = EmpPms.data;
+        $scope.position = EmpPms.position;
+        $scope.selectedMail = $scope.empPms[0];
+        vm.selectedDev = $scope.position[0];
         vm.selectedMailShowDetails = false;
 
         // Methods
         vm.checkAll = checkAll;
         vm.closeReadPane = closeReadPane;
-        vm.composeDialog = composeDialog;
+        // vm.composeDialog = composeDialog;
         vm.certificateDialog = certificateDialog;
         vm.deleteDialog = deleteDialog;
         vm.regardDialog = regardDialog;
@@ -54,20 +52,16 @@
         //////////
 
         // Watch screen size to activate responsive read pane
-        $scope.$watch(function ()
-        {
+        $scope.$watch(function() {
             return $mdMedia('gt-md');
-        }, function (current)
-        {
+        }, function(current) {
             vm.responsiveReadPane = !current;
         });
 
         // Watch screen size to activate dynamic height on tabs
-        $scope.$watch(function ()
-        {
+        $scope.$watch(function() {
             return $mdMedia('xs');
-        }, function (current)
-        {
+        }, function(current) {
             vm.dynamicHeight = current;
         });
 
@@ -76,18 +70,15 @@
          *
          * @param mail
          */
-         function selectDev(mail)
-        {vm.selectedDev = mail;}
-        function selectMail(mail)
-        {
-            vm.selectedMail = mail;
+        function selectDev(mail) { vm.selectedDev = mail; }
 
-            $timeout(function ()
-            {
+        function selectMail(mail) {
+            $scope.selectedMail = mail;
+
+            $timeout(function() {
                 // If responsive read pane is
                 // active, navigate to it
-                if ( angular.isDefined(vm.responsiveReadPane) && vm.responsiveReadPane )
-                {
+                if (angular.isDefined(vm.responsiveReadPane) && vm.responsiveReadPane) {
                     vm.activeMailPaneIndex = 1;
                 }
 
@@ -102,14 +93,11 @@
         /**
          * Close read pane
          */
-        function closeReadPane()
-        {
-            if ( angular.isDefined(vm.responsiveReadPane) && vm.responsiveReadPane )
-            {
+        function closeReadPane() {
+            if (angular.isDefined(vm.responsiveReadPane) && vm.responsiveReadPane) {
                 vm.activeMailPaneIndex = 0;
 
-                $timeout(function ()
-                {
+                $timeout(function() {
                     vm.scrollEl.scrollTop(vm.scrollPos);
                 }, 650);
             }
@@ -121,8 +109,7 @@
          * @param mail
          * @param event
          */
-        function toggleStarred(mail, event)
-        {
+        function toggleStarred(mail, event) {
             event.stopPropagation();
             emp.starred = !emp.starred;
         }
@@ -133,22 +120,17 @@
          * @param mail
          * @param event
          */
-        function toggleCheck(mail, event)
-        {
-            if ( event )
-            {
+        function toggleCheck(mail, event) {
+            if (event) {
                 event.stopPropagation();
             }
 
-            var idx = vm.checked.indexOf(mail);
+            var idx = $scope.checked.indexOf(mail);
 
-            if ( idx > -1 )
-            {
-                vm.checked.splice(idx, 1);
-            }
-            else
-            {
-                vm.checked.push(mail);
+            if (idx > -1) {
+                $scope.checked.splice(idx, 1);
+            } else {
+                $scope.checked.push(mail);
             }
         }
 
@@ -158,27 +140,20 @@
          * @param mail
          * @returns {boolean}
          */
-        function isChecked(mail)
-        {
-            return vm.checked.indexOf(mail) > -1;
+        function isChecked(mail) {
+            return $scope.checked.indexOf(mail) > -1;
         }
 
         /**
          * Check all
          */
-        function checkAll()
-        {
-            if ( vm.allChecked )
-            {
-                vm.checked = [];
+        function checkAll() {
+            if (vm.allChecked) {
+                $scope.checked = [];
                 vm.allChecked = false;
-            }
-            else
-            {
-                angular.forEach(vm.inbox, function (mail)
-                {
-                    if ( !isChecked(mail) )
-                    {
+            } else {
+                angular.forEach($scope.empPms, function(mail) {
+                    if (!isChecked(mail)) {
                         toggleCheck(mail);
                     }
                 });
@@ -192,77 +167,72 @@
          *
          * @param ev
          */
-        function composeDialog(ev)
-        {
+        $scope.composeDialog = function(ev) {
+                $mdDialog.show({
+                    controller: 'ComposeDialogController',
+                    controllerAs: 'vm',
+                    locals: {
+                        selectedMail: undefined
+                    },
+                    templateUrl: 'app/main/apps/employee/dialogs/compose/compose-dialog.html',
+                    parent: angular.element($document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true
+                });
+            }
+            ////////////  Certificate  ////////////
+        function certificateDialog(ev) {
             $mdDialog.show({
-                controller         : 'ComposeDialogController',
-                controllerAs       : 'vm',
-                locals             : {
+                controller: 'CertificateDialogController',
+                controllerAs: 'vm',
+                locals: {
                     selectedMail: undefined
                 },
-                templateUrl        : 'app/main/apps/employee/dialogs/compose/compose-dialog.html',
-                parent             : angular.element($document.body),
-                targetEvent        : ev,
-                clickOutsideToClose: true
-            });
-        }
-        ////////////  Certificate  ////////////
-        function certificateDialog(ev)
-        {
-            $mdDialog.show({
-                controller         : 'CertificateDialogController',
-                controllerAs       : 'vm',
-                locals             : {
-                    selectedMail: undefined
-                },
-                templateUrl        : 'app/main/apps/employee/dialogs/compose/certificate.html',
-                parent             : angular.element($document.body),
-                targetEvent        : ev,
+                templateUrl: 'app/main/apps/employee/dialogs/compose/certificate.html',
+                parent: angular.element($document.body),
+                targetEvent: ev,
                 clickOutsideToClose: true
             });
         }
         ////////////  Delete  ////////////
-        function deleteDialog(ev)
-        {
+        function deleteDialog(ev) {
             $mdDialog.show({
-                controller         : 'DeleteDialogController',
-                controllerAs       : 'vm',
-                locals             : {
+                controller: 'DeleteDialogController',
+                controllerAs: 'vm',
+                locals: {
                     selectedMail: undefined
                 },
-                templateUrl        : 'app/main/apps/employee/dialogs/compose/deleteEmp.html',
-                parent             : angular.element($document.body),
-                targetEvent        : ev,
+                templateUrl: 'app/main/apps/employee/dialogs/compose/deleteEmp.html',
+                parent: angular.element($document.body),
+                targetEvent: ev,
                 clickOutsideToClose: true
             });
         }
         ////////////  Reguad  ////////////
-        function regardDialog(ev)
-        {
+        function regardDialog(ev) {
             $mdDialog.show({
-                controller         : 'RegardDialogController',
-                controllerAs       : 'vm',
-                locals             : {
+                controller: 'RegardDialogController',
+                controllerAs: 'vm',
+                locals: {
                     selectedMail: undefined
                 },
-                templateUrl        : 'app/main/apps/employee/dialogs/compose/regardEmp.html',
-                parent             : angular.element($document.body),
-                targetEvent        : ev,
+                templateUrl: 'app/main/apps/employee/dialogs/compose/regardEmp.html',
+                parent: angular.element($document.body),
+                targetEvent: ev,
                 clickOutsideToClose: true
             });
         }
         ////////////  Evaluation  ////////////
-        function evaluationDialog(ev)
-        {
+        function evaluationDialog(ev) {
             $mdDialog.show({
-                controller         : 'EvaluationDialogController',
-                controllerAs       : 'vm',
-                locals             : {
+                controller: 'EvaluationDialogController',
+                controllerAs: 'vm',
+                locals: {
                     selectedMail: undefined
                 },
-                templateUrl        : 'app/main/apps/employee/dialogs/compose/evaluationEmp.html',
-                parent             : angular.element($document.body),
-                targetEvent        : ev,
+                templateUrl: 'app/main/apps/employee/dialogs/compose/evaluationEmp.html',
+                parent: angular.element($document.body),
+                targetEvent: ev,
                 clickOutsideToClose: true
             });
         }
@@ -292,15 +262,14 @@
          *
          * @param ev
          */
-        
+
 
         /**
          * Toggle sidenav
          *
          * @param sidenavId
          */
-        function toggleSidenav(sidenavId)
-        {
+        $scope.toggleSidenav = function(sidenavId) {
             $mdSidenav(sidenavId).toggle();
         }
     }
