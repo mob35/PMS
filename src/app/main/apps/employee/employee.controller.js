@@ -6,7 +6,9 @@
         .controller('EmpController', EmpController);
 
     /** @ngInject */
+
     function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms) {
+
         var vm = this;
 
         // Data
@@ -72,6 +74,7 @@
          */
         function selectDev(mail) { vm.selectedDev = mail; }
 
+
         function selectMail(mail) {
             $scope.selectedMail = mail;
 
@@ -128,6 +131,7 @@
             var idx = $scope.checked.indexOf(mail);
 
             if (idx > -1) {
+
                 $scope.checked.splice(idx, 1);
             } else {
                 $scope.checked.push(mail);
@@ -141,6 +145,7 @@
          * @returns {boolean}
          */
         function isChecked(mail) {
+
             return $scope.checked.indexOf(mail) > -1;
         }
 
@@ -149,6 +154,7 @@
          */
         function checkAll() {
             if (vm.allChecked) {
+
                 $scope.checked = [];
                 vm.allChecked = false;
             } else {
@@ -167,6 +173,22 @@
          *
          * @param ev
          */
+        // <<<<<<< HEAD
+        // function composeDialog(ev) {
+        //     $mdDialog.show({
+        //         controller: 'ComposeDialogController',
+        //         controllerAs: 'vm',
+        //         locals: {
+        //             selectedMail: undefined
+        //         },
+        //         templateUrl: 'app/main/apps/employee/dialogs/compose/compose-dialog.html',
+        //         parent: angular.element($document.body),
+        //         targetEvent: ev,
+        //         clickOutsideToClose: true
+        //     });
+        // }
+        ////////////  Certificate  ////////////
+        // =======
         $scope.composeDialog = function(ev) {
                 $mdDialog.show({
                     controller: 'ComposeDialogController',
@@ -269,6 +291,7 @@
          *
          * @param sidenavId
          */
+
         $scope.toggleSidenav = function(sidenavId) {
             $mdSidenav(sidenavId).toggle();
         }
