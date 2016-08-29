@@ -9,104 +9,89 @@
             </div>
         </md-toolbar>
         <!-- FORM WIZARD -->
-        <ms-form-wizard flex>
-            <div class="divMarCompos">
-                <form name="wizardStep1" class="md-inline-form" ms-form-wizard-form novalidate>
-                    <div class="divBtn" layout="column" layout-gt-xs="row" flex>
-                        <md-input-container flex="30">
-                            <input type="text" name="firstname" ng-model="vm.formWizard.firstname" placeholder="Firstname" required>
-                            <div ng-messages="wizardStep1.firstname.$error" role="alert">
-                                <div ng-message="required">
-                                    <span>Firstname field is required.</span>
-                                </div>
+        <div class="divMarCompos">
+            <form name="wizardStep1" class="md-inline-form" ms-form-wizard-form novalidate>
+                <div class="divBtn" layout="column" layout-gt-xs="row" flex>
+                    <md-input-container flex="30">
+                        <input type="text" name="firstname" ng-model="vm.formWizard.firstname" placeholder="Firstname" required>
+                        <div ng-messages="wizardStep1.firstname.$error" role="alert">
+                            <div ng-message="required">
+                                <span>Firstname field is required.</span>
                             </div>
-                        </md-input-container>
-                        <md-input-container flex="30">
-                            <input type="text" name="lastname" ng-model="vm.formWizard.lastname" placeholder="Lastname" required>
-                            <div ng-messages="wizardStep1.lastname.$error" role="alert">
-                                <div ng-message="required">
-                                    <span>Lastname field is required.</span>
-                                </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex="30">
+                        <input type="text" name="lastname" ng-model="vm.formWizard.lastname" placeholder="Lastname" required>
+                        <div ng-messages="wizardStep1.lastname.$error" role="alert">
+                            <div ng-message="required">
+                                <span>Lastname field is required.</span>
                             </div>
-                        </md-input-container>
-                        <md-input-container flex="30">
-                        </md-input-container>
-                    </div>
-                    <!-- /////// -->
-                    <div class="divBtn" layout="column" layout-gt-xs="row" flex>
-                        <md-input-container flex="30">
-                            <input type="text" name="position" ng-model="vm.formWizard.firstname" placeholder="Position" required>
-                            <div ng-messages="wizardStep1.firstname.$error" role="alert">
-                                <div ng-message="required">
-                                    <span>Position field is required.</span>
-                                </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex="30">
+                    </md-input-container>
+                </div>
+                <!-- /////// -->
+                <div class="divBtn" layout="column" layout-gt-xs="row" flex>
+                    <md-input-container flex="30">
+                        <input type="text" name="position" ng-model="vm.formWizard.firstname" placeholder="Position" required>
+                        <div ng-messages="wizardStep1.firstname.$error" role="alert">
+                            <div ng-message="required">
+                                <span>Position field is required.</span>
                             </div>
-                        </md-input-container>
-                        <md-input-container flex="30">
-                            <input type="text" name="salary" ng-model="vm.formWizard.lastname" placeholder="Salary" required>
-                            <div ng-messages="wizardStep1.lastname.$error" role="alert">
-                                <div ng-message="required">
-                                    <span>Salary field is required.</span>
-                                </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex="30">
+                        <input type="text" name="salary" ng-model="vm.formWizard.lastname" placeholder="Salary" required>
+                        <div ng-messages="wizardStep1.lastname.$error" role="alert">
+                            <div ng-message="required">
+                                <span>Salary field is required.</span>
                             </div>
-                        </md-input-container>
-                        <md-input-container flex="30">
-                        </md-input-container>
-                    </div>
-                    <!-- /////// -->
-                    <div class="divBtn" layout="column" layout-gt-xs="row" flex>
-                        <md-input-container flex="30">
-                            <input type="date" name="dateStart" ng-model="vm.formWizard.firstname" placeholder="Date Start" required>
-                            <div ng-messages="wizardStep1.firstname.$error" role="alert">
-                                <div ng-message="required">
-                                    <span>Date Start field is required.</span>
-                                </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex="30">
+                    </md-input-container>
+                </div>
+                <!-- /////// -->
+                <div class="divBtn" layout="column" layout-gt-xs="row" flex>
+                    <md-input-container flex="65">
+                        <input type="date" name="dateStart" ng-model="vm.formWizard.firstname" placeholder="Date Start" required>
+                        <div ng-messages="wizardStep1.firstname.$error" role="alert">
+                            <div ng-message="required">
+                                <span>Date Start field is required.</span>
                             </div>
-                        </md-input-container>
-                        <md-input-container flex="30">
-                        </md-input-container>
-                    </div>
-                </form>
-                <div class="hrBorder marginZero margin-25" layout="row" layout-xs="column" ng-hide="showme">
-                    <div flex="10">
-                    </div>
-                    <div flex="10">
-                        <a href="" ng-click="showme=true">
-                            <md-icon class="iconSize" md-font-icon="icon-plus-box"></md-icon>
-                        </a>
-                    </div>
-                    <div flex>
-                        <span>Add Benefits</span>
-                    </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex="30">
+                    </md-input-container>
+                </div>
+            </form>
+            <div class="margin-25" layout="row" ng-hide="showme">
+                <div flex>
+                    <a href="" ng-click="showme=true">
+                        <md-icon class="iconSize" md-font-icon="icon-plus-box"></md-icon>
+                    </a> <span class="margin-left-25">Add Benefits</span>
                 </div>
             </div>
-            <div class="divBtn margin-bottom-25 divTopRega">
-                <form name="wizardStep2" ms-form-wizard-form novalidate>
-                    <div layout="column" layout-gt-xs="row" ng-show="showme">
-                        <md-input-container flex="30">
-                            <label>List Benefits</label>
-                            <md-select ng-model="benefits.nameBn">
-                                <md-option ng-repeat="item in benefitsList" value="{{item.nameBn}}">
-                                    {{item.nameBn}}
-                                </md-option>
-                            </md-select>
-                        </md-input-container>
-                    </div>
-                    <div layout="row" layout-xs="column" ng-show="showme">
-                        <div flex="80">
-                        </div>
-                        <div flex>
-                            <md-button class="md-raised md-accent" ng-click="showme=false;addBenefitsList()">
-                                Add Benefits
-                            </md-button>
-                        </div>
-                    </div>
-                </form>
+            <!-- List -->
+            <div class="divBtn" layout="row" ng-show="showme">
+                <div flex="70">
+                    <md-input-container style="display:block">
+                        <label>Add Benefits</label>
+                        <md-select ng-model="benefits.nameBn">
+                            <md-option ng-repeat="item in benefitsList" value="{{item.nameBn}}">
+                                {{item.nameBn}}
+                            </md-option>
+                        </md-select>
+                        <md-input-container>
+                </div>
+                <div flex="20">
+                    <md-button class="md-raised md-accent" ng-click="showme=false;addBenefitsList()">
+                        Add Benefits
+                    </md-button>
+                </div>
             </div>
-            <div class="margin-top-25"></div>
             <div class="info hrBorder marginZero" flex layout="column" ng-repeat="bnf in benefits">
-                <!-- <div class="name" layout="row" layout-align="start center"> 
-                                    </div> -->
                 <div layout="row" layout-xs="column">
                     <div flex="10">
                     </div>
@@ -129,6 +114,5 @@
                         </md-button>
                     </span>
             </div>
-        </ms-form-wizard>
     </form>
 </md-dialog>
