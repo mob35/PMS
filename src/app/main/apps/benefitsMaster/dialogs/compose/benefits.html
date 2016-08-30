@@ -1,0 +1,61 @@
+<md-dialog class="compose-dialog" aria-label="New Employee">
+<form>
+        <md-toolbar class="md-accent md-hue-2">
+            <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+                <span class="title">New Benefits</span>
+                <md-button class="md-icon-button" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="BF.CLOSE_DIALOG">
+                    <md-icon md-font-icon="icon-close"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <!-- FORM WIZARD -->
+        <div style="padding:10px 30px 10px 30px">
+            <div layout="row">
+                <div flex><b>Benefits Information</b></div>
+            </div>
+            <div layout="row">
+                <!-- <div flex="20">Benefits Name</div> -->
+                
+                    <md-input-container flex="100">
+                        <label>Benefits Name</label>
+                        <input type="text" required>
+                    </md-input-container>
+                
+            </div>
+            <div layout="row">
+                <!-- <div flex="20">Benefits Detail</div> -->
+                    <md-input-container flex="100">
+                        <label>Benefits Detail</label>
+                        <input type="text" required>
+                    </md-input-container>
+            </div>
+            <div layout="row" style="margin-top:-35px">
+                <div flex="20"></div>
+                    <md-input-container flex="80">
+                        <label>Sub Benefits Detail1</label>
+                        <input type="text" required>
+                    </md-input-container>
+            </div>
+            <div layout="row" style="margin-top:-35px">
+                <div flex="20"></div>
+                    <md-input-container flex="80">
+                        <label>Sub Benefits Detail2</label>
+                        <input type="text" required>
+                    </md-input-container>
+            </div>
+            <div layout="row">
+                <div flex="20">
+                    <md-button class="md-raised md-accent md-button md-ink-ripple" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="BF.CLOSE_DIALOG">
+                        Cancel
+                    </md-button>
+                </div>
+                <div flex="60"></div>
+                <div flex="20" style="text-align:right">
+                    <md-button class="md-raised md-accent">
+                        Done
+                    </md-button>
+                </div>
+            </div>
+        </div>
+    </form>
+</md-dialog>
