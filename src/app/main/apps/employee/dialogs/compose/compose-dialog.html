@@ -653,6 +653,9 @@
                                     <span>Occupation [ {{fam.Occupation}} ]</span>
                                     <span>Tel : {{fam.tel}}</span>
                                 </div>
+                                <div flex="10">
+                                    <md-icon md-font-icon="icon-trash" class="iconMargin" style="font-size: 30px;" ng-click="removeItem($index)"></md-icon>
+                                </div>
                             </div>
                         </div>
                         <div class="marginAdd80" layout="row" layout-xs="column">
@@ -674,12 +677,12 @@
                         </span>
                     </md-tab-label>
                     <md-tab-body>
-                        <div class="hrBorder" layout="row" layout-xs="column" ng-hide="showmeEducation">
+                        <div class="hrBorder marginThree" layout="row" layout-xs="column" ng-hide="showmeEducation">
                             <div flex="10">
                             </div>
                             <div flex="10">
                                 <a href="" ng-click="showmeEducation=true">
-                                    <md-icon md-font-icon="icon-plus-box"></md-icon>
+                                    <md-icon md-font-icon="icon-plus-box" class="iconSize"></md-icon>
                                 </a>
                             </div>
                             <div flex>
@@ -691,14 +694,14 @@
                                 <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeEducation">
                                     <md-input-container flex="50">
                                         <label>Education Level</label>
-                                        <md-select ng-model="basicForm.state">
-                                            <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
-                                                {{state.abbrev}}
+                                        <md-select ng-model="education.eduLevel">
+                                            <md-option ng-repeat="listedu in eduLevelList" value="{{listedu.level}}">
+                                                {{listedu.level}}
                                             </md-option>
                                         </md-select>
                                     </md-input-container>
                                     <md-input-container flex="50">
-                                        <input type="text" name="Institution" ng-model="formWizard.Institution" placeholder="Institution" required>
+                                        <input type="text" name="Institution" ng-model="education.institution" placeholder="Institution" required>
                                         <div ng-messages="wizardStep1.Moo.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Institution field is required.</span>
@@ -709,9 +712,9 @@
                                 <div class="divBtn2" layout="column" layout-gt-xs="row" ng-show="showmeEducation">
                                     <md-input-container flex>
                                         <label>Major</label>
-                                        <md-select ng-model="basicForm.state">
-                                            <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
-                                                {{state.abbrev}}
+                                        <md-select ng-model="education.major">
+                                            <md-option ng-repeat="listMajor in majorList" value="{{listMajor.major}}">
+                                                {{listMajor.major}}
                                             </md-option>
                                         </md-select>
                                     </md-input-container>
@@ -719,23 +722,46 @@
                                 <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeEducation">
                                     <md-input-container flex="50">
                                         <label>From</label>
-                                        <input type="date" name="From" ng-model="formWizard.From">
+                                        <input type="date" name="From" ng-model="education.dateFrom">
                                     </md-input-container>
                                     <md-input-container flex="50">
                                         <label>To</label>
-                                        <input type="date" name="To" ng-model="formWizard.To">
+                                        <input type="date" name="To" ng-model="education.dateTo">
                                     </md-input-container>
                                 </div>
                                 <div layout="row" layout-xs="column" ng-show="showmeEducation">
                                     <div flex="80">
                                     </div>
                                     <div flex>
-                                        <md-button class="md-raised md-accent" ng-click="showmeEducation=false">
+                                        <md-button class="md-raised md-accent" ng-click="showmeEducation=false;addListEdu()">
                                             Add Education
                                         </md-button>
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                        <div class="info hrBorder marginZero" flex layout="column" ng-repeat="edu in education">
+                            <!-- <div class="name" layout="row" layout-align="start center"> 
+                            </div> -->
+                            <div layout="row" layout-xs="column">
+                                <div flex="10">
+                                </div>
+                                <div flex="10">
+                                    <md-icon md-font-icon="icon-person-box" class="iconMargin"></md-icon>
+                                </div>
+                                <div flex>
+                                    <p class="text-truncate">{{edu.eduLevel}}</p>
+                                    <span>{{edu.institution}}</span> &nbsp;&nbsp;&nbsp;
+                                    <span>( {{edu.dateFrom | date:'dd/MM/yyyy'}} - {{edu.dateTo | date:'dd/MM/yyyy'}}  )</span>
+                                </div>
+                                <div flex="10">
+                                    <md-icon md-font-icon="icon-trash" class="iconMargin" style="font-size: 30px;" ng-click="removeItemEdu($index)"></md-icon>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="marginAdd80" layout="row" layout-xs="column">
+                            <div flex>
+                            </div>
                         </div>
                     </md-tab-body>
                 </md-tab>
@@ -752,12 +778,12 @@
                         </span>
                     </md-tab-label>
                     <md-tab-body>
-                        <div class="hrBorder" layout="row" layout-xs="column" ng-hide="showmeExperience">
+                        <div class="hrBorder marginThree" layout="row" layout-xs="column" ng-hide="showmeExperience">
                             <div flex="10">
                             </div>
                             <div flex="10">
                                 <a href="" ng-click="showmeExperience=true">
-                                    <md-icon md-font-icon="icon-plus-box"></md-icon>
+                                    <md-icon md-font-icon="icon-plus-box" class="iconSize"></md-icon>
                                 </a>
                             </div>
                             <div flex>
@@ -768,7 +794,7 @@
                             <form name="wizardStep5" ms-form-wizard-form novalidate>
                                 <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeExperience">
                                     <md-input-container flex>
-                                        <input type="text" name="Company Name" ng-model="formWizard.companyname" placeholder="Company Name" required>
+                                        <input type="text" name="Company Name" ng-model="work.companyName" placeholder="Company Name" required>
                                         <div ng-messages="wizardStep5.companyname.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Company Name field is required.</span>
@@ -779,44 +805,68 @@
                                 <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeExperience">
                                     <md-input-container flex="50">
                                         <label>From</label>
-                                        <input type="date" name="From" ng-model="formWizard.From">
+                                        <input type="date" name="From" ng-model="work.dateFrom">
                                     </md-input-container>
                                     <md-input-container flex="50">
                                         <label>To</label>
-                                        <input type="date" name="To" ng-model="formWizard.To">
+                                        <input type="date" name="To" ng-model="work.dateTo">
                                     </md-input-container>
                                 </div>
                                 <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeExperience">
                                     <md-input-container flex="50">
                                         <label>Position</label>
-                                        <input type="text" name="Position" ng-model="formWizard.Position">
+                                        <input type="text" name="Position" ng-model="work.position">
                                     </md-input-container>
                                     <md-input-container flex="30">
                                         <label>Salary</label>
-                                        <input type="text" name="Salary" ng-model="formWizard.Salary">
+                                        <input type="text" name="Salary" ng-model="work.salary">
                                     </md-input-container>
                                     <div class="divBtn5" flex><span>Baht</span></div>
                                 </div>
                                 <div class="divBtn" layout="column" layout-gt-xs="row" ng-show="showmeExperience">
                                     <md-input-container flex="45">
                                         <label>Reasons</label>
-                                        <input type="text" name="Reasons" ng-model="formWizard.Reasons">
+                                        <input type="text" name="Reasons" ng-model="work.reasons">
                                     </md-input-container>
                                     <md-input-container flex="30">
                                         <label>Job Description</label>
-                                        <input type="text" name="Job Description" ng-model="formWizard.JobDescription">
+                                        <input type="text" name="Job Description" ng-model="work.jobDesc">
                                     </md-input-container>
                                 </div>
                                 <div layout="row" layout-xs="column" ng-show="showmeExperience">
                                     <div flex="70">
                                     </div>
                                     <div flex>
-                                        <md-button class="md-raised md-accent" ng-click="showmeExperience=false">
+                                        <md-button class="md-raised md-accent" ng-click="showmeExperience=false;addListWork()">
                                             Add Work Experience
                                         </md-button>
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                        <div class="info hrBorder marginZero" flex layout="column" ng-repeat="works in work">
+                            <!-- <div class="name" layout="row" layout-align="start center"> 
+                            </div> -->
+                            <div layout="row" layout-xs="column">
+                                <div flex="10">
+                                </div>
+                                <div flex="10">
+                                    <md-icon md-font-icon="icon-person-box" class="iconMargin"></md-icon>
+                                </div>
+                                <div flex>
+                                    <p class="text-truncate">{{works.companyName}}</p>
+                                    <span>{{works.position}}</span> &nbsp;&nbsp;&nbsp;
+                                    <span>( {{works.dateFrom | date:'dd/MM/yyyy'}} - {{works.dateTo | date:'dd/MM/yyyy'}}  )</span>
+                                    <p> {{works.jobDesc}}</p>
+                                </div>
+                                <div flex="10">
+                                    <md-icon md-font-icon="icon-trash" class="iconMargin" style="font-size: 30px;" ng-click="removeItemWork($index)"></md-icon>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="marginAdd80" layout="row" layout-xs="column">
+                            <div flex>
+                            </div>
                         </div>
                     </md-tab-body>
                 </md-tab>
@@ -833,12 +883,12 @@
                         </span>
                     </md-tab-label>
                     <md-tab-body>
-                        <div class="hrBorder" layout="row" layout-xs="column" ng-hide="showmeLanguage">
+                        <div class="hrBorder marginThree" layout="row" layout-xs="column" ng-hide="showmeLanguage">
                             <div flex="10">
                             </div>
                             <div flex="10">
                                 <a href="" ng-click="showmeLanguage=true">
-                                    <md-icon md-font-icon="icon-plus-box"></md-icon>
+                                    <md-icon md-font-icon="icon-plus-box" class="iconSize"></md-icon>
                                 </a>
                             </div>
                             <div flex>
@@ -850,68 +900,80 @@
                                 <div layout="column" layout-gt-xs="row" ng-show="showmeLanguage">
                                     <md-input-container flex>
                                         <label>Language</label>
-                                        <md-select ng-model="basicForm.state">
-                                            <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
-                                                {{state.abbrev}}
+                                        <md-select ng-model="language.langType">
+                                            <md-option ng-repeat="listLang in LangList" value="{{listLang.lang}}">
+                                                {{listLang.lang}} Language
                                             </md-option>
                                         </md-select>
                                     </md-input-container>
                                 </div>
                                 <div class="divBtn4" layout="row" layout-xs="column" ng-show="showmeLanguage">
                                     <span flex="20">Speaking</span>
-                                    <div flex="20">
-                                        <md-checkbox class="no-label" ng-checked>
-                                        </md-checkbox> Good
-                                    </div>
-                                    <div flex="20">
-                                        <md-checkbox class="no-label" ng-checked>
-                                        </md-checkbox> Fair
-                                    </div>
-                                    <div flex="20">
-                                        <md-checkbox class="no-label" ng-checked>
-                                        </md-checkbox> Poor
+                                    <div style="margin-top: -22px;">
+                                    <md-radio-group ng-model="language.speaking" class="md-primary"  layout="row">
+                                        <md-radio-button ng-repeat="types in typeLang" ng-value="types" ng-disabled=" types.isDisabled  " ng-class="{'md-align-top-left': $index==1}">
+                                            {{ types }}
+                                            <br/>
+                                        </md-radio-button>
+                                    </md-radio-group>
                                     </div>
                                 </div>
                                 <div class="divBtn4" layout="row" layout-xs="column" ng-show="showmeLanguage">
                                     <span flex="20">Writing</span>
-                                    <div flex="20">
-                                        <md-checkbox class="no-label" ng-checked>
-                                        </md-checkbox> Good
-                                    </div>
-                                    <div flex="20">
-                                        <md-checkbox class="no-label" ng-checked>
-                                        </md-checkbox> Fair
-                                    </div>
-                                    <div flex="20">
-                                        <md-checkbox class="no-label" ng-checked>
-                                        </md-checkbox> Poor
+                                  <div style="margin-top: -22px;">
+                                    <md-radio-group ng-model="language.writing" class="md-primary"  layout="row">
+                                        <md-radio-button ng-repeat="types in typeLang" ng-value="types" ng-disabled=" types.isDisabled  " ng-class="{'md-align-top-left': $index==1}">
+                                            {{ types }}
+                                            <br/>
+                                        </md-radio-button>
+                                    </md-radio-group>
                                     </div>
                                 </div>
                                 <div class="divBtn4" layout="row" layout-xs="column" ng-show="showmeLanguage">
                                     <span flex="20">Reading</span>
-                                    <div flex="20">
-                                        <md-checkbox class="no-label" ng-checked>
-                                        </md-checkbox> Good
-                                    </div>
-                                    <div flex="20">
-                                        <md-checkbox class="no-label" ng-checked>
-                                        </md-checkbox> Fair
-                                    </div>
-                                    <div flex="20">
-                                        <md-checkbox class="no-label" ng-checked>
-                                        </md-checkbox> Poor
+                                    <div style="margin-top: -22px;">
+                                    <md-radio-group ng-model="language.reading" class="md-primary"  layout="row">
+                                        <md-radio-button ng-repeat="types in typeLang" ng-value="types" ng-disabled=" types.isDisabled  " ng-class="{'md-align-top-left': $index==1}">
+                                            {{ types }}
+                                            <br/>
+                                        </md-radio-button>
+                                    </md-radio-group>
                                     </div>
                                 </div>
                                 <div layout="row" layout-xs="column" ng-show="showmeLanguage">
                                     <div flex="70">
                                     </div>
                                     <div flex>
-                                        <md-button class="md-raised md-accent" ng-click="showmeLanguage=false">
+                                        <md-button class="md-raised md-accent" ng-click="showmeLanguage=false ; addListLang()">
                                             Add Language Ability
                                         </md-button>
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                        <div class="info hrBorder marginZero" flex layout="column" ng-repeat="lang in language">
+                            <!-- <div class="name" layout="row" layout-align="start center"> 
+                            </div> -->
+                            <div layout="row" layout-xs="column">
+                                <div flex="10">
+                                </div>
+                                <div flex="10">
+                                    <md-icon md-font-icon="icon-person-box" class="iconMargin"></md-icon>
+                                </div>
+                                <div flex>
+                                    <p class="text-truncate">{{lang.langType}} Language</p>
+                                    <span>Speaking : {{lang.speaking}}</span> &nbsp;&nbsp;
+                                    <span>Writing : {{lang.writing}}</span> &nbsp;&nbsp;
+                                    <span>Reading  : {{lang.reading}}</span>
+                                </div>
+                                <div flex="10">
+                                    <md-icon md-font-icon="icon-trash" class="iconMargin" style="font-size: 30px;" ng-click="removeItemLang($index)"></md-icon>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="marginAdd80" layout="row" layout-xs="column">
+                            <div flex>
+                            </div>
                         </div>
                     </md-tab-body>
                 </md-tab>

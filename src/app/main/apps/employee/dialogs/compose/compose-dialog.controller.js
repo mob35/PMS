@@ -45,14 +45,28 @@
         $scope.basicForm = {};
         $scope.formWizard = {};
         $scope.sex = [{ "name": "Male" }, { "name": "Famale" }];
-        $scope.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
-            'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
-            'WY').split(' ').map(function(state) {
-            return { abbrev: state };
-        });
-
+        $scope.eduLevelList = [{ 'level': 'Grade 1-3' },
+            { 'level': 'Grade 4-6' },
+            { 'level': 'High 1-3' },
+            { 'level': 'Senior High 4-6' }
+        ];
+        $scope.majorList = [{ 'major': 'General' },
+            { 'major': 'Art Math' },
+            { 'major': 'Science Math' },
+            { 'major': 'Computer Science' }
+        ];
+         $scope.LangList = [{ 'lang': 'English' },
+            { 'lang': 'Japanese' },
+            { 'lang': 'Chinese' },
+            { 'lang': 'German' }
+        ];
+         $scope.typeLang = ['Good', 'Fair', 'Poor'];
         // Methods
         $scope.family = [];
+        $scope.education = [];
+        $scope.work = [];
+        $scope.language = [];
+
         // vm.family = [];
         // vm.sendForm = sendForm;
         // vm.submitStepper = submitStepper;
@@ -65,39 +79,105 @@
          * @param ev
          */
         $scope.addNewList = function() {
-                $scope.family.push({
-                    'nameFm': $scope.family.nameFm,
-                    'LastNameFm': $scope.family.LastNameFm,
-                    'age': $scope.family.age,
-                    'related': $scope.family.related,
-                    'Occupation': $scope.family.Occupation,
-                    'tel': $scope.family.tel
-                });
-                $scope.family.nameFm = '';
-                $scope.family.LastNameFm = '';
-                $scope.family.age = '';
-                $scope.family.related = '';
-                $scope.family.Occupation = '';
-                $scope.family.tel = '';
-            }
-            // function addNewList() {
-            //     vm.family.push({
-            //         'nameFm': vm.family.nameFm,
-            //         'LastNameFm': vm.family.LastNameFm,
-            //         'age': vm.family.age,
-            //         'related': vm.family.related,
-            //         'Occupation': vm.family.Occupation,
-            //         'tel': vm.family.tel
-            //     });
-            //     vm.family.nameFm = '';
-            //     vm.family.LastNameFm = '';
-            //     vm.family.age = '';
-            //     vm.family.related = '';
-            //     vm.family.Occupation = '';
-            //     vm.family.tel = '';
-            // }
+            $scope.family.push({
+                'nameFm': $scope.family.nameFm,
+                'LastNameFm': $scope.family.LastNameFm,
+                'age': $scope.family.age,
+                'related': $scope.family.related,
+                'Occupation': $scope.family.Occupation,
+                'tel': $scope.family.tel
+            });
+            $scope.family.nameFm = '';
+            $scope.family.LastNameFm = '';
+            $scope.family.age = '';
+            $scope.family.related = '';
+            $scope.family.Occupation = '';
+            $scope.family.tel = '';
+        }
 
-        $scope.submitStepper=function(ev) {
+
+        $scope.removeItem = function(index) {
+            $scope.family.splice(index, 1);
+        }
+
+        $scope.addListEdu = function() {
+            $scope.education.push({
+                'eduLevel': $scope.education.eduLevel,
+                'institution': $scope.education.institution,
+                'major': $scope.education.major,
+                'dateFrom': $scope.education.dateFrom,
+                'dateTo': $scope.education.dateTo
+            });
+            $scope.education.eduLevel = '';
+            $scope.education.institution = '';
+            $scope.education.major = '';
+            $scope.education.dateFrom = '';
+            $scope.education.dateTo = '';
+        }
+        $scope.removeItemEdu = function(index) {
+            $scope.education.splice(index, 1);
+        }
+
+        $scope.addListWork = function() {
+            $scope.work.push({
+                'companyName': $scope.work.companyName,
+                'dateFrom': $scope.work.dateFrom,
+                'dateTo': $scope.work.dateTo,
+                'position': $scope.work.position,
+                'salary': $scope.work.salary,
+                'reasons': $scope.work.reasons,
+                'jobDesc': $scope.work.jobDesc
+
+            });
+            $scope.work.companyName = '';
+            $scope.work.dateFrom = '';
+            $scope.work.dateTo = '';
+            $scope.work.position = '';
+            $scope.work.salary = '';
+            $scope.work.reasons = '';
+            $scope.work.jobDesc = '';
+        }
+        $scope.removeItemWork = function(index) {
+            $scope.work.splice(index, 1);
+        }
+
+        $scope.addListLang = function() {
+            $scope.language.push({
+                'langType': $scope.language.langType,
+                'speaking': $scope.language.speaking,
+                'writing': $scope.language.writing,
+                'reading': $scope.language.reading
+
+            });
+            $scope.language.langType = '';
+            $scope.language.speaking = '';
+            $scope.language.writing = '';
+            $scope.language.reading = '';
+        }
+   
+        $scope.removeItemLang = function(index) {
+            $scope.language.splice(index, 1);
+        }
+
+
+        // function addNewList() {
+        //     vm.family.push({
+        //         'nameFm': vm.family.nameFm,
+        //         'LastNameFm': vm.family.LastNameFm,
+        //         'age': vm.family.age,
+        //         'related': vm.family.related,
+        //         'Occupation': vm.family.Occupation,
+        //         'tel': vm.family.tel
+        //     });
+        //     vm.family.nameFm = '';
+        //     vm.family.LastNameFm = '';
+        //     vm.family.age = '';
+        //     vm.family.related = '';
+        //     vm.family.Occupation = '';
+        //     vm.family.tel = '';
+        // }
+
+        $scope.submitStepper = function(ev) {
             // You can do an API call here to send the form to your server
 
             // Show the sent data.. you can delete this safely.
