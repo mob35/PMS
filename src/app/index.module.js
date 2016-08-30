@@ -25,7 +25,8 @@
             
             // 'app.test',
             // Apps
-            'app.employee'
+            'app.employee',
+            'app.benefitsMaster'
 
         ]);
 })();
