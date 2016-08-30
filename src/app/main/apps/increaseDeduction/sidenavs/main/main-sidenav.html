@@ -2,20 +2,31 @@
 <div class="header" layout="column" layout-align="space-between start">
     <div class="logo" layout="row" layout-align="start center">
         <span class="logo-icon">
-            <md-icon md-font-icon="icon-ambulance" class="icon"></md-icon>
+            <md-icon md-font-icon="icon-people" class="icon"></md-icon>
         </span>
-        <span class="logo-text" translate="BF.LOGO">Benefits</span>
+        <div class="row" flex>
+        <div class="logo-text textcenter" translate="INCDDUC.Incre">Increase</div>
+        <div class="logo-text" translate="INCDDUC.Deduc">Deduction</div>
+        </div>
+        
+        
     </div>
-    
+   <!--  <div class="account">
+        <div class="title">John Doe</div>
+        <md-select class="account-selection simplified" placeholder="Mail Selection" ng-model="selectedAccount">
+            <md-option ng-repeat="(provider, address) in accounts" value="{{provider}}">{{address}}
+            </md-option>
+        </md-select>
+    </div> -->
 </div>
 <!-- / SIDENAV HEADER -->
 <!-- SIDENAV CONTENT -->
 <md-content ms-scroll class="content" flex>
     <div class="compose-button">
-        <md-button class="md-accent md-raised" aria-label="compose" ng-click="composeDialog($event)" translate="BF.NewBF">New Benefits
+        <md-button class="md-accent md-raised" aria-label="compose" ng-click="composeDialog($event)" translate="INCDDUC.New">Increase/Deduction
         </md-button>
     </div>
-    <div ng-include="'app/main/apps/benefitsMaster/views/list/list-position.html'" ms-scroll>
+    <div ng-include="'app/main/apps/increaseDeduction/views/list/list-position.html'" ms-scroll>
     </div>
     <!--  <div class="navigation-simple" layout="column">
         <md-button class="item" aria-label="inbox">

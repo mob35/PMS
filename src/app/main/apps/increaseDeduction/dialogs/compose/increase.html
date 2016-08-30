@@ -1,0 +1,87 @@
+<md-card>
+    <md-toolbar class="md-accent">
+        <h2 class="md-toolbar-tools">
+      <span flex>Increase</span>
+      <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Increase" tranlate
+                           translate-aria-label="INCDDUC.CLOSE_DIALOG">
+                    <md-icon md-font-icon="icon-table-edit"></md-icon>
+                </md-button>
+    </h2>
+    </md-toolbar>
+    <md-card-content>
+        <div ng-repeat="per in selectedMail.personalInfo">
+            <div class="hrBorder marginThree" layout="row" layout-xs="column">
+                <div>
+                    <b>{{per.nameEn}} {{per.LastNameEn}} </b>({{per.position}})
+                </div>
+            </div>
+            <div class="hrBorder marginThree" layout="row" layout-xs="column" ng-hide="showme">
+                <div ng-click="showme=true">
+                    <md-icon class="iconSize" md-font-icon="icon-plus-box"></md-icon>
+                    <span> Add Increase </span>
+                </div>
+            </div>
+            <div ng-show="showme">
+                <div layout="row">
+                    <md-input-container flex="50">
+                        <input type="text" name="IncreaseName" ng-model="formWizard.firstname" placeholder="IncreaseName" required>
+                    </md-input-container>
+                    <md-input-container flex="50">
+                        <input type="text" name="Amount" ng-model="formWizard.firstname" placeholder="Amount" required>
+                    </md-input-container>
+                </div>
+                <div class="divBtn" layout="row">
+                    <md-input-container flex="10">
+                        From
+                    </md-input-container>
+                    <md-input-container flex="40">
+                        <input type="date" name="Frome" ng-model="formWizard.firstname">
+                    </md-input-container>
+                    <md-input-container flex="10">
+                        To
+                    </md-input-container>
+                    <md-input-container flex="40">
+                        <input type="date" name="To" ng-model="formWizard.firstname">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-button flex="70">
+                    </md-button>
+                    <md-button class="md-raised md-accent" ng-click="showme=false">
+                        Add Increase
+                    </md-button>
+                </div>
+            </div>
+        </div>
+        <div ng-repeat="per in selectedMail.personalInfo" class="hrBorder marginThree">
+            <div layout="row">
+                <md-input-container flex="25">
+                    <b>Increase Name</b>
+                </md-input-container>
+                <md-input-container flex="25">
+                    <span>Bonus</span>
+                </md-input-container>
+                <md-input-container flex="25">
+                    <b>Amount</b>
+                </md-input-container>
+                <md-input-container flex="25">
+                    <span>{{per.Bonus}}</span> Baht
+                </md-input-container>
+            </div>
+            <div layout="row">
+                <md-input-container flex="25">
+                   <b>From</b> 
+                </md-input-container>
+                <md-input-container flex="25">
+                    03/2017
+                </md-input-container>
+                <md-input-container flex="25">
+                    <b>To</b>
+                </md-input-container>
+                <md-input-container flex="25">
+                    06/2017
+                </md-input-container>
+            </div>
+        </div>
+    </md-card-content>
+</md-card>
