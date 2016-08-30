@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('app.employee')
-        .controller('ComposeDialogController', ComposeDialogController);
+        .module('app.benefitsMaster')
+        .controller('benefitDialogController', benefitDialogController);
 
     /** @ngInject */
-    function ComposeDialogController($mdDialog, selectedMail, $scope) {
+    function benefitDialogController($mdDialog, selectedMail, $scope) {
         var vm = this;
 
         // Data
