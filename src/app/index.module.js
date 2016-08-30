@@ -26,12 +26,11 @@
             // 'app.test',
             // Apps
             'app.employee',
-<<<<<<< HEAD
-            'app.increaseDeduction'
 
-=======
+            'app.increaseDeduction',
+
+
             'app.benefitsMaster'
->>>>>>> 23a4e96d5fb722cad08fdf584a70bd0b2626b4c3
 
         ]);
 })();
