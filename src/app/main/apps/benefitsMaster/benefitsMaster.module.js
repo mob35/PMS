@@ -37,7 +37,7 @@
         // Navigation
         msNavigationServiceProvider.saveItem('benefitsMaster', {
             title : 'Benefits Master',
-            icon  : 'icon-people',
+            icon  : 'icon-ambulance',
             state : 'app.benefitsMaster',
             weight: 1
         });
