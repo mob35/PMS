@@ -26,6 +26,10 @@
             // 'app.test',
             // Apps
             'app.employee',
+
+            'app.increaseDeduction',
+
+
             'app.benefitsMaster'
 
         ]);
