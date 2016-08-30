@@ -30,6 +30,7 @@
         // Methods
         vm.closeDialog = closeDialog;
         vm.addNewList = addNewList;
+        // $scope.addBenefitsList = addBenefitsList;
 
 
         //////////
@@ -44,7 +45,7 @@
             step3: {}
         };
 
-        vm.basicForm = {};
+        $scope.basicForm = {};
         vm.formWizard = {};
         vm.sex = [{"name":"Male"},{"name":"Famale"}];
         vm.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
@@ -57,8 +58,19 @@
         // Methods
         // $scope.family = [];
         vm.family = [];
+        $scope.benefits = [];
         vm.sendForm = sendForm;
         vm.submitStepper = submitStepper;
+        $scope.benefitsList = [
+        {
+            "nameBn":"Bupa",
+            "descBn":"Health insurance"
+        },
+        {
+            "nameBn":"Krungsri PA Super Prompt",
+            "descBn":"Accident insurance"
+        }
+        ];
 
         //////////
 
@@ -81,6 +93,17 @@
             vm.family.related =''; 
             vm.family.Occupation =''; 
             vm.family.tel =''; 
+        }
+        $scope.addBenefitsList = function(){
+            for (var i = 0; i <= $scope.benefitsList.length; i++) {
+                if($scope.benefitsList[i].nameBn == $scope.benefits.nameBn){
+                    $scope.benefits.push({
+                        'nameBn': $scope.benefits.nameBn,
+                        'descBn': $scope.benefitsList[i].descBn
+                });
+                break;
+                }
+            }
         }
         function submitStepper(ev)
         {
