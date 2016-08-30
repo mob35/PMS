@@ -1,0 +1,28 @@
+<!-- 1 -->
+<md-card>
+    <md-toolbar class="md-accent">
+        <h2 class="md-toolbar-tools">
+      <span flex>Benefits Detail</span>
+      <md-button class="md-icon-button" ng-click="editDialog($event)" aria-label="Close dialog" tranlate
+                           translate-aria-label="BF.CLOSE_DIALOG">
+                    <md-icon md-font-icon="icon-table-edit"></md-icon>
+                </md-button>
+    </h2>
+    </md-toolbar>
+    <md-card-content>
+        <div layout="row" class="padding-30">
+            <div flex="20">Benefits Name</div>
+            <div flex="80">{{bnfName}}</div>
+        </div>
+        <hr>
+        <div layout="row" class="padding-30">
+            <div flex="20">Benefits Detail</div>
+            <div flex="80">{{bnfDes}}
+                <div layout="row" class="margin-top-15" ng-repeat="bnfsd in bnfSubDescList">
+                    <div flex="5"></div>
+                    <div flex="95">- {{bnfsd.bnfsdName}}</div>
+                </div>
+            </div>
+        </div>
+    </md-card-content>
+</md-card>
