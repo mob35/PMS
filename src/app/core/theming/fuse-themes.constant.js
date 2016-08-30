@@ -7,14 +7,14 @@
             primary   : {
                 name: 'fuse-pale-blue',
                 hues: {
-                    'default': '700',
+                    'default': '800',
                     'hue-1'  : '500',
                     'hue-2'  : '600',
                     'hue-3'  : '400'
                 }
             },
             accent    : {
-                name: 'light-blue',
+                name: 'new-orange',
                 hues: {
                     'default': '600',
                     'hue-1'  : '400',
