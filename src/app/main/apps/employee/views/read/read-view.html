@@ -3,13 +3,13 @@
     <md-toolbar class="md-accent">
         <h2 class="md-toolbar-tools">
       <span flex>Personal Information</span>
-      <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
+      <md-button class="md-icon-button" ng-click="FnEditPer()"  tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
                 </md-button>
     </h2>
     </md-toolbar>
-    <md-card-content>
+    <md-card-content ng-show="modeShowPer">
         <div ng-repeat="per in selectedMail.personalInfo">
             <div layout="row" layout-xs="column">
                 <div flex="80">
@@ -75,24 +75,6 @@
                     <span>Living : {{per.living}}</span>
                 </div>
             </div>
-            <!-- <div layout="row" layout-xs="column">
-                <div flex>
-                    <md-checkbox class="no-label" ng-checked>
-                    </md-checkbox> with parent
-                </div>
-                <div flex>
-                    <md-checkbox class="no-label" ng-checked="true">
-                    </md-checkbox> {{per.living}}
-                </div>
-                <div flex>
-                    <md-checkbox class="no-label" ng-checked>
-                    </md-checkbox> hired house
-                </div>
-                <div flex>
-                    <md-checkbox class="no-label" ng-checked>
-                    </md-checkbox> hostel
-                </div>
-            </div> -->
             <div layout="row" layout-xs="column">
                 <div flex="30">
                     <span>Birthdate : {{per.birthdate}}</span>
@@ -145,52 +127,146 @@
                     <span>Account : {{per.account}}</span>
                 </div>
             </div>
+        </div>
+    </md-card-content>
+    <md-card-content ng-hide="modeEditPer">
+        <div ng-repeat="per in selectedMail.personalInfo">
+            <div layout="row" layout-xs="column">
+                <div flex="30">
+                    <md-input-container>
+                        <input type="text" name="FirstName" ng-model="per.nameEn" placeholder="FirstName" required>
+                    </md-input-container>
+                    <!-- <span>FirstName : {{per.nameEn}}</span> -->
+                </div>
+                <div>
+                    <md-input-container>
+                        <input type="text" name="LastName" ng-model="per.LastNameEn" placeholder="LastName" required>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                <div flex="30">
+                    <md-input-container>
+                        <input type="text" name="Position" ng-model="per.position" placeholder="Position" required>
+                    </md-input-container>
+                </div>
+                <div>
+                    <md-input-container>
+                        <input type="text" name="Salary" ng-model="per.salary" placeholder="Salary" required>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                <div flex="30">
+                    <md-input-container>
+                        <input type="text" name="Address" ng-model="per.address" placeholder="Address" required>
+                    </md-input-container>
+                </div>
+                <div flex="30">
+                    <md-input-container>
+                        <input type="text" name="Moo" ng-model="per.moo" placeholder="Moo" required>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container>
+                        <input type="text" name="Road" ng-model="per.road" placeholder="Road" required>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                <div flex="30">
+                    <md-input-container>
+                        <input type="text" name="District" ng-model="per.district" placeholder="District" required>
+                    </md-input-container>
+                </div>
+                <div flex="30">
+                    <md-input-container>
+                        <input type="text" name="Amphur" ng-model="per.amphur" placeholder="Amphur" required>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container>
+                        <input type="text" name="Province" ng-model="per.province" placeholder="Province" required>
+                    </md-input-container>
+                </div>
+            </div>
+            <div class="navigation fixPos" flex layout="row" layout-align="center center">
+                <md-button class="md-raised md-accent" ng-click="FnCancelPer()" >
+                    Cancel
+                </md-button>
+                <md-button class="md-raised md-accent" ng-click="FnSavePer()" >
+                    Save
+                </md-button>
+            </div>
             <!-- <div layout="row" layout-xs="column">
-                <div flex="20">
-                    <span>Military</span>
+                <div flex="30">
+                    <span>Postcode : {{per.postcode}}</span>
                 </div>
-                <div flex="20">
-                    <md-checkbox class="no-label" ng-checked>
-                    </md-checkbox> Exempted
-                </div>
-                <div flex="20">
-                    <md-checkbox class="no-label" ng-checked>
-                    </md-checkbox> Served
+                <div flex="30">
+                    <span>Tel : {{per.tel}}</span>
                 </div>
                 <div flex>
-                    <md-checkbox class="no-label" ng-checked="true">
-                    </md-checkbox> {{per.military}}
+                    <span>Mobile : {{per.mobile}}</span>
                 </div>
-            </div> -->
-            <!-- <div layout="row" layout-xs="column">
-                <div flex>
-                    <span>Marital</span>
-                </div>
-                <div flex>
-                    <md-checkbox class="no-label" ng-checked>
-                    </md-checkbox> Married
+            </div>
+            <div layout="row" layout-xs="column">
+                <div flex="60">
+                    <span>Email : {{per.email}}</span>
                 </div>
                 <div flex>
-                    <md-checkbox class="no-label" ng-checked="true">
-                    </md-checkbox> {{per.marital}}
+                    <span>Living : {{per.living}}</span>
+                </div>
+            </div>
+            <div layout="row" layout-xs="column">
+                <div flex="30">
+                    <span>Birthdate : {{per.birthdate}}</span>
+                </div>
+                <div flex="30">
+                    <span>Age : {{per.age}} Yrs.</span>
                 </div>
                 <div flex>
-                    <md-checkbox class="no-label" ng-checked>
-                    </md-checkbox> Windowed
+                    <span>Race : {{per.race}}</span>
+                </div>
+            </div>
+            <div layout="row" layout-xs="column">
+                <div flex="30">
+                    <span>Nationality : {{per.nationality}}</span>
+                </div>
+                <div flex="30">
+                    <span>Religion : {{per.religion}}</span>
                 </div>
                 <div flex>
-                    <md-checkbox class="no-label" ng-checked>
-                    </md-checkbox> Separated
+                    <span>Sex : {{per.sex}}</span>
                 </div>
-            </div> -->
-            <!-- <div layout="row" layout-xs="column">
-                <div flex="20">
-                    <span>Sex</span>
+            </div>
+            <div layout="row" layout-xs="column">
+                <div flex="60">
+                    <span>IDCard No. : {{per.idcard}}</span>
                 </div>
-                <div ng-repeat="sexName in per.sex">
-                    <md-radio-group layout="row">
-                        <md-radio-button class="radioMargin">{{sexName.name}}</md-radio-button>
-                    </md-radio-group>
+                <div flex>
+                    <span>Expiration Date : {{per.idcardEx}}</span>
+                </div>
+            </div>
+            <div layout="row" layout-xs="column">
+                <div flex="30">
+                    <span>Height : {{per.height}} cm.</span>
+                </div>
+                <div flex="30">
+                    <span>Weight : {{per.weight}} kgs.</span>
+                </div>
+                <div flex>
+                    <span>Underlying disease : {{per.underlying}}</span>
+                </div>
+            </div>
+            <div layout="row" layout-xs="column">
+                <div flex="30">
+                    <span>Military : {{per.military}}</span>
+                </div>
+                <div flex="30">
+                    <span>Marital : {{per.marital}}</span>
+                </div>
+                <div flex="30">
+                    <span>Account : {{per.account}}</span>
                 </div>
             </div> -->
         </div>
@@ -201,13 +277,13 @@
     <md-toolbar class="md-accent">
         <h2 class="md-toolbar-tools">
       <span flex>Family Information</span>
-      <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
+      <md-button class="md-icon-button" ng-click="FnEditFam()" aria-label="Close dialog" tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
                 </md-button>
     </h2>
     </md-toolbar>
-    <md-card-content>
+    <md-card-content ng-show="modeShowFam">
         <div ng-repeat="fam in selectedMail.familyInfo">
             <div layout="row" layout-align="start center">
                 <div class="info" flex layout="column">
@@ -215,11 +291,11 @@
                         <span class="logo-icon iconMargin">
             <md-icon md-font-icon="icon-person-box" class="icon"></md-icon>
         </span>
-                        <span>&nbsp&nbsp&nbsp</span>
-                        <span>&nbsp&nbsp&nbsp</span>
+                        <span>&nbsp;&nbsp;&nbsp;</span>
+                        <span>&nbsp;&nbsp;&nbsp;</span>
                         <div class="info" flex layout="column">
                             <div class="name" layout="row" layout-align="start center">
-                                <span class="text-truncate">{{fam.nameFm}} &nbsp&nbsp&nbsp {{fam.LastNameFm}} </span>
+                                <span class="text-truncate">{{fam.nameFm}} &nbsp;&nbsp;&nbsp; {{fam.LastNameFm}} </span>
                                 <!-- <hr> -->
                             </div>
                             <div class="hrBorder" layout="row" layout-xs="column">
@@ -236,6 +312,45 @@
                 </div>
             </div>
         </div>
+    </md-card-content>
+
+    <md-card-content ng-hide="modeEditFam">
+        <div ng-repeat="fam in selectedMail.familyInfo">
+            <div layout="row" layout-align="start center">
+                <div class="info" flex layout="column">
+                    <div class="name" layout="row" layout-align="start center">
+                        <span class="logo-icon iconMargin">
+            <md-icon md-font-icon="icon-person-box" class="icon"></md-icon>
+        </span>
+                        <span>&nbsp;&nbsp;&nbsp;</span>
+                        <span>&nbsp;&nbsp;&nbsp;</span>
+                        <div class="info" flex layout="column">
+                            <div class="name" layout="row" layout-align="start center">
+                                <span class="text-truncate">{{fam.nameFm}} &nbsp;&nbsp;&nbsp; {{fam.LastNameFm}} </span>
+                                <!-- <hr> -->
+                            </div>
+                            <div class="hrBorder" layout="row" layout-xs="column">
+                                <div flex>
+                                    <span>Age : {{fam.age}} Yrs.</span>
+                                    <span>( {{fam.related}} )</span>
+                                    <span>Occupation [ {{fam.Occupation}} ]</span>
+                                    <span>Tel : {{fam.tel}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <hr> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+          <div class="navigation fixPos" flex layout="row" layout-align="center center">
+                <md-button class="md-raised md-accent" ng-click="FnCancelFam()" >
+                    Cancel
+                </md-button>
+                <md-button class="md-raised md-accent" ng-click="FnSaveFam()" >
+                    Save
+                </md-button>
+            </div>
     </md-card-content>
 </md-card>
 <!-- 3 -->
@@ -257,8 +372,8 @@
                         <span class="logo-icon iconMargin">
             <md-icon md-font-icon="icon-school" class="icon"></md-icon>
         </span>
-                        <span>&nbsp&nbsp&nbsp</span>
-                        <span>&nbsp&nbsp&nbsp</span>
+                        <span>&nbsp;&nbsp;&nbsp;</span>
+                        <span>&nbsp;&nbsp;&nbsp;</span>
                         <div class="info" flex layout="column">
                             <div class="name" layout="row" layout-align="start center">
                                 <span class="text-truncate">{{edu.EduLevel}}  </span>
@@ -298,8 +413,8 @@
                         <span class="logo-icon iconMargin">
             <md-icon md-font-icon="icon-briefcase" class="icon"></md-icon>
         </span>
-                        <span>&nbsp&nbsp&nbsp</span>
-                        <span>&nbsp&nbsp&nbsp</span>
+                        <span>&nbsp;&nbsp;&nbsp;</span>
+                        <span>&nbsp;&nbsp;&nbsp;</span>
                         <div class="info" flex layout="column">
                             <div class="name" layout="row" layout-align="start center">
                                 <span class="text-truncate">{{work.Company}}  </span>
@@ -343,8 +458,8 @@
                         <span class="logo-icon iconMargin">
             <md-icon md-font-icon="icon-earth" class="icon"></md-icon>
         </span>
-                        <span>&nbsp&nbsp&nbsp</span>
-                        <span>&nbsp&nbsp&nbsp</span>
+                        <span>&nbsp;&nbsp;&nbsp;</span>
+                        <span>&nbsp;&nbsp;&nbsp;</span>
                         <div class="info" flex layout="column">
                             <div class="name" layout="row" layout-align="start center">
                                 <span class="text-truncate">{{lang.langType}}  </span>

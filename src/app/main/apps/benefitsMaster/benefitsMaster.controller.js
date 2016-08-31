@@ -7,7 +7,7 @@
 
     /** @ngInject */
 
-    function benefitsMasterController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, benefitsMaster) {
+    function benefitsMasterController($scope, $rootScope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, benefitsMaster) {
 
         var vm = this;
 
@@ -52,6 +52,9 @@
         vm.toggleStarred = toggleStarred;
         vm.toggleCheck = toggleCheck;
         $scope.selectBenefitsDetail = selectBenefitsDetail;
+        // $scope.deleteBenefits = deleteBenefits;
+
+
 
         //////////
 
@@ -75,22 +78,61 @@
          * @param mail
          */
 
-         function selectBenefitsDetail(bnf){
-            console.log(bnf);
-            $scope.bnfName = bnf.bnfName;
-            $scope.bnfDes = bnf.bnfDes;
-            $scope.bnfSubDescList = bnf.bnfSubDesc;
-         }
+
+        function selectBenefitsDetail(bnf) {
+            $scope.index = bnf.bnfID;
+            $rootScope.bnfName = bnf.bnfName;
+            $rootScope.bnfDes = bnf.bnfDes;
+            $rootScope.bnfSubDescList = bnf.bnfSubDesc;
+        }
+
+        // $scope.showConfirmDeleteBenefits = function(ev) {
+
+        //     var confirm = $mdDialog.confirm()
+        //         .title('ยืนยันการลบข้อมูล')
+        //         .textContent('คุณต้องการลบ '+$scope.bnfName +' ออกจากระบบใช่หรือไม่')
+        //         .targetEvent(ev)
+        //         .ok('ตกลง')
+        //         .cancel('ยกเลิก');
+        //     $mdDialog.show(confirm).then(function() {
+        //         deleteBenefits();
+        //     }, function() {
+        //         console.log('Cansel');
+        //     });
+
+        // };
 
 
+        $scope.showConfirmDeleteBenefits = function(ev) {
+            $mdDialog.show({
+                controller: 'benefitDialogController',
+                controllerAs: 'vm',
+                locals: {
+                    benefitsMaster: benefitsMaster,
+                    bnfName: $rootScope.bnfName,
+                    index: $scope.index
+                },
+                templateUrl: 'app/main/apps/benefitsMaster/dialogs/compose/deleteBenefits.html',
+                parent: angular.element($document.body),
+                targetEvent: ev,
+                clickOutsideToClose: true
+            });
+            $scope.setHeader = 'Delete Benefits';
+        }
 
 
-
-
-
-
-
-
+        // function deleteBenefits() {
+        //     $scope.benefitsMasterList = benefitsMaster.benefitsList;
+        //     for (var i = 0; i < benefitsMaster.benefitsList.length; i++) {
+        //         if ($scope.index === benefitsMaster.benefitsList[i].bnfID) {
+        //             $scope.benefitsMasterList.splice(i, 1);
+        //             break;
+        //         }
+        //     }
+        //     $scope.bnfName = '';
+        //     $scope.bnfDes = '';
+        //     $scope.bnfSubDescList = '';
+        // }
 
         function selectDev(mail) { vm.selectedDev = mail; }
 
@@ -190,33 +232,17 @@
             }
         }
 
-        /**
-         * Open compose dialog
-         *
-         * @param ev
-         */
-        // <<<<<<< HEAD
-        // function composeDialog(ev) {
-        //     $mdDialog.show({
-        //         controller: 'ComposeDialogController',
-        //         controllerAs: 'vm',
-        //         locals: {
-        //             selectedMail: undefined
-        //         },
-        //         templateUrl: 'app/main/apps/benefitsMaster/dialogs/compose/compose-dialog.html',
-        //         parent: angular.element($document.body),
-        //         targetEvent: ev,
-        //         clickOutsideToClose: true
-        //     });
-        // }
-        ////////////  Certificate  ////////////
+
+
         // ======= create
         $scope.composeDialog = function(ev) {
                 $mdDialog.show({
-                    controller: 'ComposeDialogController',
+                    controller: 'benefitDialogController',
                     controllerAs: 'vm',
                     locals: {
-                        selectedMail: undefined
+                        benefitsMaster: benefitsMaster,
+                        bnfName: $rootScope.bnfName,
+                        index: $scope.index
                     },
                     templateUrl: 'app/main/apps/benefitsMaster/dialogs/compose/benefits.html',
                     parent: angular.element($document.body),
@@ -224,11 +250,9 @@
                     clickOutsideToClose: true
                 });
                 $scope.setHeader = 'New Benefits';
-                console.log('New');
-
             }
             // Edit
-            $scope.editDialog = function(ev) {
+        $scope.editDialog = function(ev) {
                 $mdDialog.show({
                     controller: 'ComposeDialogController',
                     controllerAs: 'vm',
