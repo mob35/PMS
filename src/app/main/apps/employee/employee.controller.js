@@ -92,6 +92,7 @@
                 vm.scrollEl.scrollTop(0);
             });
         }
+         
 
         /**
          * Close read pane

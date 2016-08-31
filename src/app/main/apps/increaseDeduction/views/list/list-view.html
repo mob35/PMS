@@ -1,5 +1,5 @@
 <!-- MAIL LIST ITEMS -->
-<div class="mail-list-item {{mail.status}}" ng-repeat="mail in increDeduc | filter: search | filter: global.search" md-ink-ripple ng-click="vm.selectMail(mail)" ng-class="{'starred': mail.starred, 'selected': selectedMail === mail, 'checked': vm.isChecked(mail)}">
+<div class="mail-list-item {{mail.status}}" ng-repeat="mail in increDeduc | filter: search | filter: global.search" md-ink-ripple ng-click="selectMail(mail)" ng-class="{'starred': mail.starred, 'selected': selectedMail === mail, 'checked': isChecked(mail)}">
     <div layout="row" layout-align="start center" ng-repeat="mails in mail.personalInfo">
         <!-- <md-checkbox class="no-label" ng-checked="vm.isChecked(mail)" ng-click="vm.toggleCheck(mail, $event)" aria-label="{{vm.isChecked(mail)? 'Uncheck':'check'}}">
         </md-checkbox> -->
@@ -15,14 +15,15 @@
                 <!-- <hr> -->
             </div>
             <div layout="row" layout-xs="column">
-                <div flex align="right">
+             <div flex>
+                </div>
+                <div flex="10">
                     {{mails.position}}
                 </div>
                 <div flex="60" align="right">
                     {{mail.date}}
                 </div>
-                <div flex>
-                </div>
+               
                 <div flex>
                 </div>
             </div>

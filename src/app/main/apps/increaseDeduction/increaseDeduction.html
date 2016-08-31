@@ -38,12 +38,14 @@
                         <md-icon md-font-icon="icon-delete" ng-click="vm.deleteDialog($event)"></md-icon>
                         <md-tooltip><span>Delete Employee</span></md-tooltip>
                     </md-button>
-                    <md-button class="md-icon-button" aria-label="Increase" translate translate-attr-aria-label="EMP.ARCHIVE" hide show-gt-sm>
-                        <md-icon class="iconincrededuc" md-font-icon="icon-chevron-double-up" ng-click="vm.selectMail(mail)"></md-icon>
+
+                    <md-button class="md-icon-button" aria-label="Increase" translate translate-attr-aria-label="EMP.ARCHIVE" hide show-gt-sm >
+                        <md-icon class="iconincrededuc" ng-repeat="mail in increDeduc | filter: search | filter: global.search"  md-font-icon="icon-chevron-double-up" ng-click="selectMail(mail);showme=true"></md-icon>
                         <md-tooltip><span>Increase</span></md-tooltip>
-                    </md-button>                    
+                    </md-button> 
+
                     <md-button class="md-icon-button" aria-label="Deduction" translate translate-attr-aria-label="EMP.SPAM" hide show-gt-sm>
-                        <md-icon class="iconincrededuc" md-font-icon="icon-chevron-double-down" ng-click="vm.selectMail(mail)"></md-icon>
+                        <md-icon class="iconincrededuc" ng-repeat="mail in increDeduc | filter: search | filter: global.search"  md-font-icon="icon-chevron-double-down" ng-click="selectMail(mail); showme=false"></md-icon>
                         <md-tooltip><span>Deduction</span></md-tooltip>
                     </md-button>
                     <!-- <div class="divider-vertical"></div> -->
