@@ -36,7 +36,7 @@
         
         // Navigation
         msNavigationServiceProvider.saveItem('increaseDeduction', {
-            title : 'increase / Deduction',
+            title : 'Increase / Deduction',
             icon  : 'icon-currency-usd',
             state : 'app.increaseDeduction',
             weight: 1
