@@ -51,7 +51,41 @@
         vm.toggleStarred = toggleStarred;
         vm.toggleCheck = toggleCheck;
 
-        //////////
+        $scope.modeShowPer = true;
+        $scope.modeEditPer = true;
+
+
+        $scope.FnEditPer = function() {
+
+            $scope.modeShowPer = false;
+            $scope.modeEditPer = false;
+        }
+        $scope.FnCancelPer = function() {
+            $scope.modeShowPer = true;
+            $scope.modeEditPer = true;
+        }
+        $scope.FnSavePer = function() {
+            $scope.modeShowPer = true;
+            $scope.modeEditPer = true;
+        }
+
+        $scope.modeShowFam = true;
+        $scope.modeEditFam = true;
+
+        $scope.FnEditFam = function() {
+
+            $scope.modeShowFam = false;
+            $scope.modeEditFam = false;
+        }
+        $scope.FnCancelFam = function() {
+            $scope.modeShowFam = true;
+            $scope.modeEditFam = true;
+        }
+        $scope.FnSaveFam = function() {
+                $scope.modeShowFam = true;
+                $scope.modeEditFam = true;
+            }
+            //////////
 
         // Watch screen size to activate responsive read pane
         $scope.$watch(function() {
@@ -92,6 +126,7 @@
                 vm.scrollEl.scrollTop(0);
             });
         }
+         
 
         /**
          * Close read pane
@@ -258,6 +293,7 @@
                 clickOutsideToClose: true
             });
         }
+
 
         /**
          * Open reply dialog

@@ -136,7 +136,6 @@
 
         function selectDev(mail) { vm.selectedDev = mail; }
 
-
         function selectMail(mail) {
             $scope.selectedMail = mail;
 
@@ -153,7 +152,10 @@
                 // Scroll to the top
                 vm.scrollEl.scrollTop(0);
             });
+
         }
+        
+
 
         /**
          * Close read pane

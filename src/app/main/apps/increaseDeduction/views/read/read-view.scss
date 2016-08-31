@@ -1,114 +1,124 @@
 #mail {
-
     .mail-read-pane {
         background: #FFFFFF;
-
-        .hrBorder{
-        padding-bottom: 10px;
-        margin-bottom: 10px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        .hrBorder {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
         }
-        .iconMargin{
-        margin-bottom: 30px;
+        .iconMargin {
+            margin-bottom: 30px;
         }
-        .radioMargin{
-        margin-right:40px;
+        .radioMargin {
+            margin-right: 40px;
         }
-        .fontStyle{
-        font-weight: bold;
+        .fontStyle {
+            font-weight: bold;
         }
-        .imgStyle{
-        margin-bottom: -30px
+        .imgStyle {
+            margin-bottom: -30px
         }
-
         .mail-header {
             padding-bottom: 24px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-
             .subject {
                 font-size: 17px;
                 font-weight: 500;
             }
         }
+        .icontrash-font30-margin15 {
+            font-size: 30px;
+            margin-top: 15px;
+        }
+        .iconSize {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .marginThree {
+            margin-bottom: 20px;
+        }
+        .divBtn2 {
+            margin-bottom: -25px;
+        }
+        .divBtn3 {
+            margin-bottom: -30px;
+        }
+        .divBtn4 {
+            margin-bottom: 10px;
+        }
+        .margin-bottom--5 {
+            margin-bottom: -5px;
+        }
+        .margin-bottom--20 {
+            margin-bottom:-20px;
+        }
+        .margin-bottom--12 {
+             margin-bottom:-12px;
+        }
+        .margin-left-20 {
+             margin-left:20px;
+        
 
+       
         .mail-content {
             padding: 24px 0;
-
             .to {
                 color: rgba(0, 0, 0, 0.54);
-
                 .to-text {
                     margin-right: 4px;
                     text-transform: lowercase;
                 }
             }
-
             .info {
                 padding-bottom: 16px;
-
                 .avatar {
                     margin-right: 16px;
                 }
-
                 .name {
                     margin-right: 8px;
                     font-weight: 500;
                 }
-
                 .toggle-details {
                     padding-top: 16px;
                     cursor: pointer;
                     font-weight: 500;
                 }
-
                 .details {
                     padding-top: 8px;
-
                     .title {
                         font-weight: 500;
                         margin-right: 6px;
                     }
-
                     .detail {
                         color: rgba(0, 0, 0, 0.54);
                     }
                 }
-
             }
         }
-
         .attachments {
             padding: 24px 0;
             border-top: 1px solid rgba(0, 0, 0, 0.12);
-
             .title {
                 margin-bottom: 16px;
                 font-weight: 500;
             }
-
             .attachment {
-
                 .preview {
                     width: 100px;
                     margin: 0 16px 8px 0;
                 }
-
                 .link {
                     margin-bottom: 2px;
                 }
-
                 .size {
                     font-size: 11px;
                 }
             }
         }
-
         .reply {
             padding: 24px 0;
-
             .form {
                 border: 1px solid rgba(0, 0, 0, 0.12);
-
                 textarea {
                     width: 100% !important;
                     height: 140px !important;
@@ -116,12 +126,10 @@
                     padding: 8px;
                     box-sizing: border-box;
                 }
-
                 .actions {
                     padding: 8px 16px;
                     border-top: 1px solid rgba(0, 0, 0, 0.12);
                     background-color: rgba(0, 0, 0, 0.03);
-
                     .send-button {
                         margin: 0;
                         width: 64px;
