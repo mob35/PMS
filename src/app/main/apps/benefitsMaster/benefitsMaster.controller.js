@@ -52,6 +52,8 @@
         vm.toggleStarred = toggleStarred;
         vm.toggleCheck = toggleCheck;
         $scope.selectBenefitsDetail = selectBenefitsDetail;
+       
+        
 
         //////////
 
@@ -74,23 +76,16 @@
          *
          * @param mail
          */
+         
 
-         function selectBenefitsDetail(bnf){
+        function selectBenefitsDetail(bnf) {
             console.log(bnf);
             $scope.bnfName = bnf.bnfName;
             $scope.bnfDes = bnf.bnfDes;
             $scope.bnfSubDescList = bnf.bnfSubDesc;
-         }
+        }
 
-
-
-
-
-
-
-
-
-
+        
 
         function selectDev(mail) { vm.selectedDev = mail; }
 
@@ -188,33 +183,15 @@
             }
         }
 
-        /**
-         * Open compose dialog
-         *
-         * @param ev
-         */
-        // <<<<<<< HEAD
-        // function composeDialog(ev) {
-        //     $mdDialog.show({
-        //         controller: 'ComposeDialogController',
-        //         controllerAs: 'vm',
-        //         locals: {
-        //             selectedMail: undefined
-        //         },
-        //         templateUrl: 'app/main/apps/benefitsMaster/dialogs/compose/compose-dialog.html',
-        //         parent: angular.element($document.body),
-        //         targetEvent: ev,
-        //         clickOutsideToClose: true
-        //     });
-        // }
-        ////////////  Certificate  ////////////
+
+        
         // ======= create
         $scope.composeDialog = function(ev) {
                 $mdDialog.show({
-                    controller: 'ComposeDialogController',
+                    controller: 'benefitDialogController',
                     controllerAs: 'vm',
                     locals: {
-                        selectedMail: undefined
+                        benefitsMaster: benefitsMaster
                     },
                     templateUrl: 'app/main/apps/benefitsMaster/dialogs/compose/benefits.html',
                     parent: angular.element($document.body),
@@ -222,11 +199,11 @@
                     clickOutsideToClose: true
                 });
                 $scope.setHeader = 'New Benefits';
-                console.log('New');
+                console.log($scope.benefitsList);
 
             }
             // Edit
-            $scope.editDialog = function(ev) {
+        $scope.editDialog = function(ev) {
                 $mdDialog.show({
                     controller: 'ComposeDialogController',
                     controllerAs: 'vm',
