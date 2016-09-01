@@ -1,9 +1,9 @@
 <!-- 1 -->
-<md-card>
+<md-card ng-hide="setCardBenefitShow">
     <md-toolbar class="md-accent">
         <h2 class="md-toolbar-tools">
       <span flex>Benefits Detail</span>
-      <md-button class="md-icon-button" ng-click="editDialog($event)" aria-label="Close dialog" tranlate
+      <md-button class="md-icon-button" ng-click="editBenefitInline($event)" aria-label="Close dialog" tranlate
                            translate-aria-label="BF.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
                 </md-button>
@@ -22,6 +22,51 @@
                     <div flex="5"></div>
                     <div flex="95">- {{bnfsd.bnfsdName}}</div>
                 </div>
+            </div>
+        </div>
+    </md-card-content>
+</md-card>
+<!-- edit card -->
+<md-card ng-hide="setCardBenefitEdit">
+    <md-toolbar class="md-accent">
+        <h2 class="md-toolbar-tools">
+      <span flex>Edit Benefits Detail</span>
+      <md-button class="md-icon-button" ng-click="editDialog($event)" aria-label="Close dialog" tranlate
+                           translate-aria-label="BF.CLOSE_DIALOG">
+                    <md-icon md-font-icon="icon-table-edit"></md-icon>
+                </md-button>
+    </h2>
+    </md-toolbar>
+    <md-card-content>
+        <div layout="row">
+            <div flex="20" style="padding:30px 0px 0px 30px">Benefits Name</div>
+            <md-input-container flex="80">
+                <input type="text" required aria-invalid="true" ng-model="bnfName">
+            </md-input-container>
+        </div>
+        <hr>
+        <div layout="row">
+            <div flex="20" style="padding:30px 0px 0px 30px">Benefits Detail</div>
+            <md-input-container flex="80">
+                <input type="text" required aria-invalid="true" ng-model="bnfDes">
+            </md-input-container>
+        </div>
+        <div layout="row" ng-repeat="bnfsd in bnfSubDescList" style="margin-top:-30px">
+            <div flex="25"></div>
+            <md-input-container flex="75">
+                <input type="text" required aria-invalid="true" ng-model="bnfsd.bnfsdName">
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <div flex="50" style="text-align:right;margin-right:50px">
+                <md-button class="md-raised md-accent" ng-click="saveEditBenefitsInline()">
+                    Save
+                </md-button>
+            </div>
+            <div flex="50">
+                <md-button class="md-raised md-accent md-button md-ink-ripple" ng-click="cancelEditBenefitsInline()">
+                    Cancel
+                </md-button>
             </div>
         </div>
     </md-card-content>

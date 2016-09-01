@@ -54,6 +54,9 @@
         $scope.selectBenefitsDetail = selectBenefitsDetail;
         // $scope.deleteBenefits = deleteBenefits;
 
+        $scope.setCardBenefitShow = false;
+        $scope.setCardBenefitEdit = true;
+
 
 
         //////////
@@ -154,7 +157,7 @@
             });
 
         }
-        
+
 
 
         /**
@@ -251,7 +254,7 @@
                 });
                 $scope.setHeader = 'New Benefits';
             }
-            // Edit
+            // Edit dialog
         $scope.editDialog = function(ev) {
                 $mdDialog.show({
                     controller: 'ComposeDialogController',
@@ -266,6 +269,33 @@
                 });
                 $scope.setHeader = 'Edit Benefits';
                 console.log('Edit');
+            }
+            // Edit inline
+        $scope.editBenefitInline = function(ev) {
+            $scope.setCardBenefitShow = true;
+            $scope.setCardBenefitEdit = false;
+        }
+        $scope.cancelEditBenefitsInline = function(ev) {
+            console.log('cancel');
+            $scope.setCardBenefitShow = false;
+            $scope.setCardBenefitEdit = true;
+
+        }
+        $scope.saveEditBenefitsInline = function() {
+                console.log('save');
+                $scope.setCardBenefitShow = false;
+                $scope.setCardBenefitEdit = true;
+
+                $scope.benefitsMasterList = benefitsMaster.benefitsList;
+                console.log($scope.benefitsMasterList);
+                // angular.forEach($scope.benefitsMasterList, function(options) {
+                //     if($scope.index === options.bnfID){
+                //         options.bnfName = bnfName;
+                //         options.bnfDes = bnfDes;
+                //     }
+
+                //     });
+
             }
             ////////////  Certificate  ////////////
         function certificateDialog(ev) {
