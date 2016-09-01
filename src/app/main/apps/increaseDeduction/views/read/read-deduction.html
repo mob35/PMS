@@ -1,0 +1,90 @@
+<md-card >
+    <div>
+        <md-toolbar class="md-accent">
+            <h2 class="md-toolbar-tools">
+      <span flex>Deducation Information</span>
+      <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
+                           translate-aria-label="INCDDUC.CLOSE_DIALOG">
+                    <md-icon md-font-icon="icon-table-edit"></md-icon>
+                </md-button>
+    </h2>
+        </md-toolbar>
+        <md-card-content>
+            <div class="divBtn4" ng-repeat="per in selectedMail.personalInfo">
+                <div class="hrBorder marginThree divBt3" layout="row" layout-xs="column">
+                    <div class="margin-5" >
+                        <b>{{per.nameEn}} {{per.LastNameEn}} </b>({{per.position}})
+                    </div>
+                </div>
+                <div class="hrBorder marginThree margin-bottom--20" layout="row" layout-xs="column" ng-hide="showme">
+                    <div ng-click="showme=true">
+                        <md-icon class="iconSize" md-font-icon="icon-plus-box"></md-icon>
+                        <span class="margin-left-20"> Add Deducation </span>
+                    </div>
+                </div>
+                <div ng-show="showme">
+                    <div class="divBtn" layout="row">
+                        <md-input-container flex="50">
+                            <input type="text" name="DeductionName" ng-model="deduction.DeductionName" placeholder="DeductionName" required>
+                        </md-input-container>
+                        <md-input-container flex="50">
+                            <input type="text" name="Amount" ng-model="deduction.Amount" placeholder="Amount" required>
+                        </md-input-container>
+                    </div>
+                    <div class="divBtn" layout="row">
+                        <md-input-container flex="10">
+                            From
+                        </md-input-container>
+                        <md-input-container flex="40">
+                            <input type="date" name="From" ng-model="deduction.From">
+                        </md-input-container>
+                        <md-input-container flex="10">
+                            To
+                        </md-input-container>
+                        <md-input-container flex="40">
+                            <input type="date" name="To" ng-model="deduction.To">
+                        </md-input-container>
+                    </div>
+                    <div class="hrBorder marginThree margin-bottom--20" layout="row">
+                        <div flex="70">
+                        </div>
+                        <md-button flex="30" class="md-raised md-accent" ng-click="showme=false;addDeduction()">
+                            Add Deducation
+                        </md-button>
+                    </div>
+                </div>
+            </div>
+            <div ng-repeat="deduc in deduction" class="hrBorder marginThree margin-bottom--12">
+                <div class="divBtn2" layout="row">
+                    <md-input-container flex="25">
+                        <b>Deducation Name</b>
+                    </md-input-container>
+                    <md-input-container flex="25">
+                        <span>{{deduc.DeductionName}}</span>
+                    </md-input-container>
+                    <md-input-container flex="15">
+                        <b>Amount</b>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <span>{{deduc.Amount | currency:"":0}}</span> Baht
+                    </md-input-container>
+                </div>
+                <div class="divBtn2" layout="row">
+                    <md-input-container flex="25">
+                        <b>From</b>
+                    </md-input-container>
+                    <md-input-container flex="25">
+                        {{deduc.From | date : 'MM/yyyy'}}
+                    </md-input-container>
+                    <md-input-container flex="15">
+                        <b>To</b>
+                    </md-input-container>
+                    <md-input-container flex="15">
+                        {{deduc.To | date : 'MM/yyyy'}}
+                    </md-input-container>
+                    <md-icon md-font-icon="icon-trash" class="iconMargin icontrash-font30-margin15" ng-click="removeDeduc($index)"></md-icon>
+                </div>
+            </div>
+        </md-card-content>
+    </div>
+</md-card>

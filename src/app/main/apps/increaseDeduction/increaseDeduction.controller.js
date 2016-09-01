@@ -44,23 +44,18 @@
         vm.deleteDialog = deleteDialog;
         vm.regardDialog = regardDialog;
         vm.evaluationDialog = evaluationDialog;
-        vm.isChecked = isChecked;
+        $scope.isChecked = isChecked;
         // vm.replyDialog = replyDialog;
-        vm.selectMail = selectMail;
+        $scope.selectMail = selectMail;
         vm.selectDev = selectMail;
         vm.toggleStarred = toggleStarred;
         vm.toggleCheck = toggleCheck;
+        $scope.selectIncrease = selectMail;
 
         //////////
-        $scope.Increase = [
-        {
-            "nameIn":"Bonus",
-            
-        },
-        {
-            
-        }
-        ];
+        $scope.increase = [];
+        $scope.deduction = [];
+
 
         // Watch screen size to activate responsive read pane
         $scope.$watch(function() {
@@ -102,52 +97,43 @@
             });
         }
 
-        function selectIncrease(mail) {
-            $scope.selectedMail = mail;
 
-            $timeout(function() {
-                // If responsive read pane is
-                // active, navigate to it
-                if (angular.isDefined(vm.responsiveReadPane) && vm.responsiveReadPane) {
-                    vm.activeMailPaneIndex = 1;
-                }
+        $scope.addIncrease = function() {
+            $scope.increase.push({
+                'IncreaseName': $scope.increase.IncreaseName,
+                'Amount': $scope.increase.Amount,
+                'From': $scope.increase.From,
+                'To': $scope.increase.To,
 
-                // Store the current scrollPos
-                vm.scrollPos = vm.scrollEl.scrollTop();
-
-                // Scroll to the top
-                vm.scrollEl.scrollTop(0);
             });
+            $scope.increase.IncreaseName = '';
+            $scope.increase.Amount = '';
+            $scope.increase.From = '';
+            $scope.increase.To = '';
+
         }
-         $scope.addIncrease = function(){
-            for (var i = 0; i <= $scope.Increase.length; i++) {
-                if($scope.Increase[i].nameIn == $scope.Increase.nameIn){
-                    $scope.Increase.push({
-                        'nameIn': $scope.Increase.nameIn,
-                        
-                });
-                break;
-                }
-            }
+        $scope.removeIncre = function(index) {
+            $scope.increase.splice(index, 1);
         }
+        $scope.addDeduction = function() {
+            $scope.deduction.push({
+                'IncreaseName': $scope.deduction.DeductionName,
+                'Amount': $scope.deduction.Amount,
+                'From': $scope.deduction.From,
+                'To': $scope.deduction.To,
 
-        function selectDeduction(mail) {
-            $scope.selectedMail = mail;
-
-            $timeout(function() {
-                // If responsive read pane is
-                // active, navigate to it
-                if (angular.isDefined(vm.responsiveReadPane) && vm.responsiveReadPane) {
-                    vm.activeMailPaneIndex = 1;
-                }
-
-                // Store the current scrollPos
-                vm.scrollPos = vm.scrollEl.scrollTop();
-
-                // Scroll to the top
-                vm.scrollEl.scrollTop(0);
             });
+            $scope.deduction.IncreaseName = '';
+            $scope.deduction.Amount = '';
+            $scope.deduction.From = '';
+            $scope.deduction.To = '';
+
         }
+        $scope.removeDeduc = function(index) {
+            $scope.deduction.splice(index, 1);
+        }
+
+
 
         /**
          * Close read pane

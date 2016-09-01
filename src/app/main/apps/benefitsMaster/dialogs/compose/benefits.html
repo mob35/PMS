@@ -18,7 +18,7 @@
                 
                     <md-input-container flex="100">
                         <label>Benefits Name</label>
-                        <input type="text" required>
+                        <input type="text" required ng-model="bnf.benefitsName">
                     </md-input-container>
                 
             </div>
@@ -26,21 +26,21 @@
                 <!-- <div flex="20">Benefits Detail</div> -->
                     <md-input-container flex="100">
                         <label>Benefits Detail</label>
-                        <input type="text" required>
+                        <input type="text" ng-model="bnf.benefitsDetail">
                     </md-input-container>
             </div>
             <div layout="row" style="margin-top:-35px">
                 <div flex="20"></div>
                     <md-input-container flex="80">
                         <label>Sub Benefits Detail1</label>
-                        <input type="text" required>
+                        <input type="text" ng-model="bnf.subBenefitsDetail1">
                     </md-input-container>
             </div>
             <div layout="row" style="margin-top:-35px">
                 <div flex="20"></div>
                     <md-input-container flex="80">
                         <label>Sub Benefits Detail2</label>
-                        <input type="text" required>
+                        <input type="text" ng-model="bnf.subBenefitsDetail2">
                     </md-input-container>
             </div>
             <div layout="row">
@@ -51,7 +51,7 @@
                 </div>
                 <div flex="60"></div>
                 <div flex="20" style="text-align:right">
-                    <md-button class="md-raised md-accent">
+                    <md-button class="md-raised md-accent" ng-click="saveNewBenefits(bnf)">
                         Done
                     </md-button>
                 </div>
