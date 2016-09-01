@@ -55,7 +55,7 @@
         //////////
         $scope.increase = [];
         $scope.deduction = [];
-      
+
 
         // Watch screen size to activate responsive read pane
         $scope.$watch(function() {
@@ -97,37 +97,43 @@
             });
         }
 
-        
-         $scope.addIncrease = function() {
+
+        $scope.addIncrease = function() {
             $scope.increase.push({
                 'IncreaseName': $scope.increase.IncreaseName,
                 'Amount': $scope.increase.Amount,
                 'From': $scope.increase.From,
                 'To': $scope.increase.To,
-                
+
             });
             $scope.increase.IncreaseName = '';
             $scope.increase.Amount = '';
             $scope.increase.From = '';
             $scope.increase.To = '';
-            
+
         }
-         $scope.addDeduction = function() {
+        $scope.removeIncre = function(index) {
+            $scope.increase.splice(index, 1);
+        }
+        $scope.addDeduction = function() {
             $scope.deduction.push({
                 'IncreaseName': $scope.deduction.DeductionName,
                 'Amount': $scope.deduction.Amount,
                 'From': $scope.deduction.From,
                 'To': $scope.deduction.To,
-                
+
             });
             $scope.deduction.IncreaseName = '';
             $scope.deduction.Amount = '';
             $scope.deduction.From = '';
             $scope.deduction.To = '';
-            
+
+        }
+        $scope.removeDeduc = function(index) {
+            $scope.deduction.splice(index, 1);
         }
 
-        
+
 
         /**
          * Close read pane
