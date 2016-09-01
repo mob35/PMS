@@ -20,7 +20,8 @@
         $scope.colors = ['blue-bg', 'blue-grey-bg', 'orange-bg', 'pink-bg', 'purple-bg'];
         $scope.selectedAccount = 'creapond';
         $scope.selectedMail = {};
-        vm.selectedDev = {};
+        $scope.selectedDev = {};
+        $scope.selectBy = {};
         // vm.toggleSidenav = toggleSidenav;
 
         vm.responsiveReadPane = undefined;
@@ -33,7 +34,7 @@
         $scope.empPms = EmpPms.data;
         $scope.position = EmpPms.position;
         $scope.selectedMail = $scope.empPms[0];
-        vm.selectedDev = $scope.position[0];
+        $scope.selectedDev = $scope.position[0];
         vm.selectedMailShowDetails = false;
 
         // Methods
@@ -46,8 +47,9 @@
         vm.evaluationDialog = evaluationDialog;
         vm.isChecked = isChecked;
         // vm.replyDialog = replyDialog;
-        vm.selectMail = selectMail;
-        vm.selectDev = selectMail;
+        // vm.selectMail = selectMail;
+        $scope.selectDev = $scope.selectMail;
+        $scope.selectBy = $scope.selectMail;
         vm.toggleStarred = toggleStarred;
         vm.toggleCheck = toggleCheck;
 
@@ -72,12 +74,85 @@
          *
          * @param mail
          */
-        function selectDev(mail) { vm.selectedDev = mail; }
+        // $scope.Director = $filter("filter")($scope.empPms.personalInfo, { position: "Director" });
+        // $scope.productType = "Director";
+        // $scope.changeType = function(type) {
+        //     $scope.productType = type;
+        // };
+        // $scope.Developer = true;
+        
+        $scope.selected = $scope.position[0];
+        $scope.selectedBy = "01_DI";
+        console.log($scope.selectedBy);
+        // /////////////////////////////////////////////
+        $scope.showRead = true;
+        $scope.showList = true;
+        $scope.selectBy = function(select) {
+            $scope.selected = select;
+
+            if (select.name == "Director") {
+                // alert("Director");
+                $scope.selectedMail = []; 
+                $scope.showList = true;
+                $scope.showRead = false;
+                $scope.selectedBy = select.code;
+                // console.log($scope.selectedBy);
+            } else if (select.name == "Human Resource") {
+                // alert("Human Resource");
+                $scope.selectedMail = []; 
+                $scope.showList = true;
+                $scope.showRead = false;
+                $scope.selectedBy = select.code;
+                // console.log($scope.selectedBy);
+            } else if (select.name == "Accounting") {
+                // alert("Accounting");
+                $scope.selectedMail = []; 
+                $scope.showList = true;
+                $scope.showRead = false;
+                $scope.selectedBy = select.code;
+                // console.log($scope.selectedBy);
+            } else if (select.name == 'Developer') {
+                // alert("Developer");
+                $scope.selectedMail = [];
+                $scope.showList = true;
+                $scope.showRead = false;
+                $scope.selectedBy = select.code;
+                // console.log($scope.selectedBy);
+            } else if (select.name == "System Analyst") {
+                // alert("System Analyst");
+                $scope.selectedMail = []; 
+                $scope.showList = true;
+                $scope.showRead = false;
+                $scope.selectedBy = select.code;
+                // console.log($scope.selectedBy);
+            }
+        }
+
+        // $scope.selectDev = function(mail) {
 
 
-        function selectMail(mail) {
+        //     if (mail.name == "Director") {
+        //         alert("Error Your Choose Director");
+        //     } else if (mail.name == "Human Resource") {
+        //         alert("Error Your Choose Human Resource");
+        //     } else if (mail.name == "Accounting") {
+        //         alert("Error Your Choose Accounting");
+        //     } else if (mail.name == "Developer") {
+        //         alert("Developer");
+        //         $scope.selectedMail = $scope.empPms[0];
+        //         $scope.selectedDev = $scope.selectedMail;
+        //     } else if (mail.name == "System Analyst") {
+        //         alert("Error Your Choose System Analyst");
+        //     }
+
+        //     console.log(mail.name);
+        // }
+
+
+        $scope.selectMail = function(mail) {
+            console.log(mail);
             $scope.selectedMail = mail;
-
+            $scope.showRead = true;
             $timeout(function() {
                 // If responsive read pane is
                 // active, navigate to it

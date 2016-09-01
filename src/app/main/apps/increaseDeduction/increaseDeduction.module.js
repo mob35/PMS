@@ -39,7 +39,7 @@
             title : 'Increase / Deduction',
             icon  : 'icon-currency-usd',
             state : 'app.increaseDeduction',
-            weight: 1
+            weight: 3
         });
     }
 })();

@@ -1,24 +1,26 @@
 <!-- MAIL LIST ITEMS -->
-<div class="mail-list-item {{mail.status}}" ng-repeat="mail in empPms | filter: search | filter: global.search" md-ink-ripple ng-click="vm.selectMail(mail)" ng-class="{'starred': mail.starred, 'selected': selectedMail === mail, 'checked': vm.isChecked(mail)}">
+<div class="mail-list-item {{mail.status}}" ng-repeat="mail in empPms | filter: search | filter: global.search | filter: selectedBy" md-ink-ripple ng-click="selectMail(mail);showRead" ng-show="showList" ng-class="{'starred': mail.starred, 'selected': selectedMail === mail, 'checked': vm.isChecked(mail)}">
     <div layout="row" layout-align="start center" ng-repeat="mails in mail.personalInfo">
         <!-- <md-checkbox class="no-label" ng-checked="vm.isChecked(mail)" ng-click="vm.toggleCheck(mail, $event)" aria-label="{{vm.isChecked(mail)? 'Uncheck':'check'}}">
         </md-checkbox> -->
-        <div class="info" flex layout="column">
+        <div class="info" flex layout="column" ng-repeat="mails in mail.personalInfo">
             <div class="name" layout="row" layout-align="start center">
                 <img class="avatar" ng-src="{{mails.img}}" />
                 <div class="avatar" ng-if="!mails.img" ms-random-class="colors">
                 </div>
-                <span>{{mails.nameEn}}</span>
+                <span class="text-truncate">{{mails.nameEn}}</span>
                 <span>&nbsp;&nbsp;&nbsp;</span>
                 <span class="text-truncate">{{mails.LastNameEn}}</span>
 
                 <!-- <hr> -->
             </div>
             <div layout="row" layout-xs="column">
-                <div flex align="right">
+            <div flex="10" align="left">
+                </div>
+                <div flex="45" align="left">
                     {{mails.position}}
                 </div>
-                <div flex="60" align="right">
+                <div flex="45" align="left">
                     {{mail.date}}
                 </div>
                 <div flex>
@@ -35,6 +37,6 @@
             </md-button>
         </div> -->
     </div>
+
 </div>
 
-<!-- / MAIL LIST ITEMS
