@@ -6,7 +6,7 @@
         .controller('benefitDialogController', benefitDialogController);
 
     /** @ngInject */
-    function benefitDialogController($mdDialog, benefitsMaster, bnfName, index, $scope,$rootScope) {
+    function benefitDialogController($mdDialog, benefitsMaster, bnfName, index, $scope, $rootScope, $http, $templateCache) {
         $scope.bnfName = bnfName;
         $scope.index = index;
         $scope.showBenefitsName = bnfName;
@@ -16,6 +16,17 @@
         }
 
         $scope.saveNewBenefits = function(bnf) {
+            
+            $http({
+                method: 'GET',
+                url: 'app/data/employee/benefitsData.json'
+            }).then(function successCallback(response) {
+                console.log(response.data);
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+
+
             $scope.benefitsMasterList = benefitsMaster.benefitsList;
             $scope.benefitsMasterList.push({
                 "bnfID": benefitsMaster.benefitsList.length + 1,
@@ -31,7 +42,7 @@
             $scope.closeDialog();
         }
 
-        $scope.deleteBenefits = function (){
+        $scope.deleteBenefits = function() {
             $scope.benefitsMasterList = benefitsMaster.benefitsList;
             for (var i = 0; i < benefitsMaster.benefitsList.length; i++) {
                 if ($scope.index === benefitsMaster.benefitsList[i].bnfID) {

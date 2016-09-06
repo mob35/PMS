@@ -7,10 +7,9 @@
 
     /** @ngInject */
 
-    function benefitsMasterController($scope, $rootScope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, benefitsMaster) {
+    function benefitsMasterController($scope, $rootScope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, benefitsMaster, $http, $templateCache) {
 
         var vm = this;
-
         // Data
         $scope.accounts = {
             'creapond': 'johndoe@creapond.com',
@@ -75,36 +74,12 @@
             vm.dynamicHeight = current;
         });
 
-        /**
-         * Select mail
-         *
-         * @param mail
-         */
-
-
         function selectBenefitsDetail(bnf) {
             $scope.index = bnf.bnfID;
             $rootScope.bnfName = bnf.bnfName;
             $rootScope.bnfDes = bnf.bnfDes;
             $rootScope.bnfSubDescList = bnf.bnfSubDesc;
         }
-
-        // $scope.showConfirmDeleteBenefits = function(ev) {
-
-        //     var confirm = $mdDialog.confirm()
-        //         .title('ยืนยันการลบข้อมูล')
-        //         .textContent('คุณต้องการลบ '+$scope.bnfName +' ออกจากระบบใช่หรือไม่')
-        //         .targetEvent(ev)
-        //         .ok('ตกลง')
-        //         .cancel('ยกเลิก');
-        //     $mdDialog.show(confirm).then(function() {
-        //         deleteBenefits();
-        //     }, function() {
-        //         console.log('Cansel');
-        //     });
-
-        // };
-
 
         $scope.showConfirmDeleteBenefits = function(ev) {
             $mdDialog.show({
@@ -122,20 +97,6 @@
             });
             $scope.setHeader = 'Delete Benefits';
         }
-
-
-        // function deleteBenefits() {
-        //     $scope.benefitsMasterList = benefitsMaster.benefitsList;
-        //     for (var i = 0; i < benefitsMaster.benefitsList.length; i++) {
-        //         if ($scope.index === benefitsMaster.benefitsList[i].bnfID) {
-        //             $scope.benefitsMasterList.splice(i, 1);
-        //             break;
-        //         }
-        //     }
-        //     $scope.bnfName = '';
-        //     $scope.bnfDes = '';
-        //     $scope.bnfSubDescList = '';
-        // }
 
         function selectDev(mail) { vm.selectedDev = mail; }
 
@@ -158,11 +119,6 @@
 
         }
 
-
-
-        /**
-         * Close read pane
-         */
         function closeReadPane() {
             if (angular.isDefined(vm.responsiveReadPane) && vm.responsiveReadPane) {
                 vm.activeMailPaneIndex = 0;
@@ -234,8 +190,6 @@
                 vm.allChecked = true;
             }
         }
-
-
 
         // ======= create
         $scope.composeDialog = function(ev) {

@@ -3,9 +3,10 @@
         "empID": "001",
         "date": "01-01-9999",
         "personalInfo": [{
-            "nameEn": "Jakkrich",
+            "nameEn": "Jakkrich1",
             "LastNameEn": "Jongklangthawatchkij",
-            "position": "Developer",
+            "position": "Director",
+            "code": "01_DI",
             "salary": "9999999",
             "address": "51/333",
             "moo": "9",
@@ -109,11 +110,1517 @@
         }]
     }, {
         "empID": "002",
+        "date": "01-01-9999",
+        "personalInfo": [{
+            "nameEn": "Jakkrich2",
+            "LastNameEn": "Jongklangthawatchkij",
+            "position": "Director",
+            "code": "01_DI",
+            "salary": "9999999",
+            "address": "51/333",
+            "moo": "9",
+            "road": "lumlukka",
+            "district": "lassawai",
+            "amphur": "lumlukka",
+            "province": "phathumthani",
+            "postcode": "12150",
+            "tel": "089-555-5555",
+            "mobile": "089-555-5555",
+            "living": "own home",
+            "birthdate": "18/05/1992",
+            "age": "24",
+            "race": "Thai",
+            "nationality": "Thai",
+            "religion": "Bhudda",
+            "idcard": "7895641236547",
+            "idcardEx": "12/05/2016",
+            "height": "180",
+            "weight": "65",
+            "military": "Not yet",
+            "marital": "Single",
+            "sex": "Male",
+            "account": "521562451",
+            "img": "assets/images/avatars/garry.jpg",
+            "underlying": "No",
+            "email": "toonelicious@gmail.com"
+        }],
+        "familyInfo": [{
+            "nameFm": "Jakleaw",
+            "LastNameFm": "Jongklangthawatchkij",
+            "age": "50",
+            "related": "Father",
+            "Occupation": "Engineer",
+            "tel": "098-775-8886"
+        }, {
+            "nameFm": "JakEyang",
+            "LastNameFm": "Jongklangthawatchkij",
+            "age": "50",
+            "related": "Mother",
+            "Occupation": "Engineery",
+            "tel": "098-445-8886"
+        }],
+        "EducationInfo": [{
+            "EduLevel": "Grade 1-6",
+            "Institution": "ReanTumMai School",
+            "DateEduFrom": "2000",
+            "DateEduTo": "2006"
+        }, {
+            "EduLevel": "Bachelor Degree",
+            "Institution": "NorthBangkok University",
+            "DateEduFrom": "2011",
+            "DateEduTo": "2015"
+        }],
+        "WorkInfo": [{
+            "Company": "C@net",
+            "Position": "Developer",
+            "DateFrom": "2000",
+            "DateTo": "2006",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }],
+        "languageInfo": [{
+            "langType": "ThaiLand",
+            "speaking": "Good",
+            "writing": "Fair",
+            "reading": "Poor"
+        }, {
+            "langType": "English",
+            "speaking": "Good",
+            "writing": "Good",
+            "reading": "Good"
+        }, {
+            "langType": "Japanish",
+            "speaking": "Fair",
+            "writing": "Fair",
+            "reading": "Poor"
+        }],
+        "specialInfo": [{
+            "typingTH": "25",
+            "typingEN": "30",
+            "computer": "Microsoft office, Photostop",
+            "driving": "1234567890123",
+            "officeMachine": "Printer",
+            "hobby": "Pokemon GO",
+            "sport": "Runing",
+            "knowledge": "NO",
+            "other": "NO"
+        }],
+        "otherInfo": [{
+            "workCountry": "Yes",
+            "firstName": "Jakleaw",
+            "lastName": "Jongklangthawatchkij",
+            "related": "Mother",
+            "address": "51/333 lumlokka phathumthani 12150",
+            "tel": "082-346-7897",
+            "sourceInfo": "Internet",
+            "contagious": "No",
+            "firstNameWork": "Sirintra",
+            "lastNameWork": "Wannakheaw",
+            "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
+        }]
+    }, {
+        "empID": "003",
+        "date": "01-01-9999",
+        "personalInfo": [{
+            "nameEn": "Jakkrich3",
+            "LastNameEn": "Jongklangthawatchkij",
+            "position": "Director",
+            "code": "01_DI",
+            "salary": "9999999",
+            "address": "51/333",
+            "moo": "9",
+            "road": "lumlukka",
+            "district": "lassawai",
+            "amphur": "lumlukka",
+            "province": "phathumthani",
+            "postcode": "12150",
+            "tel": "089-555-5555",
+            "mobile": "089-555-5555",
+            "living": "own home",
+            "birthdate": "18/05/1992",
+            "age": "24",
+            "race": "Thai",
+            "nationality": "Thai",
+            "religion": "Bhudda",
+            "idcard": "7895641236547",
+            "idcardEx": "12/05/2016",
+            "height": "180",
+            "weight": "65",
+            "military": "Not yet",
+            "marital": "Single",
+            "sex": "Male",
+            "account": "521562451",
+            "img": "assets/images/avatars/garry.jpg",
+            "underlying": "No",
+            "email": "toonelicious@gmail.com"
+        }],
+        "familyInfo": [{
+            "nameFm": "Jakleaw",
+            "LastNameFm": "Jongklangthawatchkij",
+            "age": "50",
+            "related": "Father",
+            "Occupation": "Engineer",
+            "tel": "098-775-8886"
+        }, {
+            "nameFm": "JakEyang",
+            "LastNameFm": "Jongklangthawatchkij",
+            "age": "50",
+            "related": "Mother",
+            "Occupation": "Engineery",
+            "tel": "098-445-8886"
+        }],
+        "EducationInfo": [{
+            "EduLevel": "Grade 1-6",
+            "Institution": "ReanTumMai School",
+            "DateEduFrom": "2000",
+            "DateEduTo": "2006"
+        }, {
+            "EduLevel": "Bachelor Degree",
+            "Institution": "NorthBangkok University",
+            "DateEduFrom": "2011",
+            "DateEduTo": "2015"
+        }],
+        "WorkInfo": [{
+            "Company": "C@net",
+            "Position": "Developer",
+            "DateFrom": "2000",
+            "DateTo": "2006",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }],
+        "languageInfo": [{
+            "langType": "ThaiLand",
+            "speaking": "Good",
+            "writing": "Fair",
+            "reading": "Poor"
+        }, {
+            "langType": "English",
+            "speaking": "Good",
+            "writing": "Good",
+            "reading": "Good"
+        }, {
+            "langType": "Japanish",
+            "speaking": "Fair",
+            "writing": "Fair",
+            "reading": "Poor"
+        }],
+        "specialInfo": [{
+            "typingTH": "25",
+            "typingEN": "30",
+            "computer": "Microsoft office, Photostop",
+            "driving": "1234567890123",
+            "officeMachine": "Printer",
+            "hobby": "Pokemon GO",
+            "sport": "Runing",
+            "knowledge": "NO",
+            "other": "NO"
+        }],
+        "otherInfo": [{
+            "workCountry": "Yes",
+            "firstName": "Jakleaw",
+            "lastName": "Jongklangthawatchkij",
+            "related": "Mother",
+            "address": "51/333 lumlokka phathumthani 12150",
+            "tel": "082-346-7897",
+            "sourceInfo": "Internet",
+            "contagious": "No",
+            "firstNameWork": "Sirintra",
+            "lastNameWork": "Wannakheaw",
+            "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
+        }]
+    }, {
+        "empID": "004",
+        "date": "01-01-9999",
+        "personalInfo": [{
+            "nameEn": "Human Resource1",
+            "LastNameEn": "Jongklangthawatchkij",
+            "position": "Human Resource",
+            "code": "02_HR",
+            "salary": "9999999",
+            "address": "51/333",
+            "moo": "9",
+            "road": "lumlukka",
+            "district": "lassawai",
+            "amphur": "lumlukka",
+            "province": "phathumthani",
+            "postcode": "12150",
+            "tel": "089-555-5555",
+            "mobile": "089-555-5555",
+            "living": "own home",
+            "birthdate": "18/05/1992",
+            "age": "24",
+            "race": "Thai",
+            "nationality": "Thai",
+            "religion": "Bhudda",
+            "idcard": "7895641236547",
+            "idcardEx": "12/05/2016",
+            "height": "180",
+            "weight": "65",
+            "military": "Not yet",
+            "marital": "Single",
+            "sex": "Male",
+            "account": "521562451",
+            "img": "assets/images/avatars/garry.jpg",
+            "underlying": "No",
+            "email": "toonelicious@gmail.com"
+        }],
+        "familyInfo": [{
+            "nameFm": "Jakleaw",
+            "LastNameFm": "Jongklangthawatchkij",
+            "age": "50",
+            "related": "Father",
+            "Occupation": "Engineer",
+            "tel": "098-775-8886"
+        }, {
+            "nameFm": "JakEyang",
+            "LastNameFm": "Jongklangthawatchkij",
+            "age": "50",
+            "related": "Mother",
+            "Occupation": "Engineery",
+            "tel": "098-445-8886"
+        }],
+        "EducationInfo": [{
+            "EduLevel": "Grade 1-6",
+            "Institution": "ReanTumMai School",
+            "DateEduFrom": "2000",
+            "DateEduTo": "2006"
+        }, {
+            "EduLevel": "Bachelor Degree",
+            "Institution": "NorthBangkok University",
+            "DateEduFrom": "2011",
+            "DateEduTo": "2015"
+        }],
+        "WorkInfo": [{
+            "Company": "C@net",
+            "Position": "Developer",
+            "DateFrom": "2000",
+            "DateTo": "2006",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }],
+        "languageInfo": [{
+            "langType": "ThaiLand",
+            "speaking": "Good",
+            "writing": "Fair",
+            "reading": "Poor"
+        }, {
+            "langType": "English",
+            "speaking": "Good",
+            "writing": "Good",
+            "reading": "Good"
+        }, {
+            "langType": "Japanish",
+            "speaking": "Fair",
+            "writing": "Fair",
+            "reading": "Poor"
+        }],
+        "specialInfo": [{
+            "typingTH": "25",
+            "typingEN": "30",
+            "computer": "Microsoft office, Photostop",
+            "driving": "1234567890123",
+            "officeMachine": "Printer",
+            "hobby": "Pokemon GO",
+            "sport": "Runing",
+            "knowledge": "NO",
+            "other": "NO"
+        }],
+        "otherInfo": [{
+            "workCountry": "Yes",
+            "firstName": "Jakleaw",
+            "lastName": "Jongklangthawatchkij",
+            "related": "Mother",
+            "address": "51/333 lumlokka phathumthani 12150",
+            "tel": "082-346-7897",
+            "sourceInfo": "Internet",
+            "contagious": "No",
+            "firstNameWork": "Sirintra",
+            "lastNameWork": "Wannakheaw",
+            "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
+        }]
+    }, {
+        "empID": "005",
+        "date": "01-01-9999",
+        "personalInfo": [{
+            "nameEn": "Human Resource2",
+            "LastNameEn": "Jongklangthawatchkij",
+            "position": "Human Resource",
+            "code": "02_HR",
+            "salary": "9999999",
+            "address": "51/333",
+            "moo": "9",
+            "road": "lumlukka",
+            "district": "lassawai",
+            "amphur": "lumlukka",
+            "province": "phathumthani",
+            "postcode": "12150",
+            "tel": "089-555-5555",
+            "mobile": "089-555-5555",
+            "living": "own home",
+            "birthdate": "18/05/1992",
+            "age": "24",
+            "race": "Thai",
+            "nationality": "Thai",
+            "religion": "Bhudda",
+            "idcard": "7895641236547",
+            "idcardEx": "12/05/2016",
+            "height": "180",
+            "weight": "65",
+            "military": "Not yet",
+            "marital": "Single",
+            "sex": "Male",
+            "account": "521562451",
+            "img": "assets/images/avatars/garry.jpg",
+            "underlying": "No",
+            "email": "toonelicious@gmail.com"
+        }],
+        "familyInfo": [{
+            "nameFm": "Jakleaw",
+            "LastNameFm": "Jongklangthawatchkij",
+            "age": "50",
+            "related": "Father",
+            "Occupation": "Engineer",
+            "tel": "098-775-8886"
+        }, {
+            "nameFm": "JakEyang",
+            "LastNameFm": "Jongklangthawatchkij",
+            "age": "50",
+            "related": "Mother",
+            "Occupation": "Engineery",
+            "tel": "098-445-8886"
+        }],
+        "EducationInfo": [{
+            "EduLevel": "Grade 1-6",
+            "Institution": "ReanTumMai School",
+            "DateEduFrom": "2000",
+            "DateEduTo": "2006"
+        }, {
+            "EduLevel": "Bachelor Degree",
+            "Institution": "NorthBangkok University",
+            "DateEduFrom": "2011",
+            "DateEduTo": "2015"
+        }],
+        "WorkInfo": [{
+            "Company": "C@net",
+            "Position": "Developer",
+            "DateFrom": "2000",
+            "DateTo": "2006",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }],
+        "languageInfo": [{
+            "langType": "ThaiLand",
+            "speaking": "Good",
+            "writing": "Fair",
+            "reading": "Poor"
+        }, {
+            "langType": "English",
+            "speaking": "Good",
+            "writing": "Good",
+            "reading": "Good"
+        }, {
+            "langType": "Japanish",
+            "speaking": "Fair",
+            "writing": "Fair",
+            "reading": "Poor"
+        }],
+        "specialInfo": [{
+            "typingTH": "25",
+            "typingEN": "30",
+            "computer": "Microsoft office, Photostop",
+            "driving": "1234567890123",
+            "officeMachine": "Printer",
+            "hobby": "Pokemon GO",
+            "sport": "Runing",
+            "knowledge": "NO",
+            "other": "NO"
+        }],
+        "otherInfo": [{
+            "workCountry": "Yes",
+            "firstName": "Jakleaw",
+            "lastName": "Jongklangthawatchkij",
+            "related": "Mother",
+            "address": "51/333 lumlokka phathumthani 12150",
+            "tel": "082-346-7897",
+            "sourceInfo": "Internet",
+            "contagious": "No",
+            "firstNameWork": "Sirintra",
+            "lastNameWork": "Wannakheaw",
+            "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
+        }]
+    }, {
+        "empID": "006",
+        "date": "01-01-9999",
+        "personalInfo": [{
+            "nameEn": "Human Resource3",
+            "LastNameEn": "Jongklangthawatchkij",
+            "position": "Human Resource",
+            "code": "02_HR",
+            "salary": "9999999",
+            "address": "51/333",
+            "moo": "9",
+            "road": "lumlukka",
+            "district": "lassawai",
+            "amphur": "lumlukka",
+            "province": "phathumthani",
+            "postcode": "12150",
+            "tel": "089-555-5555",
+            "mobile": "089-555-5555",
+            "living": "own home",
+            "birthdate": "18/05/1992",
+            "age": "24",
+            "race": "Thai",
+            "nationality": "Thai",
+            "religion": "Bhudda",
+            "idcard": "7895641236547",
+            "idcardEx": "12/05/2016",
+            "height": "180",
+            "weight": "65",
+            "military": "Not yet",
+            "marital": "Single",
+            "sex": "Male",
+            "account": "521562451",
+            "img": "assets/images/avatars/garry.jpg",
+            "underlying": "No",
+            "email": "toonelicious@gmail.com"
+        }],
+        "familyInfo": [{
+            "nameFm": "Jakleaw",
+            "LastNameFm": "Jongklangthawatchkij",
+            "age": "50",
+            "related": "Father",
+            "Occupation": "Engineer",
+            "tel": "098-775-8886"
+        }, {
+            "nameFm": "JakEyang",
+            "LastNameFm": "Jongklangthawatchkij",
+            "age": "50",
+            "related": "Mother",
+            "Occupation": "Engineery",
+            "tel": "098-445-8886"
+        }],
+        "EducationInfo": [{
+            "EduLevel": "Grade 1-6",
+            "Institution": "ReanTumMai School",
+            "DateEduFrom": "2000",
+            "DateEduTo": "2006"
+        }, {
+            "EduLevel": "Bachelor Degree",
+            "Institution": "NorthBangkok University",
+            "DateEduFrom": "2011",
+            "DateEduTo": "2015"
+        }],
+        "WorkInfo": [{
+            "Company": "C@net",
+            "Position": "Developer",
+            "DateFrom": "2000",
+            "DateTo": "2006",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }],
+        "languageInfo": [{
+            "langType": "ThaiLand",
+            "speaking": "Good",
+            "writing": "Fair",
+            "reading": "Poor"
+        }, {
+            "langType": "English",
+            "speaking": "Good",
+            "writing": "Good",
+            "reading": "Good"
+        }, {
+            "langType": "Japanish",
+            "speaking": "Fair",
+            "writing": "Fair",
+            "reading": "Poor"
+        }],
+        "specialInfo": [{
+            "typingTH": "25",
+            "typingEN": "30",
+            "computer": "Microsoft office, Photostop",
+            "driving": "1234567890123",
+            "officeMachine": "Printer",
+            "hobby": "Pokemon GO",
+            "sport": "Runing",
+            "knowledge": "NO",
+            "other": "NO"
+        }],
+        "otherInfo": [{
+            "workCountry": "Yes",
+            "firstName": "Jakleaw",
+            "lastName": "Jongklangthawatchkij",
+            "related": "Mother",
+            "address": "51/333 lumlokka phathumthani 12150",
+            "tel": "082-346-7897",
+            "sourceInfo": "Internet",
+            "contagious": "No",
+            "firstNameWork": "Sirintra",
+            "lastNameWork": "Wannakheaw",
+            "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
+        }]
+    }, {
+        "empID": "007",
         "date": "01-01-2000",
         "personalInfo": [{
-            "nameEn": "Sirintra",
+            "nameEn": "Accounting1",
+            "LastNameEn": "Wannakheaw",
+            "position": "Accounting",
+            "code": "03_AC",
+            "salary": "9999999999",
+            "address": "499/195",
+            "moo": "5",
+            "road": "phaholyothin",
+            "district": "khongtanon",
+            "amphur": "saimai",
+            "province": "bangkok",
+            "postcode": "10220",
+            "tel": "091-552-6974",
+            "mobile": "091-552-6974",
+            "living": "own home",
+            "birthdate": "12/01/1996",
+            "age": "18",
+            "race": "Thai",
+            "nationality": "Thai",
+            "religion": "Bhudda",
+            "idcard": "7895641236547",
+            "idcardEx": "12/05/2016",
+            "height": "173",
+            "weight": "49",
+            "military": "Not yet",
+            "marital": "Single",
+            "sex": "Famale",
+            "account": "521562451",
+            "img": "assets/images/avatars/alice.jpg",
+            "underlying": "No",
+            "email": "Sirintra@gmail.com"
+        }],
+        "familyInfo": [{
+            "nameFm": "Sirinty",
+            "LastNameFm": "Wannakheaw",
+            "age": "45",
+            "related": "Father",
+            "Occupation": "Engineer",
+            "tel": "099-999-9999"
+        }, {
+            "nameFm": "Sireaw",
+            "LastNameFm": "Wannakheaw",
+            "age": "47",
+            "related": "Mother",
+            "Occupation": "Engineery",
+            "tel": "099-999-9999"
+        }],
+        "EducationInfo": [{
+            "EduLevel": "Grade 1-6",
+            "Institution": "Watbannnon School",
+            "DateEduFrom": "2000",
+            "DateEduTo": "2006"
+        }, {
+            "EduLevel": "Hight 1-6",
+            "Institution": "Prachantarajbumrung School",
+            "DateEduFrom": "2006",
+            "DateEduTo": "2008"
+        }, {
+            "EduLevel": "Bachelor Degree",
+            "Institution": "NorthBangkok University",
+            "DateEduFrom": "2009",
+            "DateEduTo": "2013"
+        }],
+        "WorkInfo": [{
+            "Company": "C@net",
+            "Position": "Developer",
+            "DateFrom": "2015",
+            "DateTo": "2016",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }, {
+            "Company": "Saint's John University",
+            "Position": "System Developer",
+            "DateFrom": "2014",
+            "DateTo": "2015",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }],
+        "languageInfo": [{
+            "langType": "ThaiLand",
+            "speaking": "Good",
+            "writing": "Fair",
+            "reading": "Poor"
+        }, {
+            "langType": "English",
+            "speaking": "Good",
+            "writing": "Good",
+            "reading": "Good"
+        }, {
+            "langType": "Japanish",
+            "speaking": "Fair",
+            "writing": "Fair",
+            "reading": "Poor"
+        }],
+        "specialInfo": [{
+            "typingTH": "30",
+            "typingEN": "35",
+            "computer": "Microsoft office, Photostop",
+            "driving": "1234567890123",
+            "officeMachine": "Printer",
+            "hobby": "Pokemon GO",
+            "sport": "Runing",
+            "knowledge": "NO",
+            "other": "NO"
+        }],
+        "otherInfo": [{
+            "workCountry": "Yes",
+            "firstName": "Sireaw",
+            "lastName": "Wannakheaw",
+            "related": "Mother",
+            "address": "51/33 lumlokka phathumthani 12150",
+            "tel": "082-346-7897",
+            "sourceInfo": "Internet",
+            "contagious": "No",
+            "firstNameWork": "Jakkrich",
+            "lastNameWork": "Jongklangthawatchkij",
+            "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
+        }]
+    }, {
+        "empID": "008",
+        "date": "01-01-2000",
+        "personalInfo": [{
+            "nameEn": "Accounting2",
+            "LastNameEn": "Wannakheaw",
+            "position": "Accounting",
+            "code": "03_AC",
+            "salary": "9999999999",
+            "address": "499/195",
+            "moo": "5",
+            "road": "phaholyothin",
+            "district": "khongtanon",
+            "amphur": "saimai",
+            "province": "bangkok",
+            "postcode": "10220",
+            "tel": "091-552-6974",
+            "mobile": "091-552-6974",
+            "living": "own home",
+            "birthdate": "12/01/1996",
+            "age": "18",
+            "race": "Thai",
+            "nationality": "Thai",
+            "religion": "Bhudda",
+            "idcard": "7895641236547",
+            "idcardEx": "12/05/2016",
+            "height": "173",
+            "weight": "49",
+            "military": "Not yet",
+            "marital": "Single",
+            "sex": "Famale",
+            "account": "521562451",
+            "img": "assets/images/avatars/alice.jpg",
+            "underlying": "No",
+            "email": "Sirintra@gmail.com"
+        }],
+        "familyInfo": [{
+            "nameFm": "Sirinty",
+            "LastNameFm": "Wannakheaw",
+            "age": "45",
+            "related": "Father",
+            "Occupation": "Engineer",
+            "tel": "099-999-9999"
+        }, {
+            "nameFm": "Sireaw",
+            "LastNameFm": "Wannakheaw",
+            "age": "47",
+            "related": "Mother",
+            "Occupation": "Engineery",
+            "tel": "099-999-9999"
+        }],
+        "EducationInfo": [{
+            "EduLevel": "Grade 1-6",
+            "Institution": "Watbannnon School",
+            "DateEduFrom": "2000",
+            "DateEduTo": "2006"
+        }, {
+            "EduLevel": "Hight 1-6",
+            "Institution": "Prachantarajbumrung School",
+            "DateEduFrom": "2006",
+            "DateEduTo": "2008"
+        }, {
+            "EduLevel": "Bachelor Degree",
+            "Institution": "NorthBangkok University",
+            "DateEduFrom": "2009",
+            "DateEduTo": "2013"
+        }],
+        "WorkInfo": [{
+            "Company": "C@net",
+            "Position": "Developer",
+            "DateFrom": "2015",
+            "DateTo": "2016",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }, {
+            "Company": "Saint's John University",
+            "Position": "System Developer",
+            "DateFrom": "2014",
+            "DateTo": "2015",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }],
+        "languageInfo": [{
+            "langType": "ThaiLand",
+            "speaking": "Good",
+            "writing": "Fair",
+            "reading": "Poor"
+        }, {
+            "langType": "English",
+            "speaking": "Good",
+            "writing": "Good",
+            "reading": "Good"
+        }, {
+            "langType": "Japanish",
+            "speaking": "Fair",
+            "writing": "Fair",
+            "reading": "Poor"
+        }],
+        "specialInfo": [{
+            "typingTH": "30",
+            "typingEN": "35",
+            "computer": "Microsoft office, Photostop",
+            "driving": "1234567890123",
+            "officeMachine": "Printer",
+            "hobby": "Pokemon GO",
+            "sport": "Runing",
+            "knowledge": "NO",
+            "other": "NO"
+        }],
+        "otherInfo": [{
+            "workCountry": "Yes",
+            "firstName": "Sireaw",
+            "lastName": "Wannakheaw",
+            "related": "Mother",
+            "address": "51/33 lumlokka phathumthani 12150",
+            "tel": "082-346-7897",
+            "sourceInfo": "Internet",
+            "contagious": "No",
+            "firstNameWork": "Jakkrich",
+            "lastNameWork": "Jongklangthawatchkij",
+            "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
+        }]
+    }, {
+        "empID": "009",
+        "date": "01-01-2000",
+        "personalInfo": [{
+            "nameEn": "Accounting3",
+            "LastNameEn": "Wannakheaw",
+            "position": "Accounting",
+            "code": "03_AC",
+            "salary": "9999999999",
+            "address": "499/195",
+            "moo": "5",
+            "road": "phaholyothin",
+            "district": "khongtanon",
+            "amphur": "saimai",
+            "province": "bangkok",
+            "postcode": "10220",
+            "tel": "091-552-6974",
+            "mobile": "091-552-6974",
+            "living": "own home",
+            "birthdate": "12/01/1996",
+            "age": "18",
+            "race": "Thai",
+            "nationality": "Thai",
+            "religion": "Bhudda",
+            "idcard": "7895641236547",
+            "idcardEx": "12/05/2016",
+            "height": "173",
+            "weight": "49",
+            "military": "Not yet",
+            "marital": "Single",
+            "sex": "Famale",
+            "account": "521562451",
+            "img": "assets/images/avatars/alice.jpg",
+            "underlying": "No",
+            "email": "Sirintra@gmail.com"
+        }],
+        "familyInfo": [{
+            "nameFm": "Sirinty",
+            "LastNameFm": "Wannakheaw",
+            "age": "45",
+            "related": "Father",
+            "Occupation": "Engineer",
+            "tel": "099-999-9999"
+        }, {
+            "nameFm": "Sireaw",
+            "LastNameFm": "Wannakheaw",
+            "age": "47",
+            "related": "Mother",
+            "Occupation": "Engineery",
+            "tel": "099-999-9999"
+        }],
+        "EducationInfo": [{
+            "EduLevel": "Grade 1-6",
+            "Institution": "Watbannnon School",
+            "DateEduFrom": "2000",
+            "DateEduTo": "2006"
+        }, {
+            "EduLevel": "Hight 1-6",
+            "Institution": "Prachantarajbumrung School",
+            "DateEduFrom": "2006",
+            "DateEduTo": "2008"
+        }, {
+            "EduLevel": "Bachelor Degree",
+            "Institution": "NorthBangkok University",
+            "DateEduFrom": "2009",
+            "DateEduTo": "2013"
+        }],
+        "WorkInfo": [{
+            "Company": "C@net",
+            "Position": "Developer",
+            "DateFrom": "2015",
+            "DateTo": "2016",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }, {
+            "Company": "Saint's John University",
+            "Position": "System Developer",
+            "DateFrom": "2014",
+            "DateTo": "2015",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }],
+        "languageInfo": [{
+            "langType": "ThaiLand",
+            "speaking": "Good",
+            "writing": "Fair",
+            "reading": "Poor"
+        }, {
+            "langType": "English",
+            "speaking": "Good",
+            "writing": "Good",
+            "reading": "Good"
+        }, {
+            "langType": "Japanish",
+            "speaking": "Fair",
+            "writing": "Fair",
+            "reading": "Poor"
+        }],
+        "specialInfo": [{
+            "typingTH": "30",
+            "typingEN": "35",
+            "computer": "Microsoft office, Photostop",
+            "driving": "1234567890123",
+            "officeMachine": "Printer",
+            "hobby": "Pokemon GO",
+            "sport": "Runing",
+            "knowledge": "NO",
+            "other": "NO"
+        }],
+        "otherInfo": [{
+            "workCountry": "Yes",
+            "firstName": "Sireaw",
+            "lastName": "Wannakheaw",
+            "related": "Mother",
+            "address": "51/33 lumlokka phathumthani 12150",
+            "tel": "082-346-7897",
+            "sourceInfo": "Internet",
+            "contagious": "No",
+            "firstNameWork": "Jakkrich",
+            "lastNameWork": "Jongklangthawatchkij",
+            "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
+        }]
+    }, {
+        "empID": "010",
+        "date": "01-01-2000",
+        "personalInfo": [{
+            "nameEn": "Sirintra1",
             "LastNameEn": "Wannakheaw",
             "position": "Developer",
+            "code": "04_DEV",
+            "salary": "9999999999",
+            "address": "499/195",
+            "moo": "5",
+            "road": "phaholyothin",
+            "district": "khongtanon",
+            "amphur": "saimai",
+            "province": "bangkok",
+            "postcode": "10220",
+            "tel": "091-552-6974",
+            "mobile": "091-552-6974",
+            "living": "own home",
+            "birthdate": "12/01/1996",
+            "age": "18",
+            "race": "Thai",
+            "nationality": "Thai",
+            "religion": "Bhudda",
+            "idcard": "7895641236547",
+            "idcardEx": "12/05/2016",
+            "height": "173",
+            "weight": "49",
+            "military": "Not yet",
+            "marital": "Single",
+            "sex": "Famale",
+            "account": "521562451",
+            "img": "assets/images/avatars/alice.jpg",
+            "underlying": "No",
+            "email": "Sirintra@gmail.com"
+        }],
+        "familyInfo": [{
+            "nameFm": "Sirinty",
+            "LastNameFm": "Wannakheaw",
+            "age": "45",
+            "related": "Father",
+            "Occupation": "Engineer",
+            "tel": "099-999-9999"
+        }, {
+            "nameFm": "Sireaw",
+            "LastNameFm": "Wannakheaw",
+            "age": "47",
+            "related": "Mother",
+            "Occupation": "Engineery",
+            "tel": "099-999-9999"
+        }],
+        "EducationInfo": [{
+            "EduLevel": "Grade 1-6",
+            "Institution": "Watbannnon School",
+            "DateEduFrom": "2000",
+            "DateEduTo": "2006"
+        }, {
+            "EduLevel": "Hight 1-6",
+            "Institution": "Prachantarajbumrung School",
+            "DateEduFrom": "2006",
+            "DateEduTo": "2008"
+        }, {
+            "EduLevel": "Bachelor Degree",
+            "Institution": "NorthBangkok University",
+            "DateEduFrom": "2009",
+            "DateEduTo": "2013"
+        }],
+        "WorkInfo": [{
+            "Company": "C@net",
+            "Position": "Developer",
+            "DateFrom": "2015",
+            "DateTo": "2016",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }, {
+            "Company": "Saint's John University",
+            "Position": "System Developer",
+            "DateFrom": "2014",
+            "DateTo": "2015",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }],
+        "languageInfo": [{
+            "langType": "ThaiLand",
+            "speaking": "Good",
+            "writing": "Fair",
+            "reading": "Poor"
+        }, {
+            "langType": "English",
+            "speaking": "Good",
+            "writing": "Good",
+            "reading": "Good"
+        }, {
+            "langType": "Japanish",
+            "speaking": "Fair",
+            "writing": "Fair",
+            "reading": "Poor"
+        }],
+        "specialInfo": [{
+            "typingTH": "30",
+            "typingEN": "35",
+            "computer": "Microsoft office, Photostop",
+            "driving": "1234567890123",
+            "officeMachine": "Printer",
+            "hobby": "Pokemon GO",
+            "sport": "Runing",
+            "knowledge": "NO",
+            "other": "NO"
+        }],
+        "otherInfo": [{
+            "workCountry": "Yes",
+            "firstName": "Sireaw",
+            "lastName": "Wannakheaw",
+            "related": "Mother",
+            "address": "51/33 lumlokka phathumthani 12150",
+            "tel": "082-346-7897",
+            "sourceInfo": "Internet",
+            "contagious": "No",
+            "firstNameWork": "Jakkrich",
+            "lastNameWork": "Jongklangthawatchkij",
+            "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
+        }]
+    }, {
+        "empID": "011",
+        "date": "01-01-2000",
+        "personalInfo": [{
+            "nameEn": "Sirintra2",
+            "LastNameEn": "Wannakheaw",
+            "position": "Developer",
+            "code": "04_DEV",
+            "salary": "9999999999",
+            "address": "499/195",
+            "moo": "5",
+            "road": "phaholyothin",
+            "district": "khongtanon",
+            "amphur": "saimai",
+            "province": "bangkok",
+            "postcode": "10220",
+            "tel": "091-552-6974",
+            "mobile": "091-552-6974",
+            "living": "own home",
+            "birthdate": "12/01/1996",
+            "age": "18",
+            "race": "Thai",
+            "nationality": "Thai",
+            "religion": "Bhudda",
+            "idcard": "7895641236547",
+            "idcardEx": "12/05/2016",
+            "height": "173",
+            "weight": "49",
+            "military": "Not yet",
+            "marital": "Single",
+            "sex": "Famale",
+            "account": "521562451",
+            "img": "assets/images/avatars/alice.jpg",
+            "underlying": "No",
+            "email": "Sirintra@gmail.com"
+        }],
+        "familyInfo": [{
+            "nameFm": "Sirinty",
+            "LastNameFm": "Wannakheaw",
+            "age": "45",
+            "related": "Father",
+            "Occupation": "Engineer",
+            "tel": "099-999-9999"
+        }, {
+            "nameFm": "Sireaw",
+            "LastNameFm": "Wannakheaw",
+            "age": "47",
+            "related": "Mother",
+            "Occupation": "Engineery",
+            "tel": "099-999-9999"
+        }],
+        "EducationInfo": [{
+            "EduLevel": "Grade 1-6",
+            "Institution": "Watbannnon School",
+            "DateEduFrom": "2000",
+            "DateEduTo": "2006"
+        }, {
+            "EduLevel": "Hight 1-6",
+            "Institution": "Prachantarajbumrung School",
+            "DateEduFrom": "2006",
+            "DateEduTo": "2008"
+        }, {
+            "EduLevel": "Bachelor Degree",
+            "Institution": "NorthBangkok University",
+            "DateEduFrom": "2009",
+            "DateEduTo": "2013"
+        }],
+        "WorkInfo": [{
+            "Company": "C@net",
+            "Position": "Developer",
+            "DateFrom": "2015",
+            "DateTo": "2016",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }, {
+            "Company": "Saint's John University",
+            "Position": "System Developer",
+            "DateFrom": "2014",
+            "DateTo": "2015",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }],
+        "languageInfo": [{
+            "langType": "ThaiLand",
+            "speaking": "Good",
+            "writing": "Fair",
+            "reading": "Poor"
+        }, {
+            "langType": "English",
+            "speaking": "Good",
+            "writing": "Good",
+            "reading": "Good"
+        }, {
+            "langType": "Japanish",
+            "speaking": "Fair",
+            "writing": "Fair",
+            "reading": "Poor"
+        }],
+        "specialInfo": [{
+            "typingTH": "30",
+            "typingEN": "35",
+            "computer": "Microsoft office, Photostop",
+            "driving": "1234567890123",
+            "officeMachine": "Printer",
+            "hobby": "Pokemon GO",
+            "sport": "Runing",
+            "knowledge": "NO",
+            "other": "NO"
+        }],
+        "otherInfo": [{
+            "workCountry": "Yes",
+            "firstName": "Sireaw",
+            "lastName": "Wannakheaw",
+            "related": "Mother",
+            "address": "51/33 lumlokka phathumthani 12150",
+            "tel": "082-346-7897",
+            "sourceInfo": "Internet",
+            "contagious": "No",
+            "firstNameWork": "Jakkrich",
+            "lastNameWork": "Jongklangthawatchkij",
+            "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
+        }]
+    }, {
+        "empID": "012",
+        "date": "01-01-2000",
+        "personalInfo": [{
+            "nameEn": "Sirintra3",
+            "LastNameEn": "Wannakheaw",
+            "position": "Developer",
+            "code": "04_DEV",
+            "salary": "9999999999",
+            "address": "499/195",
+            "moo": "5",
+            "road": "phaholyothin",
+            "district": "khongtanon",
+            "amphur": "saimai",
+            "province": "bangkok",
+            "postcode": "10220",
+            "tel": "091-552-6974",
+            "mobile": "091-552-6974",
+            "living": "own home",
+            "birthdate": "12/01/1996",
+            "age": "18",
+            "race": "Thai",
+            "nationality": "Thai",
+            "religion": "Bhudda",
+            "idcard": "7895641236547",
+            "idcardEx": "12/05/2016",
+            "height": "173",
+            "weight": "49",
+            "military": "Not yet",
+            "marital": "Single",
+            "sex": "Famale",
+            "account": "521562451",
+            "img": "assets/images/avatars/alice.jpg",
+            "underlying": "No",
+            "email": "Sirintra@gmail.com"
+        }],
+        "familyInfo": [{
+            "nameFm": "Sirinty",
+            "LastNameFm": "Wannakheaw",
+            "age": "45",
+            "related": "Father",
+            "Occupation": "Engineer",
+            "tel": "099-999-9999"
+        }, {
+            "nameFm": "Sireaw",
+            "LastNameFm": "Wannakheaw",
+            "age": "47",
+            "related": "Mother",
+            "Occupation": "Engineery",
+            "tel": "099-999-9999"
+        }],
+        "EducationInfo": [{
+            "EduLevel": "Grade 1-6",
+            "Institution": "Watbannnon School",
+            "DateEduFrom": "2000",
+            "DateEduTo": "2006"
+        }, {
+            "EduLevel": "Hight 1-6",
+            "Institution": "Prachantarajbumrung School",
+            "DateEduFrom": "2006",
+            "DateEduTo": "2008"
+        }, {
+            "EduLevel": "Bachelor Degree",
+            "Institution": "NorthBangkok University",
+            "DateEduFrom": "2009",
+            "DateEduTo": "2013"
+        }],
+        "WorkInfo": [{
+            "Company": "C@net",
+            "Position": "Developer",
+            "DateFrom": "2015",
+            "DateTo": "2016",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }, {
+            "Company": "Saint's John University",
+            "Position": "System Developer",
+            "DateFrom": "2014",
+            "DateTo": "2015",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }],
+        "languageInfo": [{
+            "langType": "ThaiLand",
+            "speaking": "Good",
+            "writing": "Fair",
+            "reading": "Poor"
+        }, {
+            "langType": "English",
+            "speaking": "Good",
+            "writing": "Good",
+            "reading": "Good"
+        }, {
+            "langType": "Japanish",
+            "speaking": "Fair",
+            "writing": "Fair",
+            "reading": "Poor"
+        }],
+        "specialInfo": [{
+            "typingTH": "30",
+            "typingEN": "35",
+            "computer": "Microsoft office, Photostop",
+            "driving": "1234567890123",
+            "officeMachine": "Printer",
+            "hobby": "Pokemon GO",
+            "sport": "Runing",
+            "knowledge": "NO",
+            "other": "NO"
+        }],
+        "otherInfo": [{
+            "workCountry": "Yes",
+            "firstName": "Sireaw",
+            "lastName": "Wannakheaw",
+            "related": "Mother",
+            "address": "51/33 lumlokka phathumthani 12150",
+            "tel": "082-346-7897",
+            "sourceInfo": "Internet",
+            "contagious": "No",
+            "firstNameWork": "Jakkrich",
+            "lastNameWork": "Jongklangthawatchkij",
+            "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
+        }]
+    }, {
+        "empID": "013",
+        "date": "01-01-2000",
+        "personalInfo": [{
+            "nameEn": "System Analyst1",
+            "LastNameEn": "Wannakheaw",
+            "position": "System Analyst",
+            "code": "05_SA",
+            "salary": "9999999999",
+            "address": "499/195",
+            "moo": "5",
+            "road": "phaholyothin",
+            "district": "khongtanon",
+            "amphur": "saimai",
+            "province": "bangkok",
+            "postcode": "10220",
+            "tel": "091-552-6974",
+            "mobile": "091-552-6974",
+            "living": "own home",
+            "birthdate": "12/01/1996",
+            "age": "18",
+            "race": "Thai",
+            "nationality": "Thai",
+            "religion": "Bhudda",
+            "idcard": "7895641236547",
+            "idcardEx": "12/05/2016",
+            "height": "173",
+            "weight": "49",
+            "military": "Not yet",
+            "marital": "Single",
+            "sex": "Famale",
+            "account": "521562451",
+            "img": "assets/images/avatars/alice.jpg",
+            "underlying": "No",
+            "email": "Sirintra@gmail.com"
+        }],
+        "familyInfo": [{
+            "nameFm": "Sirinty",
+            "LastNameFm": "Wannakheaw",
+            "age": "45",
+            "related": "Father",
+            "Occupation": "Engineer",
+            "tel": "099-999-9999"
+        }, {
+            "nameFm": "Sireaw",
+            "LastNameFm": "Wannakheaw",
+            "age": "47",
+            "related": "Mother",
+            "Occupation": "Engineery",
+            "tel": "099-999-9999"
+        }],
+        "EducationInfo": [{
+            "EduLevel": "Grade 1-6",
+            "Institution": "Watbannnon School",
+            "DateEduFrom": "2000",
+            "DateEduTo": "2006"
+        }, {
+            "EduLevel": "Hight 1-6",
+            "Institution": "Prachantarajbumrung School",
+            "DateEduFrom": "2006",
+            "DateEduTo": "2008"
+        }, {
+            "EduLevel": "Bachelor Degree",
+            "Institution": "NorthBangkok University",
+            "DateEduFrom": "2009",
+            "DateEduTo": "2013"
+        }],
+        "WorkInfo": [{
+            "Company": "C@net",
+            "Position": "Developer",
+            "DateFrom": "2015",
+            "DateTo": "2016",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }, {
+            "Company": "Saint's John University",
+            "Position": "System Developer",
+            "DateFrom": "2014",
+            "DateTo": "2015",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }],
+        "languageInfo": [{
+            "langType": "ThaiLand",
+            "speaking": "Good",
+            "writing": "Fair",
+            "reading": "Poor"
+        }, {
+            "langType": "English",
+            "speaking": "Good",
+            "writing": "Good",
+            "reading": "Good"
+        }, {
+            "langType": "Japanish",
+            "speaking": "Fair",
+            "writing": "Fair",
+            "reading": "Poor"
+        }],
+        "specialInfo": [{
+            "typingTH": "30",
+            "typingEN": "35",
+            "computer": "Microsoft office, Photostop",
+            "driving": "1234567890123",
+            "officeMachine": "Printer",
+            "hobby": "Pokemon GO",
+            "sport": "Runing",
+            "knowledge": "NO",
+            "other": "NO"
+        }],
+        "otherInfo": [{
+            "workCountry": "Yes",
+            "firstName": "Sireaw",
+            "lastName": "Wannakheaw",
+            "related": "Mother",
+            "address": "51/33 lumlokka phathumthani 12150",
+            "tel": "082-346-7897",
+            "sourceInfo": "Internet",
+            "contagious": "No",
+            "firstNameWork": "Jakkrich",
+            "lastNameWork": "Jongklangthawatchkij",
+            "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
+        }]
+    }, {
+        "empID": "014",
+        "date": "01-01-2000",
+        "personalInfo": [{
+            "nameEn": "System Analyst2",
+            "LastNameEn": "Wannakheaw",
+            "position": "System Analyst",
+            "code": "05_SA",
+            "salary": "9999999999",
+            "address": "499/195",
+            "moo": "5",
+            "road": "phaholyothin",
+            "district": "khongtanon",
+            "amphur": "saimai",
+            "province": "bangkok",
+            "postcode": "10220",
+            "tel": "091-552-6974",
+            "mobile": "091-552-6974",
+            "living": "own home",
+            "birthdate": "12/01/1996",
+            "age": "18",
+            "race": "Thai",
+            "nationality": "Thai",
+            "religion": "Bhudda",
+            "idcard": "7895641236547",
+            "idcardEx": "12/05/2016",
+            "height": "173",
+            "weight": "49",
+            "military": "Not yet",
+            "marital": "Single",
+            "sex": "Famale",
+            "account": "521562451",
+            "img": "assets/images/avatars/alice.jpg",
+            "underlying": "No",
+            "email": "Sirintra@gmail.com"
+        }],
+        "familyInfo": [{
+            "nameFm": "Sirinty",
+            "LastNameFm": "Wannakheaw",
+            "age": "45",
+            "related": "Father",
+            "Occupation": "Engineer",
+            "tel": "099-999-9999"
+        }, {
+            "nameFm": "Sireaw",
+            "LastNameFm": "Wannakheaw",
+            "age": "47",
+            "related": "Mother",
+            "Occupation": "Engineery",
+            "tel": "099-999-9999"
+        }],
+        "EducationInfo": [{
+            "EduLevel": "Grade 1-6",
+            "Institution": "Watbannnon School",
+            "DateEduFrom": "2000",
+            "DateEduTo": "2006"
+        }, {
+            "EduLevel": "Hight 1-6",
+            "Institution": "Prachantarajbumrung School",
+            "DateEduFrom": "2006",
+            "DateEduTo": "2008"
+        }, {
+            "EduLevel": "Bachelor Degree",
+            "Institution": "NorthBangkok University",
+            "DateEduFrom": "2009",
+            "DateEduTo": "2013"
+        }],
+        "WorkInfo": [{
+            "Company": "C@net",
+            "Position": "Developer",
+            "DateFrom": "2015",
+            "DateTo": "2016",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }, {
+            "Company": "Saint's John University",
+            "Position": "System Developer",
+            "DateFrom": "2014",
+            "DateTo": "2015",
+            "JobDesc": " Design and Developer Analyst With tools of developer "
+        }],
+        "languageInfo": [{
+            "langType": "ThaiLand",
+            "speaking": "Good",
+            "writing": "Fair",
+            "reading": "Poor"
+        }, {
+            "langType": "English",
+            "speaking": "Good",
+            "writing": "Good",
+            "reading": "Good"
+        }, {
+            "langType": "Japanish",
+            "speaking": "Fair",
+            "writing": "Fair",
+            "reading": "Poor"
+        }],
+        "specialInfo": [{
+            "typingTH": "30",
+            "typingEN": "35",
+            "computer": "Microsoft office, Photostop",
+            "driving": "1234567890123",
+            "officeMachine": "Printer",
+            "hobby": "Pokemon GO",
+            "sport": "Runing",
+            "knowledge": "NO",
+            "other": "NO"
+        }],
+        "otherInfo": [{
+            "workCountry": "Yes",
+            "firstName": "Sireaw",
+            "lastName": "Wannakheaw",
+            "related": "Mother",
+            "address": "51/33 lumlokka phathumthani 12150",
+            "tel": "082-346-7897",
+            "sourceInfo": "Internet",
+            "contagious": "No",
+            "firstNameWork": "Jakkrich",
+            "lastNameWork": "Jongklangthawatchkij",
+            "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
+        }]
+    }, {
+        "empID": "015",
+        "date": "01-01-2000",
+        "personalInfo": [{
+            "nameEn": "System Analyst3",
+            "LastNameEn": "Wannakheaw",
+            "position": "System Analyst",
+            "code": "05_SA",
             "salary": "9999999999",
             "address": "499/195",
             "moo": "5",
@@ -229,19 +1736,19 @@
     }],
     "position": [{
         "name": "Director",
-        "code": "01"
+        "code": "01_DI"
     }, {
         "name": "Human Resource",
-        "code": "02"
+        "code": "02_HR"
     }, {
         "name": "Accounting",
-        "code": "03"
+        "code": "03_AC"
     }, {
         "name": "Developer",
-        "code": "04"
+        "code": "04_DEV"
     }, {
         "name": "System Analyst",
-        "code": "05"
+        "code": "05_SA"
     }],
     "benefitsList": [{
         "bnfID": "1",

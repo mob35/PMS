@@ -225,9 +225,8 @@
             "firstNameWork": "Jakkrich",
             "lastNameWork": "Jongklangthawatchkij",
             "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
-        }]
-    }],
-    "position": [{
+        }],
+        "position": [{
         "name": "Director",
         "code": "01"
     }, {
@@ -243,4 +242,6 @@
         "name": "System Analyst",
         "code": "05"
     }]
+    }],
+    
 }

@@ -39,7 +39,7 @@
             title : 'Benefits Master',
             icon  : 'icon-ambulance',
             state : 'app.benefitsMaster',
-            weight: 1
+            weight: 2
         });
     }
 })();

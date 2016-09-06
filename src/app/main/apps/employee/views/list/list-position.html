@@ -1,11 +1,12 @@
 <!-- MAIL LIST ITEMS -->
 
     
-    <div class="navigation-simple" layout="column" ng-repeat="mail in position">
-        <md-button class="item" aria-label="inbox">
+    <div class="navigation-simple selectListPosition" layout="column" ng-repeat="select in position">
+       <!--  <md-button class="item" aria-label="inbox" ng-click="selectDev(mail)"> -->
+        <md-button class="item" aria-label="inbox" ng-click="selectBy(select)" ng-class="{selectBy: select == selected}">
             <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-account" class="s16"></md-icon>
-                <span class="title">{{mail.name}}</span>
+                <md-icon style="color:#ff6d00" md-font-icon="icon-account" class="s16"></md-icon>
+                <span class="title">{{select.name}}</span>
             </div>
         </md-button>
 
@@ -13,3 +14,14 @@
 
 
 <!-- / MAIL LIST ITEMS -->
+
+<!-- <div class="navigation-simple" layout="column" ng-repeat="mail in empPms" >
+<div ng-repeat="mails in mail.personalInfo">
+        <md-button class="item" aria-label="inbox" ng-click="selectMail(mail)">
+            <div layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-account" class="s16"></md-icon>
+                <span class="title">{{mails.position}}</span>
+            </div>
+        </md-button>
+</div>
+    </div> -->
