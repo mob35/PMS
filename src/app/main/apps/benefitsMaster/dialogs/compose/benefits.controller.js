@@ -6,32 +6,35 @@
         .controller('benefitDialogController', benefitDialogController);
 
     /** @ngInject */
-    function benefitDialogController($mdDialog, benefitsMaster, bnfName, index, $scope,$rootScope) {
+    function benefitDialogController($mdDialog, benefitsMaster, bnfName, index, $scope, $rootScope, $http, $templateCache, benefitsMasterService) {
         $scope.bnfName = bnfName;
         $scope.index = index;
         $scope.showBenefitsName = bnfName;
+
+        $scope.newData = {
+            NameBN : '',
+            DetailBN : ''
+        };
 
         $scope.closeDialog = function() {
             $mdDialog.hide();
         }
 
-        $scope.saveNewBenefits = function(bnf) {
-            $scope.benefitsMasterList = benefitsMaster.benefitsList;
-            $scope.benefitsMasterList.push({
-                "bnfID": benefitsMaster.benefitsList.length + 1,
-                "bnfName": bnf.benefitsName,
-                "bnfDes": bnf.benefitsDetail,
-                "bnfSubDesc": [{
-                    "bnfsdName": bnf.subBenefitsDetail1
-                }, {
-                    "bnfsdName": bnf.subBenefitsDetail2
-                }]
-
+        $scope.saveNewBenefits = function() {        
+            benefitsMasterService.post($scope.newData).then(function(res) {
+                $scope.benefitsMasterList = benefitsMaster;
+                $scope.benefitsMasterList.push({
+                "BnID": res.BnID,
+                "NameBN": res.NameBN,
+                "DetailBN": res.DetailBN
             });
-            $scope.closeDialog();
+                $scope.closeDialog();
+            }, function(err) {
+                console.log(err);
+            })
         }
 
-        $scope.deleteBenefits = function (){
+        $scope.deleteBenefits = function() {
             $scope.benefitsMasterList = benefitsMaster.benefitsList;
             for (var i = 0; i < benefitsMaster.benefitsList.length; i++) {
                 if ($scope.index === benefitsMaster.benefitsList[i].bnfID) {
@@ -45,6 +48,4 @@
             $scope.closeDialog();
         }
     }
-
-
 })();

@@ -12,12 +12,12 @@
     <md-card-content>
         <div layout="row" class="padding-30">
             <div flex="20">Benefits Name</div>
-            <div flex="80">{{bnfName}}</div>
+            <div flex="80">{{selectedItem.NameBN}}</div>
         </div>
         <hr>
         <div layout="row" class="padding-30">
             <div flex="20">Benefits Detail</div>
-            <div flex="80">{{bnfDes}}
+            <div flex="80">{{selectedItem.DetailBN}}
                 <div layout="row" class="margin-top-15" ng-repeat="bnfsd in bnfSubDescList">
                     <div flex="5"></div>
                     <div flex="95">- {{bnfsd.bnfsdName}}</div>
@@ -41,14 +41,14 @@
         <div layout="row">
             <div flex="20" style="padding:30px 0px 0px 30px">Benefits Name</div>
             <md-input-container flex="80">
-                <input type="text" required aria-invalid="true" ng-model="bnfName">
+                <input type="text" required aria-invalid="true" ng-model="selectedItem.NameBN">
             </md-input-container>
         </div>
         <hr>
         <div layout="row">
             <div flex="20" style="padding:30px 0px 0px 30px">Benefits Detail</div>
             <md-input-container flex="80">
-                <input type="text" required aria-invalid="true" ng-model="bnfDes">
+                <input type="text" required aria-invalid="true" ng-model="selectedItem.DetailBN">
             </md-input-container>
         </div>
         <div layout="row" ng-repeat="bnfsd in bnfSubDescList" style="margin-top:-30px">
