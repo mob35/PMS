@@ -6,10 +6,8 @@
         .controller('benefitDialogController', benefitDialogController);
 
     /** @ngInject */
-    function benefitDialogController($mdDialog, benefitsMaster, bnfName, index, $scope, $rootScope, $http, $templateCache, benefitsMasterService) {
-        $scope.bnfName = bnfName;
-        $scope.index = index;
-        $scope.showBenefitsName = bnfName;
+    function benefitDialogController($mdDialog, $scope, $rootScope, $http, $templateCache,selectedItem,benefitsList, benefitsMasterService) {
+        $scope.showBenefitsName = selectedItem.NameBN;
 
         $scope.newData = {
             NameBN : '',
@@ -20,10 +18,9 @@
             $mdDialog.hide();
         }
 
-        $scope.saveNewBenefits = function() {        
+        $scope.saveNewBenefits = function() { 
             benefitsMasterService.post($scope.newData).then(function(res) {
-                $scope.benefitsMasterList = benefitsMaster;
-                $scope.benefitsMasterList.push({
+                benefitsList.push({
                 "BnID": res.BnID,
                 "NameBN": res.NameBN,
                 "DetailBN": res.DetailBN
@@ -31,21 +28,24 @@
                 $scope.closeDialog();
             }, function(err) {
                 console.log(err);
-            })
+            });
         }
 
         $scope.deleteBenefits = function() {
-            $scope.benefitsMasterList = benefitsMaster.benefitsList;
-            for (var i = 0; i < benefitsMaster.benefitsList.length; i++) {
-                if ($scope.index === benefitsMaster.benefitsList[i].bnfID) {
-                    $scope.benefitsMasterList.splice(i, 1);
+            benefitsMasterService.delete(selectedItem).then(function(res) {
+                for (var i = 0; i < benefitsList.length; i++) {
+                if (selectedItem.BnID === benefitsList[i].BnID) {
+                    benefitsList.splice(i, 1);
                     break;
                 }
             }
-            $rootScope.bnfName = '';
-            $rootScope.bnfDes = '';
-            $rootScope.bnfSubDescList = '';
+            selectedItem.NameBN = '';
+            selectedItem.DetailBN = '';
             $scope.closeDialog();
+            }, function(err) {
+                console.log(err);
+            });
+            
         }
     }
 })();
