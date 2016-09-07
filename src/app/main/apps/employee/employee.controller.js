@@ -7,7 +7,7 @@
 
     /** @ngInject */
 
-    function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms) {
+    function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms, $http) {
 
         var vm = this;
 
@@ -114,7 +114,10 @@
         //     $scope.productType = type;
         // };
         // $scope.Developer = true;
-        
+        // Read View
+        // $scope.personalShow = false;
+        ////////////////////////////////
+
         $scope.selected = $scope.position[0];
         $scope.selectedBy = "01_DI";
         console.log($scope.selectedBy);
@@ -126,21 +129,21 @@
 
             if (select.name == "Director") {
                 // alert("Director");
-                $scope.selectedMail = []; 
+                $scope.selectedMail = [];
                 $scope.showList = true;
                 $scope.showRead = false;
                 $scope.selectedBy = select.code;
                 // console.log($scope.selectedBy);
             } else if (select.name == "Human Resource") {
                 // alert("Human Resource");
-                $scope.selectedMail = []; 
+                $scope.selectedMail = [];
                 $scope.showList = true;
                 $scope.showRead = false;
                 $scope.selectedBy = select.code;
                 // console.log($scope.selectedBy);
             } else if (select.name == "Accounting") {
                 // alert("Accounting");
-                $scope.selectedMail = []; 
+                $scope.selectedMail = [];
                 $scope.showList = true;
                 $scope.showRead = false;
                 $scope.selectedBy = select.code;
@@ -154,7 +157,7 @@
                 // console.log($scope.selectedBy);
             } else if (select.name == "System Analyst") {
                 // alert("System Analyst");
-                $scope.selectedMail = []; 
+                $scope.selectedMail = [];
                 $scope.showList = true;
                 $scope.showRead = false;
                 $scope.selectedBy = select.code;
@@ -201,7 +204,7 @@
                 vm.scrollEl.scrollTop(0);
             });
         }
-         
+
 
         /**
          * Close read pane
@@ -283,7 +286,7 @@
          *
          * @param ev
          */
-        // <<<<<<< HEAD
+
         // function composeDialog(ev) {
         //     $mdDialog.show({
         //         controller: 'ComposeDialogController',
@@ -297,8 +300,19 @@
         //         clickOutsideToClose: true
         //     });
         // }
+        ///////////////////////////////////////
+        $scope.GetAllData = function(EmpPms) {
+            $http.get('/app/data/employee/empPms.json')
+                .success(function(data) {
+                    $scope.response = data;
+                    console.log($scope.response);
+                })
+                .error(function(data) {
+                    console.log($scope.response);
+                });
+        };
         ////////////  Certificate  ////////////
-        // =======
+
         $scope.composeDialog = function(ev) {
                 $mdDialog.show({
                     controller: 'ComposeDialogController',

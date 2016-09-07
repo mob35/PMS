@@ -2,7 +2,6 @@
 
     .mail-read-pane {
         background: #FFFFFF;
-
         .hrBorder{
         padding-bottom: 10px;
         margin-bottom: 10px;
@@ -16,6 +15,9 @@
         }
         .fontStyle{
         font-weight: bold;
+        }
+        .pointer{
+        cursor:pointer;
         }
         .imgStyle{
         margin-bottom: -30px
