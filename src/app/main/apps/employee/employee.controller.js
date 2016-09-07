@@ -7,10 +7,16 @@
 
     /** @ngInject */
 
-    function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms, $http) {
+    function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms, employeeService) {
 
         var vm = this;
-
+        $scope.students = [
+            { ID: 1, name: 'Josep', class: 'A' },
+            { ID: 2, name: 'Carles', class: 'B' },
+            { ID: 3, name: 'Xavi', class: 'A' },
+            { ID: 4, name: 'Pere', class: 'B' },
+            { ID: 5, name: 'Adrià', class: 'C' }
+        ];
         // Data
         $scope.accounts = {
             'creapond': 'johndoe@creapond.com',
@@ -33,7 +39,7 @@
 
         $scope.empPms = EmpPms.data;
         $scope.position = EmpPms.position;
-        $scope.selectedMail = $scope.empPms[0];
+        
         $scope.selectedDev = $scope.position[0];
         vm.selectedMailShowDetails = false;
 
@@ -52,6 +58,36 @@
         $scope.selectBy = $scope.selectMail;
         vm.toggleStarred = toggleStarred;
         vm.toggleCheck = toggleCheck;
+        $scope.positions = [];
+        //////////////////////////////////////////////////////////////////////call service method//////////////////////
+        employeeService.getAll().then(function(res) {
+            $scope.employeeList = res.data;
+
+
+            for (var i = 0; i <= $scope.employeeList.length - 1; i++) {
+
+                var teamIsNew = $scope.positions.indexOf($scope.employeeList[i].PersonalInfo.Position) == -1;
+                if (teamIsNew) {
+                     $scope.positions.push($scope.employeeList[i].PersonalInfo.Position);
+                }
+            }
+            
+            $scope.selected = $scope.positions[0];
+            // $scope.selectedMail = $scope.employeeList[0];
+
+        }, function(err) {
+            console.log(err);
+        });
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        $scope.players = [
+            { name: 'Gene', team: 'alpha' },
+            { name: 'George', team: 'beta' },
+            { name: 'Steve', team: 'gamma' },
+            { name: 'Paula', team: 'beta' },
+            { name: 'Scruath', team: 'gamma' }
+        ];
 
         $scope.modeShowPer = true;
         $scope.modeEditPer = true;
@@ -118,51 +154,27 @@
         // $scope.personalShow = false;
         ////////////////////////////////
 
-        $scope.selected = $scope.position[0];
+        
         $scope.selectedBy = "01_DI";
         console.log($scope.selectedBy);
         // /////////////////////////////////////////////
         $scope.showRead = true;
         $scope.showList = true;
+        $scope.filterPos = function(pos){
+            console.log(pos);
+            return pos.PersonalInfo.Position == $scope.selected;
+        };
+
         $scope.selectBy = function(select) {
+            //$scope.selectPos = select;
             $scope.selected = select;
 
-            if (select.name == "Director") {
-                // alert("Director");
-                $scope.selectedMail = [];
-                $scope.showList = true;
-                $scope.showRead = false;
-                $scope.selectedBy = select.code;
-                // console.log($scope.selectedBy);
-            } else if (select.name == "Human Resource") {
-                // alert("Human Resource");
-                $scope.selectedMail = [];
-                $scope.showList = true;
-                $scope.showRead = false;
-                $scope.selectedBy = select.code;
-                // console.log($scope.selectedBy);
-            } else if (select.name == "Accounting") {
-                // alert("Accounting");
-                $scope.selectedMail = [];
-                $scope.showList = true;
-                $scope.showRead = false;
-                $scope.selectedBy = select.code;
-                // console.log($scope.selectedBy);
-            } else if (select.name == 'Developer') {
-                // alert("Developer");
-                $scope.selectedMail = [];
-                $scope.showList = true;
-                $scope.showRead = false;
-                $scope.selectedBy = select.code;
-                // console.log($scope.selectedBy);
-            } else if (select.name == "System Analyst") {
-                // alert("System Analyst");
-                $scope.selectedMail = [];
-                $scope.showList = true;
-                $scope.showRead = false;
-                $scope.selectedBy = select.code;
-                // console.log($scope.selectedBy);
-            }
+             $scope.showList = true;
+             $scope.showRead = false;
+            // $scope.originalSelectItem = select;
+            // angular.copy(bnf, $scope.selectedItem);
+
+            
         }
 
         // $scope.selectDev = function(mail) {

@@ -1,12 +1,12 @@
 <!-- MAIL LIST ITEMS -->
 
     
-    <div class="navigation-simple selectListPosition" layout="column" ng-repeat="select in position">
+    <div class="navigation-simple selectListPosition" layout="column" ng-repeat="select in positions">
        <!--  <md-button class="item" aria-label="inbox" ng-click="selectDev(mail)"> -->
         <md-button class="item" aria-label="inbox" ng-click="selectBy(select)" ng-class="{selectBy: select == selected}">
             <div layout="row" layout-align="start center">
                 <md-icon style="color:#ff6d00" md-font-icon="icon-account" class="s16"></md-icon>
-                <span class="title">{{select.name}}</span>
+                <span class="title">{{select}}</span>
             </div>
         </md-button>
 
