@@ -6,40 +6,32 @@
         .controller('benefitDialogController', benefitDialogController);
 
     /** @ngInject */
-    function benefitDialogController($mdDialog, benefitsMaster, bnfName, index, $scope, $rootScope, $http, $templateCache) {
+    function benefitDialogController($mdDialog, benefitsMaster, bnfName, index, $scope, $rootScope, $http, $templateCache, benefitsMasterService) {
         $scope.bnfName = bnfName;
         $scope.index = index;
         $scope.showBenefitsName = bnfName;
+
+        $scope.newData = {
+            NameBN : '',
+            DetailBN : ''
+        };
 
         $scope.closeDialog = function() {
             $mdDialog.hide();
         }
 
-        $scope.saveNewBenefits = function(bnf) {
-            
-            $http({
-                method: 'GET',
-                url: 'app/data/employee/benefitsData.json'
-            }).then(function successCallback(response) {
-                console.log(response.data);
-            }, function errorCallback(response) {
-                console.log(response);
+        $scope.saveNewBenefits = function() {        
+            benefitsMasterService.post($scope.newData).then(function(res) {
+                $scope.benefitsMasterList = benefitsMaster;
+                $scope.benefitsMasterList.push({
+                "BnID": res.BnID,
+                "NameBN": res.NameBN,
+                "DetailBN": res.DetailBN
             });
-
-
-            $scope.benefitsMasterList = benefitsMaster.benefitsList;
-            $scope.benefitsMasterList.push({
-                "bnfID": benefitsMaster.benefitsList.length + 1,
-                "bnfName": bnf.benefitsName,
-                "bnfDes": bnf.benefitsDetail,
-                "bnfSubDesc": [{
-                    "bnfsdName": bnf.subBenefitsDetail1
-                }, {
-                    "bnfsdName": bnf.subBenefitsDetail2
-                }]
-
-            });
-            $scope.closeDialog();
+                $scope.closeDialog();
+            }, function(err) {
+                console.log(err);
+            })
         }
 
         $scope.deleteBenefits = function() {
@@ -56,6 +48,4 @@
             $scope.closeDialog();
         }
     }
-
-
 })();
