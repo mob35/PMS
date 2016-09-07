@@ -13,22 +13,22 @@
         <md-card-content ng-show="modeShowPer">
             <div ng-repeat="per in selectedMail.personalInfo">
                 <div layout="row" layout-xs="column">
-                    <div flex="80">
+                    <div flex="90">
                     </div>
                     <div class="imgStyle">
                         <img class="avatar" ng-src="{{per.img}}" />
                     </div>
                 </div>
-                <div layout="row" layout-xs="column">
-                    <div flex="30">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="45">
                         <span>FirstName : {{per.nameEn}}</span>
                     </div>
                     <div>
                         <span>LastName : {{per.LastNameEn}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column">
-                    <div flex="30">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="45">
                         <span>Position : {{per.position}}</span>
                     </div>
                     <div>
@@ -36,23 +36,25 @@
                     </div>
                 </div>
                 <!-- //////////////// -->
-                <div layout="row" layout-xs="column">
-                    <div flex="30">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="45">
                         <span>Birthdate : {{per.birthdate}}</span>
                     </div>
-                    <div flex="30">
-                        <span>Age : {{per.age}} Yrs.</span>
-                    </div>
                     <div flex>
-                        <span>Sex : {{per.sex}}</span>
+                        <span>Age : {{per.age}} Yrs.</span>
                     </div>
                 </div>
                 <!-- //////////////// -->
-                <div layout="row" layout-xs="column">
-                    <div flex="30">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="45">
+                        <span>Sex : {{per.sex}}</span>
+                    </div>
+                    <div flex>
                         <span>Race : {{per.race}}</span>
                     </div>
-                    <div flex="30">
+                </div>
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="45">
                         <span>Nationality : {{per.nationality}}</span>
                     </div>
                     <div flex>
@@ -60,8 +62,8 @@
                     </div>
                 </div>
                 <!-- /////////////// -->
-                <div layout="row" layout-xs="column">
-                    <div flex="60">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="45">
                         <span>IDCard No. : {{per.idcard}}</span>
                     </div>
                     <div flex>
@@ -69,13 +71,16 @@
                     </div>
                 </div>
                 <!-- ////////////////// -->
-                <div layout="row" layout-xs="column">
-                    <div flex="30">
-                        <span>Account : {{per.account}}</span>
-                    </div>
-                    <div flex>
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="45">
                         <span>Email : {{per.email}}</span>
                     </div>
+                    <div flex>
+                        <span>Account : {{per.account}}</span>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    
                 </div>
                 <div ng-hide="personalShowDis">
                     <div layout="row" layout-xs="column">
@@ -91,23 +96,25 @@
                 </div>
                 <!-- ////////////////// -->
                 <div ng-show="personalShowDis">
-                    <div layout="row" layout-xs="column">
-                        <div flex="30">
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
                             <span>Address : {{per.address}}</span>
                         </div>
-                        <div flex="30">
-                            <span>Moo : {{per.moo}}</span>
-                        </div>
                         <div flex>
-                            <span>Road : {{per.road}}</span>
+                            <span>Moo : {{per.moo}}</span>
                         </div>
                     </div>
                     <!-- //////////////////// -->
-                    <div layout="row" layout-xs="column">
-                        <div flex="30">
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
+                            <span>Road : {{per.road}}</span>
+                        </div>
+                        <div flex>
                             <span>District : {{per.district}}</span>
                         </div>
-                        <div flex="30">
+                    </div>
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
                             <span>Amphur : {{per.amphur}}</span>
                         </div>
                         <div flex>
@@ -115,23 +122,25 @@
                         </div>
                     </div>
                     <!-- ////////////////// -->
-                    <div layout="row" layout-xs="column">
-                        <div flex="30">
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
                             <span>Postcode : {{per.postcode}}</span>
                         </div>
-                        <div flex="30">
-                            <span>Tel : {{per.tel}}</span>
-                        </div>
                         <div flex>
-                            <span>Mobile : {{per.mobile}}</span>
+                            <span>Tel : {{per.tel}}</span>
                         </div>
                     </div>
                     <!-- ////////////////////// -->
-                    <div layout="row" layout-xs="column">
-                        <div flex="30">
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
+                            <span>Mobile : {{per.mobile}}</span>
+                        </div>
+                        <div flex>
                             <span>Height : {{per.height}} cm.</span>
                         </div>
-                        <div flex="30">
+                    </div>
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
                             <span>Weight : {{per.weight}} kgs.</span>
                         </div>
                         <div flex>
@@ -139,15 +148,17 @@
                         </div>
                     </div>
                     <!-- //////////////////// -->
-                    <div layout="row" layout-xs="column">
-                        <div flex="30">
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
                             <span>Living : {{per.living}}</span>
                         </div>
-                        <div flex="30">
+                        <div flex>
                             <span>Military : {{per.military}}</span>
                         </div>
-                        <div flex>
-                            <span>Marital : {{per.marital}}</span>
+                    </div>
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
+                             <span>Marital : {{per.marital}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column">
@@ -524,33 +535,33 @@
     </h2>
         </md-toolbar>
         <md-card-content>
-            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-                <div flex="30">
-                    <span>Typing</span>
+            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                <div flex="35">
+                    <span class="fontStyle">Typing</span>
                 </div>
                 <div flex>
                     <span>Thai {{spe.typingTH}} Word/Minutes</span>
                 </div>
             </div>
-            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-                <div flex="30">
+            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                <div flex="35">
                     <span></span>
                 </div>
                 <div flex>
                     <span>English {{spe.typingEN}} Word/Minutes</span>
                 </div>
             </div>
-            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-                <div flex="30">
-                    <span>Computer</span>
+            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                <div flex="35">
+                    <span class="fontStyle">Computer</span>
                 </div>
                 <div flex>
                     <span>{{spe.computer}}</span>
                 </div>
             </div>
-            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-                <div flex="30">
-                    <span>Driving</span>
+            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                <div flex="35">
+                    <span class="fontStyle">Driving</span>
                 </div>
                 <div flex>
                     <span>No. {{spe.driving}}</span>
@@ -570,41 +581,41 @@
                 </div>
             </div>
             <div ng-show="specialShowDis">
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-                    <div flex="30">
-                        <span>Office Machine</span>
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                    <div flex="35">
+                        <span class="fontStyle">Office Machine</span>
                     </div>
                     <div flex>
                         <span>{{spe.officeMachine}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-                    <div flex="30">
-                        <span>Hobby</span>
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                    <div flex="35">
+                        <span class="fontStyle">Hobby</span>
                     </div>
                     <div flex>
                         <span>{{spe.hobby}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-                    <div flex="30">
-                        <span>Sport</span>
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                    <div flex="35">
+                        <span class="fontStyle">Sport</span>
                     </div>
                     <div flex>
                         <span>{{spe.sport}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-                    <div flex="30">
-                        <span>Knowledge</span>
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                    <div flex="35">
+                        <span class="fontStyle">Knowledge</span>
                     </div>
                     <div flex>
                         <span>{{spe.knowledge}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-                    <div flex="30">
-                        <span>Other</span>
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                    <div flex="35">
+                        <span class="fontStyle">Other</span>
                     </div>
                     <div flex>
                         <span>{{spe.other}}</span>
@@ -615,7 +626,7 @@
                     </div>
                     <div flex>
                         <div ng-click="specialShowDis = false">
-                            <span style="font-weight: bold;cursor:pointer">Hide</span>
+                            <span style="font-weight: bold;cursor:pointer;">Hide</span>
                         </div>
                     </div>
                 </div>
@@ -635,21 +646,21 @@
         </md-toolbar>
         <md-card-content>
             <div ng-repeat="oth in selectedMail.otherInfo">
-                <div layout="row" layout-xs="column">
-                    <div class="fontStyle" flex="40">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div class="fontStyle" flex="50">
                         <span>I Can Work Up Country</span>
                     </div>
                     <div flex>
                         <span>{{oth.workCountry}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column">
-                    <div class="fontStyle" flex="70">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div class="fontStyle" flex>
                         <span>Person to be notified in case of emergency</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column">
-                    <div flex="40">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="50">
                         <span class="fontStyle">FirstName : </span>
                         <span>{{oth.firstName}}</span>
                     </div>
@@ -658,24 +669,24 @@
                         <span>{{oth.lastName}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column">
-                    <div class="fontStyle" flex="40">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div class="fontStyle" flex="50">
                         <span>Related to the applient as</span>
                     </div>
                     <div flex>
                         <span>{{oth.related}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column">
-                    <div class="fontStyle" flex="40">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div class="fontStyle" flex="50">
                         <span>Address</span>
                     </div>
                     <div flex>
                         <span>{{oth.address}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column">
-                    <div class="fontStyle" flex="40">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div class="fontStyle" flex="50">
                         <span>Telephone</span>
                     </div>
                     <div flex>
@@ -695,29 +706,29 @@
                     </div>
                 </div>
                 <div ng-show="otherShowDis">
-                    <div layout="row" layout-xs="column">
-                        <div class="fontStyle" flex="40">
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div class="fontStyle" flex="50">
                             <span>Source of job information</span>
                         </div>
                         <div flex>
                             <span>{{oth.sourceInfo}}</span>
                         </div>
                     </div>
-                    <div layout="row" layout-xs="column">
-                        <div class="fontStyle" flex="40">
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div class="fontStyle" flex="50">
                             <span>Contagious Disease</span>
                         </div>
                         <div flex>
                             <span>{{oth.contagious}}</span>
                         </div>
                     </div>
-                    <div layout="row" layout-xs="column">
-                        <div class="fontStyle" flex="100">
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div class="fontStyle" flex>
                             <span>Give the name of relative/friend working with us know to you</span>
                         </div>
                     </div>
-                    <div layout="row" layout-xs="column">
-                        <div flex="40">
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="50">
                             <span class="fontStyle">FirstName : </span>
                             <span>{{oth.firstNameWork}}</span>
                         </div>
@@ -726,13 +737,13 @@
                             <span>{{oth.lastNameWork}}</span>
                         </div>
                     </div>
-                    <div layout="row" layout-xs="column">
-                        <div class="fontStyle" flex="40">
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div class="fontStyle" flex="50">
                             <span>Introduce yourself</span>
                         </div>
                     </div>
-                    <div layout="row" layout-xs="column">
-                        <div flex="100">
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex>
                             <span>{{oth.introduce}}</span>
                         </div>
                     </div>

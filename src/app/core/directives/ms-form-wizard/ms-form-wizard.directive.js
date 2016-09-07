@@ -70,6 +70,8 @@
             }
 
             vm.selectedIndex++;
+            console.log(vm.selectedIndex);
+            
         }
 
         /**
@@ -96,7 +98,9 @@
         function totalSteps()
         {
             return vm.forms.length;
+
         }
+
 
         /**
          * Is first step?

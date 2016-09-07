@@ -6,10 +6,8 @@
         .controller('benefitDialogController', benefitDialogController);
 
     /** @ngInject */
-    function benefitDialogController($mdDialog, benefitsMaster, bnfName, index, $scope, $rootScope, $http, $templateCache, benefitsMasterService) {
-        $scope.bnfName = bnfName;
-        $scope.index = index;
-        $scope.showBenefitsName = bnfName;
+    function benefitDialogController($mdDialog, $scope, $rootScope, $http, $templateCache,selectedItem, benefitsMasterService) {
+        $scope.showBenefitsName = selectedItem.NameBN;
 
         $scope.newData = {
             NameBN : '',
