@@ -7,10 +7,47 @@
         .controller('RegardDialogController', RegardDialogController);
 
     /** @ngInject */
-    function RegardDialogController($mdDialog, selectedMail, $scope)
+    function RegardDialogController($mdDialog, selectedMail, $scope,benefitsMasterService)
     {
-        var vm = this;
+        //////////////////////////////////////////////////////////call service method////////////////////////////////////////////////
 
+        benefitsMasterService.getAll().then(function(res) {
+            $scope.benefitsList = res.data;
+            console.log(res.data);
+        }, function(err) {
+            console.log(err);
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //////////////////////////////////////////////////////////template//////////////////////////////////////////////////////////
+        var vm = this;
         // Data
         vm.form = {
             from: 'johndoe@creapond.com'
@@ -31,9 +68,6 @@
         vm.closeDialog = closeDialog;
         vm.addNewList = addNewList;
         // $scope.addBenefitsList = addBenefitsList;
-
-
-        //////////
 
         function closeDialog()
         {
