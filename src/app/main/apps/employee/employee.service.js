@@ -29,17 +29,28 @@
             // });
 
             return defer.promise;
-        }   
+        };   
 
         this.putEmpData = function(employee){
         	var defer = $q.defer();
-        	$http.put(url +'/'+benefitsMaster.BnID,benefitsMaster).success(function(response){
+        	$http.put(url +'/'+employee.EmpID,employee).success(function(response){
         		defer.resolve(response);
         	})
         	.error(function(response){
         		defer.reject(response);
         	});
         	return defer.promise;
-        }  
+        };
+        this.deleteEmpData = function(selectEmpForDel){
+            // console.log(selectEmpForDel.EmpID);
+            var defer = $q.defer();
+            $http.delete(url +'/'+selectEmpForDel.EmpID).success(function(response){
+                defer.resolve(response);
+            })
+            .error(function(response){
+                defer.reject(response);
+            });
+            return defer.promise;
+        };  
     }
 })();

@@ -4,7 +4,11 @@
         <md-toolbar class="md-accent">
             <h2 class="md-toolbar-tools">
       <span flex>Personal Information</span>
-      <md-button class="md-icon-button" ng-click="FnEditPer()"  tranlate
+      <!-- <md-button class="md-icon-button" ng-click="FnEditPer()"  tranlate
+                           translate-aria-label="EMP.CLOSE_DIALOG">
+                    <md-icon md-font-icon="icon-table-edit"></md-icon>
+                </md-button> -->
+                <md-button class="md-icon-button" ng-click="FnEditPer($event)"  tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
                 </md-button>
@@ -174,11 +178,11 @@
             </div>
         </md-card-content>
         <md-card-content ng-hide="modeEditPer">
-            <div ng-repeat="per in selectedMail.personalInfo">
+            <div>
                 <div layout="row" layout-xs="column">
                     <div flex="30">
                         <md-input-container>
-                            <input type="text" name="FirstName" ng-model="per.nameEn" placeholder="FirstName" required>
+                            <input type="text" name="FirstName" ng-model="selectedMail.PersonalInfo.FirstNameEN" placeholder="FirstName" required>
                         </md-input-container>
                         <!-- <span>FirstName : {{per.nameEn}}</span> -->
                     </div>
