@@ -51,6 +51,17 @@
         		defer.reject(response);
         	});
         	return defer.promise;
-        }  
+        }
+
+        this.delete = function(benefitsMaster){
+            var defer = $q.defer();
+            $http.delete(url +'/'+benefitsMaster.BnID,benefitsMaster).success(function(response){
+                defer.resolve(response);
+            })
+            .error(function(response){
+                defer.reject(response);
+            });
+            return defer.promise;
+        }
     }
 })();

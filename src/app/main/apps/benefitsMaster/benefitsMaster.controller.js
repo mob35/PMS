@@ -15,6 +15,7 @@
         $scope.setCardBenefitShow = false;
         $scope.setCardBenefitEdit = true;
         $scope.selectedItem = {};
+        $scope.isSelectItem = true;
 
         //////////////////////////////////////////////////////////////////////call service method//////////////////////
         benefitsMasterService.getAll().then(function(res) {
@@ -24,6 +25,7 @@
         });
 
         function selectBenefitsDetail(bnf) {
+            $scope.isSelectItem = false;
             $scope.originalSelectItem = bnf;
             angular.copy(bnf, $scope.selectedItem);
         }
@@ -33,7 +35,8 @@
                 controller: 'benefitDialogController',
                 controllerAs: 'vm',
                 locals: {
-                    selectedItem: $scope.selectedItem
+                    selectedItem: $scope.selectedItem,
+                    benefitsList: $scope.benefitsList
 
                 },
                 templateUrl: 'app/main/apps/benefitsMaster/dialogs/compose/deleteBenefits.html',
@@ -49,7 +52,8 @@
                 controller: 'benefitDialogController',
                 controllerAs: 'vm',
                 locals: {
-                    selectedItem: $scope.selectedItem
+                    selectedItem: $scope.selectedItem,
+                    benefitsList: $scope.benefitsList
                 },
                 templateUrl: 'app/main/apps/benefitsMaster/dialogs/compose/benefits.html',
                 parent: angular.element($document.body),

@@ -1,5 +1,5 @@
 <md-dialog class="compose-dialog" aria-label="New Employee">
-<form>
+<form name="myForm">
         <md-toolbar class="md-accent md-hue-2">
             <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
                 <span class="title">New Benefits</span>
@@ -18,7 +18,7 @@
                 
                     <md-input-container flex="100">
                         <label>Benefits Name</label>
-                        <input type="text" required ng-model="newData.NameBN">
+                        <input type="text" required name="NameBN" ng-model="newData.NameBN">
                     </md-input-container>
                 
             </div>
@@ -29,20 +29,7 @@
                         <input type="text" ng-model="newData.DetailBN">
                     </md-input-container>
             </div>
-            <div layout="row" style="margin-top:-35px">
-                <div flex="20"></div>
-                    <md-input-container flex="80">
-                        <label>Sub Benefits Detail1</label>
-                        <input type="text" ng-model="bnf.subBenefitsDetail1">
-                    </md-input-container>
-            </div>
-            <div layout="row" style="margin-top:-35px">
-                <div flex="20"></div>
-                    <md-input-container flex="80">
-                        <label>Sub Benefits Detail2</label>
-                        <input type="text" ng-model="bnf.subBenefitsDetail2">
-                    </md-input-container>
-            </div>
+            
             <div layout="row">
                 <div flex="20">
                     <md-button class="md-raised md-accent md-button md-ink-ripple" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="BF.CLOSE_DIALOG">
@@ -51,7 +38,7 @@
                 </div>
                 <div flex="60"></div>
                 <div flex="20" style="text-align:right">
-                    <md-button class="md-raised md-accent" ng-click="saveNewBenefits()">
+                    <md-button ng-disabled="myForm.NameBN.$invalid" class="md-raised md-accent" ng-click="saveNewBenefits()">
                         Done
                     </md-button>
                 </div>
