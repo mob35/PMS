@@ -1,16 +1,16 @@
 <!-- MAIL LIST ITEMS -->
-<div class="mail-list-item {{mail.status}}" ng-repeat="mail in empPms | filter: search | filter: global.search | filter: selectedBy" md-ink-ripple ng-click="selectMail(mail);showRead" ng-show="showList" ng-class="{'starred': mail.starred, 'selected': selectedMail === mail, 'checked': vm.isChecked(mail)}">
-    <div layout="row" layout-align="start center" ng-repeat="mails in mail.personalInfo">
+<div class="mail-list-item {{mail.status}}" ng-repeat="mail in employeeList | filter: search | filter: global.search | filter: filterPos" md-ink-ripple ng-click="selectEmp(mail);showRead" ng-show="showList" ng-class="{'starred': mail.starred, 'selected': selectedMail === mail, 'checked': vm.isChecked(mail)}">
+    <div layout="row" layout-align="start center" >
         <!-- <md-checkbox class="no-label" ng-checked="vm.isChecked(mail)" ng-click="vm.toggleCheck(mail, $event)" aria-label="{{vm.isChecked(mail)? 'Uncheck':'check'}}">
         </md-checkbox> -->
-        <div class="info" flex layout="column" ng-repeat="mails in mail.personalInfo">
+        <div class="info" flex layout="column" ng-click="selectedEmployee(mail)">
             <div class="name" layout="row" layout-align="start center">
-                <img class="avatar" ng-src="{{mails.img}}" />
-                <div class="avatar" ng-if="!mails.img" ms-random-class="colors">
+                <img class="avatar" ng-src="assets/images/avatars/garry.jpg" />
+                <div class="avatar" ng-if="!mails.img" >
                 </div>
-                <span class="text-truncate">{{mails.nameEn}}</span>
+                <span class="text-truncate">{{mail.PersonalInfo.FirstNameEN}}</span>
                 <span>&nbsp;&nbsp;&nbsp;</span>
-                <span class="text-truncate">{{mails.LastNameEn}}</span>
+                <span class="text-truncate">{{mail.PersonalInfo.LastNameEN}}</span>
 
                 <!-- <hr> -->
             </div>
@@ -18,11 +18,11 @@
             <div flex="10" align="left">
                 </div>
                 <div flex="45" align="left">
-                    {{mails.position}}
+                    {{mail.PersonalInfo.Position}}
                 </div>
-                <div flex="45" align="left">
+                <!-- <div flex="45" align="left">
                     {{mail.date}}
-                </div>
+                </div> -->
                 <div flex>
                 </div>
                 <div flex>

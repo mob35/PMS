@@ -1,9 +1,9 @@
 <md-dialog class="compose-dialog" aria-label="New Employee">
-    <form class="md-inline-form">
+    <form class="md-inline-form" name="regardEmpForm">
         <md-toolbar class="md-accent md-hue-2">
             <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
                 <span class="title">Regard Employee</span>
-                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
+                <md-button class="md-icon-button" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-close"></md-icon>
                 </md-button>
             </div>
@@ -13,7 +13,7 @@
             <form name="wizardStep1" class="md-inline-form" ms-form-wizard-form novalidate>
                 <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                     <md-input-container flex="30">
-                        <input type="text" name="firstname" ng-model="vm.formWizard.firstname" placeholder="Firstname" required>
+                        <input ng-disabled="true" type="text" name="firstname" ng-model="selectedEmp.PersonalInfo.FirstNameEN" placeholder="Firstname" required>
                         <div ng-messages="wizardStep1.firstname.$error" role="alert">
                             <div ng-message="required">
                                 <span>Firstname field is required.</span>
@@ -21,7 +21,7 @@
                         </div>
                     </md-input-container>
                     <md-input-container flex="30">
-                        <input type="text" name="lastname" ng-model="vm.formWizard.lastname" placeholder="Lastname" required>
+                        <input ng-disabled="true" type="text" name="lastname" ng-model="selectedEmp.PersonalInfo.LastNameEN" placeholder="Lastname" required>
                         <div ng-messages="wizardStep1.lastname.$error" role="alert">
                             <div ng-message="required">
                                 <span>Lastname field is required.</span>
@@ -34,7 +34,7 @@
                 <!-- /////// -->
                 <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                     <md-input-container flex="30">
-                        <input type="text" name="position" ng-model="vm.formWizard.firstname" placeholder="Position" required>
+                        <input type="text" name="position" ng-model="selectedEmp.PersonalInfo.Position" placeholder="Position" required>
                         <div ng-messages="wizardStep1.firstname.$error" role="alert">
                             <div ng-message="required">
                                 <span>Position field is required.</span>
@@ -42,7 +42,7 @@
                         </div>
                     </md-input-container>
                     <md-input-container flex="30">
-                        <input type="text" name="salary" ng-model="vm.formWizard.lastname" placeholder="Salary" required>
+                        <input type="text" name="salary" ng-model="selectedEmp.PersonalInfo.Salary" placeholder="Salary" required>
                         <div ng-messages="wizardStep1.lastname.$error" role="alert">
                             <div ng-message="required">
                                 <span>Salary field is required.</span>
@@ -55,7 +55,7 @@
                 <!-- /////// -->
                 <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                     <md-input-container flex="65">
-                        <input type="date" name="dateStart" ng-model="vm.formWizard.firstname" placeholder="Date Start" required>
+                        <input type="text" name="dateStart" ng-model="selectedEmp.PersonalInfo.StartDate" placeholder="Date Start" required>
                         <div ng-messages="wizardStep1.firstname.$error" role="alert">
                             <div ng-message="required">
                                 <span>Date Start field is required.</span>
@@ -78,9 +78,9 @@
                 <div flex="70">
                     <md-input-container style="display:block">
                         <label>Add Benefits</label>
-                        <md-select ng-model="benefits.nameBn">
-                            <md-option ng-repeat="item in benefitsList" value="{{item.nameBn}}">
-                                {{item.nameBn}}
+                        <md-select ng-model="newBnf">
+                            <md-option ng-repeat="item in benefitsList" ng-value="item">
+                                {{item.NameBN}}
                             </md-option>
                         </md-select>
                         <md-input-container>
@@ -91,25 +91,28 @@
                     </md-button>
                 </div>
             </div>
-            <div class="info hrBorder marginZero" flex layout="column" ng-repeat="bnf in benefits">
+            <div class="info hrBorder marginZero" flex layout="column" ng-repeat="bnf in selectedEmp.BenefitsInfo">
                 <div layout="row" layout-xs="column">
-                    <div flex="10">
-                    </div>
+                    
                     <div flex="10">
                         <md-icon md-font-icon="icon-person-box" class="iconMargin"></md-icon>
                     </div>
                     <div flex>
-                        <p class="text-truncate">{{bnf.nameBn}}</p>
-                        <p class="text-truncate">{{bnf.descBn}}</p>
+                        <p class="text-truncate">{{bnf.NameBN}}</p>
+                        <p class="text-truncate">{{bnf.DetailBN}}</p>
+                        <p class="text-truncate">{{bnf.BnID}}</p>
+                    </div>
+                    <div flex="10">
+                    <md-icon md-font-icon="icon-delete" class="iconMargin" ng-click="deleteBnf(bnf.BnID)"></md-icon>
                     </div>
                 </div>
             </div>
             <div class="navigation" flex layout="row" layout-align="right">
-                <md-button class="md-raised md-accent md-button md-ink-ripple" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
+                <md-button class="md-raised md-accent md-button md-ink-ripple" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
                     Cancel
                 </md-button>
                 <span class="btn-right">
-                        <md-button class="md-raised md-accent">
+                        <md-button class="md-raised md-accent" ng-click="saveRegardEmployee()">
                             Done
                         </md-button>
                     </span>

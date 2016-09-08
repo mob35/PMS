@@ -6,232 +6,171 @@
         .controller('EvaluationDialogController', EvaluationDialogController);
 
     /** @ngInject */
-    function EvaluationDialogController($mdDialog, selectedMail, $scope) {
-        var vm = this;
-
-        // Data
-        vm.form = {
-            from: 'johndoe@creapond.com'
+    function EvaluationDialogController($mdDialog,$scope) {
+        $scope.selectedEval = {
+            "PersonalInfo": {
+                "EmpID": "1",
+                "FirstNameTH": "Apple",
+                "LastNameTH": "Dook",
+                "FirstNameEN": "sample string 4",
+                "LastNameEN": "sample string 5",
+                "Position": "programmer",
+                "Salary": 7,
+                "StartDate": "09/12/2016",
+                "PresentAddress": "sample string 8",
+                "Moo": 9,
+                "District": "sample string 10",
+                "Amphur": "sample string 11",
+                "Province": "sample string 12",
+                "Postcode": "sample string 13",
+                "Tel": "sample string 14",
+                "Moblie": "sample string 15",
+                "Email": "sample string 16",
+                "Living": "sample string 17",
+                "Birthdate": "2016-07-26T18:53:36.003",
+                "Age": 18,
+                "Race": "sample string 19",
+                "Nationality": "sample string 20",
+                "Religion": "sample string 21",
+                "IDCard": "sample string 22",
+                "IDCardExp": "2016-07-26T18:53:36.003",
+                "Height": 23,
+                "Weight": 24,
+                "Military": "sample string 25",
+                "Marital": "sample string 26",
+                "Sex": "sample string 27",
+                "Img": "sample string 28",
+                "UnderlyingDisease": "sample string 29",
+                "Account": null,
+                "ObjectState": 0,
+                "Created": "2016-07-26T18:53:36.003",
+                "CreatedBy": "sample string 28",
+                "Updated": "2016-07-26T18:53:36.003",
+                "UpdatedBy": "sample string 29"
+            },
+            "EvaluationInfo": {
+                "EmpID": "sample string 1",
+                "DateConfirmedEV": "2016-09-07T16:14:25.6154237+07:00",
+                "JobLearningEV": 2,
+                "JobKnowledge_SkillEV": 3,
+                "AdaptationEV": 4,
+                "RulesRespectEV": 5,
+                "CommunicationEV": 6,
+                "AttitudeEV": 7,
+                "Planning_FollowingEV": 8,
+                "Decision_SolvingEV": 9,
+                "ResponsibilityEV": 10,
+                "CooperationEV": 11,
+                "SumP5EV": 12,
+                "SumP4EV": 13,
+                "SumP3EV": 14,
+                "SumP2EV": 15,
+                "SumP1EV": 16,
+                "TotalScoreEV": 17,
+                "PercentEV": 18,
+                "OtherEV": "sample string 19",
+                "EvaluationTypeEV": "sample string 20",
+                "ObjectState": 0,
+                "Created": "2016-09-07T16:14:25.6154237+07:00",
+                "CreatedBy": "sample string 21",
+                "Updated": "2016-09-07T16:14:25.6154237+07:00",
+                "UpdatedBy": "sample string 22"
+            },
+            "BenefitsInfo": [],
+            "IncreaseInfo": [],
+            "DeductionInfo": [],
+            "SilpInfo": [],
+            "ObjectState": 0,
+            "Created": "2016-09-06T16:49:39.14",
+            "CreatedBy": "sample string 2",
+            "Updated": "2016-07-26T18:53:36.01",
+            "UpdatedBy": "sample string 3"
         };
-
-        vm.hiddenCC = true;
-        vm.hiddenBCC = true;
-
-        // If replying
-        if (angular.isDefined(selectedMail)) {
-            vm.form.to = selectedMail.from.email;
-            vm.form.subject = 'RE: ' + selectedMail.subject;
-            vm.form.message = '<blockquote>' + selectedMail.message + '</blockquote>';
-        }
-
-        // Methods
-        vm.closeDialog = closeDialog;
-
-
-        //////////
-
-        function closeDialog() {
-            $mdDialog.hide();
-        }
-        vm.stepper = {
-            step1: {},
-            step2: {},
-            step3: {}
-        };
-
-        vm.basicForm = {};
-        vm.formWizard = {};
-        vm.sex = [{ "name": "Male" }, { "name": "Famale" }];
-        vm.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
-            'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
-            'WY').split(' ').map(function(state) {
-            return { abbrev: state };
-        });
-
-        
-
-        // Methods
-        // $scope.family = [];
-        vm.family = [];
-        vm.sendForm = sendForm;
-        vm.submitStepper = submitStepper;
-
-        //////////
-
-        /**
-         * Submit stepper form
-         *
-         * @param ev
-         */
-
-        $scope.showIssueInformation = function(){
-            
-        }
-
-        function submitStepper(ev) {
-            // You can do an API call here to send the form to your server
-
-            // Show the sent data.. you can delete this safely.
-            $mdDialog.show({
-                controller: function($scope, $mdDialog, formWizardData) {
-                    $scope.formWizardData = formWizardData;
-                    $scope.closeDialog = function() {
-                        $mdDialog.hide();
-                    }
-                },
-                template: '<md-dialog>' +
-                    '  <md-dialog-content><h1>You have sent the form with the following data</h1><div><pre>{{formWizardData | json}}</pre></div></md-dialog-content>' +
-                    '  <md-dialog-actions>' +
-                    '    <md-button ng-click="closeDialog()" class="md-primary">' +
-                    '      Close' +
-                    '    </md-button>' +
-                    '  </md-dialog-actions>' +
-                    '</md-dialog>',
-                parent: angular.element('body'),
-                targetEvent: ev,
-                locals: {
-                    formWizardData: vm.stepper
-                },
-                clickOutsideToClose: true
-            });
-
-            // Reset the form model
-            vm.stepper = {
-                step1: {},
-                step2: {},
-                step3: {}
-            };
-        }
-
-        /**
-         * Send form
-         */
-        function sendForm(ev) {
-            // You can do an API call here to send the form to your server
-
-            // Show the sent data.. you can delete this safely.
-            $mdDialog.show({
-                controller: function($scope, $mdDialog, formWizardData) {
-                    $scope.formWizardData = formWizardData;
-                    $scope.closeDialog = function() {
-                        $mdDialog.hide();
-                    }
-                },
-                template: '<md-dialog>' +
-                    '  <md-dialog-content><h1>You have sent the form with the following data</h1><div><pre>{{formWizardData | json}}</pre></div></md-dialog-content>' +
-                    '  <md-dialog-actions>' +
-                    '    <md-button ng-click="closeDialog()" class="md-primary">' +
-                    '      Close' +
-                    '    </md-button>' +
-                    '  </md-dialog-actions>' +
-                    '</md-dialog>',
-                parent: angular.element('body'),
-                targetEvent: ev,
-                locals: {
-                    formWizardData: vm.formWizard
-                },
-                clickOutsideToClose: true
-            });
-
-            // Clear the form data
-            vm.formWizard = {};
-        }
 
         //////////////////////////////////////////////////////custom///////////////////////////////
 
         $scope.issueList = [{
-                "issueName": "Job Learning",
-                "checked5": "true",
-                "checked4": "",
-                "checked3": "",
-                "checked2": "",
-                "checked1": ""
-            }, {
-                "issueName": "Job Knowledge & Skill",
-                "checked5": "",
-                "checked4": "true",
-                "checked3": "",
-                "checked2": "",
-                "checked1": ""
-            }, {
-                "issueName": "Adaptation",
-                "checked5": "",
-                "checked4": "",
-                "checked3": "true",
-                "checked2": "",
-                "checked1": ""
-            }, {
-                "issueName": "Rules Respect",
-                "checked5": "",
-                "checked4": "",
-                "checked3": "",
-                "checked2": "true",
-                "checked1": ""
-            }, {
-                "issueName": "Communication",
-                "checked5": "",
-                "checked4": "",
-                "checked3": "",
-                "checked2": "",
-                "checked1": "true"
-            }, {
-                "issueName": "Attitude",
-                "checked5": "true",
-                "checked4": "",
-                "checked3": "",
-                "checked2": "",
-                "checked1": ""
-            }, {
-                "issueName": "Planning and Following up on work",
-                "checked5": "",
-                "checked4": "",
-                "checked3": "true",
-                "checked2": "",
-                "checked1": ""
-            }, {
-                "issueName": "Decision Makong / Problem Solving",
-                "checked5": "true",
-                "checked4": "",
-                "checked3": "",
-                "checked2": "",
-                "checked1": ""
-            }, {
-                "issueName": "Responsibility",
-                "checked5": "",
-                "checked4": "",
-                "checked3": "",
-                "checked2": "true",
-                "checked1": ""
-            }, {
-                "issueName": "Co-operation with Colleagues",
-                "checked5": "true",
-                "checked4": "",
-                "checked3": "",
-                "checked2": "",
-                "checked1": ""
-            }, {
-                "issueName": "Scores",
-                "checked5": "true",
-                "checked4": "",
-                "checked3": "",
-                "checked2": "",
-                "checked1": ""
-            }];
+            "issueName": "Job Learning",
+            "checked5": "true",
+            "checked4": "",
+            "checked3": "",
+            "checked2": "",
+            "checked1": ""
+        }, {
+            "issueName": "Job Knowledge & Skill",
+            "checked5": "",
+            "checked4": "true",
+            "checked3": "",
+            "checked2": "",
+            "checked1": ""
+        }, {
+            "issueName": "Adaptation",
+            "checked5": "",
+            "checked4": "",
+            "checked3": "true",
+            "checked2": "",
+            "checked1": ""
+        }, {
+            "issueName": "Rules Respect",
+            "checked5": "",
+            "checked4": "",
+            "checked3": "",
+            "checked2": "true",
+            "checked1": ""
+        }, {
+            "issueName": "Communication",
+            "checked5": "",
+            "checked4": "",
+            "checked3": "",
+            "checked2": "",
+            "checked1": "true"
+        }, {
+            "issueName": "Attitude",
+            "checked5": "true",
+            "checked4": "",
+            "checked3": "",
+            "checked2": "",
+            "checked1": ""
+        }, {
+            "issueName": "Planning and Following up on work",
+            "checked5": "",
+            "checked4": "",
+            "checked3": "true",
+            "checked2": "",
+            "checked1": ""
+        }, {
+            "issueName": "Decision Makong / Problem Solving",
+            "checked5": "true",
+            "checked4": "",
+            "checked3": "",
+            "checked2": "",
+            "checked1": ""
+        }, {
+            "issueName": "Responsibility",
+            "checked5": "",
+            "checked4": "",
+            "checked3": "",
+            "checked2": "true",
+            "checked1": ""
+        }, {
+            "issueName": "Co-operation with Colleagues",
+            "checked5": "true",
+            "checked4": "",
+            "checked3": "",
+            "checked2": "",
+            "checked1": ""
+        }, {
+            "issueName": "Scores",
+            "checked5": "true",
+            "checked4": "",
+            "checked3": "",
+            "checked2": "",
+            "checked1": ""
+        }];
 
-
-    }//end controler
+        $scope.closeDialog = function() {
+            $mdDialog.hide();
+        }
+    } //end controler
 
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-

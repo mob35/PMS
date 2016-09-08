@@ -1,9 +1,9 @@
-<md-dialog class="compose-dialog" aria-label="New Employee">
+<md-dialog class="compose-dialog" aria-label="Evaluation Information">
     <form class="md-inline-form">
         <md-toolbar class="md-accent md-hue-2">
             <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
                 <span class="title">Evaluation Information</span>
-                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
+                <md-button class="md-icon-button" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-close"></md-icon>
                 </md-button>
             </div>
@@ -14,7 +14,7 @@
                 <form name="wizardStep1" class="md-inline-form" ms-form-wizard-form novalidate>
                     <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                         <md-input-container flex="30">
-                            <input type="text" name="employeeNo" ng-model="vm.formWizard.firstname" placeholder="Employee No" required>
+                            <input ng-disabled="true" type="text" name="employeeNo" ng-model="selectedEval.PersonalInfo.EmpID" placeholder="Employee No" required>
                             <div ng-messages="wizardStep1.firstname.$error" role="alert">
                                 <div ng-message="required">
                                     <span>Employee No field is required.</span>
@@ -22,7 +22,7 @@
                             </div>
                         </md-input-container>
                         <md-input-container flex="30">
-                            <input type="date" name="dateStart" ng-model="vm.formWizard.lastname" placeholder="Date Start" required>
+                            <input ng-disabled="true" type="text" name="dateStart" ng-model="selectedEval.PersonalInfo.StartDate" placeholder="Date Start" required>
                             <div ng-messages="wizardStep1.lastname.$error" role="alert">
                                 <div ng-message="required">
                                     <span>Date Start field is required.</span>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                         <md-input-container flex="30">
-                            <input type="text" name="firstname" ng-model="vm.formWizard.firstname" placeholder="Firstname" required>
+                            <input ng-disabled="true" type="text" name="firstname" ng-model="selectedEval.PersonalInfo.FirstNameTH" placeholder="Firstname" required>
                             <div ng-messages="wizardStep1.firstname.$error" role="alert">
                                 <div ng-message="required">
                                     <span>Firstname field is required.</span>
@@ -42,7 +42,7 @@
                             </div>
                         </md-input-container>
                         <md-input-container flex="30">
-                            <input type="text" name="lastname" ng-model="vm.formWizard.lastname" placeholder="Lastname" required>
+                            <input ng-disabled="true" type="text" name="lastname" ng-model="selectedEval.PersonalInfo.LastNameTH" placeholder="Lastname" required>
                             <div ng-messages="wizardStep1.lastname.$error" role="alert">
                                 <div ng-message="required">
                                     <span>Lastname field is required.</span>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                         <md-input-container flex="30">
-                            <input type="text" name="position" ng-model="vm.formWizard.firstname" placeholder="Position" required>
+                            <input ng-disabled="true" type="text" name="position" ng-model="selectedEval.PersonalInfo.Position" placeholder="Position" required>
                             <div ng-messages="wizardStep1.firstname.$error" role="alert">
                                 <div ng-message="required">
                                     <span>Position field is required.</span>
@@ -62,7 +62,7 @@
                             </div>
                         </md-input-container>
                         <md-input-container flex="30">
-                            <input type="date" name="dateConf" ng-model="vm.formWizard.lastname" placeholder="Date Confirmed" required>
+                            <input ng-disabled="true" type="text" name="dateConf" ng-model="selectedEval.EvaluationInfo.DateConfirmedEV" placeholder="Date Confirmed" required>
                             <div ng-messages="wizardStep1.lastname.$error" role="alert">
                                 <div ng-message="required">
                                     <span>Date Confirmed field is required.</span>
@@ -87,8 +87,188 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="x in issueList">
-                        <td class="text-left">{{x.issueName}}</td>
+                    <tr>
+                        <td class="text-left">Job Learning</td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked5}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked4}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked3}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked2}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked1}}" name="{{x.issueName}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Job Knowledge & Skill</td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked5}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked4}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked3}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked2}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked1}}" name="{{x.issueName}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Adaptation</td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked5}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked4}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked3}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked2}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked1}}" name="{{x.issueName}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Rules Respect</td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked5}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked4}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked3}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked2}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked1}}" name="{{x.issueName}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Communication</td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked5}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked4}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked3}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked2}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked1}}" name="{{x.issueName}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Attitude</td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked5}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked4}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked3}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked2}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked1}}" name="{{x.issueName}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Planning and Following up on work</td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked5}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked4}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked3}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked2}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked1}}" name="{{x.issueName}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Decision Makong / Problem Solving</td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked5}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked4}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked3}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked2}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked1}}" name="{{x.issueName}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Responsibility</td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked5}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked4}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked3}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked2}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked1}}" name="{{x.issueName}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Co-operation with Colleagues</td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked5}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked4}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked3}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked2}}" name="{{x.issueName}}">
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" ng-checked="{{x.checked1}}" name="{{x.issueName}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Scores</td>
                         <td class="text-center">
                             <input type="radio" ng-checked="{{x.checked5}}" name="{{x.issueName}}">
                         </td>
@@ -107,15 +287,27 @@
                     </tr>
                     <tr>
                         <td class="text-left">Total Scores</td>
-                        <td class="text-center" colspan="5"><md-input-container><input type="text" name=""></md-input-container></td>
+                        <td class="text-center" colspan="5">
+                            <md-input-container>
+                                <input type="text" name="">
+                            </md-input-container>
+                        </td>
                     </tr>
                     <tr>
                         <td class="text-left">Persent</td>
-                        <td class="text-center" colspan="5"><md-input-container><input type="text" name=""></md-input-container></td>
+                        <td class="text-center" colspan="5">
+                            <md-input-container>
+                                <input type="text" name="">
+                            </md-input-container>
+                        </td>
                     </tr>
                     <tr>
                         <td class="text-left">Other</td>
-                        <td class="text-center" colspan="5"><md-input-container><textarea></textarea></md-input-container></td>
+                        <td class="text-center" colspan="5">
+                            <md-input-container>
+                                <textarea></textarea>
+                            </md-input-container>
+                        </td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -130,24 +322,29 @@
                 </md-input-container>
             </div>
             <table>
-                    <tr>
-                        <td class="text-center" colspan="5"><input type="radio" name="evalType" class="margin-bottom-35 margin-left-55 margin-top-35"></td>
-                        <td class="text-left">Confirmed</td>
-                    
-                        <td class="text-center" style="padding-left:30px" colspan="5"><input type="radio" name="evalType"></td>
-                        <td class="text-left">Extended</td>
-                        <td class="text-center" colspan="5"><md-input-container><input type="text" name=""></md-input-container></td>
-                        <td class="text-left">Day</td>
-                    
-                        <td class="text-center" style="padding-left:30px" colspan="5"><input type="radio" name="evalType"></td>
-                        <td class="text-left">Not Confirmed</td>
-                    </tr>
+                <tr>
+                    <td class="text-center" colspan="5">
+                        <input type="radio" name="evalType" class="margin-bottom-35 margin-left-55 margin-top-35">
+                    </td>
+                    <td class="text-left">Confirmed</td>
+                    <td class="text-center" style="padding-left:30px" colspan="5">
+                        <input type="radio" name="evalType">
+                    </td>
+                    <td class="text-left">Extended</td>
+                    <td class="text-center" colspan="5">
+                        <md-input-container>
+                            <input type="text" name="">
+                        </md-input-container>
+                    </td>
+                    <td class="text-left">Day</td>
+                    <td class="text-center" style="padding-left:30px" colspan="5">
+                        <input type="radio" name="evalType">
+                    </td>
+                    <td class="text-left">Not Confirmed</td>
+                </tr>
             </table>
-
-
-
             <div class="navigation" flex layout="row" layout-align="right">
-                <md-button class="md-raised md-accent md-button md-ink-ripple" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
+                <md-button class="md-raised md-accent md-button md-ink-ripple" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
                     Cancel
                 </md-button>
                 <span class="btn-right">

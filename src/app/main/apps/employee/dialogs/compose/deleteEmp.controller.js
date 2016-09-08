@@ -4,10 +4,10 @@
 
     angular
         .module('app.employee')
-        .controller('DeleteDialogController', DeleteDialogController);
+        .controller('DeleteDialogEmpController', DeleteDialogEmpController);
 
     /** @ngInject */
-    function DeleteDialogController($mdDialog, selectedMail, $scope)
+    function DeleteDialogEmpController($mdDialog, selectedMail,selectEmpForDel, $scope, employeeService)
     {
         var vm = this;
 
@@ -19,6 +19,28 @@
         vm.hiddenCC = true;
         vm.hiddenBCC = true;
 
+            //////////////////////////////////////////////////////////////////////call service method//////////////////////
+        // employeeService.getAll().then(function(res) {
+        //     $scope.employeeList = res.data;
+
+
+        //     for (var i = 0; i <= $scope.employeeList.length - 1; i++) {
+
+        //         var teamIsNew = $scope.positions.indexOf($scope.employeeList[i].PersonalInfo.Position) == -1;
+        //         if (teamIsNew) {
+        //             $scope.positions.push($scope.employeeList[i].PersonalInfo.Position);
+        //         }
+        //     }
+
+        //     $scope.selected = $scope.positions[0];
+            
+
+        // }, function(err) {
+        //     console.log(err);
+        // });
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         // If replying
         if ( angular.isDefined(selectedMail) )
         {
@@ -28,14 +50,35 @@
         }
 
         // Methods
-        $scope.closeDialog = closeDialog;
+        // $scope.closeDialog = closeDialog;
         vm.addNewList = addNewList;
 
 
         //////////
+        $scope.deleteEmp = function() {
+            alert("deleteEmp");
+            console.log('length:'+selectEmpForDel.EmpID);
+            employeeService.deleteEmpData(selectEmpForDel).then(function(res) {
+                for (var i = 0; i < $scope.employeeList.length; i++) {
+                if (selectEmpForDel.EmpID == $scope.employeeList[i].EmpID) {
+                    $scope.employeeList.splice(i, 1);
+                    break;
+                }
+            }
+            selectedMail.PersonalInfo.FirstNameEN = '';
+            $scope.closeDialog();
+            console.log('success');
+            }, function(err) {
+                console.log(err);
+            });
+            
+        }
 
-        function closeDialog()
+
+
+        $scope.closeDialog = function()
         {
+            alert("closeDialog");
             $mdDialog.hide();
         }
         $scope.stepper = {

@@ -1,205 +1,252 @@
 <!-- 1 -->
 <div ng-show="showRead">
-<md-card>
-    <md-toolbar class="md-accent">
-        <h2 class="md-toolbar-tools">
+    <md-card>
+        <md-toolbar class="md-accent">
+            <h2 class="md-toolbar-tools">
       <span flex>Personal Information</span>
-      <md-button class="md-icon-button" ng-click="FnEditPer()"  tranlate
+      <!-- <md-button class="md-icon-button" ng-click="FnEditPer()"  tranlate
+                           translate-aria-label="EMP.CLOSE_DIALOG">
+                    <md-icon md-font-icon="icon-table-edit"></md-icon>
+                </md-button> -->
+                <md-button class="md-icon-button" ng-click="FnEditPer($event)"  tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
                 </md-button>
     </h2>
-    </md-toolbar>
-    <md-card-content ng-show="modeShowPer">
-        <div ng-repeat="per in selectedMail.personalInfo">
-            <div layout="row" layout-xs="column">
-                <div flex="80">
+        </md-toolbar>
+        <md-card-content ng-show="modeShowPer">
+            <div >
+                <div layout="row" layout-xs="column">
+                    <div flex="90">
+                    </div>
+                    <div class="imgStyle">
+                        <img class="avatar" ng-src="{{per.img}}" />
+                    </div>
                 </div>
-                <div class="imgStyle">
-                    <img class="avatar" ng-src="{{per.img}}" />
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="45">
+                        <span>FirstName : {{selectedMail.PersonalInfo.FirstNameEN}}</span>
+                    </div>
+                    <div>
+                        <span>LastName : {{per.LastNameEn}}</span>
+                    </div>
                 </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <span>FirstName : {{per.nameEn}}</span>
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="45">
+                        <span>Position : {{per.position}}</span>
+                    </div>
+                    <div>
+                        <span>Salary : {{per.salary}} THB</span>
+                    </div>
                 </div>
-                <div>
-                    <span>LastName : {{per.LastNameEn}}</span>
+                <!-- //////////////// -->
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="45">
+                        <span>Birthdate : {{per.birthdate}}</span>
+                    </div>
+                    <div flex>
+                        <span>Age : {{per.age}} Yrs.</span>
+                    </div>
                 </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <span>Position : {{per.position}}</span>
+                <!-- //////////////// -->
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="45">
+                        <span>Sex : {{per.sex}}</span>
+                    </div>
+                    <div flex>
+                        <span>Race : {{per.race}}</span>
+                    </div>
                 </div>
-                <div>
-                    <span>Salary : {{per.salary}} THB</span>
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="45">
+                        <span>Nationality : {{per.nationality}}</span>
+                    </div>
+                    <div flex>
+                        <span>Religion : {{per.religion}}</span>
+                    </div>
                 </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <span>Address : {{per.address}}</span>
+                <!-- /////////////// -->
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="45">
+                        <span>IDCard No. : {{per.idcard}}</span>
+                    </div>
+                    <div flex>
+                        <span>Expiration Date : {{per.idcardEx}}</span>
+                    </div>
                 </div>
-                <div flex="30">
-                    <span>Moo : {{per.moo}}</span>
+                <!-- ////////////////// -->
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="45">
+                        <span>Email : {{per.email}}</span>
+                    </div>
+                    <div flex>
+                        <span>Account : {{per.account}}</span>
+                    </div>
                 </div>
-                <div flex>
-                    <span>Road : {{per.road}}</span>
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    
                 </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <span>District : {{per.district}}</span>
+                <div ng-hide="personalShowDis">
+                    <div layout="row" layout-xs="column">
+                        <div flex="90">
+                        </div>
+                        <div flex>
+                            <div ng-click="personalShowDis = true">
+                                <span style="font-weight: bold;cursor:pointer">More</span>
+                                <!-- <md-icon md-font-icon="icon-dots-horizontal" class="icon"></md-icon> -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div flex="30">
-                    <span>Amphur : {{per.amphur}}</span>
-                </div>
-                <div flex>
-                    <span>Province : {{per.province}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <span>Postcode : {{per.postcode}}</span>
-                </div>
-                <div flex="30">
-                    <span>Tel : {{per.tel}}</span>
-                </div>
-                <div flex>
-                    <span>Mobile : {{per.mobile}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="60">
-                    <span>Email : {{per.email}}</span>
-                </div>
-                <div flex>
-                    <span>Living : {{per.living}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <span>Birthdate : {{per.birthdate}}</span>
-                </div>
-                <div flex="30">
-                    <span>Age : {{per.age}} Yrs.</span>
-                </div>
-                <div flex>
-                    <span>Race : {{per.race}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <span>Nationality : {{per.nationality}}</span>
-                </div>
-                <div flex="30">
-                    <span>Religion : {{per.religion}}</span>
-                </div>
-                <div flex>
-                    <span>Sex : {{per.sex}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="60">
-                    <span>IDCard No. : {{per.idcard}}</span>
-                </div>
-                <div flex>
-                    <span>Expiration Date : {{per.idcardEx}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <span>Height : {{per.height}} cm.</span>
-                </div>
-                <div flex="30">
-                    <span>Weight : {{per.weight}} kgs.</span>
-                </div>
-                <div flex>
-                    <span>Underlying disease : {{per.underlying}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <span>Military : {{per.military}}</span>
-                </div>
-                <div flex="30">
-                    <span>Marital : {{per.marital}}</span>
-                </div>
-                <div flex="30">
-                    <span>Account : {{per.account}}</span>
-                </div>
-            </div>
-        </div>
-    </md-card-content>
-    <md-card-content ng-hide="modeEditPer">
-        <div ng-repeat="per in selectedMail.personalInfo">
-            <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <md-input-container>
-                        <input type="text" name="FirstName" ng-model="per.nameEn" placeholder="FirstName" required>
-                    </md-input-container>
-                    <!-- <span>FirstName : {{per.nameEn}}</span> -->
-                </div>
-                <div>
-                    <md-input-container>
-                        <input type="text" name="LastName" ng-model="per.LastNameEn" placeholder="LastName" required>
-                    </md-input-container>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column" style="margin-top: -45px;">
-                <div flex="30">
-                    <md-input-container>
-                        <input type="text" name="Position" ng-model="per.position" placeholder="Position" required>
-                    </md-input-container>
-                </div>
-                <div>
-                    <md-input-container>
-                        <input type="text" name="Salary" ng-model="per.salary" placeholder="Salary" required>
-                    </md-input-container>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column" style="margin-top: -45px;">
-                <div flex="30">
-                    <md-input-container>
-                        <input type="text" name="Address" ng-model="per.address" placeholder="Address" required>
-                    </md-input-container>
-                </div>
-                <div flex="30">
-                    <md-input-container>
-                        <input type="text" name="Moo" ng-model="per.moo" placeholder="Moo" required>
-                    </md-input-container>
-                </div>
-                <div flex>
-                    <md-input-container>
-                        <input type="text" name="Road" ng-model="per.road" placeholder="Road" required>
-                    </md-input-container>
+                <!-- ////////////////// -->
+                <div ng-show="personalShowDis">
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
+                            <span>Address : {{per.address}}</span>
+                        </div>
+                        <div flex>
+                            <span>Moo : {{per.moo}}</span>
+                        </div>
+                    </div>
+                    <!-- //////////////////// -->
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
+                            <span>Road : {{per.road}}</span>
+                        </div>
+                        <div flex>
+                            <span>District : {{per.district}}</span>
+                        </div>
+                    </div>
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
+                            <span>Amphur : {{per.amphur}}</span>
+                        </div>
+                        <div flex>
+                            <span>Province : {{per.province}}</span>
+                        </div>
+                    </div>
+                    <!-- ////////////////// -->
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
+                            <span>Postcode : {{per.postcode}}</span>
+                        </div>
+                        <div flex>
+                            <span>Tel : {{per.tel}}</span>
+                        </div>
+                    </div>
+                    <!-- ////////////////////// -->
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
+                            <span>Mobile : {{per.mobile}}</span>
+                        </div>
+                        <div flex>
+                            <span>Height : {{per.height}} cm.</span>
+                        </div>
+                    </div>
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
+                            <span>Weight : {{per.weight}} kgs.</span>
+                        </div>
+                        <div flex>
+                            <span>Underlying disease : {{per.underlying}}</span>
+                        </div>
+                    </div>
+                    <!-- //////////////////// -->
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
+                            <span>Living : {{per.living}}</span>
+                        </div>
+                        <div flex>
+                            <span>Military : {{per.military}}</span>
+                        </div>
+                    </div>
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="45">
+                             <span>Marital : {{per.marital}}</span>
+                        </div>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <div flex="90">
+                        </div>
+                        <div flex>
+                            <div ng-click="personalShowDis = false">
+                                <span style="font-weight: bold;cursor:pointer">Hide</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div layout="row" layout-xs="column" style="margin-top: -45px;">
-                <div flex="30">
-                    <md-input-container>
-                        <input type="text" name="District" ng-model="per.district" placeholder="District" required>
-                    </md-input-container>
+        </md-card-content>
+        <md-card-content ng-hide="modeEditPer">
+            <div>
+                <div layout="row" layout-xs="column">
+                    <div flex="30">
+                        <md-input-container>
+                            <input type="text" name="FirstName" ng-model="selectedMail.PersonalInfo.FirstNameEN" placeholder="FirstName" required>
+                        </md-input-container>
+                        <!-- <span>FirstName : {{per.nameEn}}</span> -->
+                    </div>
+                    <div>
+                        <md-input-container>
+                            <input type="text" name="LastName" ng-model="per.LastNameEn" placeholder="LastName" required>
+                        </md-input-container>
+                    </div>
                 </div>
-                <div flex="30">
-                    <md-input-container>
-                        <input type="text" name="Amphur" ng-model="per.amphur" placeholder="Amphur" required>
-                    </md-input-container>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex="30">
+                        <md-input-container>
+                            <input type="text" name="Position" ng-model="per.position" placeholder="Position" required>
+                        </md-input-container>
+                    </div>
+                    <div>
+                        <md-input-container>
+                            <input type="text" name="Salary" ng-model="per.salary" placeholder="Salary" required>
+                        </md-input-container>
+                    </div>
                 </div>
-                <div flex>
-                    <md-input-container>
-                        <input type="text" name="Province" ng-model="per.province" placeholder="Province" required>
-                    </md-input-container>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex="30">
+                        <md-input-container>
+                            <input type="text" name="Address" ng-model="per.address" placeholder="Address" required>
+                        </md-input-container>
+                    </div>
+                    <div flex="30">
+                        <md-input-container>
+                            <input type="text" name="Moo" ng-model="per.moo" placeholder="Moo" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Road" ng-model="per.road" placeholder="Road" required>
+                        </md-input-container>
+                    </div>
                 </div>
-            </div>
-            <div class="navigation fixPos" flex layout="row" layout-align="center center">
-                <md-button class="md-raised md-accent" ng-click="FnCancelPer()" >
-                    Cancel
-                </md-button>
-                <md-button class="md-raised md-accent" ng-click="FnSavePer()" >
-                    Save
-                </md-button>
-            </div>
-            <!-- <div layout="row" layout-xs="column">
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex="30">
+                        <md-input-container>
+                            <input type="text" name="District" ng-model="per.district" placeholder="District" required>
+                        </md-input-container>
+                    </div>
+                    <div flex="30">
+                        <md-input-container>
+                            <input type="text" name="Amphur" ng-model="per.amphur" placeholder="Amphur" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Province" ng-model="per.province" placeholder="Province" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div class="navigation fixPos" flex layout="row" layout-align="center center">
+                    <md-button class="md-raised md-accent" ng-click="FnCancelPer()">
+                        Cancel
+                    </md-button>
+                    <md-button class="md-raised md-accent" ng-click="FnSavePer()">
+                        Save
+                    </md-button>
+                </div>
+                <!-- <div layout="row" layout-xs="column">
                 <div flex="30">
                     <span>Postcode : {{per.postcode}}</span>
                 </div>
@@ -270,405 +317,451 @@
                     <span>Account : {{per.account}}</span>
                 </div>
             </div> -->
-        </div>
-    </md-card-content>
-</md-card>
-<!-- 2 -->
-<md-card>
-    <md-toolbar class="md-accent">
-        <h2 class="md-toolbar-tools">
+            </div>
+        </md-card-content>
+    </md-card>
+    <!-- 2 -->
+    <md-card>
+        <md-toolbar class="md-accent">
+            <h2 class="md-toolbar-tools">
       <span flex>Family Information</span>
       <md-button class="md-icon-button" ng-click="FnEditFam()" aria-label="Close dialog" tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
                 </md-button>
     </h2>
-    </md-toolbar>
-    <md-card-content ng-show="modeShowFam">
-        <div ng-repeat="fam in selectedMail.familyInfo">
-            <div layout="row" layout-align="start center">
-                <div class="info" flex layout="column">
-                    <div class="name" layout="row" layout-align="start center">
-                        <span class="logo-icon iconMargin">
+        </md-toolbar>
+        <md-card-content ng-show="modeShowFam">
+            <div ng-repeat="fam in selectedMail.familyInfo">
+                <div layout="row" layout-align="start center">
+                    <div class="info" flex layout="column">
+                        <div class="name" layout="row" layout-align="start center">
+                            <span class="logo-icon iconMargin">
             <md-icon md-font-icon="icon-person-box" class="icon"></md-icon>
         </span>
-                        <span>&nbsp;&nbsp;&nbsp;</span>
-                        <span>&nbsp;&nbsp;&nbsp;</span>
-                        <div class="info" flex layout="column">
-                            <div class="name" layout="row" layout-align="start center">
-                                <span class="text-truncate">{{fam.nameFm}} &nbsp;&nbsp;&nbsp; {{fam.LastNameFm}} </span>
-                                <!-- <hr> -->
-                            </div>
-                            <div class="hrBorder" layout="row" layout-xs="column">
-                                <div flex>
-                                    <span>Age : {{fam.age}} Yrs.</span>
-                                    <span>( {{fam.related}} )</span>
-                                    <span>Occupation [ {{fam.Occupation}} ]</span>
-                                    <span>Tel : {{fam.tel}}</span>
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                            <div class="info" flex layout="column">
+                                <div class="name" layout="row" layout-align="start center">
+                                    <span class="text-truncate">{{fam.nameFm}} &nbsp;&nbsp;&nbsp; {{fam.LastNameFm}} </span>
+                                    <!-- <hr> -->
+                                </div>
+                                <div class="hrBorder" layout="row" layout-xs="column">
+                                    <div flex>
+                                        <span>Age : {{fam.age}} Yrs.</span>
+                                        <span>( {{fam.related}} )</span>
+                                        <span>Occupation [ {{fam.Occupation}} ]</span>
+                                        <span>Tel : {{fam.tel}}</span>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- <hr> -->
                         </div>
-                        <!-- <hr> -->
                     </div>
                 </div>
             </div>
-        </div>
-    </md-card-content>
-
-    <md-card-content ng-hide="modeEditFam">
-        <div ng-repeat="fam in selectedMail.familyInfo">
-            <div layout="row" layout-align="start center">
-                <div class="info" flex layout="column">
-                    <div class="name" layout="row" layout-align="start center">
-                        <span class="logo-icon iconMargin">
+        </md-card-content>
+        <md-card-content ng-hide="modeEditFam">
+            <div ng-repeat="fam in selectedMail.familyInfo">
+                <div layout="row" layout-align="start center">
+                    <div class="info" flex layout="column">
+                        <div class="name" layout="row" layout-align="start center">
+                            <span class="logo-icon iconMargin">
             <md-icon md-font-icon="icon-person-box" class="icon"></md-icon>
         </span>
-                        <span>&nbsp;&nbsp;&nbsp;</span>
-                        <span>&nbsp;&nbsp;&nbsp;</span>
-                        <div class="info" flex layout="column">
-                            <div class="name" layout="row" layout-align="start center">
-                                <span class="text-truncate">{{fam.nameFm}} &nbsp;&nbsp;&nbsp; {{fam.LastNameFm}} </span>
-                                <!-- <hr> -->
-                            </div>
-                            <div class="hrBorder" layout="row" layout-xs="column">
-                                <div flex>
-                                    <span>Age : {{fam.age}} Yrs.</span>
-                                    <span>( {{fam.related}} )</span>
-                                    <span>Occupation [ {{fam.Occupation}} ]</span>
-                                    <span>Tel : {{fam.tel}}</span>
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                            <div class="info" flex layout="column">
+                                <div class="name" layout="row" layout-align="start center">
+                                    <span class="text-truncate">{{fam.nameFm}} &nbsp;&nbsp;&nbsp; {{fam.LastNameFm}} </span>
+                                    <!-- <hr> -->
+                                </div>
+                                <div class="hrBorder" layout="row" layout-xs="column">
+                                    <div flex>
+                                        <span>Age : {{fam.age}} Yrs.</span>
+                                        <span>( {{fam.related}} )</span>
+                                        <span>Occupation [ {{fam.Occupation}} ]</span>
+                                        <span>Tel : {{fam.tel}}</span>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- <hr> -->
                         </div>
-                        <!-- <hr> -->
                     </div>
                 </div>
             </div>
-        </div>
-          <div class="navigation fixPos" flex layout="row" layout-align="center center">
-                <md-button class="md-raised md-accent" ng-click="FnCancelFam()" >
+            <div class="navigation fixPos" flex layout="row" layout-align="center center">
+                <md-button class="md-raised md-accent" ng-click="FnCancelFam()">
                     Cancel
                 </md-button>
-                <md-button class="md-raised md-accent" ng-click="FnSaveFam()" >
+                <md-button class="md-raised md-accent" ng-click="FnSaveFam()">
                     Save
                 </md-button>
             </div>
-    </md-card-content>
-</md-card>
-<!-- 3 -->
-<md-card>
-    <md-toolbar class="md-accent">
-        <h2 class="md-toolbar-tools">
+        </md-card-content>
+    </md-card>
+    <!-- 3 -->
+    <md-card>
+        <md-toolbar class="md-accent">
+            <h2 class="md-toolbar-tools">
       <span flex>Education Information</span>
       <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
                 </md-button>
     </h2>
-    </md-toolbar>
-    <md-card-content>
-        <div ng-repeat="edu in selectedMail.EducationInfo">
-            <div layout="row" layout-align="start center">
-                <div class="info" flex layout="column">
-                    <div class="name" layout="row" layout-align="start center">
-                        <span class="logo-icon iconMargin">
+        </md-toolbar>
+        <md-card-content>
+            <div ng-repeat="edu in selectedMail.EducationInfo">
+                <div layout="row" layout-align="start center">
+                    <div class="info" flex layout="column">
+                        <div class="name" layout="row" layout-align="start center">
+                            <span class="logo-icon iconMargin">
             <md-icon md-font-icon="icon-school" class="icon"></md-icon>
         </span>
-                        <span>&nbsp;&nbsp;&nbsp;</span>
-                        <span>&nbsp;&nbsp;&nbsp;</span>
-                        <div class="info" flex layout="column">
-                            <div class="name" layout="row" layout-align="start center">
-                                <span class="text-truncate">{{edu.EduLevel}}  </span>
-                                <!-- <hr> -->
-                            </div>
-                            <div class="hrBorder" layout="row" layout-xs="column">
-                                <div flex>
-                                    <span>{{edu.age}}</span>
-                                    <span>{{edu.Institution}}</span>
-                                    <span>( {{edu.DateEduFrom}} - {{edu.DateEduTo}} )</span>
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                            <div class="info" flex layout="column">
+                                <div class="name" layout="row" layout-align="start center">
+                                    <span class="text-truncate">{{edu.EduLevel}}  </span>
+                                    <!-- <hr> -->
+                                </div>
+                                <div class="hrBorder" layout="row" layout-xs="column">
+                                    <div flex>
+                                        <span>{{edu.age}}</span>
+                                        <span>{{edu.Institution}}</span>
+                                        <span>( {{edu.DateEduFrom}} - {{edu.DateEduTo}} )</span>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- <hr> -->
                         </div>
-                        <!-- <hr> -->
                     </div>
                 </div>
             </div>
-        </div>
-    </md-card-content>
-</md-card>
-<!-- 4 -->
-<md-card>
-    <md-toolbar class="md-accent">
-        <h2 class="md-toolbar-tools">
+        </md-card-content>
+    </md-card>
+    <!-- 4 -->
+    <md-card>
+        <md-toolbar class="md-accent">
+            <h2 class="md-toolbar-tools">
       <span flex>Work Experience</span>
       <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
                 </md-button>
     </h2>
-    </md-toolbar>
-    <md-card-content>
-        <div ng-repeat="work in selectedMail.WorkInfo">
-            <div layout="row" layout-align="start center">
-                <div class="info" flex layout="column">
-                    <div class="name" layout="row" layout-align="start center">
-                        <span class="logo-icon iconMargin">
+        </md-toolbar>
+        <md-card-content>
+            <div ng-repeat="work in selectedMail.WorkInfo">
+                <div layout="row" layout-align="start center">
+                    <div class="info" flex layout="column">
+                        <div class="name" layout="row" layout-align="start center">
+                            <span class="logo-icon iconMargin">
             <md-icon md-font-icon="icon-briefcase" class="icon"></md-icon>
         </span>
-                        <span>&nbsp;&nbsp;&nbsp;</span>
-                        <span>&nbsp;&nbsp;&nbsp;</span>
-                        <div class="info" flex layout="column">
-                            <div class="name" layout="row" layout-align="start center">
-                                <span class="text-truncate">{{work.Company}}  </span>
-                                <!-- <hr> -->
-                            </div>
-                            <div layout="row" layout-xs="column">
-                                <div flex>
-                                    <span>{{work.Position}}</span>
-                                    <span>( {{work.DateFrom}} - {{work.DateTo}} )</span>
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                            <div class="info" flex layout="column">
+                                <div class="name" layout="row" layout-align="start center">
+                                    <span class="text-truncate">{{work.Company}}  </span>
+                                    <!-- <hr> -->
+                                </div>
+                                <div layout="row" layout-xs="column">
+                                    <div flex>
+                                        <span>{{work.Position}}</span>
+                                        <span>( {{work.DateFrom}} - {{work.DateTo}} )</span>
+                                    </div>
+                                </div>
+                                <div class="hrBorder" layout="row" layout-xs="column">
+                                    <div flex>
+                                        <span>{{work.JobDesc}}</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="hrBorder" layout="row" layout-xs="column">
-                                <div flex>
-                                    <span>{{work.JobDesc}}</span>
-                                </div>
-                            </div>
+                            <!-- <hr> -->
                         </div>
-                        <!-- <hr> -->
                     </div>
                 </div>
             </div>
-        </div>
-    </md-card-content>
-</md-card>
-<!-- 5 -->
-<md-card>
-    <md-toolbar class="md-accent">
-        <h2 class="md-toolbar-tools">
+        </md-card-content>
+    </md-card>
+    <!-- 5 -->
+    <md-card>
+        <md-toolbar class="md-accent">
+            <h2 class="md-toolbar-tools">
       <span flex>Language Ability</span>
       <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
                 </md-button>
     </h2>
-    </md-toolbar>
-    <md-card-content>
-        <div ng-repeat="lang in selectedMail.languageInfo">
-            <div layout="row" layout-align="start center">
-                <div class="info" flex layout="column">
-                    <div class="name" layout="row" layout-align="start center">
-                        <span class="logo-icon iconMargin">
+        </md-toolbar>
+        <md-card-content>
+            <div ng-repeat="lang in selectedMail.languageInfo">
+                <div layout="row" layout-align="start center">
+                    <div class="info" flex layout="column">
+                        <div class="name" layout="row" layout-align="start center">
+                            <span class="logo-icon iconMargin">
             <md-icon md-font-icon="icon-earth" class="icon"></md-icon>
         </span>
-                        <span>&nbsp;&nbsp;&nbsp;</span>
-                        <span>&nbsp;&nbsp;&nbsp;</span>
-                        <div class="info" flex layout="column">
-                            <div class="name" layout="row" layout-align="start center">
-                                <span class="text-truncate">{{lang.langType}}  </span>
-                                <!-- <hr> -->
-                            </div>
-                            <div class="hrBorder" layout="row" layout-xs="column">
-                                <div flex>
-                                    <span>Speaking : {{lang.speaking}} |</span>
-                                    <span>Writing : {{lang.writing}} |</span>
-                                    <span>Reading : {{lang.reading}}</span>
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                            <div class="info" flex layout="column">
+                                <div class="name" layout="row" layout-align="start center">
+                                    <span class="text-truncate">{{lang.langType}}  </span>
+                                    <!-- <hr> -->
+                                </div>
+                                <div class="hrBorder" layout="row" layout-xs="column">
+                                    <div flex>
+                                        <span>Speaking : {{lang.speaking}} |</span>
+                                        <span>Writing : {{lang.writing}} |</span>
+                                        <span>Reading : {{lang.reading}}</span>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- <hr> -->
                         </div>
-                        <!-- <hr> -->
                     </div>
                 </div>
             </div>
-        </div>
-    </md-card-content>
-</md-card>
-<!-- 6 -->
-<md-card>
-    <md-toolbar class="md-accent">
-        <h2 class="md-toolbar-tools">
+        </md-card-content>
+    </md-card>
+    <!-- 6 -->
+    <md-card>
+        <md-toolbar class="md-accent">
+            <h2 class="md-toolbar-tools">
       <span flex>Special Ability</span>
       <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
                 </md-button>
     </h2>
-    </md-toolbar>
-    <md-card-content>
-        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-            <div flex="30">
-                <span>Typing</span>
+        </md-toolbar>
+        <md-card-content>
+            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                <div flex="35">
+                    <span class="fontStyle">Typing</span>
+                </div>
+                <div flex>
+                    <span>Thai {{spe.typingTH}} Word/Minutes</span>
+                </div>
             </div>
-            <div flex>
-                <span>Thai {{spe.typingTH}} Word/Minutes</span>
+            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                <div flex="35">
+                    <span></span>
+                </div>
+                <div flex>
+                    <span>English {{spe.typingEN}} Word/Minutes</span>
+                </div>
             </div>
-        </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-            <div flex="30">
-                <span></span>
+            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                <div flex="35">
+                    <span class="fontStyle">Computer</span>
+                </div>
+                <div flex>
+                    <span>{{spe.computer}}</span>
+                </div>
             </div>
-            <div flex>
-                <span>English {{spe.typingEN}} Word/Minutes</span>
+            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                <div flex="35">
+                    <span class="fontStyle">Driving</span>
+                </div>
+                <div flex>
+                    <span>No. {{spe.driving}}</span>
+                </div>
             </div>
-        </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-            <div flex="30">
-                <span>Computer</span>
+            <!-- /////////////////////////// -->
+            <div ng-hide="specialShowDis">
+                <div layout="row" layout-xs="column">
+                    <div flex="90">
+                    </div>
+                    <div flex>
+                        <div ng-click="specialShowDis = true">
+                            <span style="font-weight: bold;cursor:pointer">More</span>
+                            <!-- <md-icon md-font-icon="icon-dots-horizontal" class="icon"></md-icon> -->
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div flex>
-                <span>{{spe.computer}}</span>
+            <div ng-show="specialShowDis">
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                    <div flex="35">
+                        <span class="fontStyle">Office Machine</span>
+                    </div>
+                    <div flex>
+                        <span>{{spe.officeMachine}}</span>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                    <div flex="35">
+                        <span class="fontStyle">Hobby</span>
+                    </div>
+                    <div flex>
+                        <span>{{spe.hobby}}</span>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                    <div flex="35">
+                        <span class="fontStyle">Sport</span>
+                    </div>
+                    <div flex>
+                        <span>{{spe.sport}}</span>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                    <div flex="35">
+                        <span class="fontStyle">Knowledge</span>
+                    </div>
+                    <div flex>
+                        <span>{{spe.knowledge}}</span>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                    <div flex="35">
+                        <span class="fontStyle">Other</span>
+                    </div>
+                    <div flex>
+                        <span>{{spe.other}}</span>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column">
+                    <div flex="90">
+                    </div>
+                    <div flex>
+                        <div ng-click="specialShowDis = false">
+                            <span style="font-weight: bold;cursor:pointer;">Hide</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-            <div flex="30">
-                <span>Driving</span>
-            </div>
-            <div flex>
-                <span>No. {{spe.driving}}</span>
-            </div>
-        </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-            <div flex="30">
-                <span>Office Machine</span>
-            </div>
-            <div flex>
-                <span>{{spe.officeMachine}}</span>
-            </div>
-        </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-            <div flex="30">
-                <span>Hobby</span>
-            </div>
-            <div flex>
-                <span>{{spe.hobby}}</span>
-            </div>
-        </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-            <div flex="30">
-                <span>Sport</span>
-            </div>
-            <div flex>
-                <span>{{spe.sport}}</span>
-            </div>
-        </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-            <div flex="30">
-                <span>Knowledge</span>
-            </div>
-            <div flex>
-                <span>{{spe.knowledge}}</span>
-            </div>
-        </div>
-        <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo">
-            <div flex="30">
-                <span>Other</span>
-            </div>
-            <div flex>
-                <span>{{spe.other}}</span>
-            </div>
-        </div>
-    </md-card-content>
-</md-card>
-<!-- 7 -->
-<md-card>
-    <md-toolbar class="md-accent">
-        <h2 class="md-toolbar-tools">
+        </md-card-content>
+    </md-card>
+    <!-- 7 -->
+    <md-card>
+        <md-toolbar class="md-accent">
+            <h2 class="md-toolbar-tools">
       <span flex>Other Information</span>
       <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
                 </md-button>
     </h2>
-    </md-toolbar>
-    <md-card-content>
-        <div ng-repeat="oth in selectedMail.otherInfo">
-            <div layout="row" layout-xs="column">
-                <div class="fontStyle" flex="40">
-                    <span>I Can Work Up Country</span>
+        </md-toolbar>
+        <md-card-content>
+            <div ng-repeat="oth in selectedMail.otherInfo">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div class="fontStyle" flex="50">
+                        <span>I Can Work Up Country</span>
+                    </div>
+                    <div flex>
+                        <span>{{oth.workCountry}}</span>
+                    </div>
                 </div>
-                <div flex>
-                    <span>{{oth.workCountry}}</span>
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div class="fontStyle" flex>
+                        <span>Person to be notified in case of emergency</span>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div flex="50">
+                        <span class="fontStyle">FirstName : </span>
+                        <span>{{oth.firstName}}</span>
+                    </div>
+                    <div flex>
+                        <span class="fontStyle">LastName : </span>
+                        <span>{{oth.lastName}}</span>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div class="fontStyle" flex="50">
+                        <span>Related to the applient as</span>
+                    </div>
+                    <div flex>
+                        <span>{{oth.related}}</span>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div class="fontStyle" flex="50">
+                        <span>Address</span>
+                    </div>
+                    <div flex>
+                        <span>{{oth.address}}</span>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                    <div class="fontStyle" flex="50">
+                        <span>Telephone</span>
+                    </div>
+                    <div flex>
+                        <span>{{oth.tel}}</span>
+                    </div>
+                </div>
+                <!-- /////////////////// -->
+                <div ng-hide="otherShowDis">
+                    <div layout="row" layout-xs="column">
+                        <div flex="90">
+                        </div>
+                        <div flex>
+                            <div ng-click="otherShowDis = true">
+                                <span style="font-weight: bold;cursor:pointer">More</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="otherShowDis">
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div class="fontStyle" flex="50">
+                            <span>Source of job information</span>
+                        </div>
+                        <div flex>
+                            <span>{{oth.sourceInfo}}</span>
+                        </div>
+                    </div>
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div class="fontStyle" flex="50">
+                            <span>Contagious Disease</span>
+                        </div>
+                        <div flex>
+                            <span>{{oth.contagious}}</span>
+                        </div>
+                    </div>
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div class="fontStyle" flex>
+                            <span>Give the name of relative/friend working with us know to you</span>
+                        </div>
+                    </div>
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex="50">
+                            <span class="fontStyle">FirstName : </span>
+                            <span>{{oth.firstNameWork}}</span>
+                        </div>
+                        <div flex>
+                            <span class="fontStyle">LastName : </span>
+                            <span>{{oth.lastNameWork}}</span>
+                        </div>
+                    </div>
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div class="fontStyle" flex="50">
+                            <span>Introduce yourself</span>
+                        </div>
+                    </div>
+                    <div layout="row" layout-xs="column" style="margin-bottom:5px;">
+                        <div flex>
+                            <span>{{oth.introduce}}</span>
+                        </div>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <div flex="90">
+                        </div>
+                        <div flex>
+                            <div ng-click="otherShowDis = false">
+                                <span style="font-weight: bold;cursor:pointer">Hide</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div layout="row" layout-xs="column">
-                <div class="fontStyle" flex="70">
-                    <span>Person to be notified in case of emergency</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="40">
-                    <span class="fontStyle">FirstName : </span>
-                    <span>{{oth.firstName}}</span>
-                </div>
-                <div flex>
-                    <span class="fontStyle">LastName : </span>
-                    <span>{{oth.lastName}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div class="fontStyle" flex="40">
-                    <span>Related to the applient as</span>
-                </div>
-                <div flex>
-                    <span>{{oth.related}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div class="fontStyle" flex="40">
-                    <span>Address</span>
-                </div>
-                <div flex>
-                    <span>{{oth.address}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div class="fontStyle" flex="40">
-                    <span>Telephone</span>
-                </div>
-                <div flex>
-                    <span>{{oth.tel}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div class="fontStyle" flex="40">
-                    <span>Source of job information</span>
-                </div>
-                <div flex>
-                    <span>{{oth.sourceInfo}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div class="fontStyle" flex="40">
-                    <span>Contagious Disease</span>
-                </div>
-                <div flex>
-                    <span>{{oth.contagious}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div class="fontStyle" flex="100">
-                    <span>Give the name of relative/friend working with us know to you</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="40">
-                    <span class="fontStyle">FirstName : </span>
-                    <span>{{oth.firstNameWork}}</span>
-                </div>
-                <div flex>
-                    <span class="fontStyle">LastName : </span>
-                    <span>{{oth.lastNameWork}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div class="fontStyle" flex="40">
-                    <span>Introduce yourself</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="100">
-                    <span>{{oth.introduce}}</span>
-                </div>
-            </div>
-        </div>
-    </md-card-content>
-</md-card>
+        </md-card-content>
+    </md-card>
 </div>

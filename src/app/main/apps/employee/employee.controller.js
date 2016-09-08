@@ -7,11 +7,16 @@
 
     /** @ngInject */
 
-    function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms,employeeService) {
+// <<<<<<< HEAD
+//     function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms,employeeService) {
+
+//         var vm = this;
+//         var serviceEmpData = employeeService.getData();
+//         console.log(serviceEmpData);
+// =======
+    function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms, employeeService) {
 
         var vm = this;
-        var serviceEmpData = employeeService.getData();
-        console.log(serviceEmpData);
         // Data
         $scope.accounts = {
             'creapond': 'johndoe@creapond.com',
@@ -21,8 +26,9 @@
         $scope.colors = ['blue-bg', 'blue-grey-bg', 'orange-bg', 'pink-bg', 'purple-bg'];
         $scope.selectedAccount = 'creapond';
         $scope.selectedMail = {};
-        $scope.selectedDev = {};
-        $scope.selectBy = {};
+        $scope.originalSelectedEmp = {};
+        // $scope.selectedDev = {};
+        // $scope.selectBy = {};
         // vm.toggleSidenav = toggleSidenav;
 
         vm.responsiveReadPane = undefined;
@@ -34,8 +40,8 @@
 
         $scope.empPms = EmpPms.data;
         $scope.position = EmpPms.position;
-        $scope.selectedMail = $scope.empPms[0];
-        $scope.selectedDev = $scope.position[0];
+
+        // $scope.selectedDev = $scope.position[0];
         vm.selectedMailShowDetails = false;
 
         // Methods
@@ -49,28 +55,55 @@
         vm.isChecked = isChecked;
         // vm.replyDialog = replyDialog;
         // vm.selectMail = selectMail;
-        $scope.selectDev = $scope.selectMail;
-        $scope.selectBy = $scope.selectMail;
+        // $scope.selectDev = $scope.selectMail;
+        // $scope.selectBy = $scope.selectMail;
         vm.toggleStarred = toggleStarred;
         vm.toggleCheck = toggleCheck;
+        $scope.positions = [];
+        //////////////////////////////////////////////////////////////////////call service method//////////////////////
+        employeeService.getAll().then(function(res) {
+            $scope.employeeList = res.data;
+
+
+            for (var i = 0; i <= $scope.employeeList.length - 1; i++) {
+
+                var teamIsNew = $scope.positions.indexOf($scope.employeeList[i].PersonalInfo.Position) == -1;
+                if (teamIsNew) {
+                    $scope.positions.push($scope.employeeList[i].PersonalInfo.Position);
+                }
+            }
+
+            $scope.selected = $scope.positions[0];
+            // $scope.selectedMail = $scope.employeeList[0];
+            
+
+        }, function(err) {
+            console.log(err);
+        });
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        $scope.selectedEmployee = function(mail){
+            $scope.selectEmpForDel = mail;
+        }
+
+
+
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         $scope.modeShowPer = true;
         $scope.modeEditPer = true;
 
 
-        $scope.FnEditPer = function() {
+        $scope.FnEditPer = function(ev) {
 
             $scope.modeShowPer = false;
             $scope.modeEditPer = false;
         }
-        $scope.FnCancelPer = function() {
-            $scope.modeShowPer = true;
-            $scope.modeEditPer = true;
-        }
-        $scope.FnSavePer = function() {
-            $scope.modeShowPer = true;
-            $scope.modeEditPer = true;
-        }
+        
+       
 
         $scope.modeShowFam = true;
         $scope.modeEditFam = true;
@@ -104,105 +137,49 @@
             vm.dynamicHeight = current;
         });
 
-        /**
-         * Select mail
-         *
-         * @param mail
-         */
-        // $scope.Director = $filter("filter")($scope.empPms.personalInfo, { position: "Director" });
-        // $scope.productType = "Director";
-        // $scope.changeType = function(type) {
-        //     $scope.productType = type;
-        // };
-        // $scope.Developer = true;
-        
-        $scope.selected = $scope.position[0];
-        $scope.selectedBy = "01_DI";
-        console.log($scope.selectedBy);
-        // /////////////////////////////////////////////
+
         $scope.showRead = true;
         $scope.showList = true;
+
+        $scope.filterPos = function(pos){
+            //console.log(pos);
+            return pos.PersonalInfo.Position == $scope.selected;
+        };
+
         $scope.selectBy = function(select) {
+            //$scope.selectPos = select;
             $scope.selected = select;
 
-            if (select.name == "Director") {
-                // alert("Director");
-                $scope.selectedMail = []; 
-                $scope.showList = true;
-                $scope.showRead = false;
-                $scope.selectedBy = select.code;
-                // console.log($scope.selectedBy);
-            } else if (select.name == "Human Resource") {
-                // alert("Human Resource");
-                $scope.selectedMail = []; 
-                $scope.showList = true;
-                $scope.showRead = false;
-                $scope.selectedBy = select.code;
-                // console.log($scope.selectedBy);
-            } else if (select.name == "Accounting") {
-                // alert("Accounting");
-                $scope.selectedMail = []; 
-                $scope.showList = true;
-                $scope.showRead = false;
-                $scope.selectedBy = select.code;
-                // console.log($scope.selectedBy);
-            } else if (select.name == 'Developer') {
-                // alert("Developer");
-                $scope.selectedMail = [];
-                $scope.showList = true;
-                $scope.showRead = false;
-                $scope.selectedBy = select.code;
-                // console.log($scope.selectedBy);
-            } else if (select.name == "System Analyst") {
-                // alert("System Analyst");
-                $scope.selectedMail = []; 
-                $scope.showList = true;
-                $scope.showRead = false;
-                $scope.selectedBy = select.code;
-                // console.log($scope.selectedBy);
-            }
+            $scope.showList = true;
+            $scope.showRead = false;
+           
         }
 
-        // $scope.selectDev = function(mail) {
-
-
-        //     if (mail.name == "Director") {
-        //         alert("Error Your Choose Director");
-        //     } else if (mail.name == "Human Resource") {
-        //         alert("Error Your Choose Human Resource");
-        //     } else if (mail.name == "Accounting") {
-        //         alert("Error Your Choose Accounting");
-        //     } else if (mail.name == "Developer") {
-        //         alert("Developer");
-        //         $scope.selectedMail = $scope.empPms[0];
-        //         $scope.selectedDev = $scope.selectedMail;
-        //     } else if (mail.name == "System Analyst") {
-        //         alert("Error Your Choose System Analyst");
-        //     }
-
-        //     console.log(mail.name);
-        // }
-
-
-        $scope.selectMail = function(mail) {
-            console.log(mail);
-            $scope.selectedMail = mail;
+       
+        $scope.selectEmp = function(mail) {
+            $scope.originalSelectedEmp = mail;
+            angular.copy(mail,$scope.selectedMail);
+            
             $scope.showRead = true;
-            $timeout(function() {
-                // If responsive read pane is
-                // active, navigate to it
-                if (angular.isDefined(vm.responsiveReadPane) && vm.responsiveReadPane) {
-                    vm.activeMailPaneIndex = 1;
-                }
-
-                // Store the current scrollPos
-                vm.scrollPos = vm.scrollEl.scrollTop();
-
-                // Scroll to the top
-                vm.scrollEl.scrollTop(0);
-            });
+            
         }
-         
+         $scope.FnSavePer = function() {
+            // angular.copy($scope.selectedMail, $scope.originalSelectedEmp);
+            employeeService.putEmpData($scope.selectedMail).then(function(res) {
+                angular.copy($scope.selectedMail, $scope.originalSelectedEmp);
+
+            }, function(err) {
+                console.log(err);
+            })
+            $scope.modeShowPer = true;
+            $scope.modeEditPer = true;
+        }
+
+        $scope.FnCancelPer = function() {
+            angular.copy($scope.originalSelectedEmp, $scope.selectedMail);
+            $scope.modeShowPer = true;
+            $scope.modeEditPer = true;
+        }
 
         /**
          * Close read pane
@@ -279,27 +256,20 @@
             }
         }
 
-        /**
-         * Open compose dialog
-         *
-         * @param ev
-         */
-        // <<<<<<< HEAD
-        // function composeDialog(ev) {
-        //     $mdDialog.show({
-        //         controller: 'ComposeDialogController',
-        //         controllerAs: 'vm',
-        //         locals: {
-        //             selectedMail: undefined
-        //         },
-        //         templateUrl: 'app/main/apps/employee/dialogs/compose/compose-dialog.html',
-        //         parent: angular.element($document.body),
-        //         targetEvent: ev,
-        //         clickOutsideToClose: true
-        //     });
-        // }
+
+        ///////////////////////////////////////
+        $scope.GetAllData = function(EmpPms) {
+            $http.get('/app/data/employee/empPms.json')
+                .success(function(data) {
+                    $scope.response = data;
+                    console.log($scope.response);
+                })
+                .error(function(data) {
+                    console.log($scope.response);
+                });
+        };
         ////////////  Certificate  ////////////
-        // =======
+
         $scope.composeDialog = function(ev) {
                 $mdDialog.show({
                     controller: 'ComposeDialogController',
@@ -330,10 +300,11 @@
         ////////////  Delete  ////////////
         function deleteDialog(ev) {
             $mdDialog.show({
-                controller: 'DeleteDialogController',
+                controller: 'DeleteDialogEmpController',
                 controllerAs: 'vm',
                 locals: {
-                    selectedMail: undefined
+                    selectedMail: undefined,
+                    selectEmpForDel: $scope.selectEmpForDel
                 },
                 templateUrl: 'app/main/apps/employee/dialogs/compose/deleteEmp.html',
                 parent: angular.element($document.body),
@@ -347,7 +318,7 @@
                 controller: 'RegardDialogController',
                 controllerAs: 'vm',
                 locals: {
-                    selectedMail: undefined
+                    selectedEmp: undefined
                 },
                 templateUrl: 'app/main/apps/employee/dialogs/compose/regardEmp.html',
                 parent: angular.element($document.body),
@@ -371,38 +342,7 @@
         }
 
 
-        /**
-         * Open reply dialog
-         *
-         * @param ev
-         */
-        // function replyDialog(ev)
-        // {
-        //     $mdDialog.show({
-        //         controller         : 'ComposeDialogController',
-        //         controllerAs       : 'vm',
-        //         locals             : {
-        //             selectedMail: vm.selectedMail
-        //         },
-        //         templateUrl        : 'app/main/apps/employee/dialogs/compose/compose-dialog.html',
-        //         parent             : angular.element($document.body),
-        //         targetEvent        : ev,
-        //         clickOutsideToClose: true
-        //     });
-        // }
 
-        /**
-         * Open reply dialog
-         *
-         * @param ev
-         */
-
-
-        /**
-         * Toggle sidenav
-         *
-         * @param sidenavId
-         */
 
         $scope.toggleSidenav = function(sidenavId) {
             $mdSidenav(sidenavId).toggle();

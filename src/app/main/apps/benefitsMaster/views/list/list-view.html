@@ -3,7 +3,7 @@
     <div layout="row" layout-align="start center" ng-repeat="mails in mail.personalInfo">
         <!-- <md-checkbox class="no-label" ng-checked="vm.isChecked(mail)" ng-click="vm.toggleCheck(mail, $event)" aria-label="{{vm.isChecked(mail)? 'Uncheck':'check'}}">
         </md-checkbox> -->
-        <div class="info" flex layout="column">
+        <div class="info" flex layout="column" ng-click="selectedEmployee()">
             <div class="name" layout="row" layout-align="start center">
                 <img class="avatar" ng-src="{{mails.img}}" />
                 <div class="avatar" ng-if="!mails.img" ms-random-class="colors">
