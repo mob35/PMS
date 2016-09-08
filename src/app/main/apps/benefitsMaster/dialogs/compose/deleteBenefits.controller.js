@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.employee')
+        .module('app.benefitsMaster')
         .controller('DeleteDialogController', DeleteDialogController);
 
     /** @ngInject */

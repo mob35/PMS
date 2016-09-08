@@ -1,9 +1,9 @@
 <!-- MAIL LIST ITEMS -->
-<div class="mail-list-item {{mail.status}}" ng-repeat="mail in employeeList | filter: search | filter: global.search | filter: filterPos" md-ink-ripple ng-click="selectMail(mail);showRead" ng-show="showList" ng-class="{'starred': mail.starred, 'selected': selectedMail === mail, 'checked': vm.isChecked(mail)}">
+<div class="mail-list-item {{mail.status}}" ng-repeat="mail in employeeList | filter: search | filter: global.search | filter: filterPos" md-ink-ripple ng-click="selectEmp(mail);showRead" ng-show="showList" ng-class="{'starred': mail.starred, 'selected': selectedMail === mail, 'checked': vm.isChecked(mail)}">
     <div layout="row" layout-align="start center" >
         <!-- <md-checkbox class="no-label" ng-checked="vm.isChecked(mail)" ng-click="vm.toggleCheck(mail, $event)" aria-label="{{vm.isChecked(mail)? 'Uncheck':'check'}}">
         </md-checkbox> -->
-        <div class="info" flex layout="column" >
+        <div class="info" flex layout="column" ng-click="selectedEmployee(mail)">
             <div class="name" layout="row" layout-align="start center">
                 <img class="avatar" ng-src="assets/images/avatars/garry.jpg" />
                 <div class="avatar" ng-if="!mails.img" >

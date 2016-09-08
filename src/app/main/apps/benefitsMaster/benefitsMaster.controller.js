@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.benefitsMaster')
+        .module('app.employee')
         .controller('benefitsMasterController', benefitsMasterController);
 
     /** @ngInject */

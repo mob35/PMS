@@ -29,28 +29,40 @@
             // });
 
             return defer.promise;
-        }   
+        };   
 
         this.putEmpData = function(employee){
         	var defer = $q.defer();
-        	$http.put(url +'/'+benefitsMaster.BnID,benefitsMaster).success(function(response){
+        	$http.put(url +'/'+employee.EmpID,employee).success(function(response){
         		defer.resolve(response);
         	})
         	.error(function(response){
         		defer.reject(response);
         	});
         	return defer.promise;
+<<<<<<< HEAD
         } 
 
         this.putRegradEmp = function(selectedEmp){
             var defer = $q.defer();
             $http.put(url +'/'+selectedEmp.EmpID,selectedEmp).success(function(response){
+=======
+        };
+        this.deleteEmpData = function(selectEmpForDel){
+            // console.log(selectEmpForDel.EmpID);
+            var defer = $q.defer();
+            $http.delete(url +'/'+selectEmpForDel.EmpID).success(function(response){
+>>>>>>> 4ae3b7f6cb0fd090d8b51e14bcdc222c570dbb00
                 defer.resolve(response);
             })
             .error(function(response){
                 defer.reject(response);
             });
             return defer.promise;
+<<<<<<< HEAD
         } 
+=======
+        };  
+>>>>>>> 4ae3b7f6cb0fd090d8b51e14bcdc222c570dbb00
     }
 })();
