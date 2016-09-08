@@ -35,6 +35,10 @@
                 <div layout="row" layout-align="start center">
                     <md-checkbox class="no-label" aria-label="{{vm.allChecked?'Uncheck All':'Check All'}}" ng-checked="vm.allChecked" ng-click="vm.checkAll()"></md-checkbox>
                     <md-button class="md-icon-button" aria-label="Delete" translate translate-attr-aria-label="EMP.DELETE" hide show-gt-sm>
+                        <md-icon md-font-icon="icon-table-edit" ng-click="composeDialog($event)"></md-icon>
+                        <md-tooltip><span>Edit Employee</span></md-tooltip>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Delete" translate translate-attr-aria-label="EMP.DELETE" hide show-gt-sm>
                         <md-icon md-font-icon="icon-delete" ng-click="vm.deleteDialog($event)"></md-icon>
                         <md-tooltip><span>Delete Employee</span></md-tooltip>
                     </md-button>

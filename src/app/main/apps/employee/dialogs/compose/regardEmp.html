@@ -55,7 +55,7 @@
                 <!-- /////// -->
                 <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                     <md-input-container flex="65">
-                        <input type="text" name="dateStart" ng-model="selectedEmp.PersonalInfo.StartDate" placeholder="Date Start" required>
+                        <input type="text" name="dateStart" ng-model="selectedEmp.RegardInfo.StartDateRI" placeholder="Date Start" required>
                         <div ng-messages="wizardStep1.firstname.$error" role="alert">
                             <div ng-message="required">
                                 <span>Date Start field is required.</span>
@@ -100,7 +100,6 @@
                     <div flex>
                         <p class="text-truncate">{{bnf.NameBN}}</p>
                         <p class="text-truncate">{{bnf.DetailBN}}</p>
-                        <p class="text-truncate">{{bnf.BnID}}</p>
                     </div>
                     <div flex="10">
                     <md-icon md-font-icon="icon-delete" class="iconMargin" ng-click="deleteBnf(bnf.BnID)"></md-icon>

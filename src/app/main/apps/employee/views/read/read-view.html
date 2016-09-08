@@ -8,14 +8,14 @@
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
                 </md-button> -->
-                <md-button class="md-icon-button" ng-click="FnEditPer($event)"  tranlate
+                <!-- <md-button class="md-icon-button" ng-click="FnEditPer($event)"  tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
-                </md-button>
+                </md-button> -->
     </h2>
         </md-toolbar>
         <md-card-content ng-show="modeShowPer">
-            <div >
+            <div>
                 <div layout="row" layout-xs="column">
                     <div flex="90">
                     </div>
@@ -25,66 +25,65 @@
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span>FirstName : {{selectedMail.PersonalInfo.FirstNameEN}}</span>
+                        <span><b>FirstName :</b> {{selectedMail.PersonalInfo.FirstNameEN}}</span>
                     </div>
                     <div>
-                        <span>LastName : {{per.LastNameEn}}</span>
+                        <span><b>LastName :</b> {{selectedMail.PersonalInfo.LastNameEN}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span>Position : {{per.position}}</span>
+                        <span><b>Position :</b> {{selectedMail.PersonalInfo.Position}}</span>
                     </div>
                     <div>
-                        <span>Salary : {{per.salary}} THB</span>
+                        <span><b>Salary :</b> {{selectedMail.PersonalInfo.Salary}} THB</span>
                     </div>
                 </div>
                 <!-- //////////////// -->
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span>Birthdate : {{per.birthdate}}</span>
+                        <span><b>Birthdate :</b> {{selectedMail.PersonalInfo.Birthdate | date:'dd/MM/yyyy'}}</span>
                     </div>
                     <div flex>
-                        <span>Age : {{per.age}} Yrs.</span>
+                        <span><b>Age :</b> {{selectedMail.PersonalInfo.Age}} Yrs.</span>
                     </div>
                 </div>
                 <!-- //////////////// -->
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span>Sex : {{per.sex}}</span>
+                        <span><b>Sex :</b> {{selectedMail.PersonalInfo.Sex}}</span>
                     </div>
                     <div flex>
-                        <span>Race : {{per.race}}</span>
+                        <span><b>Race :</b> {{selectedMail.PersonalInfo.Race}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span>Nationality : {{per.nationality}}</span>
+                        <span><b>Nationality :</b> {{selectedMail.PersonalInfo.Nationality}}</span>
                     </div>
                     <div flex>
-                        <span>Religion : {{per.religion}}</span>
+                        <span><b>Religion :</b> {{selectedMail.PersonalInfo.Religion}}</span>
                     </div>
                 </div>
                 <!-- /////////////// -->
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span>IDCard No. : {{per.idcard}}</span>
+                        <span><b>IDCard No. :</b> {{selectedMail.PersonalInfo.IDCard}}</span>
                     </div>
                     <div flex>
-                        <span>Expiration Date : {{per.idcardEx}}</span>
+                        <span><b>Expiration Date :</b> {{selectedMail.PersonalInfo.IDCardExp}}</span>
                     </div>
                 </div>
                 <!-- ////////////////// -->
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span>Email : {{per.email}}</span>
+                        <span><b>Email :</b> {{selectedMail.PersonalInfo.Email}}</span>
                     </div>
                     <div flex>
-                        <span>Account : {{per.account}}</span>
+                        <span><b>Account :</b> {{selectedMail.PersonalInfo.Account}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
-                    
                 </div>
                 <div ng-hide="personalShowDis">
                     <div layout="row" layout-xs="column">
@@ -102,67 +101,67 @@
                 <div ng-show="personalShowDis">
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span>Address : {{per.address}}</span>
+                            <span><b>Address :</b> {{selectedMail.PersonalInfo.PresentAddress}}</span>
                         </div>
                         <div flex>
-                            <span>Moo : {{per.moo}}</span>
+                            <span><b>Moo :</b> {{selectedMail.PersonalInfo.Moo}}</span>
                         </div>
                     </div>
                     <!-- //////////////////// -->
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span>Road : {{per.road}}</span>
+                            <span><b>Road :</b> {{selectedMail.PersonalInfo.LastNameEN}}</span>
                         </div>
                         <div flex>
-                            <span>District : {{per.district}}</span>
+                            <span><b>District :</b> {{selectedMail.PersonalInfo.District}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span>Amphur : {{per.amphur}}</span>
+                            <span><b>Amphur :</b> {{selectedMail.PersonalInfo.Amphur}}</span>
                         </div>
                         <div flex>
-                            <span>Province : {{per.province}}</span>
+                            <span><b>Province :</b> {{selectedMail.PersonalInfo.Province}}</span>
                         </div>
                     </div>
                     <!-- ////////////////// -->
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span>Postcode : {{per.postcode}}</span>
+                            <span><b>Postcode :</b> {{selectedMail.PersonalInfo.Postcode}}</span>
                         </div>
                         <div flex>
-                            <span>Tel : {{per.tel}}</span>
+                            <span><b>Tel :</b> {{selectedMail.PersonalInfo.Tel}}</span>
                         </div>
                     </div>
                     <!-- ////////////////////// -->
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span>Mobile : {{per.mobile}}</span>
+                            <span><b>Mobile :</b> {{selectedMail.PersonalInfo.Moblie}}</span>
                         </div>
                         <div flex>
-                            <span>Height : {{per.height}} cm.</span>
+                            <span><b>Height :</b> {{selectedMail.PersonalInfo.Height}} cm.</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span>Weight : {{per.weight}} kgs.</span>
+                            <span><b>Weight :</b> {{selectedMail.PersonalInfo.Weight}} kgs.</span>
                         </div>
                         <div flex>
-                            <span>Underlying disease : {{per.underlying}}</span>
+                            <span><b>Underlying disease :</b> {{selectedMail.PersonalInfo.UnderlyingDisease}}</span>
                         </div>
                     </div>
                     <!-- //////////////////// -->
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span>Living : {{per.living}}</span>
+                            <span><b>Living :</b> {{selectedMail.PersonalInfo.Living}}</span>
                         </div>
                         <div flex>
-                            <span>Military : {{per.military}}</span>
+                            <span><b>Military :</b> {{selectedMail.PersonalInfo.Military}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                             <span>Marital : {{per.marital}}</span>
+                            <span><b>Marital :</b> {{selectedMail.PersonalInfo.Marital}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column">
@@ -180,61 +179,178 @@
         <md-card-content ng-hide="modeEditPer">
             <div>
                 <div layout="row" layout-xs="column">
-                    <div flex="30">
+                    <div flex>
                         <md-input-container>
                             <input type="text" name="FirstName" ng-model="selectedMail.PersonalInfo.FirstNameEN" placeholder="FirstName" required>
                         </md-input-container>
                         <!-- <span>FirstName : {{per.nameEn}}</span> -->
                     </div>
-                    <div>
+                    <div flex>
                         <md-input-container>
-                            <input type="text" name="LastName" ng-model="per.LastNameEn" placeholder="LastName" required>
+                            <input type="text" name="LastName" ng-model="selectedMail.PersonalInfo.LastNameEN" placeholder="LastName" required>
                         </md-input-container>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-top: -45px;">
-                    <div flex="30">
+                    <div flex>
                         <md-input-container>
-                            <input type="text" name="Position" ng-model="per.position" placeholder="Position" required>
-                        </md-input-container>
-                    </div>
-                    <div>
-                        <md-input-container>
-                            <input type="text" name="Salary" ng-model="per.salary" placeholder="Salary" required>
-                        </md-input-container>
-                    </div>
-                </div>
-                <div layout="row" layout-xs="column" style="margin-top: -45px;">
-                    <div flex="30">
-                        <md-input-container>
-                            <input type="text" name="Address" ng-model="per.address" placeholder="Address" required>
-                        </md-input-container>
-                    </div>
-                    <div flex="30">
-                        <md-input-container>
-                            <input type="text" name="Moo" ng-model="per.moo" placeholder="Moo" required>
+                            <input type="text" name="Position" ng-model="selectedMail.PersonalInfo.Position" placeholder="Position" required>
                         </md-input-container>
                     </div>
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Road" ng-model="per.road" placeholder="Road" required>
+                            <input type="text" name="Salary" ng-model="selectedMail.PersonalInfo.Salary" placeholder="Salary" required>
                         </md-input-container>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-top: -45px;">
-                    <div flex="30">
+                    <div flex>
                         <md-input-container>
-                            <input type="text" name="District" ng-model="per.district" placeholder="District" required>
-                        </md-input-container>
-                    </div>
-                    <div flex="30">
-                        <md-input-container>
-                            <input type="text" name="Amphur" ng-model="per.amphur" placeholder="Amphur" required>
+                            <input type="text" name="Birthdate" ng-model="selectedMail.PersonalInfo.Birthdate" placeholder="Birth date" required>
                         </md-input-container>
                     </div>
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Province" ng-model="per.province" placeholder="Province" required>
+                            <input type="text" name="Age" ng-model="selectedMail.PersonalInfo.Age" placeholder="Age" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Sex" ng-model="selectedMail.PersonalInfo.Sex" placeholder="Sex" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Race" ng-model="selectedMail.PersonalInfo.Race" placeholder="Race" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Nationality" ng-model="selectedMail.PersonalInfo.Nationality" placeholder="Nationality" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Religion" ng-model="selectedMail.PersonalInfo.Religion" placeholder="Religion" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="IDCardNo" ng-model="selectedMail.PersonalInfo.IDCard" placeholder="IDCard No" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="ExpirationDate" ng-model="selectedMail.PersonalInfo.IDCardExp" placeholder="Expiration Date" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Email" ng-model="selectedMail.PersonalInfo.Email" placeholder="Email" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Account" ng-model="selectedMail.PersonalInfo.Account" placeholder="Account" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Address" ng-model="selectedMail.PersonalInfo.PresentAddress" placeholder="Address" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Moo" ng-model="selectedMail.PersonalInfo.Moo" placeholder="Moo" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Road" ng-model="selectedMail.PersonalInfo.Province" placeholder="Road" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="District" ng-model="selectedMail.PersonalInfo.District" placeholder="District" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Amphur" ng-model="selectedMail.PersonalInfo.Amphur" placeholder="Amphur" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Province" ng-model="selectedMail.PersonalInfo.Province" placeholder="Province" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Postcode" ng-model="selectedMail.PersonalInfo.Postcode" placeholder="Postcode" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Tel" ng-model="selectedMail.PersonalInfo.Tel" placeholder="Tel" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Mobile" ng-model="selectedMail.PersonalInfo.Moblie" placeholder="Mobile" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Height" ng-model="selectedMail.PersonalInfo.Height" placeholder="Height" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Weight" ng-model="selectedMail.PersonalInfo.Weight" placeholder="Weight" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Underlyingdisease" ng-model="selectedMail.PersonalInfo.UnderlyingDisease" placeholder="Underlying disease" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Living" ng-model="selectedMail.PersonalInfo.Living" placeholder="Living" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Military" ng-model="selectedMail.PersonalInfo.Military" placeholder="Military" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Marital" ng-model="selectedMail.PersonalInfo.Marital" placeholder="Marital" required>
                         </md-input-container>
                     </div>
                 </div>
@@ -246,77 +362,6 @@
                         Save
                     </md-button>
                 </div>
-                <!-- <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <span>Postcode : {{per.postcode}}</span>
-                </div>
-                <div flex="30">
-                    <span>Tel : {{per.tel}}</span>
-                </div>
-                <div flex>
-                    <span>Mobile : {{per.mobile}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="60">
-                    <span>Email : {{per.email}}</span>
-                </div>
-                <div flex>
-                    <span>Living : {{per.living}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <span>Birthdate : {{per.birthdate}}</span>
-                </div>
-                <div flex="30">
-                    <span>Age : {{per.age}} Yrs.</span>
-                </div>
-                <div flex>
-                    <span>Race : {{per.race}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <span>Nationality : {{per.nationality}}</span>
-                </div>
-                <div flex="30">
-                    <span>Religion : {{per.religion}}</span>
-                </div>
-                <div flex>
-                    <span>Sex : {{per.sex}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="60">
-                    <span>IDCard No. : {{per.idcard}}</span>
-                </div>
-                <div flex>
-                    <span>Expiration Date : {{per.idcardEx}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <span>Height : {{per.height}} cm.</span>
-                </div>
-                <div flex="30">
-                    <span>Weight : {{per.weight}} kgs.</span>
-                </div>
-                <div flex>
-                    <span>Underlying disease : {{per.underlying}}</span>
-                </div>
-            </div>
-            <div layout="row" layout-xs="column">
-                <div flex="30">
-                    <span>Military : {{per.military}}</span>
-                </div>
-                <div flex="30">
-                    <span>Marital : {{per.marital}}</span>
-                </div>
-                <div flex="30">
-                    <span>Account : {{per.account}}</span>
-                </div>
-            </div> -->
             </div>
         </md-card-content>
     </md-card>
@@ -325,33 +370,34 @@
         <md-toolbar class="md-accent">
             <h2 class="md-toolbar-tools">
       <span flex>Family Information</span>
-      <md-button class="md-icon-button" ng-click="FnEditFam()" aria-label="Close dialog" tranlate
+      <!-- <md-button class="md-icon-button" ng-click="" aria-label="Close dialog" tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
-                </md-button>
+                </md-button> -->
     </h2>
         </md-toolbar>
         <md-card-content ng-show="modeShowFam">
-            <div ng-repeat="fam in selectedMail.familyInfo">
+            <div ng-repeat="fam in selectedEmp.FamilyInfo">
                 <div layout="row" layout-align="start center">
                     <div class="info" flex layout="column">
                         <div class="name" layout="row" layout-align="start center">
                             <span class="logo-icon iconMargin">
+        
             <md-icon md-font-icon="icon-person-box" class="icon"></md-icon>
         </span>
                             <span>&nbsp;&nbsp;&nbsp;</span>
                             <span>&nbsp;&nbsp;&nbsp;</span>
                             <div class="info" flex layout="column">
                                 <div class="name" layout="row" layout-align="start center">
-                                    <span class="text-truncate">{{fam.nameFm}} &nbsp;&nbsp;&nbsp; {{fam.LastNameFm}} </span>
+                                    <span class="text-truncate">{{fam.FirstNameFI}} &nbsp;&nbsp;&nbsp; {{fam.LastnameFI}} </span>
                                     <!-- <hr> -->
                                 </div>
                                 <div class="hrBorder" layout="row" layout-xs="column">
                                     <div flex>
-                                        <span>Age : {{fam.age}} Yrs.</span>
-                                        <span>( {{fam.related}} )</span>
-                                        <span>Occupation [ {{fam.Occupation}} ]</span>
-                                        <span>Tel : {{fam.tel}}</span>
+                                        <span>Age : {{fam.AgeFI}} Yrs.</span>
+                                        <span>( {{fam.RelatedFI}} )</span>
+                                        <span>Occupation [ {{fam.OccupationFI}} ]</span>
+                                        <span>Tel : {{fam.TelFI}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -361,8 +407,13 @@
                 </div>
             </div>
         </md-card-content>
-        <md-card-content ng-hide="modeEditFam">
-            <div ng-repeat="fam in selectedMail.familyInfo">
+        <!-- <md-card-content ng-hide="modeEditFam">
+            <div layout="row" class="margin-bottom-10">
+                <div flex>
+                <md-icon md-font-icon="icon-account-plus" class="icon" ng-click="editFamily()"></md-icon> Add Family
+                </div>
+            </div>
+            <div ng-repeat="fam in selectedEmp.FamilyInfo">
                 <div layout="row" layout-align="start center">
                     <div class="info" flex layout="column">
                         <div class="name" layout="row" layout-align="start center">
@@ -373,20 +424,20 @@
                             <span>&nbsp;&nbsp;&nbsp;</span>
                             <div class="info" flex layout="column">
                                 <div class="name" layout="row" layout-align="start center">
-                                    <span class="text-truncate">{{fam.nameFm}} &nbsp;&nbsp;&nbsp; {{fam.LastNameFm}} </span>
-                                    <!-- <hr> -->
+                                    <span class="text-truncate">{{fam.FirstNameFI}} &nbsp;&nbsp;&nbsp; {{fam.LastnameFI}} </span>
+                                    <hr>
                                 </div>
                                 <div class="hrBorder" layout="row" layout-xs="column">
                                     <div flex>
-                                        <span>Age : {{fam.age}} Yrs.</span>
-                                        <span>( {{fam.related}} )</span>
-                                        <span>Occupation [ {{fam.Occupation}} ]</span>
-                                        <span>Tel : {{fam.tel}}</span>
+                                        <span>Age : {{fam.AgeFI}} Yrs.</span>
+                                        <span>( {{fam.RelatedFI}} )</span>
+                                        <span>Occupation [ {{fam.OccupationFI}} ]</span>
+                                        <span>Tel : {{fam.TelFI}}</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- <hr> -->
-                        </div>
+                        <!-- </div>
                     </div>
                 </div>
             </div>
@@ -398,21 +449,21 @@
                     Save
                 </md-button>
             </div>
-        </md-card-content>
+        </md-card-content> -->
     </md-card>
     <!-- 3 -->
     <md-card>
         <md-toolbar class="md-accent">
             <h2 class="md-toolbar-tools">
       <span flex>Education Information</span>
-      <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
+      <!-- <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
-                </md-button>
+                </md-button> -->
     </h2>
         </md-toolbar>
         <md-card-content>
-            <div ng-repeat="edu in selectedMail.EducationInfo">
+            <div ng-repeat="edu in selectedEmp.EducationInfo">
                 <div layout="row" layout-align="start center">
                     <div class="info" flex layout="column">
                         <div class="name" layout="row" layout-align="start center">
@@ -423,14 +474,14 @@
                             <span>&nbsp;&nbsp;&nbsp;</span>
                             <div class="info" flex layout="column">
                                 <div class="name" layout="row" layout-align="start center">
-                                    <span class="text-truncate">{{edu.EduLevel}}  </span>
+                                    <span class="text-truncate">{{edu.EducationLevelEI}}  </span>
                                     <!-- <hr> -->
                                 </div>
                                 <div class="hrBorder" layout="row" layout-xs="column">
                                     <div flex>
-                                        <span>{{edu.age}}</span>
-                                        <span>{{edu.Institution}}</span>
-                                        <span>( {{edu.DateEduFrom}} - {{edu.DateEduTo}} )</span>
+                                        <span>{{edu.MajorEI}}</span>
+                                        <span>{{edu.InstitutionEI}}</span>
+                                        <span>( {{edu.DateFromEI | date: 'dd/MM/yyyy'}} - {{edu.DateToEI | date: 'dd/MM/yyyy'}} )</span>
                                     </div>
                                 </div>
                             </div>
@@ -446,14 +497,14 @@
         <md-toolbar class="md-accent">
             <h2 class="md-toolbar-tools">
       <span flex>Work Experience</span>
-      <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
+      <!-- <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
-                </md-button>
+                </md-button> -->
     </h2>
         </md-toolbar>
         <md-card-content>
-            <div ng-repeat="work in selectedMail.WorkInfo">
+            <div ng-repeat="work in selectedEmp.WorkExperienceInfo">
                 <div layout="row" layout-align="start center">
                     <div class="info" flex layout="column">
                         <div class="name" layout="row" layout-align="start center">
@@ -464,18 +515,18 @@
                             <span>&nbsp;&nbsp;&nbsp;</span>
                             <div class="info" flex layout="column">
                                 <div class="name" layout="row" layout-align="start center">
-                                    <span class="text-truncate">{{work.Company}}  </span>
+                                    <span class="text-truncate">{{work.CompanyWI}}  </span>
                                     <!-- <hr> -->
                                 </div>
                                 <div layout="row" layout-xs="column">
                                     <div flex>
-                                        <span>{{work.Position}}</span>
-                                        <span>( {{work.DateFrom}} - {{work.DateTo}} )</span>
+                                        <span>{{work.PositionWI}}</span>
+                                        <span>( {{work.DateFromWI | date: 'dd/MM/yyyy'}} - {{work.DateToWI | date: 'dd/MM/yyyy'}} )</span>
                                     </div>
                                 </div>
                                 <div class="hrBorder" layout="row" layout-xs="column">
                                     <div flex>
-                                        <span>{{work.JobDesc}}</span>
+                                        <span>{{work.JobDescWI}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -491,14 +542,14 @@
         <md-toolbar class="md-accent">
             <h2 class="md-toolbar-tools">
       <span flex>Language Ability</span>
-      <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
+      <!-- <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
-                </md-button>
+                </md-button> -->
     </h2>
         </md-toolbar>
         <md-card-content>
-            <div ng-repeat="lang in selectedMail.languageInfo">
+            <div ng-repeat="lang in selectedEmp.LanguageInfo">
                 <div layout="row" layout-align="start center">
                     <div class="info" flex layout="column">
                         <div class="name" layout="row" layout-align="start center">
@@ -509,14 +560,14 @@
                             <span>&nbsp;&nbsp;&nbsp;</span>
                             <div class="info" flex layout="column">
                                 <div class="name" layout="row" layout-align="start center">
-                                    <span class="text-truncate">{{lang.langType}}  </span>
+                                    <span class="text-truncate">{{lang.LanguageTypeLI}}  </span>
                                     <!-- <hr> -->
                                 </div>
                                 <div class="hrBorder" layout="row" layout-xs="column">
                                     <div flex>
-                                        <span>Speaking : {{lang.speaking}} |</span>
-                                        <span>Writing : {{lang.writing}} |</span>
-                                        <span>Reading : {{lang.reading}}</span>
+                                        <span>Speaking : {{lang.SpeakingLI}} |</span>
+                                        <span>Writing : {{lang.WritingLI}} |</span>
+                                        <span>Reading : {{lang.ReadingLI}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -532,43 +583,43 @@
         <md-toolbar class="md-accent">
             <h2 class="md-toolbar-tools">
       <span flex>Special Ability</span>
-      <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
+      <!-- <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
-                </md-button>
+                </md-button> -->
     </h2>
         </md-toolbar>
         <md-card-content>
-            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+            <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
                 <div flex="35">
                     <span class="fontStyle">Typing</span>
                 </div>
                 <div flex>
-                    <span>Thai {{spe.typingTH}} Word/Minutes</span>
+                    <span>Thai {{spe.TypingTHSI}} Word/Minutes</span>
                 </div>
             </div>
-            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+            <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
                 <div flex="35">
                     <span></span>
                 </div>
                 <div flex>
-                    <span>English {{spe.typingEN}} Word/Minutes</span>
+                    <span>English {{spe.TypingENSI}} Word/Minutes</span>
                 </div>
             </div>
-            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+            <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
                 <div flex="35">
                     <span class="fontStyle">Computer</span>
                 </div>
                 <div flex>
-                    <span>{{spe.computer}}</span>
+                    <span>{{spe.ComputerSI}}</span>
                 </div>
             </div>
-            <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+            <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
                 <div flex="35">
                     <span class="fontStyle">Driving</span>
                 </div>
                 <div flex>
-                    <span>No. {{spe.driving}}</span>
+                    <span>No. {{spe.DrivingSI}}</span>
                 </div>
             </div>
             <!-- /////////////////////////// -->
@@ -585,44 +636,44 @@
                 </div>
             </div>
             <div ng-show="specialShowDis">
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
                     <div flex="35">
                         <span class="fontStyle">Office Machine</span>
                     </div>
                     <div flex>
-                        <span>{{spe.officeMachine}}</span>
+                        <span>{{spe.OfficeMachineSI}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
                     <div flex="35">
                         <span class="fontStyle">Hobby</span>
                     </div>
                     <div flex>
-                        <span>{{spe.hobby}}</span>
+                        <span>{{spe.HobbiceSI}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
                     <div flex="35">
                         <span class="fontStyle">Sport</span>
                     </div>
                     <div flex>
-                        <span>{{spe.sport}}</span>
+                        <span>{{spe.SportSI}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
                     <div flex="35">
                         <span class="fontStyle">Knowledge</span>
                     </div>
                     <div flex>
-                        <span>{{spe.knowledge}}</span>
+                        <span>{{spe.KnowledgeSI}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedMail.specialInfo" style="margin-bottom:5px;">
+                <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
                     <div flex="35">
                         <span class="fontStyle">Other</span>
                     </div>
                     <div flex>
-                        <span>{{spe.other}}</span>
+                        <span>{{spe.OtherSI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column">
@@ -642,20 +693,20 @@
         <md-toolbar class="md-accent">
             <h2 class="md-toolbar-tools">
       <span flex>Other Information</span>
-      <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
+      <!-- <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
                            translate-aria-label="EMP.CLOSE_DIALOG">
                     <md-icon md-font-icon="icon-table-edit"></md-icon>
-                </md-button>
+                </md-button> -->
     </h2>
         </md-toolbar>
         <md-card-content>
-            <div ng-repeat="oth in selectedMail.otherInfo">
+            <div ng-repeat="oth in selectedEmp.OtherInfo">
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div class="fontStyle" flex="50">
                         <span>I Can Work Up Country</span>
                     </div>
                     <div flex>
-                        <span>{{oth.workCountry}}</span>
+                        <span>{{oth.WorkCountryDescOI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -666,11 +717,11 @@
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="50">
                         <span class="fontStyle">FirstName : </span>
-                        <span>{{oth.firstName}}</span>
+                        <span>{{oth.FirtNameOI}}</span>
                     </div>
                     <div flex>
                         <span class="fontStyle">LastName : </span>
-                        <span>{{oth.lastName}}</span>
+                        <span>{{oth.LastNameOI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -678,7 +729,7 @@
                         <span>Related to the applient as</span>
                     </div>
                     <div flex>
-                        <span>{{oth.related}}</span>
+                        <span>{{oth.RelatedOI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -686,7 +737,7 @@
                         <span>Address</span>
                     </div>
                     <div flex>
-                        <span>{{oth.address}}</span>
+                        <span>{{oth.AddressOI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -694,7 +745,7 @@
                         <span>Telephone</span>
                     </div>
                     <div flex>
-                        <span>{{oth.tel}}</span>
+                        <span>{{oth.TelOI}}</span>
                     </div>
                 </div>
                 <!-- /////////////////// -->
@@ -715,7 +766,7 @@
                             <span>Source of job information</span>
                         </div>
                         <div flex>
-                            <span>{{oth.sourceInfo}}</span>
+                            <span>{{oth.SourceInfoOI}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -723,7 +774,7 @@
                             <span>Contagious Disease</span>
                         </div>
                         <div flex>
-                            <span>{{oth.contagious}}</span>
+                            <span>{{oth.ContagiousFlagOI}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -734,11 +785,11 @@
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="50">
                             <span class="fontStyle">FirstName : </span>
-                            <span>{{oth.firstNameWork}}</span>
+                            <span>{{oth.FirtNameWorkRelativeOI}}</span>
                         </div>
                         <div flex>
                             <span class="fontStyle">LastName : </span>
-                            <span>{{oth.lastNameWork}}</span>
+                            <span>{{oth.LastNameWorkRelativeOI}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -748,7 +799,7 @@
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex>
-                            <span>{{oth.introduce}}</span>
+                            <span>{{oth.IntroduceYoureSelfOI}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column">
