@@ -44,7 +44,7 @@
 
         }
         this.putRegradEmp = function(selectedEmp) {
-            console.log(selectedEmp.BenefitsInfo);
+            console.log(JSON.stringify(selectedEmp));
             var defer = $q.defer();
             $http.put(url + '/' + selectedEmp.EmpID, selectedEmp).success(function(response) {
 
@@ -59,6 +59,19 @@
         this.deleteEmpData = function(selectEmpForDel) {
             var defer = $q.defer();
             $http.delete(url + '/' + selectEmpForDel.EmpID).success(function(response) {
+
+                    defer.resolve(response);
+                })
+                .error(function(response) {
+                    defer.reject(response);
+                });
+            return defer.promise;
+
+        };
+
+        this.postEmp = function(empDataList) {
+            var defer = $q.defer();
+            $http.post(url,empDataList).success(function(response) {
 
                     defer.resolve(response);
                 })

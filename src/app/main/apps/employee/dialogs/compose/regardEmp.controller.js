@@ -8,7 +8,9 @@
     /** @ngInject */
     function RegardDialogController($mdDialog, selectedEmp, $scope, benefitsMasterService,employeeService) {
 
-        $scope.selectedEmp = selectedEmp;
+        //$scope.originalselectedEmp = selectedEmp;
+        $scope.selectedEmp={};
+        angular.copy(selectedEmp,$scope.selectedEmp);
         $scope.newBnf = {};
         //////////////////////////////////////////////////////////call service method////////////////////////////////////////////////
 
@@ -30,10 +32,16 @@
 
         $scope.saveRegardEmployee = function() {
             employeeService.putRegradEmp($scope.selectedEmp).then(function(res) {
+                angular.copy($scope.selectedEmp,selectedEmp);
                 $scope.closeDialog();
             }, function(err) {
                 console.log(err);
             });
+        }
+
+        $scope.cancelRegardEmp = function() {
+            angular.copy(selectedEmp,$scope.selectedEmp);
+            $scope.closeDialog();
         }
 
         $scope.deleteBnf = function(bnfID) {

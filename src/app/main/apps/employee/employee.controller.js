@@ -88,7 +88,7 @@
             $scope.selectedEmp = mail;
         }
 
-  
+
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         $scope.modeShowPer = true;
@@ -269,11 +269,44 @@
         ////////////  Certificate  ////////////
 
         $scope.composeDialog = function(ev) {
+                var newEmp = {
+                    "PersonalInfo": {},
+                    "FamilyInfo": [],
+                    "EducationInfo": [],
+                    "WorkExperienceInfo": [],
+                    "LanguageInfo": [],
+                    "SpecialInfo": [{
+
+                        "TypingSI": 'false',
+                        "ComputerSI": 'false',
+                        "DrivingSI": 'false'
+
+
+                    }],
+                    "OtherInfo": {}
+                };
                 $mdDialog.show({
                     controller: 'ComposeDialogController',
                     controllerAs: 'vm',
                     locals: {
-                        selectedMail: undefined
+                        selectedMail: newEmp,
+                        mode:'C'
+                    },
+                    templateUrl: 'app/main/apps/employee/dialogs/compose/compose-dialog.html',
+                    parent: angular.element($document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true
+                });
+            }
+
+            $scope.editDialog = function(ev) {
+                
+                $mdDialog.show({
+                    controller: 'ComposeDialogController',
+                    controllerAs: 'vm',
+                    locals: {
+                        selectedMail: $scope.selectedEmp,
+                        mode:'U'
                     },
                     templateUrl: 'app/main/apps/employee/dialogs/compose/compose-dialog.html',
                     parent: angular.element($document.body),
@@ -316,7 +349,7 @@
                 controller: 'RegardDialogController',
                 controllerAs: 'vm',
                 locals: {
-                    selectedEmp: $scope.selectedEmp
+                    selectedEmp: $scope.originalSelectedEmp
                 },
                 templateUrl: 'app/main/apps/employee/dialogs/compose/regardEmp.html',
                 parent: angular.element($document.body),
