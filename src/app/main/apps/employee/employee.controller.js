@@ -7,13 +7,13 @@
 
     /** @ngInject */
 
-// <<<<<<< HEAD
-//     function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms,employeeService) {
+    // <<<<<<< HEAD
+    //     function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms,employeeService) {
 
-//         var vm = this;
-//         var serviceEmpData = employeeService.getData();
-//         console.log(serviceEmpData);
-// =======
+    //         var vm = this;
+    //         var serviceEmpData = employeeService.getData();
+    //         console.log(serviceEmpData);
+    // =======
     function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms, employeeService) {
 
         var vm = this;
@@ -75,7 +75,7 @@
 
             $scope.selected = $scope.positions[0];
             // $scope.selectedMail = $scope.employeeList[0];
-            
+
 
         }, function(err) {
             console.log(err);
@@ -83,14 +83,12 @@
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        $scope.selectedEmployee = function(mail){
+        $scope.selectedEmployee = function(mail) {
             $scope.selectEmpForDel = mail;
+            $scope.selectedEmp = mail;
         }
 
-
-
-
-
+  
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         $scope.modeShowPer = true;
@@ -102,8 +100,8 @@
             $scope.modeShowPer = false;
             $scope.modeEditPer = false;
         }
-        
-       
+
+
 
         $scope.modeShowFam = true;
         $scope.modeEditFam = true;
@@ -141,7 +139,7 @@
         $scope.showRead = true;
         $scope.showList = true;
 
-        $scope.filterPos = function(pos){
+        $scope.filterPos = function(pos) {
             //console.log(pos);
             return pos.PersonalInfo.Position == $scope.selected;
         };
@@ -152,18 +150,18 @@
 
             $scope.showList = true;
             $scope.showRead = false;
-           
+
         }
 
-       
+
         $scope.selectEmp = function(mail) {
             $scope.originalSelectedEmp = mail;
-            angular.copy(mail,$scope.selectedMail);
-            
+            angular.copy(mail, $scope.selectedMail);
+
             $scope.showRead = true;
-            
+
         }
-         $scope.FnSavePer = function() {
+        $scope.FnSavePer = function() {
             // angular.copy($scope.selectedMail, $scope.originalSelectedEmp);
             employeeService.putEmpData($scope.selectedMail).then(function(res) {
                 angular.copy($scope.selectedMail, $scope.originalSelectedEmp);
@@ -318,7 +316,7 @@
                 controller: 'RegardDialogController',
                 controllerAs: 'vm',
                 locals: {
-                    selectedEmp: undefined
+                    selectedEmp: $scope.selectedEmp
                 },
                 templateUrl: 'app/main/apps/employee/dialogs/compose/regardEmp.html',
                 parent: angular.element($document.body),
