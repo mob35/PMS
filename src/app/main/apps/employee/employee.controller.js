@@ -133,13 +133,9 @@
 
         $scope.showRead = true;
         $scope.showList = true;
-<<<<<<< HEAD
+
         $scope.filterPos = function(pos){
             //console.log(pos);
-=======
-        $scope.filterPos = function(pos) {
-            // console.log(pos);
->>>>>>> 4ae3b7f6cb0fd090d8b51e14bcdc222c570dbb00
             return pos.PersonalInfo.Position == $scope.selected;
         };
 
