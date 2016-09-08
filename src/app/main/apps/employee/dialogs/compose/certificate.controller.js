@@ -6,7 +6,7 @@
         .controller('CertificateDialogController', CertificateDialogController);
 
     /** @ngInject */
-    function CertificateDialogController($mdDialog, selectedMail, $scope) {
+    function CertificateDialogController($mdDialog, selectedMail, $scope, employeeService) {
         var vm = this;
 
         // Data
@@ -55,15 +55,30 @@
         $scope.sendForm = sendForm;
         $scope.submitStepper = submitStepper;
         $scope.all = {
-            myDate: new Date,
-            firstName: 'Jakkrich',
-            lastName: 'Jongklangthawatchkij',
-            position: 'Delevelop',
-            order: 'ปฏิบัติตามคำสั่ง',
-            startDate: new Date("2015-09-01"),
-            salary: '30,000'
+            myDate: new Date
+                // firstName: 'Jakkrich',
+                // lastName: 'Jongklangthawatchkij',
+                // position: 'Delevelop',
+                // order: 'ปฏิบัติตามคำสั่ง',
+                // startDate: new Date("2015-09-01"),
+                // salary: '30,000'
         }
+        $scope.employee = {
 
+            "CertificateInfo": {
+                "DateRecordCI": new Date,
+                "FirstNameCI": "อนัญญา",
+                "LastNameCI": "ทองไทย",
+                "PositionCI": "Develop",
+                "DateStartCI": new Date("2015-09-01"),
+                "SalaryCI": 5,
+                "DatePrintCI": new Date,
+                "BossSign": "ลายเซ็น"
+
+            },
+
+
+        };
 
 
 
