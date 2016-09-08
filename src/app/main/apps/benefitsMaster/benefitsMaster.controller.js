@@ -24,6 +24,22 @@
             console.log(err);
         });
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // Watch screen size to activate responsive read pane
+        // $scope.$watch(function() {
+        //     return $mdMedia('gt-md');
+        // }, function(current) {
+        //     vm.responsiveReadPane = !current;
+        // });
+
+        // Watch screen size to activate dynamic height on tabs
+        $scope.$watch(function() {
+            return $mdMedia('xs');
+        }, function(current) {
+            $scope.dynamicHeight = current;
+        });
+
         function selectBenefitsDetail(bnf) {
             $scope.isSelectItem = false;
             $scope.originalSelectItem = bnf;

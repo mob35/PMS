@@ -11,7 +11,7 @@
     </h2>
         </md-toolbar>
         <md-card-content ng-show="modeShowPer">
-            <div ng-repeat="per in selectedMail.personalInfo">
+            <div >
                 <div layout="row" layout-xs="column">
                     <div flex="90">
                     </div>
@@ -21,7 +21,7 @@
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span>FirstName : {{per.nameEn}}</span>
+                        <span>FirstName : {{selectedMail.PersonalInfo.FirstNameEN}}</span>
                     </div>
                     <div>
                         <span>LastName : {{per.LastNameEn}}</span>
