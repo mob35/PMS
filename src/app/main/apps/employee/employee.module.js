@@ -15,7 +15,7 @@
             views    : {
                 'content@app': {
                     templateUrl: 'app/main/apps/employee/employee.html',
-                    controller : 'EmpController as vm'
+                    controller : 'EmpController as vm',
                 }
             },
             resolve  : {

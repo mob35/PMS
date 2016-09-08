@@ -7,10 +7,11 @@
 
     /** @ngInject */
 
-    function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms) {
+    function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms,employeeService) {
 
         var vm = this;
-
+        var serviceEmpData = employeeService.getData();
+        console.log(serviceEmpData);
         // Data
         $scope.accounts = {
             'creapond': 'johndoe@creapond.com',

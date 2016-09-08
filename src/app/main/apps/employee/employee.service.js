@@ -1,7 +1,10 @@
-{
-    "data": [{
-        "empID":"001",
-        "date": "01-01-9999",
+'use strict';
+
+angular.module('app.employee').service('employeeService', function() {
+
+    var Data = [{
+        "empID": 1,
+        "date": "01-01-1999",
         "personalInfo": [{
             "nameEn": "Jakkrich",
             "LastNameEn": "Jongklangthawatchkij",
@@ -106,7 +109,8 @@
             "firstNameWork": "Sirintra",
             "lastNameWork": "Wannakheaw",
             "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
-        }]
+        }],
+
     }, {
         "empID": "002",
         "date": "01-01-2000",
@@ -227,21 +231,38 @@
             "introduce": "I Am Pretty I Am Pretty I Am Pretty I Am PrettyI Am Pretty I Am Pretty I Am Pretty I Am Pretty"
         }],
         "position": [{
-        "name": "Director",
-        "code": "01"
-    }, {
-        "name": "Human Resource",
-        "code": "02"
-    }, {
-        "name": "Accounting",
-        "code": "03"
-    }, {
-        "name": "Developer",
-        "code": "04"
-    }, {
-        "name": "System Analyst",
-        "code": "05"
-    }]
-    }],
-    
-}
+            "name": "Director",
+            "code": "01"
+        }, {
+            "name": "Human Resource",
+            "code": "02"
+        }, {
+            "name": "Accounting",
+            "code": "03"
+        }, {
+            "name": "Developer",
+            "code": "04"
+        }, {
+            "name": "System Analyst",
+            "code": "05"
+        }],
+
+    }];
+    this.getData = function(){
+    	//Data.get(employeeService)
+    	console.log("getData success")
+    	return Data;
+    }
+    this.addData = function(item) {
+        Data.push(item);
+    };
+    this.deleteData = function(id) {
+        for (var i = 0; i < Data.length; i++) {
+            if (Data[i].id == id) {
+                Data.splice(i, 1);
+                break;
+            }
+        }
+        return Data;
+    };
+});
