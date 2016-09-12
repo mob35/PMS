@@ -28,7 +28,7 @@
             'app.employee',
 
 
-            //'app.increaseDeduction',
+            'app.increaseDeduction',
 
 
 
