@@ -8,7 +8,7 @@
     /** @ngInject */
     function ComposeDialogController($mdDialog, selectedMail, mode, $scope, employeeService) {
         $scope.newEmp = selectedMail;
-        console.log(selectedMail);
+        
         // console.log($scope.newEmp.SpecialInfo);
         $scope.done = function() {
             // console.log($scope.newEmp);
@@ -25,7 +25,7 @@
                 });
 
             } else {
-
+                console.log(JSON.stringify(selectedMail));
                 employeeService.putEmpData($scope.newEmp).then(function(res) {
                     $scope.closeDialog();
                 }, function(err) {
