@@ -23,7 +23,7 @@
                     console.log(err);
                 });
 
-            } else {
+            } else if (mode == 'U'){
                 employeeService.putEmpData($scope.newEmp).then(function(res) {
                     $scope.closeDialog();
                 }, function(err) {
