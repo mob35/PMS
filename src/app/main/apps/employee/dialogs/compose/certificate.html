@@ -40,7 +40,7 @@
                             </md-input-container>
                             <md-input-container flex="30">
                             </md-input-container>
-                            <md-input-container flex="20">                                
+                            <md-input-container flex="20">
                             </md-input-container>
                             <span flex="20" name="Date" ng-model="employee.CertificateInfo.DateRecordCI" placeholder="Date"> {{employee.CertificateInfo.DateRecordCI | date:'dd/MM/yyyy'}} </span>
                         </div>
@@ -51,10 +51,10 @@
                         </div>
                         <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                             <md-input-container flex="50">
-                                <input type="text" name="FirstName" ng-model="employee.CertificateInfo.FirstNameCI" placeholder="FirstName">
+                                <input type="text" name="FirstName" ng-model="newEmp.PersonalInfo.FirstNameEN" placeholder="FirstName">
                             </md-input-container>
                             <md-input-container flex="50">
-                                <input type="text" name="LastName" ng-model="employee.CertificateInfo.LastNameCI" placeholder="LastName">
+                                <input type="text" name="LastName" ng-model="newEmp.PersonalInfo.LastNameEN" placeholder="LastName">
                             </md-input-container>
                         </div>
                         <div class="divBtn" layout="column" layout-gt-xs="row" flex>
@@ -62,7 +62,7 @@
                                 <span>ปฏิบัติงานในตำแหน่ง</span>
                             </md-input-container>
                             <md-input-container flex="25">
-                                <input type="text" name="" ng-model="employee.CertificateInfo.PositionCI" placeholder="">
+                                <input type="text" name="" ng-model="newEmp.PersonalInfo.Position" placeholder="">
                             </md-input-container>
                             <md-input-container flex="15">
                                 <span>ซึ่งมีหน้าที่</span>
@@ -71,12 +71,12 @@
                                 <input type="text" name="" ng-model="employee.CertificateInfo.order" placeholder="">
                             </md-input-container>
                         </div>
-                        <div class="divBtn" layout="column" layout-gt-xs="row" flex>
+                        <div class="divBtn2" layout="column" layout-gt-xs="row" flex>
                             <md-input-container flex="40">
                                 <span>โดยเริ่มปฏิบัติงานตั้งแต่วันที่</span>
                             </md-input-container>
                             <md-input-container flex="30">
-                                <input type="date" name="Date" ng-model="employee.CertificateInfo.DateStartCI" placeholder="Date">
+                                <span name="Date" ng-model="newEmp.RegardInfo.StartDateRI" placeholder="Date"> {{employee.CertificateInfo.DateRecordCI | date:'dd/MM/yyyy'}} </span>
                             </md-input-container>
                             <md-input-container flex="30">
                             </md-input-container>
@@ -86,7 +86,7 @@
                                 <span>มีอัตตราเงินค่าตอบแทน ณ ปัจจุบันที่</span>
                             </md-input-container>
                             <md-input-container flex="30">
-                                <input type="text" name="" ng-model="employee.CertificateInfo.SalaryCI" placeholder="">
+                                <input type="text" name="" ng-model="newEmp.PersonalInfo.Salary" placeholder="">
                             </md-input-container>
                             <md-input-container flex="15">
                                 <span>บาท</span>
@@ -100,13 +100,11 @@
                                 <span>ซึ่งอัตรานี้ไม่รวมค่าพิเศษอื่นๆ</span>
                             </md-input-container>
                         </div>
-                        <div  layout="column" layout-gt-xs="row" flex>
+                        <div layout="column" layout-gt-xs="row" flex>
                             <md-input-container flex>
                                 <span>หนังสือรับรองฉบับนี้ออกให้ไว้ ณ วันที่</span>
-
-                            </md-input-container>                            
-                            
-                            <md-input-container flex="20"> <span  name="Date" ng-model="employee.CertificateInfo.DatePrintCI" placeholder="Date"> {{employee.CertificateInfo.DateRecordCI | date:'dd/MM/yyyy'}} </span>
+                            </md-input-container>
+                            <md-input-container flex="20"> <span name="Date" ng-model="employee.CertificateInfo.DatePrintCI" placeholder="Date"> {{employee.CertificateInfo.DateRecordCI | date:'dd/MM/yyyy'}} </span>
                             </md-input-container>
                         </div>
                         <div class="divBtn2" layout="column" layout-gt-xs="row" flex>
