@@ -322,7 +322,7 @@
                 controller: 'CertificateDialogController',
                 controllerAs: 'vm',
                 locals: {
-                    selectedMail: undefined
+                    selectedMail: $scope.selectedEmp
                 },
                 templateUrl: 'app/main/apps/employee/dialogs/compose/certificate.html',
                 parent: angular.element($document.body),
