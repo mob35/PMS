@@ -23,13 +23,8 @@
                 }, function(err) {
                     console.log(err);
                 });
-<<<<<<< HEAD
-
             } else {
                 console.log(JSON.stringify(selectedMail));
-=======
-            } else if (mode == 'U'){
->>>>>>> ef6a7c1571d7d353723530ea8a2b06c84d062af0
                 employeeService.putEmpData($scope.newEmp).then(function(res) {
                     $scope.closeDialog();
                 }, function(err) {
