@@ -8,14 +8,15 @@
     /** @ngInject */
     function ComposeDialogController($mdDialog, selectedMail, mode, $scope, employeeService) {
         $scope.newEmp = selectedMail;
-
-        console.log($scope.newEmp.SpecialInfo);
+        console.log(selectedMail);
+        // console.log($scope.newEmp.SpecialInfo);
         $scope.done = function() {
-            console.log($scope.newEmp);
+            // console.log($scope.newEmp);
         };
         $scope.sendForm = function() {
             console.log(mode);
-            console.log(JSON.stringify($scope.newEmp));
+            console.log($scope.newEmp);
+            // console.log(JSON.stringify($scope.newEmp));
             if (mode == 'C') {
                 employeeService.postEmp($scope.newEmp).then(function(res) {
                     $scope.closeDialog();
@@ -24,6 +25,7 @@
                 });
 
             } else {
+
                 employeeService.putEmpData($scope.newEmp).then(function(res) {
                     $scope.closeDialog();
                 }, function(err) {
@@ -41,17 +43,6 @@
 
         vm.hiddenCC = true;
         vm.hiddenBCC = true;
-
-        // If replying
-        // if (angular.isDefined(selectedMail)) {
-        //     vm.form.to = selectedMail.from.email;
-        //     vm.form.subject = 'RE: ' + selectedMail.subject;
-        //     vm.form.message = '<blockquote>' + selectedMail.message + '</blockquote>';
-        // }
-
-        // Methods
-        // vm.closeDialog = closeDialog;
-        // vm.addNewList = addNewList;
 
 
         //////////
@@ -205,85 +196,6 @@
         $scope.removeItemLang = function(index) {
             $scope.newEmp.LanguageInfo.splice(index, 1);
         }
-
-        // $scope.checkedTypeSpec = function() {
-        //         if ($scope.typeSpecial == 'Yes') {
-        //             $scope.SpecialInfo.TypingSI = true;
-        //             console.log($scope.newEmp.SpecialInfo.TypingSI);
-        //         } else {
-        //             $scope.SpecialInfo.TypingSI = false;
-        //             console.log($scope.newEmp.SpecialInfo.TypingSI);
-        //         }
-
-        //     }
-        // $scope.submitStepper = function(ev) {
-        //     // You can do an API call here to send the form to your server
-
-        //     // Show the sent data.. you can delete this safely.
-        //     $mdDialog.show({
-        //         controller: function($scope, $mdDialog, formWizardData) {
-        //             $scope.formWizardData = formWizardData;
-        //             $scope.closeDialog = function() {
-        //                 $mdDialog.hide();
-        //             }
-        //         },
-        //         template: '<md-dialog>' +
-        //             '  <md-dialog-content><h1>You have sent the form with the following data</h1><div><pre>{{formWizardData | json}}</pre></div></md-dialog-content>' +
-        //             '  <md-dialog-actions>' +
-        //             '    <md-button ng-click="closeDialog()" class="md-primary">' +
-        //             '      Close' +
-        //             '    </md-button>' +
-        //             '  </md-dialog-actions>' +
-        //             '</md-dialog>',
-        //         parent: angular.element('body'),
-        //         targetEvent: ev,
-        //         locals: {
-        //             formWizardData: $scope.stepper
-        //         },
-        //         clickOutsideToClose: true
-        //     });
-
-        //     // Reset the form model
-        //     $scope.stepper = {
-        //         step1: {},
-        //         step2: {},
-        //         step3: {}
-        //     };
-        // }
-
-        /**
-         * Send form
-         */
-        // $scope.sendForm = function(ev) {
-        //     // You can do an API call here to send the form to your server
-
-        //     // Show the sent data.. you can delete this safely.
-        //     $mdDialog.show({
-        //         controller: function($scope, $mdDialog, formWizardData) {
-        //             $scope.formWizardData = formWizardData;
-        //             $scope.closeDialog = function() {
-        //                 $mdDialog.hide();
-        //             }
-        //         },
-        //         template: '<md-dialog>' +
-        //             '  <md-dialog-content><h1>You have sent the form with the following data</h1><div><pre>{{formWizardData | json}}</pre></div></md-dialog-content>' +
-        //             '  <md-dialog-actions>' +
-        //             '    <md-button ng-click="closeDialog()" class="md-primary">' +
-        //             '      Close' +
-        //             '    </md-button>' +
-        //             '  </md-dialog-actions>' +
-        //             '</md-dialog>',
-        //         parent: angular.element('body'),
-        //         targetEvent: ev,
-        //         locals: {
-        //             formWizardData: $scope.formWizard
-        //         },
-        //         clickOutsideToClose: true
-        //     });
-
-        //     // Clear the form data
-        //     $scope.formWizard = {};
-        // }
     }
 
 
