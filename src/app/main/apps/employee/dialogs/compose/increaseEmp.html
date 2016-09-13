@@ -1,0 +1,102 @@
+<md-dialog class="compose-dialog" aria-label="Evaluation Information">
+    <form class="md-inline-form">
+        <md-toolbar class="md-accent md-hue-2">
+            <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+                <span class="title">Increase</span>
+                <md-button class="md-icon-button" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
+                    <md-icon md-font-icon="icon-close"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <!-- FORM WIZARD -->
+        <ms-form-wizard flex>
+            <div class="divMarCompos">
+                <!-- <div class="hrBorder marginThree" layout="row" layout-xs="column">
+                    <div class="margin-5">
+                        <b>{{selectedMail.PersonalInfo.FirstNameEN}} {{selectedMail.PersonalInfo.LastNameEN}} </b>({{selectedMail.PersonalInfo.Position}})
+                    </div>
+                </div> -->
+                <div class="divBtn" layout="column" layout-gt-xs="row" flex>
+                    <md-input-container flex="30">
+                        <input ng-disabled="true" type="text" name="firstname" ng-model="selectedMail.PersonalInfo.FirstNameEN" placeholder="Firstname" required>
+                        <div ng-messages="wizardStep1.firstname.$error" role="alert">
+                            <div ng-message="required">
+                                <span>Firstname field is required.</span>
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex="30">
+                        <input ng-disabled="true" type="text" name="lastname" ng-model="selectedMail.PersonalInfo.LastNameEN" placeholder="Lastname" required>
+                        <div ng-messages="wizardStep1.lastname.$error" role="alert">
+                            <div ng-message="required">
+                                <span>Lastname field is required.</span>
+                            </div>
+                        </div>
+                    </md-input-container>
+                     <md-input-container flex="30">
+                        <input ng-disabled="true" type="text" name="position" ng-model="selectedMail.PersonalInfo.Position" placeholder="Position" required>
+                        <div ng-messages="wizardStep1.firstname.$error" role="alert">
+                            <div ng-message="required">
+                                <span>Position field is required.</span>
+                            </div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div class="margin-25" layout="row" ng-hide="showme">
+                <div flex>
+                    <a href="" ng-click="showme=true">
+                        <md-icon class="iconSize" md-font-icon="icon-plus-box"></md-icon>
+                    </a> <span class="margin-left-25">Add Increase</span>
+                </div>
+            </div>
+            <!-- List -->
+            <div class="divBtn" layout="row" ng-show="showme">
+                <div flex="70">
+
+ 
+  
+
+
+                    <md-input-container flex="30">
+                        <input type="text" name="position" ng-model="newIncre" placeholder="Position" required>
+                        <div ng-messages="wizardStep1.firstname.$error" role="alert">
+                            <div ng-message="required">
+                                <span>Position field is required.</span>
+                            </div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div flex="20">
+                    <md-button class="md-raised md-accent" ng-click="showme=false;addIncreaseList()">
+                        Add Increase
+                    </md-button>
+                </div>
+            </div>
+            <div class="info hrBorder marginZero" flex layout="column" ng-repeat="incre in selectedMail.IncreaseInfo">
+                <div layout="row" layout-xs="column">
+                    
+                    <div flex="10">
+                        <md-icon md-font-icon="icon-person-box" class="iconMargin"></md-icon>
+                    </div>
+                    <div flex>
+                        <p class="text-truncate">{{incre.DetailIn}}</p>
+                    </div>
+                    <div flex="10">
+                    <md-icon md-font-icon="icon-delete" class="iconMargin" ng-click="deleteBnf(incre.BnID)"></md-icon>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="navigation" flex layout="row" layout-align="right">
+                <md-button class="md-raised md-accent md-button md-ink-ripple" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
+                    Cancel
+                </md-button>
+                <span class="btn-right">
+                <md-button class="md-raised md-accent" ng-click="">
+                    Done
+                </md-button>
+                 </span>
+            </div>
+        </ms-form-wizard>
+    </form>
+</md-dialog>

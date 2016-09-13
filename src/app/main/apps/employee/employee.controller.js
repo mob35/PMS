@@ -60,6 +60,7 @@
         vm.toggleStarred = toggleStarred;
         vm.toggleCheck = toggleCheck;
         $scope.positions = [];
+
         //////////////////////////////////////////////////////////////////////call service method//////////////////////
         employeeService.getAll().then(function(res) {
             $scope.employeeList = res.data;
@@ -86,6 +87,7 @@
         $scope.selectedEmployee = function(mail) {
             $scope.selectEmpForDel = mail;
             $scope.selectedEmp = mail;
+            console.log(mail);
         }
 
 
@@ -139,6 +141,7 @@
         $scope.showRead = true;
         $scope.showList = true;
 
+
         $scope.filterPos = function(pos) {
             //console.log(pos);
             return pos.PersonalInfo.Position == $scope.selected;
@@ -153,13 +156,13 @@
 
         }
 
-
+            $scope.disabled = true;
         $scope.selectEmp = function(mail) {
             $scope.originalSelectedEmp = mail;
             angular.copy(mail, $scope.selectedMail);
 
             $scope.showRead = true;
-
+            $scope.disabled = false;
         }
         $scope.FnSavePer = function() {
             // angular.copy($scope.selectedMail, $scope.originalSelectedEmp);
@@ -371,8 +374,34 @@
                 clickOutsideToClose: true
             });
         }
-
-
+        ////////////  Increase ///////////////
+        $scope.increaseDialog = function(ev){
+            $mdDialog.show({
+                controller: 'IncreaseDialogController',
+                controllerAs: 'vm',
+                locals: {
+                    selectedMail: $scope.selectedMail
+                },
+                templateUrl: 'app/main/apps/employee/dialogs/compose/increaseEmp.html',
+                parent: angular.element($document.body),
+                targetEvent: ev,
+                clickOutsideToClose: true
+            });
+        }
+        ////////////  Deduction ///////////////
+        $scope.deductionDialog = function(ev){
+            $mdDialog.show({
+                controller: 'DeductionDialogController',
+                controllerAs: 'vm',
+                locals: {
+                    selectedMail: $scope.selectedMail
+                },
+                templateUrl: 'app/main/apps/employee/dialogs/compose/deductionEmp.html',
+                parent: angular.element($document.body),
+                targetEvent: ev,
+                clickOutsideToClose: true
+            });
+        }
 
 
         $scope.toggleSidenav = function(sidenavId) {

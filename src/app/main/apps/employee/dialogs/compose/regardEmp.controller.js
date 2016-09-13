@@ -8,7 +8,7 @@
     /** @ngInject */
     function RegardDialogController($mdDialog, selectedEmp, $scope, benefitsMasterService,employeeService) {
 
-        //$scope.originalselectedEmp = selectedEmp;
+        $scope.originalselectedEmp = selectedEmp;
         $scope.selectedEmp={};
         angular.copy(selectedEmp,$scope.selectedEmp);
         $scope.newBnf = {};
