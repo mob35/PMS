@@ -32,6 +32,7 @@
         };
 
         this.putEmpData = function(employee) {
+            console.log(employee);
             var defer = $q.defer();
             $http.put(url + '/' + employee.EmpID, employee).success(function(response) {
                     defer.resolve(response);
@@ -47,6 +48,32 @@
             console.log(JSON.stringify(selectedEmp));
             var defer = $q.defer();
             $http.put(url + '/' + selectedEmp.EmpID, selectedEmp).success(function(response) {
+
+                    defer.resolve(response);
+                })
+                .error(function(response) {
+                    defer.reject(response);
+                });
+            return defer.promise;
+
+        };
+        this.putIncrease = function(selectedMail) {
+            console.log(JSON.stringify(selectedMail));
+            var defer = $q.defer();
+            $http.put(url + '/' + selectedMail.EmpID, selectedMail).success(function(response) {
+
+                    defer.resolve(response);
+                })
+                .error(function(response) {
+                    defer.reject(response);
+                });
+            return defer.promise;
+
+        };
+        this.putDeduction = function(selectedMail) {
+            console.log(JSON.stringify(selectedMail));
+            var defer = $q.defer();
+            $http.put(url + '/' + selectedMail.EmpID, selectedMail).success(function(response) {
 
                     defer.resolve(response);
                 })

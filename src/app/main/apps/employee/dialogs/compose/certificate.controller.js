@@ -35,12 +35,12 @@
         var vm = this;
         console.log(selectedMail);
         // Data
-        $scope.form = {
-            from: 'johndoe@creapond.com'
-        };
+        // $scope.form = {
+        //     from: 'johndoe@creapond.com'
+        // };
 
-        vm.hiddenCC = true;
-        vm.hiddenBCC = true;
+        // vm.hiddenCC = true;
+        // vm.hiddenBCC = true;
 
         // If replying
         // if (angular.isDefined(selectedMail)) {
