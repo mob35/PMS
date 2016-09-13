@@ -121,6 +121,7 @@
             "ReadingLI": ""
         };
         $scope.special = {
+            "EmpID": $scope.newEmp.EmpID,
             "TypingSI": ""
                 // "TypingTHSI": 4,
                 // "TypingENSI": 5,
