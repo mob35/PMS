@@ -11,11 +11,6 @@
         <!-- FORM WIZARD -->
         <ms-form-wizard flex>
             <div class="divMarCompos">
-                <!-- <div class="hrBorder marginThree" layout="row" layout-xs="column">
-                    <div class="margin-5">
-                        <b>{{selectedMail.PersonalInfo.FirstNameEN}} {{selectedMail.PersonalInfo.LastNameEN}} </b>({{selectedMail.PersonalInfo.Position}})
-                    </div>
-                </div> -->
                 <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                     <md-input-container flex="30">
                         <input ng-disabled="true" type="text" name="firstname" ng-model="selectedMail.PersonalInfo.FirstNameEN" placeholder="Firstname" required>
@@ -33,7 +28,9 @@
                             </div>
                         </div>
                     </md-input-container>
-                     <md-input-container flex="30">
+                </div>
+                <div class="divBtn" layout="column" layout-gt-xs="row" flex>
+                    <md-input-container flex="30">
                         <input ng-disabled="true" type="text" name="position" ng-model="selectedMail.PersonalInfo.Position" placeholder="Position" required>
                         <div ng-messages="wizardStep1.firstname.$error" role="alert">
                             <div ng-message="required">
@@ -43,59 +40,90 @@
                     </md-input-container>
                 </div>
                 <div class="margin-25" layout="row" ng-hide="showme">
-                <div flex>
-                    <a href="" ng-click="showme=true">
-                        <md-icon class="iconSize" md-font-icon="icon-plus-box"></md-icon>
-                    </a> <span class="margin-left-25">Add Increase</span>
-                </div>
-            </div>
-            <!-- List -->
-            <div class="divBtn" layout="row" ng-show="showme">
-                <div flex="70">
-
- 
-  
-
-
-                    <md-input-container flex="30">
-                        <input type="text" name="position" ng-model="newIncre" placeholder="Position" required>
-                        <div ng-messages="wizardStep1.firstname.$error" role="alert">
-                            <div ng-message="required">
-                                <span>Position field is required.</span>
-                            </div>
-                        </div>
-                    </md-input-container>
-                </div>
-                <div flex="20">
-                    <md-button class="md-raised md-accent" ng-click="showme=false;addIncreaseList()">
-                        Add Increase
-                    </md-button>
-                </div>
-            </div>
-            <div class="info hrBorder marginZero" flex layout="column" ng-repeat="incre in selectedMail.IncreaseInfo">
-                <div layout="row" layout-xs="column">
-                    
-                    <div flex="10">
-                        <md-icon md-font-icon="icon-person-box" class="iconMargin"></md-icon>
-                    </div>
                     <div flex>
-                        <p class="text-truncate">{{incre.DetailIn}}</p>
-                    </div>
-                    <div flex="10">
-                    <md-icon md-font-icon="icon-delete" class="iconMargin" ng-click="deleteBnf(incre.BnID)"></md-icon>
+                        <a href="" ng-click="showme=true">
+                            <md-icon class="iconSize" md-font-icon="icon-plus-box"></md-icon>
+                        </a> <span class="margin-left-25">Add Increase</span>
                     </div>
                 </div>
-            </div>
-            </div>
-            <div class="navigation" flex layout="row" layout-align="right">
-                <md-button class="md-raised md-accent md-button md-ink-ripple" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
-                    Cancel
-                </md-button>
-                <span class="btn-right">
-                <md-button class="md-raised md-accent" ng-click="">
+                <!-- List -->
+                <div class="divBtn7" ng-show="showme">
+                    <div class="divBtn" layout="row">
+                        <md-input-container flex="50">
+                            <input type="text" name="DetailIn" ng-model="increase.DetailIn" placeholder="IncreaseName" required>
+                        </md-input-container>
+                        <md-input-container flex="50">
+                            <input type="text" name="AmountIn" ng-model="increase.AmountIn" placeholder="Amount" required>
+                        </md-input-container>
+                    </div>
+                    <div class="divBtn2" layout="row">
+                        <md-input-container flex="10">
+                            From
+                        </md-input-container>
+                        <md-input-container flex="40">
+                            <input type="date" name="StartDateIn" ng-model="increase.StartDateIn">
+                        </md-input-container>
+                        <md-input-container flex="10">
+                            To
+                        </md-input-container>
+                        <md-input-container flex="40">
+                            <input type="date" name="EndDateIn" ng-model="increase.EndDateIn">
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <div flex="80">
+                        </div>
+                        <div flex="20">
+                            <md-button class="md-raised md-accent md-button md-ink-ripple" ng-click="showme=false;addIncrease()">
+                                Add Increase
+                            </md-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="marginZero" ng-repeat="inc in newIncre.IncreaseInfo" class="hrBorder marginThree margin-bottom--12" style="margin-top:-1px;border: 1px;border-top-style:groove;border-bottom-style:groove;">
+                    <div class="divBtn" layout="row">
+                        <md-input-container flex="20">
+                            <b>Increase Name</b>
+                        </md-input-container>
+                        <md-input-container flex="25">
+                            <span>{{inc.DetailIn}}</span>
+                        </md-input-container>
+                        <md-input-container flex="20">
+                            <b>Amount</b>
+                        </md-input-container>
+                        <md-input-container flex="25">
+                            <span>{{inc.AmountIn | currency:"":0}}</span> Baht
+                        </md-input-container>
+                    </div>
+                    <div class="marginZero" layout="row">
+                        <md-input-container flex="20">
+                            <b>From</b>
+                        </md-input-container>
+                        <md-input-container flex="25">
+                            {{inc.StartDateIn | date : 'MM/yyyy'}}
+                        </md-input-container>
+                        <md-input-container flex="20">
+                            <b>To</b>
+                        </md-input-container>
+                        <md-input-container flex="25">
+                            {{inc.EndDateIn | date : 'MM/yyyy'}}
+                        </md-input-container>
+                     
+                            <div>
+                            <md-icon style="cursor:pointer; margin:0px;font-size:25px;" class="icon"  md-font-icon="icon-trash" ng-click="removeIncre($index)"></md-icon>
+                            </div>
+                    </div>
+                </div>
+                <div class="navigation" flex layout="row" layout-align="right">
+                    <md-button class="md-raised md-accent md-button md-ink-ripple" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
+                        Cancel
+                    </md-button>
+                    <span class="btn-right">
+                <md-button class="md-raised md-accent" ng-click="saveIncrease()">
                     Done
                 </md-button>
                  </span>
+                </div>
             </div>
         </ms-form-wizard>
     </form>

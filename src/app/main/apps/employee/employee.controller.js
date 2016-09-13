@@ -155,7 +155,7 @@
 
         }
 
-            $scope.disabled = true;
+        
         $scope.selectEmp = function(mail) {
             $scope.originalSelectedEmp = mail;
             angular.copy(mail, $scope.selectedMail);
