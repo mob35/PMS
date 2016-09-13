@@ -700,13 +700,15 @@
     </h2>
         </md-toolbar>
         <md-card-content>
-            <div ng-repeat="oth in selectedEmp.OtherInfo">
+       
+            <div>
+                
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div class="fontStyle" flex="50">
                         <span>I Can Work Up Country</span>
                     </div>
                     <div flex>
-                        <span>{{oth.WorkCountryDescOI}}</span>
+                        <span>{{(selectedMail.OtherInfo.WorkCountryOI ? "Yes" : "No")}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -717,11 +719,11 @@
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="50">
                         <span class="fontStyle">FirstName : </span>
-                        <span>{{oth.FirtNameOI}}</span>
+                        <span>{{selectedMail.OtherInfo.FirtNameOI}}</span>
                     </div>
                     <div flex>
                         <span class="fontStyle">LastName : </span>
-                        <span>{{oth.LastNameOI}}</span>
+                        <span>{{selectedMail.OtherInfo.LastNameOI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -729,7 +731,7 @@
                         <span>Related to the applient as</span>
                     </div>
                     <div flex>
-                        <span>{{oth.RelatedOI}}</span>
+                        <span>{{selectedMail.OtherInfo.RelatedOI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -737,7 +739,7 @@
                         <span>Address</span>
                     </div>
                     <div flex>
-                        <span>{{oth.AddressOI}}</span>
+                        <span>{{selectedMail.OtherInfo.AddressOI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -745,7 +747,7 @@
                         <span>Telephone</span>
                     </div>
                     <div flex>
-                        <span>{{oth.TelOI}}</span>
+                        <span>{{selectedMail.OtherInfo.TelOI}}</span>
                     </div>
                 </div>
                 <!-- /////////////////// -->
@@ -766,7 +768,7 @@
                             <span>Source of job information</span>
                         </div>
                         <div flex>
-                            <span>{{oth.SourceInfoOI}}</span>
+                            <span>{{selectedMail.OtherInfo.SourceInfoOI}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -774,7 +776,7 @@
                             <span>Contagious Disease</span>
                         </div>
                         <div flex>
-                            <span>{{oth.ContagiousFlagOI}}</span>
+                            <span>{{selectedMail.OtherInfo.ContagiousFlagOI}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -785,11 +787,11 @@
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="50">
                             <span class="fontStyle">FirstName : </span>
-                            <span>{{oth.FirtNameWorkRelativeOI}}</span>
+                            <span>{{selectedMail.OtherInfo.FirtNameWorkRelativeOI}}</span>
                         </div>
                         <div flex>
                             <span class="fontStyle">LastName : </span>
-                            <span>{{oth.LastNameWorkRelativeOI}}</span>
+                            <span>{{selectedMail.OtherInfo.LastNameWorkRelativeOI}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -799,7 +801,7 @@
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex>
-                            <span>{{oth.IntroduceYoureSelfOI}}</span>
+                            <span>{{selectedMail.OtherInfo.IntroduceYoureSelfOI}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column">

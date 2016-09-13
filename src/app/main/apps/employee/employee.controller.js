@@ -87,6 +87,7 @@
         $scope.selectedEmployee = function(mail) {
             $scope.selectEmpForDel = mail;
             $scope.selectedEmp = mail;
+            console.log(mail);
         }
 
 

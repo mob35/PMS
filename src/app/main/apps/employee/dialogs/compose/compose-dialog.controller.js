@@ -8,7 +8,7 @@
     /** @ngInject */
     function ComposeDialogController($mdDialog, selectedMail, mode, $scope, employeeService) {
         $scope.newEmp = selectedMail;
-        console.log(selectedMail);
+
         // console.log($scope.newEmp.SpecialInfo);
         $scope.done = function() {
             // console.log($scope.newEmp);
@@ -23,7 +23,8 @@
                 }, function(err) {
                     console.log(err);
                 });
-            } else if (mode == 'U') {
+            } else {
+                console.log(JSON.stringify(selectedMail));
                 employeeService.putEmpData($scope.newEmp).then(function(res) {
                     $scope.closeDialog();
                 }, function(err) {
@@ -84,6 +85,7 @@
 
 
         $scope.family = {
+            "EmpID": $scope.newEmp.EmpID,
             "FirstNameFI": "",
             "LastnameFI": "",
             "AgeFI": "",
@@ -94,6 +96,7 @@
             "TelFI": ""
         };
         $scope.education = {
+            "EmpID": $scope.newEmp.EmpID,
             "EducationLevelEI": "",
             "InstitutionEI": "",
             "MajorEI": "",
@@ -101,6 +104,7 @@
             "DateToEI": ""
         };
         $scope.workExp = {
+            "EmpID": $scope.newEmp.EmpID,
             "CompanyWI": "",
             "DateFromWI": "",
             "DateToWI": "",
@@ -110,6 +114,7 @@
             "JobDescWI": ""
         };
         $scope.language = {
+            "EmpID": $scope.newEmp.EmpID,
             "LanguageTypeLI": "",
             "SpeakingLI": "",
             "WritingLI": "",

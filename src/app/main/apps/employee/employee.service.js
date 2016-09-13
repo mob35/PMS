@@ -32,6 +32,7 @@
         };
 
         this.putEmpData = function(employee) {
+            console.log(employee);
             var defer = $q.defer();
             $http.put(url + '/' + employee.EmpID, employee).success(function(response) {
                     defer.resolve(response);
