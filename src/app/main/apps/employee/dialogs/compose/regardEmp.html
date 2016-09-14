@@ -54,8 +54,8 @@
                 </div>
                 <!-- /////// -->
                 <div class="divBtn" layout="column" layout-gt-xs="row" flex>
-                    <md-input-container flex="65" ng-hide="dateSwitch">
-                        <input type="date" name="StartDateRI" ng-model="selectedEmp.RegardInfo.StartDateRI" placeholder="Date Start" required>
+                    <md-input-container flex="65">
+                        <input type="text" name="StartDateRI" ng-model="selectedEmp.RegardInfo.StartDateRI" placeholder="YYYY/MM/DD" required>
                         <div ng-messages="wizardStep1.firstname.$error" role="alert">
                             <div ng-message="required">
                                 <span>Date Start field is required.</span>
@@ -63,16 +63,18 @@
                         </div>
                         
                     </md-input-container>
-
+    
                     <!--  -->
-                    <md-input-container flex="65" ng-show="dateSwitch" ng-click="dateSwitchEdit()">
+                <!--     <md-input-container flex="65" ng-show="dateSwitch" ng-click="dateSwitchEdit()">
                         <input ng-disabled="true" style="cursor:pointer;" type="text" name="StartDateRI" ng-model="selectedEmp.RegardInfo.StartDateRI | date : 'dd/MM/yyyy'" placeholder="Date Start" >
-                    </md-input-container>
+                    </md-input-container> -->
                     <!--  -->
                     <md-input-container flex="30">
                     </md-input-container>
                 </div>
-                
+                <!-- <md-input-container flex="65">
+                        <input ng-disabled="true" style="cursor:pointer;" type="text" name="StartDateRI" ng-model="selectedEmp.RegardInfo.StartDateRI | date : 'dd/MM/yyyy'" placeholder="Date Start" >
+                    </md-input-container> -->
                 
 
             </form>
@@ -93,7 +95,7 @@
                                 {{item.NameBN}}
                             </md-option>
                         </md-select>
-                        <md-input-container>
+                        </md-input-container>
                 </div>
                 <div flex="20">
                     <md-button class="md-raised md-accent" ng-click="showme=false;addBenefitsList()">
