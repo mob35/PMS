@@ -19,7 +19,7 @@
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         // $scope.increase = [];
         $scope.increase = {
-            "EmpID": $scope.newIncre.EmpID,
+            "_id": $scope.newIncre._id,
             "DetailIn": "",
             "AmountIn": "",
             "StartDateIn": "",
@@ -32,7 +32,7 @@
 
         $scope.addIncrease = function() {
             $scope.newIncre.IncreaseInfo.push($scope.increase);
-            console.log($scope.newIncre.EmpID);
+            console.log($scope.newIncre._id);
             console.log($scope.newIncre.IncreaseInfo);
             $scope.increase = {
                 "DetailIn": "",

@@ -34,7 +34,7 @@
                 <!-- /////// -->
                 <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                     <md-input-container flex="30">
-                        <input type="text" name="position" ng-model="selectedEmp.PersonalInfo.Position" placeholder="Position" required>
+                        <input ng-disabled="true" type="text" name="position" ng-model="selectedEmp.PersonalInfo.Position" placeholder="Position" required>
                         <div ng-messages="wizardStep1.firstname.$error" role="alert">
                             <div ng-message="required">
                                 <span>Position field is required.</span>
@@ -42,7 +42,7 @@
                         </div>
                     </md-input-container>
                     <md-input-container flex="30">
-                        <input type="text" name="salary" ng-model="selectedEmp.PersonalInfo.Salary" placeholder="Salary" required>
+                        <input ng-disabled="true" type="text" name="salary" ng-model="selectedEmp.PersonalInfo.Salary" placeholder="Salary" required>
                         <div ng-messages="wizardStep1.lastname.$error" role="alert">
                             <div ng-message="required">
                                 <span>Salary field is required.</span>
@@ -54,17 +54,27 @@
                 </div>
                 <!-- /////// -->
                 <div class="divBtn" layout="column" layout-gt-xs="row" flex>
-                    <md-input-container flex="65">
-                        <input type="text" name="dateStart" ng-model="selectedEmp.RegardInfo.StartDateRI" placeholder="Date Start" required>
+                    <md-input-container flex="65" ng-hide="dateSwitch">
+                        <input type="date" name="StartDateRI" ng-model="selectedEmp.RegardInfo.StartDateRI" placeholder="Date Start" required>
                         <div ng-messages="wizardStep1.firstname.$error" role="alert">
                             <div ng-message="required">
                                 <span>Date Start field is required.</span>
                             </div>
                         </div>
+                        
                     </md-input-container>
+
+                    <!--  -->
+                    <md-input-container flex="65" ng-show="dateSwitch" ng-click="dateSwitchEdit()">
+                        <input ng-disabled="true" style="cursor:pointer;" type="text" name="StartDateRI" ng-model="selectedEmp.RegardInfo.StartDateRI | date : 'dd/MM/yyyy'" placeholder="Date Start" >
+                    </md-input-container>
+                    <!--  -->
                     <md-input-container flex="30">
                     </md-input-container>
                 </div>
+                
+                
+
             </form>
             <div class="margin-25" layout="row" ng-hide="showme">
                 <div flex>
@@ -93,7 +103,6 @@
             </div>
             <div class="info hrBorder marginZero" flex layout="column" ng-repeat="bnf in selectedEmp.BenefitsInfo">
                 <div layout="row" layout-xs="column">
-                    
                     <div flex="10">
                         <md-icon md-font-icon="icon-person-box" class="iconMargin"></md-icon>
                     </div>
@@ -102,7 +111,7 @@
                         <p class="text-truncate">{{bnf.DetailBN}}</p>
                     </div>
                     <div flex="10">
-                    <md-icon md-font-icon="icon-delete" class="iconMargin" ng-click="deleteBnf(bnf.BnID)"></md-icon>
+                        <md-icon md-font-icon="icon-delete" class="iconMargin" ng-click="deleteBnf(bnf.BnID)"></md-icon>
                     </div>
                 </div>
             </div>

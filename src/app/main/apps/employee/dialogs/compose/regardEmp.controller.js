@@ -6,13 +6,16 @@
         .controller('RegardDialogController', RegardDialogController);
 
     /** @ngInject */
-    function RegardDialogController($mdDialog, selectedEmp, $scope, benefitsMasterService,employeeService) {
+    function RegardDialogController($mdDialog, selectedEmp, $scope, benefitsMasterService, employeeService) {
+
 
         $scope.originalselectedEmp = selectedEmp;
-        $scope.selectedEmp={};
-        angular.copy(selectedEmp,$scope.selectedEmp);
+        $scope.selectedEmp = {};
+        angular.copy(selectedEmp, $scope.selectedEmp);
         $scope.newBnf = {};
         //////////////////////////////////////////////////////////call service method////////////////////////////////////////////////
+        console.log($scope.selectedEmp.RegardInfo);
+
 
         benefitsMasterService.getAll().then(function(res) {
             $scope.benefitsList = res.data;
@@ -32,15 +35,16 @@
 
         $scope.saveRegardEmployee = function() {
             employeeService.putRegradEmp($scope.selectedEmp).then(function(res) {
-                angular.copy($scope.selectedEmp,selectedEmp);
+                angular.copy($scope.selectedEmp, selectedEmp);
                 $scope.closeDialog();
             }, function(err) {
                 console.log(err);
             });
+            console.log($scope.selectedEmp.RegardInfo);
         }
 
         $scope.cancelRegardEmp = function() {
-            angular.copy(selectedEmp,$scope.selectedEmp);
+            angular.copy(selectedEmp, $scope.selectedEmp);
             $scope.closeDialog();
         }
 
@@ -52,6 +56,12 @@
                 }
             }
 
+        }
+        // 
+        $scope.dateSwitch = true;
+        $scope.dateSwitchEdit = function() {
+             $scope.dateSwitch = false;
+            
         }
 
         $scope.closeDialog = function() {

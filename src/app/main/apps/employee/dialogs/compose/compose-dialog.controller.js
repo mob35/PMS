@@ -85,7 +85,7 @@
 
 
         $scope.family = {
-            "EmpID": $scope.newEmp.EmpID,
+            "_id": $scope.newEmp._id,
             "FirstNameFI": "",
             "LastnameFI": "",
             "AgeFI": "",
@@ -96,7 +96,7 @@
             "TelFI": ""
         };
         $scope.education = {
-            "EmpID": $scope.newEmp.EmpID,
+            "_id": $scope.newEmp._id,
             "EducationLevelEI": "",
             "InstitutionEI": "",
             "MajorEI": "",
@@ -104,7 +104,7 @@
             "DateToEI": ""
         };
         $scope.workExp = {
-            "EmpID": $scope.newEmp.EmpID,
+            "_id": $scope.newEmp._id,
             "CompanyWI": "",
             "DateFromWI": "",
             "DateToWI": "",
@@ -114,14 +114,14 @@
             "JobDescWI": ""
         };
         $scope.language = {
-            "EmpID": $scope.newEmp.EmpID,
+            "_id": $scope.newEmp._id,
             "LanguageTypeLI": "",
             "SpeakingLI": "",
             "WritingLI": "",
             "ReadingLI": ""
         };
         $scope.special = {
-            "EmpID": $scope.newEmp.EmpID,
+            "_id": $scope.newEmp._id,
             "TypingSI": ""
                 // "TypingTHSI": 4,
                 // "TypingENSI": 5,

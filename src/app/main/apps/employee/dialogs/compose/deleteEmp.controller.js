@@ -51,6 +51,7 @@
 
         //////////
         $scope.deleteEmp = function() {
+<<<<<<< HEAD
             // alert("deleteEmp");
             // console.log('length:' + selectEmpForDel._id);
             employeeService.deleteEmpData(selectEmpForDel).then(function(res) {
@@ -63,6 +64,20 @@
                 // selectedMail.PersonalInfo.FirstNameEN = '';
                 $scope.closeDialog();
                 console.log('success');
+=======
+            alert("deleteEmp");
+            console.log('length:'+selectEmpForDel._id);
+            employeeService.deleteEmpData(selectEmpForDel).then(function(res) {
+                for (var i = 0; i < $scope.employeeList.length; i++) {
+                if (selectEmpForDel._id == $scope.employeeList[i]._id) {
+                    $scope.employeeList.splice(i, 1);
+                    break;
+                }
+            }
+            selectedMail.PersonalInfo.FirstNameEN = '';
+            $scope.closeDialog();
+            console.log('success');
+>>>>>>> 0f9cd5127fdb3904fad7049ce39cc5805242ac58
             }, function(err) {
                 console.log(err);
             });
