@@ -33,37 +33,37 @@
             <!-- CONTENT TOOLBAR -->
             <div class="toolbar" layout="row" layout-align="space-between center" ng-if="vm.activeMailPaneIndex === 0">
                 <div layout="row" layout-align="start center">
-                   <!--  <md-checkbox class="no-label" aria-label="{{vm.allChecked?'Uncheck All':'Check All'}}" ng-checked="vm.allChecked" ng-click="vm.checkAll()"></md-checkbox> -->
-                    <md-button class="md-icon-button" aria-label="Delete" translate translate-attr-aria-label="EMP.DELETE" hide show-gt-sm>
-                        <md-icon md-font-icon="icon-table-edit" ng-click="editDialog($event)"></md-icon>
+                    <!--  <md-checkbox class="no-label" aria-label="{{vm.allChecked?'Uncheck All':'Check All'}}" ng-checked="vm.allChecked" ng-click="vm.checkAll()"></md-checkbox> -->
+                    <md-button class="md-icon-button" aria-label="EditEmp" ng-click="editDialog($event)" hide show-gt-sm>
+                        <md-icon md-font-icon="icon-table-edit"></md-icon>
                         <md-tooltip><span>Edit Employee</span></md-tooltip>
                     </md-button>
-                    <md-button class="md-icon-button" aria-label="Delete" translate translate-attr-aria-label="EMP.DELETE" hide show-gt-sm>
-                        <md-icon md-font-icon="icon-delete" ng-click="vm.deleteDialog($event)"></md-icon>
+                    <md-button class="md-icon-button" aria-label="DeleteEmp" ng-click="vm.deleteDialog($event)" hide show-gt-sm>
+                        <md-icon md-font-icon="icon-delete"></md-icon>
                         <md-tooltip><span>Delete Employee</span></md-tooltip>
                     </md-button>
-                    <md-button class="md-icon-button" aria-label="Archive" translate translate-attr-aria-label="EMP.ARCHIVE" hide show-gt-sm>
-                        <md-icon md-font-icon="icon-note" ng-click="vm.certificateDialog($event)"></md-icon>
+                    <md-button class="md-icon-button" aria-label="Salary" ng-click="vm.certificateDialog($event)" hide show-gt-sm>
+                        <md-icon md-font-icon="icon-note"></md-icon>
                         <md-tooltip><span>Salary Certificate</span></md-tooltip>
                     </md-button>
                     <!-- <div class="divider-vertical" hide show-gt-sm></div> -->
-                    <md-button class="md-icon-button iconMar" aria-label="Cash" translate translate-attr-aria-label="EMP.SPAM" hide show-gt-sm>
-                        <md-icon class="iconSize" md-font-icon="icon-square-inc-cash" ng-click="vm.regardDialog($event)"></md-icon>
+                    <md-button class="md-icon-button iconMar" aria-label="Regard" ng-click="vm.regardDialog($event)" hide show-gt-sm>
+                        <md-icon class="iconSize" md-font-icon="icon-square-inc-cash"></md-icon>
                         <md-tooltip><span>Regard Employee</span></md-tooltip>
                     </md-button>
                     <!-- <div class="divider-vertical"></div> -->
-                    <md-button class="md-icon-button" aria-label="Person" translate translate-attr-aria-label="EMP.MOVE_TO" hide show-gt-sm>
-                        <md-icon md-font-icon="icon-person-box" ng-click="vm.evaluationDialog($event)"></md-icon>
+                    <md-button class="md-icon-button" aria-label="Evaluation" ng-click="vm.evaluationDialog($event)" hide show-gt-sm>
+                        <md-icon md-font-icon="icon-person-box"></md-icon>
                         <md-tooltip><span>Evaluation Information</span></md-tooltip>
                     </md-button>
                     <!-- // -->
-                    <md-button class="md-icon-button" aria-label="Person" translate translate-attr-aria-label="EMP.MOVE_TO" hide show-gt-sm>
-                        <md-icon md-font-icon="icon-thumb-up" ng-click="increaseDialog($event)"></md-icon>
+                    <md-button class="md-icon-button" aria-label="Increase" ng-click="increaseDialog($event)" hide show-gt-sm>
+                        <md-icon md-font-icon="icon-thumb-up"></md-icon>
                         <md-tooltip><span>Increase</span></md-tooltip>
                     </md-button>
                     <!-- // -->
-                    <md-button class="md-icon-button" aria-label="Person" translate translate-attr-aria-label="EMP.MOVE_TO" hide show-gt-sm>
-                        <md-icon md-font-icon="icon-thumb-down" ng-click="deductionDialog($event)"></md-icon>
+                    <md-button class="md-icon-button" aria-label="Deduction" ng-click="deductionDialog($event)" hide show-gt-sm>
+                        <md-icon md-font-icon="icon-thumb-down"></md-icon>
                         <md-tooltip><span>Deduction</span></md-tooltip>
                     </md-button>
                     <md-menu hide-gt-sm>
@@ -72,33 +72,45 @@
                         </md-button>
                         <md-menu-content width="3">
                             <md-menu-item>
-                                <md-button aria-label="Archive" translate-attr-aria-label="EMP.ARCHIVE">
-                                    <md-icon md-font-icon="icon-archive"></md-icon>
-                                    <span>Archive</span>
+                                <md-button aria-label="EditEmp" ng-click="editDialog($event)">
+                                    <md-icon md-font-icon="icon-table-edit"></md-icon>
+                                    <span>Edit Employee</span>
                                 </md-button>
                             </md-menu-item>
                             <md-menu-item>
-                                <md-button aria-label="Spam" translate-attr-aria-label="EMP.SPAM">
-                                    <md-icon md-font-icon="icon-alert-octagon"></md-icon>
-                                    <span translate="EMP.SPAM">Spam</span>
-                                </md-button>
-                            </md-menu-item>
-                            <md-menu-item>
-                                <md-button aria-label="Delete" translate-aria-label="EMP.DELETE">
+                                <md-button aria-label="DeleteEmp" ng-click="vm.deleteDialog($event)">
                                     <md-icon md-font-icon="icon-delete"></md-icon>
-                                    <span translate="EMP.DELETE">Delete</span>
+                                    <span>Delete Employee</span>
                                 </md-button>
                             </md-menu-item>
                             <md-menu-item>
-                                <md-button aria-label="Move To" translate-attr-aria-label="EMP.MOVE_TO">
-                                    <md-icon md-font-icon="icon-folder-move"></md-icon>
-                                    <span translate="EMP.MOVE_TO">Move To</span>
+                                <md-button aria-label="Salary" ng-click="vm.certificateDialog($event)">
+                                    <md-icon md-font-icon="icon-note"></md-icon>
+                                    <span>Salary Certificate</span>
                                 </md-button>
                             </md-menu-item>
                             <md-menu-item>
-                                <md-button aria-label="Labels" translate-attr-aria-label="EMP.LABELS">
-                                    <md-icon md-font-icon="icon-label"></md-icon>
-                                    <span translate="EMP.LABELS">Labels</span>
+                                <md-button aria-label="Regard" ng-click="vm.regardDialog($event)">
+                                    <md-icon style="font-size: 20px;" md-font-icon="icon-square-inc-cash"></md-icon>
+                                    <span>Regard Employee</span>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="Evaluation" ng-click="vm.evaluationDialog($event)">
+                                    <md-icon md-font-icon="icon-person-box"></md-icon>
+                                    <span>Evaluation Information</span>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="Increase" ng-click="increaseDialog($event)">
+                                    <md-icon md-font-icon="icon-thumb-up"></md-icon>
+                                    <span>Increase</span>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="Deduction" ng-click="deductionDialog($event)">
+                                    <md-icon md-font-icon="icon-thumb-down"></md-icon>
+                                    <span>Deduction</span>
                                 </md-button>
                             </md-menu-item>
                         </md-menu-content>
