@@ -14,7 +14,7 @@
                 <form name="wizardStep1" class="md-inline-form" ms-form-wizard-form novalidate>
                     <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                         <md-input-container flex="30">
-                            <input type="text" name="employeeNo" ng-model="newEmp.PersonalInfo.EmpID">
+                            <input type="text" name="employeeNo" ng-model="newEmp._id">
                         </md-input-container>
                         <md-input-container flex="30">
                             <input type="text" name="dateStart" ng-model="newEmp.RegardInfo.StartDateRI">
@@ -47,7 +47,7 @@
             </div>
             <div>
                 <!-- class="divMarCompos" -->
-                <form>
+                <form ng-checked="calSum()">
                     <div layout="row" layout-xs="column">
                         <span flex="5"></span>
                         <span class="divBtntop20" style="margin-top: -5px;" flex="50"><h2>Issue</h2></span>
@@ -139,23 +139,31 @@
                     </div>
                     <div layout="row" layout-xs="column">
                         <span flex="10"></span>
-                        <span class="divBtntop20" flex="50">Scores</span>
-                        <!-- <md-radio-group ng-model="newEmp.EvaluationInfo.Scores" class="md-primary" layout="row">
-                            <md-radio-button ng-repeat="sco in Score" ng-value="sco" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}">
-                            </md-radio-button>
-                        </md-radio-group> -->
+                        <span class="divBtntop20"  flex="45">Scores</span>
+                        <label class="divBtntop20" ng-model="newEmp.EvaluationInfo.SumP5EV" style="margin-left: 34px;">{{newEmp.EvaluationInfo.SumP5EV}}</label>
+                        <label class="divBtntop20" ng-model="newEmp.EvaluationInfo.SumP4EV" style="margin-left: 35px;">{{newEmp.EvaluationInfo.SumP4EV}}</label>
+                        <label class="divBtntop20" ng-model="newEmp.EvaluationInfo.SumP3EV" style="margin-left: 36.5px;">{{newEmp.EvaluationInfo.SumP3EV}}</label>
+                        <label class="divBtntop20" ng-model="newEmp.EvaluationInfo.SumP2EV" style="margin-left: 36.5px;">{{newEmp.EvaluationInfo.SumP2EV}}</label>
+                        <label class="divBtntop20" ng-model="newEmp.EvaluationInfo.SumP1EV" style="margin-left: 35.5px;">{{newEmp.EvaluationInfo.SumP1EV}}</label>
+                        <!-- <input type="text" ng-model="newEmp.EvaluationInfo.SumP5EV">
+                        <input type="text" ng-model="newEmp.EvaluationInfo.SumP4EV">
+                        <input type="text" ng-model="newEmp.EvaluationInfo.SumP3EV">
+                        <input type="text" ng-model="newEmp.EvaluationInfo.SumP2EV">
+                        <input type="text" ng-model="newEmp.EvaluationInfo.SumP1EV"> -->
                     </div>
                     <div layout="row" layout-xs="column">
                         <span flex="10"></span>
-                        <span class="divBtntop20" flex="50">Total Scores</span> {{(newEmp.EvaluationInfo.JobLearningEV) + (newEmp.EvaluationInfo.JobKnowledge_SkillEV) + (newEmp.EvaluationInfo.AdaptationEV) + (newEmp.EvaluationInfo.RulesRespectEV) + (newEmp.EvaluationInfo.CommunicationEV) + (newEmp.EvaluationInfo.AttitudeEV) + (newEmp.EvaluationInfo.Planning_FollowingEV) + (newEmp.EvaluationInfo.Decision_SolvingEV) + (newEmp.EvaluationInfo.ResponsibilityEV) + (newEmp.EvaluationInfo.CooperationEV)}}
+                        <span class="divBtntop20" flex="50">Total Scores</span>
+                        <div class="divBtntop20"> {{(newEmp.EvaluationInfo.JobLearningEV) + (newEmp.EvaluationInfo.JobKnowledge_SkillEV) + (newEmp.EvaluationInfo.AdaptationEV) + (newEmp.EvaluationInfo.RulesRespectEV) + (newEmp.EvaluationInfo.CommunicationEV) + (newEmp.EvaluationInfo.AttitudeEV) + (newEmp.EvaluationInfo.Planning_FollowingEV) + (newEmp.EvaluationInfo.Decision_SolvingEV) + (newEmp.EvaluationInfo.ResponsibilityEV) + (newEmp.EvaluationInfo.CooperationEV) }}</div>
                     </div>
-                    <div layout="row" layout-xs="column">
+                    <div layout="row" layout-xs="column" ng-model="newEmp.EvaluationInfo.PercentEV">
                         <span flex="10"></span>
                         <span class="divBtntop20" flex="50">Percent</span>
+                        <div class="divBtntop20">{{((newEmp.EvaluationInfo.JobLearningEV) + (newEmp.EvaluationInfo.JobKnowledge_SkillEV) + (newEmp.EvaluationInfo.AdaptationEV) + (newEmp.EvaluationInfo.RulesRespectEV) + (newEmp.EvaluationInfo.CommunicationEV) + (newEmp.EvaluationInfo.AttitudeEV) + (newEmp.EvaluationInfo.Planning_FollowingEV) + (newEmp.EvaluationInfo.Decision_SolvingEV) + (newEmp.EvaluationInfo.ResponsibilityEV) + (newEmp.EvaluationInfo.CooperationEV)) * (2)}}</div>
                     </div>
                     <div layout="row" layout-xs="column">
                         <span flex="10"></span>
-                        <span class="divBtntop20" flex="50">Other</span>
+                        <span class="divBtntop20" flex="50">Other</span> <span class="divBtntop20"><input type="text" placeholder="Other" ng-model="newEmp.EvaluationInfo.OtherEV"></span>
                     </div>
                 </form>
             </div>
@@ -169,7 +177,7 @@
                     </div>
                     <div layout="row" layout-xs="column">
                         <span style="margin-left:20px;" flex="20"></span>
-                        <md-radio-group ng-model="newEmp.EvaluationInfo.Evaluation" class="md-primary" layout="row">
+                        <md-radio-group ng-model="newEmp.EvaluationInfo.EvaluationTypeEV" class="md-primary" layout="row">
                             <md-radio-button value="Confirmed" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}" ng-hide="showme">Confirmed
                             </md-radio-button>
                             <md-radio-button value="Extended" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}" ng-click="showme=true">Extended
@@ -178,7 +186,7 @@
                             </md-radio-button>
                         </md-radio-group>
                         <div style="margin-top:21px;border-top:black;" ng-show="showme">
-                            <input flex="30" ng-model="newEmp.EvaluationInfo.Evaluation" type="text" placeholder="จำนวนวัน"> Day
+                            <input flex="30" ng-model="newEmp.EvaluationInfo.EvaluationTypeEV" type="text" placeholder="จำนวนวัน"> Day
                         </div>
                     </div>
                 </form>

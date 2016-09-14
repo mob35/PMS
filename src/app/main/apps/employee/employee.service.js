@@ -6,7 +6,7 @@
         .service('employeeService', employeeService);
 
     function employeeService($q, $http) {
-        var url = "http://192.168.1.141:8080/api/EmployeeDatas";
+        var url = "http://192.168.1.114:8080/api/EmployeeDatas";
 
         this.getAll = function() {
             var defer = $q.defer();
