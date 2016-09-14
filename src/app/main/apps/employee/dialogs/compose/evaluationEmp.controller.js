@@ -10,26 +10,162 @@
         $scope.newEmp = selectedMail;
         console.log(selectedMail);
         // console.log($scope.newEmp.SpecialInfo);
-        
-        $scope.Score = [5,4,3,2,1]
+        $scope.calSum = function() {
+            $scope.sumFive = 0;
+            $scope.sumFour = 0;
+            $scope.sumthree = 0;
+            $scope.sumTwo = 0;
+            $scope.sumOne = 0;
+            // JobLearningEV
+            if ($scope.newEmp.EvaluationInfo.JobLearningEV == 5) {
+                $scope.sumFive = $scope.sumFive + 1;
+            } else if ($scope.newEmp.EvaluationInfo.JobLearningEV == 4) {
+                $scope.sumFour = $scope.sumFour + 1;
+            } else if ($scope.newEmp.EvaluationInfo.JobLearningEV == 3) {
+                $scope.sumthree = $scope.sumthree + 1;
+            } else if ($scope.newEmp.EvaluationInfo.JobLearningEV == 2) {
+                $scope.sumTwo = $scope.sumTwo + 1;
+            } else if ($scope.newEmp.EvaluationInfo.JobLearningEV == 1) {
+                $scope.sumOne = $scope.sumOne + 1;
+            }
+            // JobKnowledge_SkillEV
+            if ($scope.newEmp.EvaluationInfo.JobKnowledge_SkillEV == 5) {
+                $scope.sumFive = $scope.sumFive + 1;
+            } else if ($scope.newEmp.EvaluationInfo.JobKnowledge_SkillEV == 4) {
+                $scope.sumFour = $scope.sumFour + 1;
+            } else if ($scope.newEmp.EvaluationInfo.JobKnowledge_SkillEV == 3) {
+                $scope.sumthree = $scope.sumthree + 1;
+            } else if ($scope.newEmp.EvaluationInfo.JobKnowledge_SkillEV == 2) {
+                $scope.sumTwo = $scope.sumTwo + 1;
+            } else if ($scope.newEmp.EvaluationInfo.JobKnowledge_SkillEV == 1) {
+                $scope.sumOne = $scope.sumOne + 1;
+            }
+            // AdaptationEV
+            if ($scope.newEmp.EvaluationInfo.AdaptationEV == 5) {
+                $scope.sumFive = $scope.sumFive + 1;
+            } else if ($scope.newEmp.EvaluationInfo.AdaptationEV == 4) {
+                $scope.sumFour = $scope.sumFour + 1;
+            } else if ($scope.newEmp.EvaluationInfo.AdaptationEV == 3) {
+                $scope.sumthree = $scope.sumthree + 1;
+            } else if ($scope.newEmp.EvaluationInfo.AdaptationEV == 2) {
+                $scope.sumTwo = $scope.sumTwo + 1;
+            } else if ($scope.newEmp.EvaluationInfo.AdaptationEV == 1) {
+                $scope.sumOne = $scope.sumOne + 1;
+            }
+            // RulesRespectEV
+            if ($scope.newEmp.EvaluationInfo.RulesRespectEV == 5) {
+                $scope.sumFive = $scope.sumFive + 1;
+            } else if ($scope.newEmp.EvaluationInfo.RulesRespectEV == 4) {
+                $scope.sumFour = $scope.sumFour + 1;
+            } else if ($scope.newEmp.EvaluationInfo.RulesRespectEV == 3) {
+                $scope.sumthree = $scope.sumthree + 1;
+            } else if ($scope.newEmp.EvaluationInfo.RulesRespectEV == 2) {
+                $scope.sumTwo = $scope.sumTwo + 1;
+            } else if ($scope.newEmp.EvaluationInfo.RulesRespectEV == 1) {
+                $scope.sumOne = $scope.sumOne + 1;
+            }
+            // CommunicationEV
+            if ($scope.newEmp.EvaluationInfo.CommunicationEV == 5) {
+                $scope.sumFive = $scope.sumFive + 1;
+            } else if ($scope.newEmp.EvaluationInfo.CommunicationEV == 4) {
+                $scope.sumFour = $scope.sumFour + 1;
+            } else if ($scope.newEmp.EvaluationInfo.CommunicationEV == 3) {
+                $scope.sumthree = $scope.sumthree + 1;
+            } else if ($scope.newEmp.EvaluationInfo.CommunicationEV == 2) {
+                $scope.sumTwo = $scope.sumTwo + 1;
+            } else if ($scope.newEmp.EvaluationInfo.CommunicationEV == 1) {
+                $scope.sumOne = $scope.sumOne + 1;
+            }
+            // AttitudeEV
+            if ($scope.newEmp.EvaluationInfo.AttitudeEV == 5) {
+                $scope.sumFive = $scope.sumFive + 1;
+            } else if ($scope.newEmp.EvaluationInfo.AttitudeEV == 4) {
+                $scope.sumFour = $scope.sumFour + 1;
+            } else if ($scope.newEmp.EvaluationInfo.AttitudeEV == 3) {
+                $scope.sumthree = $scope.sumthree + 1;
+            } else if ($scope.newEmp.EvaluationInfo.AttitudeEV == 2) {
+                $scope.sumTwo = $scope.sumTwo + 1;
+            } else if ($scope.newEmp.EvaluationInfo.AttitudeEV == 1) {
+                $scope.sumOne = $scope.sumOne + 1;
+            }
+            // Planning_FollowingEV
+            if ($scope.newEmp.EvaluationInfo.Planning_FollowingEV == 5) {
+                $scope.sumFive = $scope.sumFive + 1;
+            } else if ($scope.newEmp.EvaluationInfo.Planning_FollowingEV == 4) {
+                $scope.sumFour = $scope.sumFour + 1;
+            } else if ($scope.newEmp.EvaluationInfo.Planning_FollowingEV == 3) {
+                $scope.sumthree = $scope.sumthree + 1;
+            } else if ($scope.newEmp.EvaluationInfo.Planning_FollowingEV == 2) {
+                $scope.sumTwo = $scope.sumTwo + 1;
+            } else if ($scope.newEmp.EvaluationInfo.Planning_FollowingEV == 1) {
+                $scope.sumOne = $scope.sumOne + 1;
+            }
+            // Decision_SolvingEV
+            if ($scope.newEmp.EvaluationInfo.Decision_SolvingEV == 5) {
+                $scope.sumFive = $scope.sumFive + 1;
+            } else if ($scope.newEmp.EvaluationInfo.Decision_SolvingEV == 4) {
+                $scope.sumFour = $scope.sumFour + 1;
+            } else if ($scope.newEmp.EvaluationInfo.Decision_SolvingEV == 3) {
+                $scope.sumthree = $scope.sumthree + 1;
+            } else if ($scope.newEmp.EvaluationInfo.Decision_SolvingEV == 2) {
+                $scope.sumTwo = $scope.sumTwo + 1;
+            } else if ($scope.newEmp.EvaluationInfo.Decision_SolvingEV == 1) {
+                $scope.sumOne = $scope.sumOne + 1;
+            }
+            // ResponsibilityEV
+            if ($scope.newEmp.EvaluationInfo.ResponsibilityEV == 5) {
+                $scope.sumFive = $scope.sumFive + 1;
+            } else if ($scope.newEmp.EvaluationInfo.ResponsibilityEV == 4) {
+                $scope.sumFour = $scope.sumFour + 1;
+            } else if ($scope.newEmp.EvaluationInfo.ResponsibilityEV == 3) {
+                $scope.sumthree = $scope.sumthree + 1;
+            } else if ($scope.newEmp.EvaluationInfo.ResponsibilityEV == 2) {
+                $scope.sumTwo = $scope.sumTwo + 1;
+            } else if ($scope.newEmp.EvaluationInfo.ResponsibilityEV == 1) {
+                $scope.sumOne = $scope.sumOne + 1;
+            }
+            // CooperationEV
+            if ($scope.newEmp.EvaluationInfo.CooperationEV == 5) {
+                $scope.sumFive = $scope.sumFive + 1;
+            } else if ($scope.newEmp.EvaluationInfo.CooperationEV == 4) {
+                $scope.sumFour = $scope.sumFour + 1;
+            } else if ($scope.newEmp.EvaluationInfo.CooperationEV == 3) {
+                $scope.sumthree = $scope.sumthree + 1;
+            } else if ($scope.newEmp.EvaluationInfo.CooperationEV == 2) {
+                $scope.sumTwo = $scope.sumTwo + 1;
+            } else if ($scope.newEmp.EvaluationInfo.CooperationEV == 1) {
+                $scope.sumOne = $scope.sumOne + 1;
+            }
+            // Sum
+            $scope.newEmp.EvaluationInfo.SumP5EV = 5 * $scope.sumFive;
+            $scope.newEmp.EvaluationInfo.SumP4EV = 4 * $scope.sumFour;
+            $scope.newEmp.EvaluationInfo.SumP3EV = 3 * $scope.sumthree;
+            $scope.newEmp.EvaluationInfo.SumP2EV = 2 * $scope.sumTwo;
+            $scope.newEmp.EvaluationInfo.SumP1EV = 1 * $scope.sumOne;
+
+        };
+
+
+        $scope.Score = [5, 4, 3, 2, 1]
         $scope.done = function() {
-            $scope.newEmp.EvaluationInfo.TotalScoreEV = 
-            ($scope.newEmp.EvaluationInfo.JobLearningEV) + 
-            ($scope.newEmp.EvaluationInfo.JobKnowledge_SkillEV) +
-            ($scope.newEmp.EvaluationInfo.AdaptationEV) +
-            ($scope.newEmp.EvaluationInfo.RulesRespectEV) +
-            ($scope.newEmp.EvaluationInfo.CommunicationEV) + 
-            ($scope.newEmp.EvaluationInfo.AttitudeEV) +
-            ($scope.newEmp.EvaluationInfo.Planning_FollowingEV) +
-            ($scope.newEmp.EvaluationInfo.Decision_SolvingEV) + 
-            ($scope.newEmp.EvaluationInfo.ResponsibilityEV) +
-            ($scope.newEmp.EvaluationInfo.CooperationEV);
+            $scope.newEmp.EvaluationInfo.TotalScoreEV =
+                ($scope.newEmp.EvaluationInfo.JobLearningEV) +
+                ($scope.newEmp.EvaluationInfo.JobKnowledge_SkillEV) +
+                ($scope.newEmp.EvaluationInfo.AdaptationEV) +
+                ($scope.newEmp.EvaluationInfo.RulesRespectEV) +
+                ($scope.newEmp.EvaluationInfo.CommunicationEV) +
+                ($scope.newEmp.EvaluationInfo.AttitudeEV) +
+                ($scope.newEmp.EvaluationInfo.Planning_FollowingEV) +
+                ($scope.newEmp.EvaluationInfo.Decision_SolvingEV) +
+                ($scope.newEmp.EvaluationInfo.ResponsibilityEV) +
+                ($scope.newEmp.EvaluationInfo.CooperationEV);
+            $scope.newEmp.EvaluationInfo.PercentEV = ($scope.newEmp.EvaluationInfo.TotalScoreEV) * (2);
             employeeService.putEmpData($scope.newEmp).then(function(res) {
-                    $scope.closeDialog();
-                }, function(err) {
-                    console.log(err);
-                });
-            
+                $scope.closeDialog();
+            }, function(err) {
+                console.log(err);
+            });
+
             console.log((JSON.stringify($scope.newEmp)));
         };
 
