@@ -752,12 +752,12 @@
                         </span>
                     </md-tab-label>
                     <md-tab-body>
-                        <div class="divMarCompos" ng-repeat="specialiItm in newEmp.SpecialInfo">
+                        <div class="divMarCompos" >
                             <form name="wizardStep7" class="md-inline-form" ms-form-wizard-form novalidate>
                                 <div class="divBtn5 divBtn3" layout="row" layout-xs="column">
                                     <span flex="20">Typing</span>
                                     <div flex="30">
-                                        <md-radio-group flex="30" ng-model="specialiItm.TypingSI">
+                                        <md-radio-group flex="30" ng-model="SpecialInfo.TypingSI">
                                             <md-radio-button value="true" ng-disabled=" type.isDisabled " ng-class="{'md-align-top-left': $index==1}"> Yes
                                             </md-radio-button>
                                             <md-radio-button value="false" ng-disabled=" type.isDisabled " ng-class="{'md-align-top-left': $index==1}"> No
@@ -768,12 +768,8 @@
                                     <md-input-container flex="20">
                                     </md-input-container>
                                     <md-input-container flex="50">
-                                        <input type="number" name="Thai" ng-model="specialiItm.TypingTHSI" placeholder="Thai">
-                                        <div ng-messages="wizardStep7.Thai.$error" role="alert">
-                                            <div ng-message="required">
-                                                <span>Thai field is required.</span>
-                                            </div>
-                                        </div>
+                                        <input type="number" name="Thai" ng-model="SpecialInfo.TypingTHSI" placeholder="Thai">
+                                        
                                     </md-input-container>
                                     <span class="divBtn5" flex="20">Word/Minutes</span>
                                 </div>
@@ -781,12 +777,8 @@
                                     <md-input-container flex="20">
                                     </md-input-container>
                                     <md-input-container flex="50">
-                                        <input type="number" name="English" ng-model="specialiItm.TypingENSI" placeholder="English">
-                                        <div ng-messages="wizardStep7.English.$error" role="alert">
-                                            <div ng-message="required">
-                                                <span>English field is required.</span>
-                                            </div>
-                                        </div>
+                                        <input type="number" name="English" ng-model="SpecialInfo.TypingENSI" placeholder="English">
+                                        
                                     </md-input-container>
                                     <span class="divBtn5" flex="20">Word/Minutes</span>
                                 </div>
@@ -794,7 +786,7 @@
                                 <div class="divBtn3" layout="row" layout-xs="column">
                                     <span flex="20">Computer</span>
                                     <div flex="30">
-                                        <md-radio-group flex="30" ng-model="specialiItm.ComputerSI">
+                                        <md-radio-group flex="30" ng-model="SpecialInfo.ComputerSI">
                                             <md-radio-button value="true" ng-disabled=" type.isDisabled " ng-class="{'md-align-top-left': $index==1}"> Yes
                                             </md-radio-button>
                                             <md-radio-button value="false" ng-disabled=" type.isDisabled " ng-class="{'md-align-top-left': $index==1}"> No
@@ -805,18 +797,14 @@
                                     <md-input-container flex="20">
                                     </md-input-container>
                                     <md-input-container flex="50">
-                                        <input type="text" name="Please Mension" ng-model="specialiItm.ComputerDescSI" placeholder="Please Mension">
-                                        <div ng-messages="wizardStep7.PleaseMension.$error" role="alert">
-                                            <div ng-message="required">
-                                                <span>Please Mension field is required.</span>
-                                            </div>
-                                        </div>
+                                        <input type="text" name="Please Mension" ng-model="SpecialInfo.ComputerDescSI" placeholder="Please Mension">
+                                       
                                     </md-input-container>
                                 </div>
                                 <div class="divBtn3" layout="row" layout-xs="column">
                                     <span flex="20">Dirving</span>
                                     <div flex="30">
-                                        <md-radio-group flex="30" ng-model="specialiItm.DrivingSI">
+                                        <md-radio-group flex="30" ng-model="SpecialInfo.DrivingSI">
                                             <md-radio-button value="true" ng-disabled=" type.isDisabled " ng-class="{'md-align-top-left': $index==1}"> Yes
                                             </md-radio-button>
                                             <md-radio-button value="false" ng-disabled=" type.isDisabled " ng-class="{'md-align-top-left': $index==1}"> No
@@ -827,12 +815,8 @@
                                     <md-input-container flex="20">
                                     </md-input-container>
                                     <md-input-container flex="50">
-                                        <input type="text" name="Dirving License No." ng-model="specialiItm.DrivingNoSI" placeholder="Dirving License No.">
-                                        <div ng-messages="wizardStep7.DirvingLicense.$error" role="alert">
-                                            <div ng-message="required">
-                                                <span>Dirving License No. field is required.</span>
-                                            </div>
-                                        </div>
+                                        <input type="text" name="Dirving License No." ng-model="SpecialInfo.DrivingNoSI" placeholder="Dirving License No.">
+                                       
                                     </md-input-container>
                                 </div>
                             </form>
@@ -852,11 +836,11 @@
                         </span>
                     </md-tab-label>
                     <md-tab-body>
-                        <div class="divMarCompos" ng-repeat="specialiItm in newEmp.SpecialInfo">
+                        <div class="divMarCompos" >
                             <form name="wizardStep8" class="md-inline-form" ms-form-wizard-form novalidate>
                                 <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                                     <md-input-container flex>
-                                        <input type="text" name="Office Machine" ng-model="specialiItm.OfficeMachineSI" placeholder="Office Machine">
+                                        <input type="text" name="Office Machine" ng-model="SpecialInfo.OfficeMachineSI" placeholder="Office Machine">
                                         <div ng-messages="wizardStep8.OfficeMachine.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Office Machine field is required.</span>
@@ -866,7 +850,7 @@
                                 </div>
                                 <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                                     <md-input-container flex>
-                                        <input type="text" name="Hobbies" ng-model="specialiItm.HobbiceSI" placeholder="Hobbies">
+                                        <input type="text" name="Hobbies" ng-model="SpecialInfo.HobbiceSI" placeholder="Hobbies">
                                         <div ng-messages="wizardStep8.Hobbies.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Hobbies field is required.</span>
@@ -876,7 +860,7 @@
                                 </div>
                                 <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                                     <md-input-container flex>
-                                        <input type="text" name="Sport" ng-model="specialiItm.SportSI" placeholder="Sport">
+                                        <input type="text" name="Sport" ng-model="SpecialInfo.SportSI" placeholder="Sport">
                                         <div ng-messages="wizardStep8.Sport.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Sport field is required.</span>
@@ -886,7 +870,7 @@
                                 </div>
                                 <div class="divBtn" layout="column" layout-gt-xs="row" flex>
                                     <md-input-container flex>
-                                        <input type="text" name="Knowledge" ng-model="specialiItm.KnowledgeSI" placeholder="Knowledge">
+                                        <input type="text" name="Knowledge" ng-model="SpecialInfo.KnowledgeSI" placeholder="Knowledge">
                                         <div ng-messages="wizardStep8.Knowledge.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Knowledge field is required.</span>
@@ -896,7 +880,7 @@
                                 </div>
                                 <div layout="column" layout-gt-xs="row" flex>
                                     <md-input-container flex>
-                                        <input type="text" name="Other" ng-model="specialiItm.OtherSI" placeholder="Other">
+                                        <input type="text" name="Other" ng-model="SpecialInfo.OtherSI" placeholder="Other">
                                         <div ng-messages="wizardStep8.Other.$error" role="alert">
                                             <div ng-message="required">
                                                 <span>Other field is required.</span>

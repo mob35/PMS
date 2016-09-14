@@ -1,0 +1,198 @@
+<md-dialog class="compose-dialog" aria-label="Evaluation Information">
+    <form class="md-inline-form">
+        <md-toolbar class="md-accent md-hue-2">
+            <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+                <span class="title">Evaluation Information</span>
+                <md-button class="md-icon-button" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
+                    <md-icon md-font-icon="icon-close"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <!-- FORM WIZARD -->
+        <ms-form-wizard flex>
+            <div class="divMarCompos">
+                <form name="wizardStep1" class="md-inline-form" ms-form-wizard-form novalidate>
+                    <div class="divBtn" layout="column" layout-gt-xs="row" flex>
+                        <md-input-container flex="30">
+                            <input type="text" name="employeeNo" ng-model="newEmp.PersonalInfo._id">
+                        </md-input-container>
+                        <md-input-container flex="30">
+                            <input type="text" name="dateStart" ng-model="newEmp.RegardInfo.StartDateRI">
+                        </md-input-container>
+                        <md-input-container flex="30">
+                        </md-input-container>
+                    </div>
+                    <div class="divBtn" layout="column" layout-gt-xs="row" flex>
+                        <md-input-container flex="30">
+                            <input type="text" name="firstname" ng-model="newEmp.PersonalInfo.FirstNameEN">
+                        </md-input-container>
+                        <md-input-container flex="30">
+                            <input type="text" name="lastname" ng-model="newEmp.PersonalInfo.LastNameEN">
+                        </md-input-container>
+                        <md-input-container flex="30">
+                        </md-input-container>
+                    </div>
+                    <div class="divBtn" layout="column" layout-gt-xs="row" flex>
+                        <md-input-container flex="30">
+                            <input type="text" name="position" ng-model="newEmp.PersonalInfo.Position">
+                        </md-input-container>
+                        <md-input-container flex="30">
+                            <input type="date" name="dateConf" ng-model="newEmp.EvaluationInfo.DateConfirmedEV" placeholder="Date Confirmed">
+                        </md-input-container>
+                        <md-input-container flex="30">
+                        </md-input-container>
+                    </div>
+                    <!-- /////// -->
+                </form>
+            </div>
+            <div>
+                <!-- class="divMarCompos" -->
+                <form>
+                    <div layout="row" layout-xs="column">
+                        <span flex="5"></span>
+                        <span class="divBtntop20" style="margin-top: -5px;" flex="50"><h2>Issue</h2></span>
+                        <label class="divBtntop20" style="margin-left: 41px;">5</label>
+                        <label class="divBtntop20" style="margin-left: 40px;">4</label>
+                        <label class="divBtntop20" style="margin-left: 41.5px;">3</label>
+                        <label class="divBtntop20" style="margin-left: 41.5px;">2</label>
+                        <label class="divBtntop20" style="margin-left: 40.5px;">1</label>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span flex="10"></span>
+                        <span class="divBtntop20" flex="50">Job Learning</span>
+                        <md-radio-group ng-model="newEmp.EvaluationInfo.JobLearningEV" class="md-primary" layout="row">
+                            <md-radio-button ng-repeat="sco in Score" ng-value="sco" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}">
+                            </md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span flex="10"></span>
+                        <span class="divBtntop20" flex="50">Job Knowledge & Skills</span>
+                        <md-radio-group ng-model="newEmp.EvaluationInfo.JobKnowledge_SkillEV" class="md-primary" layout="row">
+                            <md-radio-button ng-repeat="sco in Score" ng-value="sco" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}">
+                            </md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span flex="10"></span>
+                        <span class="divBtntop20" flex="50">Adaptation</span>
+                        <md-radio-group ng-model="newEmp.EvaluationInfo.AdaptationEV" class="md-primary" layout="row">
+                            <md-radio-button ng-repeat="sco in Score" ng-value="sco" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}">
+                            </md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span flex="10"></span>
+                        <span class="divBtntop20" flex="50">Rules Respect</span>
+                        <md-radio-group ng-model="newEmp.EvaluationInfo.RulesRespectEV" class="md-primary" layout="row">
+                            <md-radio-button ng-repeat="sco in Score" ng-value="sco" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}">
+                            </md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span flex="10"></span>
+                        <span class="divBtntop20" flex="50">Communication</span>
+                        <md-radio-group ng-model="newEmp.EvaluationInfo.CommunicationEV" class="md-primary" layout="row">
+                            <md-radio-button ng-repeat="sco in Score" ng-value="sco" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}">
+                            </md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span flex="10"></span>
+                        <span class="divBtntop20" flex="50">Attitude</span>
+                        <md-radio-group ng-model="newEmp.EvaluationInfo.AttitudeEV" class="md-primary" layout="row">
+                            <md-radio-button ng-repeat="sco in Score" ng-value="sco" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}">
+                            </md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span flex="10"></span>
+                        <span class="divBtntop20" flex="50">Planning and Following up on work</span>
+                        <md-radio-group ng-model="newEmp.EvaluationInfo.Planning_FollowingEV" class="md-primary" layout="row">
+                            <md-radio-button ng-repeat="sco in Score" ng-value="sco" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}">
+                            </md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span flex="10"></span>
+                        <span class="divBtntop20" flex="50">Decision Makeing / Problem Solving</span>
+                        <md-radio-group ng-model="newEmp.EvaluationInfo.Decision_SolvingEV" class="md-primary" layout="row">
+                            <md-radio-button ng-repeat="sco in Score" ng-value="sco" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}">
+                            </md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span flex="10"></span>
+                        <span class="divBtntop20" flex="50">Responsibility</span>
+                        <md-radio-group ng-model="newEmp.EvaluationInfo.ResponsibilityEV" class="md-primary" layout="row">
+                            <md-radio-button ng-repeat="sco in Score" ng-value="sco" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}">
+                            </md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span flex="10"></span>
+                        <span class="divBtntop20" flex="50">Co-operation with Colleagues</span>
+                        <md-radio-group ng-model="newEmp.EvaluationInfo.CooperationEV" class="md-primary" layout="row">
+                            <md-radio-button ng-repeat="sco in Score" ng-value="sco" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}">
+                            </md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span flex="10"></span>
+                        <span class="divBtntop20" flex="50">Scores</span>
+                        <!-- <md-radio-group ng-model="newEmp.EvaluationInfo.Scores" class="md-primary" layout="row">
+                            <md-radio-button ng-repeat="sco in Score" ng-value="sco" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}">
+                            </md-radio-button>
+                        </md-radio-group> -->
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span flex="10"></span>
+                        <span class="divBtntop20" flex="50">Total Scores</span> {{(newEmp.EvaluationInfo.JobLearningEV) + (newEmp.EvaluationInfo.JobKnowledge_SkillEV) + (newEmp.EvaluationInfo.AdaptationEV) + (newEmp.EvaluationInfo.RulesRespectEV) + (newEmp.EvaluationInfo.CommunicationEV) + (newEmp.EvaluationInfo.AttitudeEV) + (newEmp.EvaluationInfo.Planning_FollowingEV) + (newEmp.EvaluationInfo.Decision_SolvingEV) + (newEmp.EvaluationInfo.ResponsibilityEV) + (newEmp.EvaluationInfo.CooperationEV)}}
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span flex="10"></span>
+                        <span class="divBtntop20" flex="50">Percent</span>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span flex="10"></span>
+                        <span class="divBtntop20" flex="50">Other</span>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <br>
+            <div>
+                <form>
+                    <div layout="row" layout-xs="column">
+                        <span flex="5"></span>
+                        <span> <h2>Evaluation Type</h2></span>
+                    </div>
+                    <div layout="row" layout-xs="column">
+                        <span style="margin-left:20px;" flex="20"></span>
+                        <md-radio-group ng-model="newEmp.EvaluationInfo.Evaluation" class="md-primary" layout="row">
+                            <md-radio-button value="Confirmed" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}" ng-hide="showme">Confirmed
+                            </md-radio-button>
+                            <md-radio-button value="Extended" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}" ng-click="showme=true">Extended
+                            </md-radio-button>
+                            <md-radio-button value="NotConfirmed" ng-disabled="types.isDisabled " ng-class="{'md-align-top-left': $index==1}" ng-hide="showme">Not Confirmed
+                            </md-radio-button>
+                        </md-radio-group>
+                        <div style="margin-top:21px;border-top:black;" ng-show="showme">
+                            <input flex="30" ng-model="newEmp.EvaluationInfo.Evaluation" type="text" placeholder="จำนวนวัน"> Day
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="navigation" flex layout="row" layout-align="right">
+                <md-button class="md-raised md-accent md-button md-ink-ripple" ng-click="closeDialog()" aria-label="Close dialog" tranlate translate-aria-label="EMP.CLOSE_DIALOG">
+                    Cancel
+                </md-button>
+                <span class="btn-right">
+                <md-button class="md-raised md-accent" ng-click="done()">
+                    Done
+                </md-button>
+                 </span>
+            </div>
+        </ms-form-wizard>
+    </form>
+</md-dialog>

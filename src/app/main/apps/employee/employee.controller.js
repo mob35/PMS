@@ -67,11 +67,13 @@
 
 
             for (var i = 0; i <= $scope.employeeList.length - 1; i++) {
-
-                var teamIsNew = $scope.positions.indexOf($scope.employeeList[i].PersonalInfo.Position) == -1;
+                if($scope.employeeList[i].PersonalInfo){
+                     var teamIsNew = $scope.positions.indexOf($scope.employeeList[i].PersonalInfo.Position) == -1;
                 if (teamIsNew) {
                     $scope.positions.push($scope.employeeList[i].PersonalInfo.Position);
                 }
+                }
+               
             }
 
             $scope.selected = $scope.positions[0];
@@ -144,7 +146,10 @@
 
         $scope.filterPos = function(pos) {
             //console.log(pos);
-            return pos.PersonalInfo.Position == $scope.selected;
+            if(pos.PersonalInfo){
+                return pos.PersonalInfo.Position == $scope.selected;
+            }
+            return false;
         };
 
         $scope.selectBy = function(select) {

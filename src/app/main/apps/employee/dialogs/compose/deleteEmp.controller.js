@@ -57,10 +57,10 @@
         //////////
         $scope.deleteEmp = function() {
             alert("deleteEmp");
-            console.log('length:'+selectEmpForDel.EmpID);
+            console.log('length:'+selectEmpForDel._id);
             employeeService.deleteEmpData(selectEmpForDel).then(function(res) {
                 for (var i = 0; i < $scope.employeeList.length; i++) {
-                if (selectEmpForDel.EmpID == $scope.employeeList[i].EmpID) {
+                if (selectEmpForDel._id == $scope.employeeList[i]._id) {
                     $scope.employeeList.splice(i, 1);
                     break;
                 }

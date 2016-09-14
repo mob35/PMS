@@ -14,7 +14,7 @@
 
         //////////////////////////////////////////////////////custom///////////////////////////////
         $scope.deduction = {
-            "EmpID": $scope.newDeduc.EmpID,
+            "_id": $scope.newDeduc._id,
             "DetailDe": "",
             "AmountDe": "",
             "StartDateDe": "",
@@ -24,7 +24,7 @@
         // 
         $scope.addDeduction = function() {
             $scope.newDeduc.DeductionInfo.push($scope.deduction);
-            console.log($scope.newDeduc.EmpID);
+            console.log($scope.newDeduc._id);
             console.log($scope.newDeduc.DeductionInfo);
             $scope.deduction = {
                 "DetailDe": "",
