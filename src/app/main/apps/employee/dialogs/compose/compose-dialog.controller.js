@@ -11,12 +11,12 @@
 
         // console.log($scope.newEmp.SpecialInfo);
         $scope.done = function() {
-            // console.log($scope.newEmp);
+            console.log($scope.newEmp);
         };
         $scope.sendForm = function() {
             console.log(mode);
             console.log($scope.newEmp);
-            // console.log(JSON.stringify($scope.newEmp));
+            console.log(JSON.stringify($scope.newEmp));
             if (mode == 'C') {
                 employeeService.postEmp($scope.newEmp).then(function(res) {
                     $scope.closeDialog();

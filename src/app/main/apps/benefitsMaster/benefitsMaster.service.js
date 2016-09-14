@@ -6,7 +6,7 @@
         .service('benefitsMasterService', benefitsMasterService);
 
     function benefitsMasterService($q,$http) {
-    	var url = "http://192.168.1.104/api/BenefitsMasterDatas";
+    	var url = "http://192.168.1.141:8080/api/BenefitsMasterDatas";
 
         this.getAll = function() {
         	var defer = $q.defer();

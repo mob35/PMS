@@ -10,7 +10,20 @@
         $scope.newEmp = selectedMail;
         console.log(selectedMail);
         // console.log($scope.newEmp.SpecialInfo);
+        
+        $scope.Score = [5,4,3,2,1]
         $scope.done = function() {
+            $scope.newEmp.EvaluationInfo.TotalScoreEV = 
+            ($scope.newEmp.EvaluationInfo.JobLearningEV) + 
+            ($scope.newEmp.EvaluationInfo.JobKnowledge_SkillEV) +
+            ($scope.newEmp.EvaluationInfo.AdaptationEV) +
+            ($scope.newEmp.EvaluationInfo.RulesRespectEV) +
+            ($scope.newEmp.EvaluationInfo.CommunicationEV) + 
+            ($scope.newEmp.EvaluationInfo.AttitudeEV) +
+            ($scope.newEmp.EvaluationInfo.Planning_FollowingEV) +
+            ($scope.newEmp.EvaluationInfo.Decision_SolvingEV) + 
+            ($scope.newEmp.EvaluationInfo.ResponsibilityEV) +
+            ($scope.newEmp.EvaluationInfo.CooperationEV);
             employeeService.putEmpData($scope.newEmp).then(function(res) {
                     $scope.closeDialog();
                 }, function(err) {

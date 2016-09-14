@@ -6,7 +6,7 @@
         .service('employeeService', employeeService);
 
     function employeeService($q, $http) {
-        var url = "http://192.168.1.104/api/EmployeeDatas";
+        var url = "http://192.168.1.141:8080/api/EmployeeDatas";
 
         this.getAll = function() {
             var defer = $q.defer();
@@ -34,7 +34,7 @@
         this.putEmpData = function(employee) {
             console.log(employee);
             var defer = $q.defer();
-            $http.put(url + '/' + employee.EmpID, employee).success(function(response) {
+            $http.put(url + '/' + employee._id, employee).success(function(response) {
                     defer.resolve(response);
                 })
                 .error(function(response) {
@@ -47,7 +47,7 @@
         this.putRegradEmp = function(selectedEmp) {
             console.log(JSON.stringify(selectedEmp));
             var defer = $q.defer();
-            $http.put(url + '/' + selectedEmp.EmpID, selectedEmp).success(function(response) {
+            $http.put(url + '/' + selectedEmp._id, selectedEmp).success(function(response) {
 
                     defer.resolve(response);
                 })
@@ -60,7 +60,7 @@
         this.putIncrease = function(selectedMail) {
             console.log(JSON.stringify(selectedMail));
             var defer = $q.defer();
-            $http.put(url + '/' + selectedMail.EmpID, selectedMail).success(function(response) {
+            $http.put(url + '/' + selectedMail._id, selectedMail).success(function(response) {
 
                     defer.resolve(response);
                 })
@@ -73,7 +73,7 @@
         this.putDeduction = function(selectedMail) {
             console.log(JSON.stringify(selectedMail));
             var defer = $q.defer();
-            $http.put(url + '/' + selectedMail.EmpID, selectedMail).success(function(response) {
+            $http.put(url + '/' + selectedMail._id, selectedMail).success(function(response) {
 
                     defer.resolve(response);
                 })
@@ -85,7 +85,7 @@
         };
         this.deleteEmpData = function(selectEmpForDel) {
             var defer = $q.defer();
-            $http.delete(url + '/' + selectEmpForDel.EmpID).success(function(response) {
+            $http.delete(url + '/' + selectEmpForDel._id).success(function(response) {
 
                     defer.resolve(response);
                 })
