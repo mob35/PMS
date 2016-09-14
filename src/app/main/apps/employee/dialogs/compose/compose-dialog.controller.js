@@ -32,7 +32,7 @@
                 });
             }
             $mdDialog.hide();
-        };
+        window.location.reload();};
         var vm = this;
 
         // Data
