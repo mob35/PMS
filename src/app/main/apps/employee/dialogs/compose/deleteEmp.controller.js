@@ -33,7 +33,7 @@
         $scope.closeDialog = function() {
             //alert("closeDialog");
             $mdDialog.hide();
-            window.location.reload();
+       
 
         }
 

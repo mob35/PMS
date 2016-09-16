@@ -14,9 +14,15 @@
     //         var serviceEmpData = employeeService.getData();
     //         console.log(serviceEmpData);
     // =======
-    function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms, employeeService) {
+    function EmpController($rootScope,$scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms, employeeService) {
 
         var vm = this;
+
+//////
+$scope.selectedEmp = {};
+$scope.selectedEmpCopy = {};
+//////
+
         // Data
         $scope.accounts = {
             'creapond': 'johndoe@creapond.com',
@@ -27,6 +33,8 @@
         $scope.selectedAccount = 'creapond';
         $scope.selectedMail = {};
         $scope.originalSelectedEmp = {};
+
+        $scope.selectedEmpOriginal = {};
         // $scope.selectedDev = {};
         // $scope.selectBy = {};
         // vm.toggleSidenav = toggleSidenav;
@@ -63,17 +71,16 @@
 
         //////////////////////////////////////////////////////////////////////call service method//////////////////////
         employeeService.getAll().then(function(res) {
-            $scope.employeeList = res.data;
+            $rootScope.employeeList = res.data;
 
+            for (var i = 0; i <= $rootScope.employeeList.length - 1; i++) {
+                if ($rootScope.employeeList[i].PersonalInfo) {
+                    var teamIsNew = $scope.positions.indexOf($rootScope.employeeList[i].PersonalInfo.Position) == -1;
+                    if (teamIsNew) {
+                        $scope.positions.push($rootScope.employeeList[i].PersonalInfo.Position);
+                    }
+                }
 
-            for (var i = 0; i <= $scope.employeeList.length - 1; i++) {
-                if($scope.employeeList[i].PersonalInfo){
-                     var teamIsNew = $scope.positions.indexOf($scope.employeeList[i].PersonalInfo.Position) == -1;
-                if (teamIsNew) {
-                    $scope.positions.push($scope.employeeList[i].PersonalInfo.Position);
-                }
-                }
-               
             }
 
             $scope.selected = $scope.positions[0];
@@ -84,12 +91,17 @@
             console.log(err);
         });
 
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////SELECT//////////////////////////////////////////////////
 
-        $scope.selectedEmployee = function(mail) {
-            $scope.selectEmpForDel = mail;
-            $scope.selectedEmp = mail;
-            console.log(mail);
+        $scope.selectedEmployee = function(selectEmp) {
+
+            $scope.selectedEmp = selectEmp;
+            console.log($scope.selectedEmp);
+            angular.copy(selectEmp, $scope.selectedEmpCopy);
+            // $scope.selectEmpForDel = mail;
+            // $scope.selectedEmp = mail;
+            
+            // console.log(mail);
         }
 
 
@@ -146,22 +158,20 @@
 
         $scope.filterPos = function(pos) {
             //console.log(pos);
-            if(pos.PersonalInfo){
+            if (pos.PersonalInfo) {
                 return pos.PersonalInfo.Position == $scope.selected;
             }
             return false;
         };
 
         $scope.selectBy = function(select) {
-            //$scope.selectPos = select;
-            $scope.selected = select;
-
+            //$scope.selectPos = select; 
             $scope.showList = true;
             $scope.showRead = false;
 
         }
 
-        
+
         $scope.selectEmp = function(mail) {
             $scope.originalSelectedEmp = mail;
             angular.copy(mail, $scope.selectedMail);
@@ -261,6 +271,32 @@
                 vm.allChecked = true;
             }
         }
+        $scope.$on("add", function(event, data) {
+            //alert("add");
+            employeeService.getAll().then(function(res) {
+                $scope.employeeList = res.data;
+
+
+                for (var i = 0; i <= $scope.employeeList.length - 1; i++) {
+                    if ($scope.employeeList[i].PersonalInfo) {
+                        var teamIsNew = $scope.positions.indexOf($scope.employeeList[i].PersonalInfo.Position) == -1;
+                        if (teamIsNew) {
+                            $scope.positions.push($scope.employeeList[i].PersonalInfo.Position);
+                        }
+                    }
+
+                }
+
+                $scope.selected = $scope.positions[0];
+                // $scope.selectedMail = $scope.employeeList[0];
+                $scope.selectedEmp = data;
+
+            }, function(err) {
+                console.log(err);
+            });
+
+        });
+
 
 
         ///////////////////////////////////////
@@ -277,37 +313,37 @@
         ////////////  Certificate  ////////////
 
         $scope.composeDialog = function(ev) {
-                var newEmp = {
-                    "PersonalInfo": {},
-                    "FamilyInfo": [],
-                    "EducationInfo": [],
-                    "WorkExperienceInfo": [],
-                    "LanguageInfo": [],
-                    "SpecialInfo": {},
-                    "OtherInfo": {}
-                };
-                $mdDialog.show({
-                    controller: 'ComposeDialogController',
-                    controllerAs: 'vm',
-                    locals: {
-                        selectedMail: newEmp,
-                        mode:'C'
-                    },
-                    templateUrl: 'app/main/apps/employee/dialogs/compose/compose-dialog.html',
-                    parent: angular.element($document.body),
-                    targetEvent: ev,
-                    clickOutsideToClose: true
-                });
-            }
+            var newEmp = {
+                "PersonalInfo": {},
+                "FamilyInfo": [],
+                "EducationInfo": [],
+                "WorkExperienceInfo": [],
+                "LanguageInfo": [],
+                "SpecialInfo": {},
+                "OtherInfo": {}
+            };
+            $mdDialog.show({
+                controller: 'ComposeDialogController',
+                controllerAs: 'vm',
+                locals: {
+                    selectedMail: newEmp,
+                    mode: 'C'
+                },
+                templateUrl: 'app/main/apps/employee/dialogs/compose/compose-dialog.html',
+                parent: angular.element($document.body),
+                targetEvent: ev,
+                clickOutsideToClose: true
+            });
+        }
 
-            $scope.editDialog = function(ev) {
-                
+        $scope.editDialog = function(ev) {
+
                 $mdDialog.show({
                     controller: 'ComposeDialogController',
                     controllerAs: 'vm',
                     locals: {
-                        selectedMail: $scope.selectedEmp,
-                        mode:'U'
+                        selectedEmpCopy: $scope.selectedEmpCopy,
+                        mode: 'U'
                     },
                     templateUrl: 'app/main/apps/employee/dialogs/compose/compose-dialog.html',
                     parent: angular.element($document.body),
@@ -373,21 +409,21 @@
             });
         }
         ////////////  Increase ///////////////
-        $scope.increaseDialog = function(ev){
-            $mdDialog.show({
-                controller: 'IncreaseDialogController',
-                controllerAs: 'vm',
-                locals: {
-                    selectedMail: $scope.selectedMail
-                },
-                templateUrl: 'app/main/apps/employee/dialogs/compose/increaseEmp.html',
-                parent: angular.element($document.body),
-                targetEvent: ev,
-                clickOutsideToClose: true
-            });
-        }
-        ////////////  Deduction ///////////////
-        $scope.deductionDialog = function(ev){
+        $scope.increaseDialog = function(ev) {
+                $mdDialog.show({
+                    controller: 'IncreaseDialogController',
+                    controllerAs: 'vm',
+                    locals: {
+                        selectedMail: $scope.selectedMail
+                    },
+                    templateUrl: 'app/main/apps/employee/dialogs/compose/increaseEmp.html',
+                    parent: angular.element($document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true
+                });
+            }
+            ////////////  Deduction ///////////////
+        $scope.deductionDialog = function(ev) {
             $mdDialog.show({
                 controller: 'DeductionDialogController',
                 controllerAs: 'vm',

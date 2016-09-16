@@ -5,7 +5,7 @@
         .module('app.employee')
         .service('employeeService', employeeService);
 
-    function employeeService($q, $http) {
+    function employeeService($q, $http, $rootScope) {
         var url = "http://192.168.1.112:8080/api/EmployeeDatas";
 
         this.getAll = function() {
@@ -15,6 +15,7 @@
                 method: 'GET',
                 url: url
             }).then(function successCallback(response) {
+
                 defer.resolve(response);
             }, function errorCallback(response) {
                 defer.reject(response);
@@ -35,6 +36,7 @@
             console.log(employee);
             var defer = $q.defer();
             $http.put(url + '/' + employee._id, employee).success(function(response) {
+                    $rootScope.$broadcast("add", employee);
                     defer.resolve(response);
                 })
                 .error(function(response) {
@@ -48,7 +50,7 @@
             console.log(JSON.stringify(selectedEmp));
             var defer = $q.defer();
             $http.put(url + '/' + selectedEmp._id, selectedEmp).success(function(response) {
-
+                    $rootScope.$broadcast("add", selectedEmp);
                     defer.resolve(response);
                 })
                 .error(function(response) {
@@ -74,7 +76,7 @@
             console.log(JSON.stringify(selectedMail));
             var defer = $q.defer();
             $http.put(url + '/' + selectedMail._id, selectedMail).success(function(response) {
-
+                    $rootScope.$broadcast("add", selectedMail);
                     defer.resolve(response);
                 })
                 .error(function(response) {
@@ -87,7 +89,7 @@
             console.log(JSON.stringify(selectedMail));
             var defer = $q.defer();
             $http.put(url + '/' + selectedMail._id, selectedMail).success(function(response) {
-
+                    $rootScope.$broadcast("add", selectedMail);
                     defer.resolve(response);
                 })
                 .error(function(response) {
@@ -99,7 +101,7 @@
         this.deleteEmpData = function(selectEmpForDel) {
             var defer = $q.defer();
             $http.delete(url + '/' + selectEmpForDel._id).success(function(response) {
-
+                    $rootScope.$broadcast("add", selectEmpForDel);
                     defer.resolve(response);
                 })
                 .error(function(response) {
@@ -111,8 +113,8 @@
 
         this.postEmp = function(empDataList) {
             var defer = $q.defer();
-            $http.post(url,empDataList).success(function(response) {
-
+            $http.post(url, empDataList).success(function(response) {
+                    $rootScope.$broadcast("add", empDataList);
                     defer.resolve(response);
                 })
                 .error(function(response) {

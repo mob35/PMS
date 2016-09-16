@@ -1,4 +1,5 @@
 <!-- 1 -->
+
 <div ng-show="showRead">
     <md-card>
         <md-toolbar class="md-accent">
@@ -25,62 +26,62 @@
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span><b>FirstName :</b> {{selectedMail.PersonalInfo.FirstNameEN}}</span>
+                        <span><b>FirstName :</b> {{selectedEmp.PersonalInfo.FirstNameEN}}</span>
                     </div>
                     <div>
-                        <span><b>LastName :</b> {{selectedMail.PersonalInfo.LastNameEN}}</span>
+                        <span><b>LastName :</b> {{selectedEmp.PersonalInfo.LastNameEN}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span><b>Position :</b> {{selectedMail.PersonalInfo.Position}}</span>
+                        <span><b>Position :</b> {{selectedEmp.PersonalInfo.Position}}</span>
                     </div>
                     <div>
-                        <span><b>Salary :</b> {{selectedMail.PersonalInfo.Salary}} THB</span>
+                        <span><b>Salary :</b> {{selectedEmp.PersonalInfo.Salary}} THB</span>
                     </div>
                 </div>
                 <!-- //////////////// -->
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span><b>Birthdate :</b> {{selectedMail.PersonalInfo.Birthdate | date:'dd/MM/yyyy'}}</span>
+                        <span><b>Birthdate :</b> {{selectedEmp.PersonalInfo.Birthdate | date:'dd/MM/yyyy'}}</span>
                     </div>
                     <div flex>
-                        <span><b>Age :</b> {{selectedMail.PersonalInfo.Age}} Yrs.</span>
+                        <span><b>Age :</b> {{selectedEmp.PersonalInfo.Age}} Yrs.</span>
                     </div>
                 </div>
                 <!-- //////////////// -->
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span><b>Sex :</b> {{selectedMail.PersonalInfo.Sex}}</span>
+                        <span><b>Sex :</b> {{selectedEmp.PersonalInfo.Sex}}</span>
                     </div>
                     <div flex>
-                        <span><b>Race :</b> {{selectedMail.PersonalInfo.Race}}</span>
+                        <span><b>Race :</b> {{selectedEmp.PersonalInfo.Race}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span><b>Nationality :</b> {{selectedMail.PersonalInfo.Nationality}}</span>
+                        <span><b>Nationality :</b> {{selectedEmp.PersonalInfo.Nationality}}</span>
                     </div>
                     <div flex>
-                        <span><b>Religion :</b> {{selectedMail.PersonalInfo.Religion}}</span>
+                        <span><b>Religion :</b> {{selectedEmp.PersonalInfo.Religion}}</span>
                     </div>
                 </div>
                 <!-- /////////////// -->
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span><b>IDCard No. :</b> {{selectedMail.PersonalInfo.IDCard}}</span>
+                        <span><b>IDCard No. :</b> {{selectedEmp.PersonalInfo.IDCard}}</span>
                     </div>
                     <div flex>
-                        <span><b>Expiration Date :</b> {{selectedMail.PersonalInfo.IDCardExp}}</span>
+                        <span><b>Expiration Date :</b> {{selectedEmp.PersonalInfo.IDCardExp}}</span>
                     </div>
                 </div>
                 <!-- ////////////////// -->
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="45">
-                        <span><b>Email :</b> {{selectedMail.PersonalInfo.Email}}</span>
+                        <span><b>Email :</b> {{selectedEmp.PersonalInfo.Email}}</span>
                     </div>
                     <div flex>
-                        <span><b>Account :</b> {{selectedMail.PersonalInfo.Account}}</span>
+                        <span><b>Account :</b> {{selectedEmp.PersonalInfo.Account}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -101,67 +102,67 @@
                 <div ng-show="personalShowDis">
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span><b>Address :</b> {{selectedMail.PersonalInfo.PresentAddress}}</span>
+                            <span><b>Address :</b> {{selectedEmp.PersonalInfo.PresentAddress}}</span>
                         </div>
                         <div flex>
-                            <span><b>Moo :</b> {{selectedMail.PersonalInfo.Moo}}</span>
+                            <span><b>Moo :</b> {{selectedEmp.PersonalInfo.Moo}}</span>
                         </div>
                     </div>
                     <!-- //////////////////// -->
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span><b>Road :</b> {{selectedMail.PersonalInfo.LastNameEN}}</span>
+                            <span><b>Road :</b> {{selectedEmp.PersonalInfo.LastNameEN}}</span>
                         </div>
                         <div flex>
-                            <span><b>District :</b> {{selectedMail.PersonalInfo.District}}</span>
+                            <span><b>District :</b> {{selectedEmp.PersonalInfo.District}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span><b>Amphur :</b> {{selectedMail.PersonalInfo.Amphur}}</span>
+                            <span><b>Amphur :</b> {{selectedEmp.PersonalInfo.Amphur}}</span>
                         </div>
                         <div flex>
-                            <span><b>Province :</b> {{selectedMail.PersonalInfo.Province}}</span>
+                            <span><b>Province :</b> {{selectedEmp.PersonalInfo.Province}}</span>
                         </div>
                     </div>
                     <!-- ////////////////// -->
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span><b>Postcode :</b> {{selectedMail.PersonalInfo.Postcode}}</span>
+                            <span><b>Postcode :</b> {{selectedEmp.PersonalInfo.Postcode}}</span>
                         </div>
                         <div flex>
-                            <span><b>Tel :</b> {{selectedMail.PersonalInfo.Tel}}</span>
+                            <span><b>Tel :</b> {{selectedEmp.PersonalInfo.Tel}}</span>
                         </div>
                     </div>
                     <!-- ////////////////////// -->
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span><b>Mobile :</b> {{selectedMail.PersonalInfo.Moblie}}</span>
+                            <span><b>Mobile :</b> {{selectedEmp.PersonalInfo.Moblie}}</span>
                         </div>
                         <div flex>
-                            <span><b>Height :</b> {{selectedMail.PersonalInfo.Height}} cm.</span>
+                            <span><b>Height :</b> {{selectedEmp.PersonalInfo.Height}} cm.</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span><b>Weight :</b> {{selectedMail.PersonalInfo.Weight}} kgs.</span>
+                            <span><b>Weight :</b> {{selectedEmp.PersonalInfo.Weight}} kgs.</span>
                         </div>
                         <div flex>
-                            <span><b>Underlying disease :</b> {{selectedMail.PersonalInfo.UnderlyingDisease}}</span>
+                            <span><b>Underlying disease :</b> {{selectedEmp.PersonalInfo.UnderlyingDisease}}</span>
                         </div>
                     </div>
                     <!-- //////////////////// -->
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span><b>Living :</b> {{selectedMail.PersonalInfo.Living}}</span>
+                            <span><b>Living :</b> {{selectedEmp.PersonalInfo.Living}}</span>
                         </div>
                         <div flex>
-                            <span><b>Military :</b> {{selectedMail.PersonalInfo.Military}}</span>
+                            <span><b>Military :</b> {{selectedEmp.PersonalInfo.Military}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="45">
-                            <span><b>Marital :</b> {{selectedMail.PersonalInfo.Marital}}</span>
+                            <span><b>Marital :</b> {{selectedEmp.PersonalInfo.Marital}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column">
@@ -181,176 +182,176 @@
                 <div layout="row" layout-xs="column">
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="FirstName" ng-model="selectedMail.PersonalInfo.FirstNameEN" placeholder="FirstName" required>
+                            <input type="text" name="FirstName" ng-model="selectedEmp.PersonalInfo.FirstNameEN" placeholder="FirstName" required>
                         </md-input-container>
                         <!-- <span>FirstName : {{per.nameEn}}</span> -->
                     </div>
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="LastName" ng-model="selectedMail.PersonalInfo.LastNameEN" placeholder="LastName" required>
+                            <input type="text" name="LastName" ng-model="selectedEmp.PersonalInfo.LastNameEN" placeholder="LastName" required>
                         </md-input-container>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-top: -45px;">
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Position" ng-model="selectedMail.PersonalInfo.Position" placeholder="Position" required>
+                            <input type="text" name="Position" ng-model="selectedEmp.PersonalInfo.Position" placeholder="Position" required>
                         </md-input-container>
                     </div>
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Salary" ng-model="selectedMail.PersonalInfo.Salary" placeholder="Salary" required>
-                        </md-input-container>
-                    </div>
-                </div>
-                <div layout="row" layout-xs="column" style="margin-top: -45px;">
-                    <div flex>
-                        <md-input-container>
-                            <input type="text" name="Birthdate" ng-model="selectedMail.PersonalInfo.Birthdate" placeholder="Birth date" required>
-                        </md-input-container>
-                    </div>
-                    <div flex>
-                        <md-input-container>
-                            <input type="text" name="Age" ng-model="selectedMail.PersonalInfo.Age" placeholder="Age" required>
+                            <input type="text" name="Salary" ng-model="selectedEmp.PersonalInfo.Salary" placeholder="Salary" required>
                         </md-input-container>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-top: -45px;">
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Sex" ng-model="selectedMail.PersonalInfo.Sex" placeholder="Sex" required>
+                            <input type="text" name="Birthdate" ng-model="selectedEmp.PersonalInfo.Birthdate" placeholder="Birth date" required>
                         </md-input-container>
                     </div>
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Race" ng-model="selectedMail.PersonalInfo.Race" placeholder="Race" required>
-                        </md-input-container>
-                    </div>
-                </div>
-                <div layout="row" layout-xs="column" style="margin-top: -45px;">
-                    <div flex>
-                        <md-input-container>
-                            <input type="text" name="Nationality" ng-model="selectedMail.PersonalInfo.Nationality" placeholder="Nationality" required>
-                        </md-input-container>
-                    </div>
-                    <div flex>
-                        <md-input-container>
-                            <input type="text" name="Religion" ng-model="selectedMail.PersonalInfo.Religion" placeholder="Religion" required>
+                            <input type="text" name="Age" ng-model="selectedEmp.PersonalInfo.Age" placeholder="Age" required>
                         </md-input-container>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-top: -45px;">
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="IDCardNo" ng-model="selectedMail.PersonalInfo.IDCard" placeholder="IDCard No" required>
+                            <input type="text" name="Sex" ng-model="selectedEmp.PersonalInfo.Sex" placeholder="Sex" required>
                         </md-input-container>
                     </div>
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="ExpirationDate" ng-model="selectedMail.PersonalInfo.IDCardExp" placeholder="Expiration Date" required>
-                        </md-input-container>
-                    </div>
-                </div>
-                <div layout="row" layout-xs="column" style="margin-top: -45px;">
-                    <div flex>
-                        <md-input-container>
-                            <input type="text" name="Email" ng-model="selectedMail.PersonalInfo.Email" placeholder="Email" required>
-                        </md-input-container>
-                    </div>
-                    <div flex>
-                        <md-input-container>
-                            <input type="text" name="Account" ng-model="selectedMail.PersonalInfo.Account" placeholder="Account" required>
+                            <input type="text" name="Race" ng-model="selectedEmp.PersonalInfo.Race" placeholder="Race" required>
                         </md-input-container>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-top: -45px;">
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Address" ng-model="selectedMail.PersonalInfo.PresentAddress" placeholder="Address" required>
+                            <input type="text" name="Nationality" ng-model="selectedEmp.PersonalInfo.Nationality" placeholder="Nationality" required>
                         </md-input-container>
                     </div>
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Moo" ng-model="selectedMail.PersonalInfo.Moo" placeholder="Moo" required>
-                        </md-input-container>
-                    </div>
-                </div>
-                <div layout="row" layout-xs="column" style="margin-top: -45px;">
-                    <div flex>
-                        <md-input-container>
-                            <input type="text" name="Road" ng-model="selectedMail.PersonalInfo.Province" placeholder="Road" required>
-                        </md-input-container>
-                    </div>
-                    <div flex>
-                        <md-input-container>
-                            <input type="text" name="District" ng-model="selectedMail.PersonalInfo.District" placeholder="District" required>
+                            <input type="text" name="Religion" ng-model="selectedEmp.PersonalInfo.Religion" placeholder="Religion" required>
                         </md-input-container>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-top: -45px;">
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Amphur" ng-model="selectedMail.PersonalInfo.Amphur" placeholder="Amphur" required>
+                            <input type="text" name="IDCardNo" ng-model="selectedEmp.PersonalInfo.IDCard" placeholder="IDCard No" required>
                         </md-input-container>
                     </div>
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Province" ng-model="selectedMail.PersonalInfo.Province" placeholder="Province" required>
-                        </md-input-container>
-                    </div>
-                </div>
-                <div layout="row" layout-xs="column" style="margin-top: -45px;">
-                    <div flex>
-                        <md-input-container>
-                            <input type="text" name="Postcode" ng-model="selectedMail.PersonalInfo.Postcode" placeholder="Postcode" required>
-                        </md-input-container>
-                    </div>
-                    <div flex>
-                        <md-input-container>
-                            <input type="text" name="Tel" ng-model="selectedMail.PersonalInfo.Tel" placeholder="Tel" required>
+                            <input type="text" name="ExpirationDate" ng-model="selectedEmp.PersonalInfo.IDCardExp" placeholder="Expiration Date" required>
                         </md-input-container>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-top: -45px;">
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Mobile" ng-model="selectedMail.PersonalInfo.Moblie" placeholder="Mobile" required>
+                            <input type="text" name="Email" ng-model="selectedEmp.PersonalInfo.Email" placeholder="Email" required>
                         </md-input-container>
                     </div>
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Height" ng-model="selectedMail.PersonalInfo.Height" placeholder="Height" required>
-                        </md-input-container>
-                    </div>
-                </div>
-                <div layout="row" layout-xs="column" style="margin-top: -45px;">
-                    <div flex>
-                        <md-input-container>
-                            <input type="text" name="Weight" ng-model="selectedMail.PersonalInfo.Weight" placeholder="Weight" required>
-                        </md-input-container>
-                    </div>
-                    <div flex>
-                        <md-input-container>
-                            <input type="text" name="Underlyingdisease" ng-model="selectedMail.PersonalInfo.UnderlyingDisease" placeholder="Underlying disease" required>
+                            <input type="text" name="Account" ng-model="selectedEmp.PersonalInfo.Account" placeholder="Account" required>
                         </md-input-container>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-top: -45px;">
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Living" ng-model="selectedMail.PersonalInfo.Living" placeholder="Living" required>
+                            <input type="text" name="Address" ng-model="selectedEmp.PersonalInfo.PresentAddress" placeholder="Address" required>
                         </md-input-container>
                     </div>
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Military" ng-model="selectedMail.PersonalInfo.Military" placeholder="Military" required>
+                            <input type="text" name="Moo" ng-model="selectedEmp.PersonalInfo.Moo" placeholder="Moo" required>
                         </md-input-container>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-top: -45px;">
                     <div flex>
                         <md-input-container>
-                            <input type="text" name="Marital" ng-model="selectedMail.PersonalInfo.Marital" placeholder="Marital" required>
+                            <input type="text" name="Road" ng-model="selectedEmp.PersonalInfo.Province" placeholder="Road" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="District" ng-model="selectedEmp.PersonalInfo.District" placeholder="District" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Amphur" ng-model="selectedEmp.PersonalInfo.Amphur" placeholder="Amphur" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Province" ng-model="selectedEmp.PersonalInfo.Province" placeholder="Province" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Postcode" ng-model="selectedEmp.PersonalInfo.Postcode" placeholder="Postcode" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Tel" ng-model="selectedEmp.PersonalInfo.Tel" placeholder="Tel" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Mobile" ng-model="selectedEmp.PersonalInfo.Moblie" placeholder="Mobile" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Height" ng-model="selectedEmp.PersonalInfo.Height" placeholder="Height" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Weight" ng-model="selectedEmp.PersonalInfo.Weight" placeholder="Weight" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Underlyingdisease" ng-model="selectedEmp.PersonalInfo.UnderlyingDisease" placeholder="Underlying disease" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Living" ng-model="selectedEmp.PersonalInfo.Living" placeholder="Living" required>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Military" ng-model="selectedEmp.PersonalInfo.Military" placeholder="Military" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="column" style="margin-top: -45px;">
+                    <div flex>
+                        <md-input-container>
+                            <input type="text" name="Marital" ng-model="selectedEmp.PersonalInfo.Marital" placeholder="Marital" required>
                         </md-input-container>
                     </div>
                 </div>
@@ -595,7 +596,7 @@
                     <span class="fontStyle">Typing</span>
                 </div>
                 <div flex>
-                    <span>Thai {{selectedMail.SpecialInfo.TypingTHSI}} Word/Minutes</span>
+                    <span>Thai {{selectedEmp.SpecialInfo.TypingTHSI}} Word/Minutes</span>
                 </div>
             </div>
             <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -603,7 +604,7 @@
                     <span></span>
                 </div>
                 <div flex>
-                    <span>English {{selectedMail.SpecialInfo.TypingENSI}} Word/Minutes</span>
+                    <span>English {{selectedEmp.SpecialInfo.TypingENSI}} Word/Minutes</span>
                 </div>
             </div>
             <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -611,7 +612,7 @@
                     <span class="fontStyle">Computer</span>
                 </div>
                 <div flex>
-                    <span>{{selectedMail.SpecialInfo.ComputerSI}}</span>
+                    <span>{{selectedEmp.SpecialInfo.ComputerSI}}</span>
                 </div>
             </div>
             <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -619,7 +620,7 @@
                     <span class="fontStyle">Driving</span>
                 </div>
                 <div flex>
-                    <span>No. {{selectedMail.SpecialInfo.DrivingSI}}</span>
+                    <span>No. {{selectedEmp.SpecialInfo.DrivingSI}}</span>
                 </div>
             </div>
             <!-- /////////////////////////// -->
@@ -641,7 +642,7 @@
                         <span class="fontStyle">Office Machine</span>
                     </div>
                     <div flex>
-                        <span>{{selectedMail.SpecialInfo.OfficeMachineSI}}</span>
+                        <span>{{selectedEmp.SpecialInfo.OfficeMachineSI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -649,7 +650,7 @@
                         <span class="fontStyle">Hobby</span>
                     </div>
                     <div flex>
-                        <span>{{selectedMail.SpecialInfo.HobbiceSI}}</span>
+                        <span>{{selectedEmp.SpecialInfo.HobbiceSI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -657,7 +658,7 @@
                         <span class="fontStyle">Sport</span>
                     </div>
                     <div flex>
-                        <span>{{selectedMail.SpecialInfo.SportSI}}</span>
+                        <span>{{selectedEmp.SpecialInfo.SportSI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -665,7 +666,7 @@
                         <span class="fontStyle">Knowledge</span>
                     </div>
                     <div flex>
-                        <span>{{selectedMail.SpecialInfo.KnowledgeSI}}</span>
+                        <span>{{selectedEmp.SpecialInfo.KnowledgeSI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -673,7 +674,7 @@
                         <span class="fontStyle">Other</span>
                     </div>
                     <div flex>
-                        <span>{{selectedMail.SpecialInfo.OtherSI}}</span>
+                        <span>{{selectedEmp.SpecialInfo.OtherSI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column">
@@ -708,7 +709,7 @@
                         <span>I Can Work Up Country</span>
                     </div>
                     <div flex>
-                        <span>{{(selectedMail.OtherInfo.WorkCountryOI ? "Yes" : "No")}}</span>
+                        <span>{{(selectedEmp.OtherInfo.WorkCountryOI ? "Yes" : "No")}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -719,11 +720,11 @@
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="50">
                         <span class="fontStyle">FirstName : </span>
-                        <span>{{selectedMail.OtherInfo.FirtNameOI}}</span>
+                        <span>{{selectedEmp.OtherInfo.FirtNameOI}}</span>
                     </div>
                     <div flex>
                         <span class="fontStyle">LastName : </span>
-                        <span>{{selectedMail.OtherInfo.LastNameOI}}</span>
+                        <span>{{selectedEmp.OtherInfo.LastNameOI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -731,7 +732,7 @@
                         <span>Related to the applient as</span>
                     </div>
                     <div flex>
-                        <span>{{selectedMail.OtherInfo.RelatedOI}}</span>
+                        <span>{{selectedEmp.OtherInfo.RelatedOI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -739,7 +740,7 @@
                         <span>Address</span>
                     </div>
                     <div flex>
-                        <span>{{selectedMail.OtherInfo.AddressOI}}</span>
+                        <span>{{selectedEmp.OtherInfo.AddressOI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -747,7 +748,7 @@
                         <span>Telephone</span>
                     </div>
                     <div flex>
-                        <span>{{selectedMail.OtherInfo.TelOI}}</span>
+                        <span>{{selectedEmp.OtherInfo.TelOI}}</span>
                     </div>
                 </div>
                 <!-- /////////////////// -->
@@ -768,7 +769,7 @@
                             <span>Source of job information</span>
                         </div>
                         <div flex>
-                            <span>{{selectedMail.OtherInfo.SourceInfoOI}}</span>
+                            <span>{{selectedEmp.OtherInfo.SourceInfoOI}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -776,7 +777,7 @@
                             <span>Contagious Disease</span>
                         </div>
                         <div flex>
-                            <span>{{selectedMail.OtherInfo.ContagiousFlagOI}}</span>
+                            <span>{{selectedEmp.OtherInfo.ContagiousFlagOI}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -787,11 +788,11 @@
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex="50">
                             <span class="fontStyle">FirstName : </span>
-                            <span>{{selectedMail.OtherInfo.FirtNameWorkRelativeOI}}</span>
+                            <span>{{selectedEmp.OtherInfo.FirtNameWorkRelativeOI}}</span>
                         </div>
                         <div flex>
                             <span class="fontStyle">LastName : </span>
-                            <span>{{selectedMail.OtherInfo.LastNameWorkRelativeOI}}</span>
+                            <span>{{selectedEmp.OtherInfo.LastNameWorkRelativeOI}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
@@ -801,7 +802,7 @@
                     </div>
                     <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                         <div flex>
-                            <span>{{selectedMail.OtherInfo.IntroduceYoureSelfOI}}</span>
+                            <span>{{selectedEmp.OtherInfo.IntroduceYoureSelfOI}}</span>
                         </div>
                     </div>
                     <div layout="row" layout-xs="column">

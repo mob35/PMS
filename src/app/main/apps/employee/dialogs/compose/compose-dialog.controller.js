@@ -6,8 +6,9 @@
         .controller('ComposeDialogController', ComposeDialogController);
 
     /** @ngInject */
-    function ComposeDialogController($mdDialog, selectedMail, mode, $scope, employeeService) {
-        $scope.newEmp = selectedMail;
+    function ComposeDialogController($mdDialog, mode, $rootScope, $scope, employeeService, selectedEmpCopy) {
+        $scope.newEmp = selectedEmpCopy;
+
 
         // console.log($scope.newEmp.SpecialInfo);
         $scope.done = function() {
@@ -29,7 +30,7 @@
                     console.log(err);
                 });
             } else {
-                console.log(JSON.stringify(selectedMail));
+                console.log(JSON.stringify(selectedEmpCopy));
                 employeeService.putEmpData($scope.newEmp).then(function(res) {
                     $scope.closeDialog();
                 }, function(err) {
