@@ -14,7 +14,7 @@
     //         var serviceEmpData = employeeService.getData();
     //         console.log(serviceEmpData);
     // =======
-    function EmpController($rootScope,$scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms, employeeService) {
+    function EmpController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, EmpPms, employeeService) {
 
         var vm = this;
 
@@ -73,15 +73,15 @@ $scope.selectedEmpCopy = {};
         employeeService.getAll().then(function(res) {
             $scope.employeeList = res.data;
 
-            for (var i = 0; i <= $rootScope.employeeList.length - 1; i++) {
-                if ($rootScope.employeeList[i].PersonalInfo) {
-                    if(!$rootScope.employeeList[i].PersonalInfo.Position){
-                        $rootScope.employeeList[i].PersonalInfo.Position = "";
+            for (var i = 0; i <= $scope.employeeList.length - 1; i++) {
+                if ($scope.employeeList[i].PersonalInfo) {
+                    if(!$scope.employeeList[i].PersonalInfo.Position){
+                        $scope.employeeList[i].PersonalInfo.Position = "";
                     }
-                    var teamIsNew = $scope.positions.indexOf($rootScope.employeeList[i].PersonalInfo.Position ? $rootScope.employeeList[i].PersonalInfo.Position : "") == -1;
+                    var teamIsNew = $scope.positions.indexOf($scope.employeeList[i].PersonalInfo.Position ? $scope.employeeList[i].PersonalInfo.Position : "") == -1;
                     if (teamIsNew) {
 
-                        $scope.positions.push($rootScope.employeeList[i].PersonalInfo.Position ? $rootScope.employeeList[i].PersonalInfo.Position : "");
+                        $scope.positions.push($scope.employeeList[i].PersonalInfo.Position ? $scope.employeeList[i].PersonalInfo.Position : "");
                     }
                 }
 
