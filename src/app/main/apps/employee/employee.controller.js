@@ -71,13 +71,17 @@ $scope.selectedEmpCopy = {};
 
         //////////////////////////////////////////////////////////////////////call service method//////////////////////
         employeeService.getAll().then(function(res) {
-            $rootScope.employeeList = res.data;
+            $scope.employeeList = res.data;
 
             for (var i = 0; i <= $rootScope.employeeList.length - 1; i++) {
                 if ($rootScope.employeeList[i].PersonalInfo) {
-                    var teamIsNew = $scope.positions.indexOf($rootScope.employeeList[i].PersonalInfo.Position) == -1;
+                    if(!$rootScope.employeeList[i].PersonalInfo.Position){
+                        $rootScope.employeeList[i].PersonalInfo.Position = "";
+                    }
+                    var teamIsNew = $scope.positions.indexOf($rootScope.employeeList[i].PersonalInfo.Position ? $rootScope.employeeList[i].PersonalInfo.Position : "") == -1;
                     if (teamIsNew) {
-                        $scope.positions.push($rootScope.employeeList[i].PersonalInfo.Position);
+
+                        $scope.positions.push($rootScope.employeeList[i].PersonalInfo.Position ? $rootScope.employeeList[i].PersonalInfo.Position : "");
                     }
                 }
 
@@ -165,7 +169,7 @@ $scope.selectedEmpCopy = {};
         };
 
         $scope.selectBy = function(select) {
-            //$scope.selectPos = select; 
+            $scope.selected = select; 
             $scope.showList = true;
             $scope.showRead = false;
 
@@ -326,7 +330,7 @@ $scope.selectedEmpCopy = {};
                 controller: 'ComposeDialogController',
                 controllerAs: 'vm',
                 locals: {
-                    selectedMail: newEmp,
+                    selectedEmpCopy: newEmp,
                     mode: 'C'
                 },
                 templateUrl: 'app/main/apps/employee/dialogs/compose/compose-dialog.html',
