@@ -283,14 +283,7 @@
                     "EducationInfo": [],
                     "WorkExperienceInfo": [],
                     "LanguageInfo": [],
-                    "SpecialInfo": [{
-
-                        "TypingSI": 'false',
-                        "ComputerSI": 'false',
-                        "DrivingSI": 'false'
-
-
-                    }],
+                    "SpecialInfo": {},
                     "OtherInfo": {}
                 };
                 $mdDialog.show({

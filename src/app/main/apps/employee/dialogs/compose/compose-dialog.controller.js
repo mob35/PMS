@@ -12,6 +12,9 @@
         // console.log($scope.newEmp.SpecialInfo);
         $scope.done = function() {
             console.log($scope.newEmp);
+            console.log($scope.newEmp.SpecialInfo);
+            console.log(JSON.stringify($scope.newEmp));
+
         };
         $scope.sendForm = function() {
             console.log(mode);
@@ -19,6 +22,8 @@
             console.log(JSON.stringify($scope.newEmp));
             if (mode == 'C') {
                 employeeService.postEmp($scope.newEmp).then(function(res) {
+                    console.log("==============================================================");
+                    console.log(res);
                     $scope.closeDialog();
                 }, function(err) {
                     console.log(err);
@@ -32,7 +37,7 @@
                 });
             }
             $mdDialog.hide();
-        window.location.reload();};
+        };
         var vm = this;
 
         // Data
@@ -120,25 +125,40 @@
             "WritingLI": "",
             "ReadingLI": ""
         };
-        $scope.special = {
-            "_id": $scope.newEmp._id,
-            "TypingSI": ""
-                // "TypingTHSI": 4,
-                // "TypingENSI": 5,
-                // "ComputerSI": true,
-                // "ComputerDescSI": "sample string 7",
-                // "DrivingSI": true,
-                // "DrivingNoSI": "sample string 9",
-                // "OfficeMachineSI": "sample string 10",
-                // "HobbiceSI": "sample string 11",
-                // "SportSI": "sample string 12",
-                // "KnowledgeSI": "sample string 13",
-                // "OtherSI": "sample string 14",
-        }
-        $scope.pushnong = function() {
-            $scope.newEmp.SpecialInfo.push($scope.special);
-            console.log($scope.special);
-        }
+        // $scope.special = {
+        //     "_id": $scope.newEmp._id,
+        //     "TypingSI": true,
+        //     "TypingTHSI": 0,
+        //     "TypingENSI": 0,
+        //     "ComputerSI": true,
+        //     "ComputerDescSI": "",
+        //     "DrivingSI": true,
+        //     "DrivingNoSI": "",
+        //     "OfficeMachineSI": "",
+        //     "HobbiceSI": "",
+        //     "SportSI": "",
+        //     "KnowledgeSI": "",
+        //     "OtherSI": "",
+        // };
+        // $scope.addspecial = function() {
+        //     $scope.newEmp.SpecialInfo.push($scope.special);
+        //     $scope.special = {
+        //         "TypingSI": true,
+        //         "TypingTHSI": 0,
+        //         "TypingENSI": 0,
+        //         "ComputerSI": true,
+        //         "ComputerDescSI": "",
+        //         "DrivingSI": true,
+        //         "DrivingNoSI": "",
+        //         "OfficeMachineSI": "",
+        //         "HobbiceSI": "",
+        //         "SportSI": "",
+        //         "KnowledgeSI": "",
+        //         "OtherSI": ""
+        //     };
+
+        //     console.log($scope.special);
+        // }
 
         $scope.addNewFam = function() {
             $scope.newEmp.FamilyInfo.push($scope.family);
