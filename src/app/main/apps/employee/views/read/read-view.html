@@ -590,36 +590,36 @@
     </h2>
         </md-toolbar>
         <md-card-content>
-            <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
+            <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                 <div flex="35">
                     <span class="fontStyle">Typing</span>
                 </div>
                 <div flex>
-                    <span>Thai {{spe.TypingTHSI}} Word/Minutes</span>
+                    <span>Thai {{selectedMail.SpecialInfo.TypingTHSI}} Word/Minutes</span>
                 </div>
             </div>
-            <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
+            <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                 <div flex="35">
                     <span></span>
                 </div>
                 <div flex>
-                    <span>English {{spe.TypingENSI}} Word/Minutes</span>
+                    <span>English {{selectedMail.SpecialInfo.TypingENSI}} Word/Minutes</span>
                 </div>
             </div>
-            <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
+            <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                 <div flex="35">
                     <span class="fontStyle">Computer</span>
                 </div>
                 <div flex>
-                    <span>{{spe.ComputerSI}}</span>
+                    <span>{{selectedMail.SpecialInfo.ComputerSI}}</span>
                 </div>
             </div>
-            <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
+            <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                 <div flex="35">
                     <span class="fontStyle">Driving</span>
                 </div>
                 <div flex>
-                    <span>No. {{spe.DrivingSI}}</span>
+                    <span>No. {{selectedMail.SpecialInfo.DrivingSI}}</span>
                 </div>
             </div>
             <!-- /////////////////////////// -->
@@ -636,44 +636,44 @@
                 </div>
             </div>
             <div ng-show="specialShowDis">
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="35">
                         <span class="fontStyle">Office Machine</span>
                     </div>
                     <div flex>
-                        <span>{{spe.OfficeMachineSI}}</span>
+                        <span>{{selectedMail.SpecialInfo.OfficeMachineSI}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="35">
                         <span class="fontStyle">Hobby</span>
                     </div>
                     <div flex>
-                        <span>{{spe.HobbiceSI}}</span>
+                        <span>{{selectedMail.SpecialInfo.HobbiceSI}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="35">
                         <span class="fontStyle">Sport</span>
                     </div>
                     <div flex>
-                        <span>{{spe.SportSI}}</span>
+                        <span>{{selectedMail.SpecialInfo.SportSI}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="35">
                         <span class="fontStyle">Knowledge</span>
                     </div>
                     <div flex>
-                        <span>{{spe.KnowledgeSI}}</span>
+                        <span>{{selectedMail.SpecialInfo.KnowledgeSI}}</span>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column" ng-repeat="spe in selectedEmp.SpecialInfo" style="margin-bottom:5px;">
+                <div layout="row" layout-xs="column" style="margin-bottom:5px;">
                     <div flex="35">
                         <span class="fontStyle">Other</span>
                     </div>
                     <div flex>
-                        <span>{{spe.OtherSI}}</span>
+                        <span>{{selectedMail.SpecialInfo.OtherSI}}</span>
                     </div>
                 </div>
                 <div layout="row" layout-xs="column">
