@@ -29,10 +29,11 @@
                 console.log(err);
             });
 
-        window.location.reload();}
+        }
         $scope.closeDialog = function() {
             //alert("closeDialog");
             $mdDialog.hide();
+            window.location.reload();
 
         }
 
